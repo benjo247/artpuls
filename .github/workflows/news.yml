@@ -3,13 +3,12 @@ name: Fetch news
 on:
   schedule:
     # 3x daily at 06:07, 11:07, 17:07 UTC
-    # Aligns with European morning, lunch, and evening — captures Asia overnight + US daytime news
     - cron: '7 6,11,17 * * *'
-  workflow_dispatch:       # manual trigger button in GitHub UI
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - 'scripts/fetch-news.mjs'   # rerun when the script itself changes
+      - 'scripts/fetch-news.mjs'
 
 permissions:
   contents: write
@@ -25,6 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so rebase works cleanly
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -46,7 +47,17 @@ jobs:
           git add data/ sitemap.xml
           if git diff --staged --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "chore(news): update $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
+            exit 0
           fi
+          git commit -m "chore(news): update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          # Retry push with rebase if remote has new commits (race condition handling)
+          for i in 1 2 3; do
+            if git push; then
+              echo "Push successful on attempt $i"
+              exit 0
+            fi
+            echo "Push failed, attempt $i — pulling and retrying..."
+            git pull --rebase origin main
+          done
+          echo "Push failed after 3 attempts"
+          exit 1
