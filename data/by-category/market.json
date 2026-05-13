@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-05-13T10:14:10.608278+00:00",
+  "category": "market",
+  "count": 1,
+  "stories": [
+    {
+      "id": "seed-monetization",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": "https://picsum.photos/seed/kp-market/800/1200",
+      "source": "Kunstpuls",
+      "url": null,
+      "publishedAt": "2026-05-13T10:14:10.606744+00:00",
+      "time_en": "just now",
+      "time_de": "gerade eben",
+      "read": 2,
+      "kicker_en": "Built-in revenue",
+      "kicker_de": "Eingebaute Monetarisierung",
+      "headline_en": "Two ad slots designed-in, AdSense ready",
+      "headline_de": "Zwei Anzeigenplätze eingedacht, AdSense-ready",
+      "summary_en": "An in-feed slot appears every 5-7 stories with smart placement rules. An in-article slot sits inside each expanded reading view.",
+      "summary_de": "Alle 5-7 Stories erscheint ein In-Feed-Slot mit intelligenter Platzierung. Ein In-Article-Slot sitzt in jeder Detailansicht.",
+      "body_en": "When AdSense is approved, only three values change in ads.js. Frequency rules already protect new users from ad burnout: no ads in the first 4 stories, sparser cadence for first-time visitors, hard cap per session, and exclusion of sensitive categories like restitution.",
+      "body_de": "Wenn AdSense freigeschaltet ist, ändern sich nur drei Werte in ads.js. Frequenzregeln schützen neue User vor Werbe-Burnout: keine Ads in den ersten 4 Stories, geringere Dichte für Erstbesucher, Hard-Cap pro Session, Ausschluss sensibler Kategorien wie Restitution."
+    }
+  ]
+}

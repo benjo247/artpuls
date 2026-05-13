@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://kunstpuls.app/</loc>
+    <changefreq>hourly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://kunstpuls.app/s/seed-welcome</loc>
+    <lastmod>2026-05-13T10:14:10.606637+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kunstpuls.app/s/seed-archive</loc>
+    <lastmod>2026-05-13T10:14:10.606741+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kunstpuls.app/s/seed-monetization</loc>
+    <lastmod>2026-05-13T10:14:10.606744+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

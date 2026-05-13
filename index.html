@@ -2,150 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <meta name="theme-color" content="#0e0d0b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Kunstpuls">
+
 <title>Kunstpuls — Art world, in one breath</title>
 <meta name="description" content="The art world, condensed. Compact news from auctions, exhibitions, biennials and the market.">
+
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #0e0d0b;
-  --bg-2: #16140f;
-  --ink: #f4f1ea;
-  --ink-2: #a8a094;
-  --ink-3: #6b6458;
-  --accent: #e8503a;
-  --line: rgba(244, 241, 234, 0.08);
-  --line-2: rgba(244, 241, 234, 0.16);
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body {
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Geist', system-ui, sans-serif;
-  color: var(--ink);
-  overscroll-behavior: none;
-}
-body {
-  background: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.phone {
-  width: 100%;
-  height: 100vh;
-  height: 100dvh;
-  background: var(--bg);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 640px) {
-  body {
-    background:
-      radial-gradient(ellipse at 20% 0%, #1a1612 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 100%, #1a1410 0%, transparent 50%),
-      #050403;
-    padding: 16px 8px;
-  }
-  .phone {
-    max-width: 420px;
-    height: min(96vh, 880px);
-    border-radius: 32px;
-    box-shadow:
-      0 1px 0 rgba(255,255,255,0.04) inset,
-      0 60px 120px -30px rgba(0,0,0,0.7),
-      0 0 0 1px rgba(255,255,255,0.04);
-  }
-}
-.header {
-  position: absolute; inset: 0 0 auto 0; z-index: 30;
-  padding: 16px 16px 10px;
-  background: linear-gradient(to bottom, rgba(14,13,11,0.92) 0%, rgba(14,13,11,0.78) 60%, rgba(14,13,11,0) 100%);
-  backdrop-filter: blur(8px);
-}
-.header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.logo { display: flex; align-items: baseline; gap: 8px; font-family: 'Instrument Serif', serif; font-size: 22px; letter-spacing: -0.01em; }
-.logo-mark { color: var(--accent); font-size: 10px; transform: translateY(-3px); }
-.logo em { font-style: italic; }
-.header-actions { display: flex; gap: 6px; align-items: center; }
-.lang { display: inline-flex; background: rgba(244,241,234,0.06); border: 1px solid var(--line); border-radius: 999px; padding: 2px; font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; }
-.lang button { background: none; border: none; color: var(--ink-2); padding: 5px 9px; border-radius: 999px; cursor: pointer; text-transform: uppercase; letter-spacing: inherit; font-family: inherit; font-size: inherit; transition: all .2s; }
-.lang button.on { background: var(--ink); color: var(--bg); }
-.icon-btn { width: 32px; height: 32px; border-radius: 999px; background: rgba(244,241,234,0.06); border: 1px solid var(--line); color: var(--ink); display: grid; place-items: center; cursor: pointer; }
-.cats { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 2px 16px 6px; }
-.cats::-webkit-scrollbar { display: none; }
-.cat { flex: 0 0 auto; padding: 6px 11px; border-radius: 999px; background: transparent; border: 1px solid var(--line); color: var(--ink-2); font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: all .2s; }
-.cat:hover { color: var(--ink); }
-.cat.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.progress { display: flex; gap: 3px; margin-top: 8px; padding: 0 2px; }
-.progress span { flex: 1; height: 2px; background: var(--line); border-radius: 1px; transition: background .3s; }
-.progress span.on { background: var(--ink); }
-.feed { flex: 1; overflow-y: scroll; scroll-snap-type: y mandatory; scrollbar-width: none; }
-.feed::-webkit-scrollbar { display: none; }
-.card { position: relative; width: 100%; height: 100%; scroll-snap-align: start; scroll-snap-stop: always; overflow: hidden; }
-.card-img { position: absolute; inset: 0; background-size: cover; background-position: center; background-color: #1a1612; filter: saturate(0.9) contrast(1.05); }
-.card-grad { position: absolute; inset: 0; opacity: 0.35; mix-blend-mode: multiply; }
-.card-shade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(14,13,11,0.55) 0%, rgba(14,13,11,0) 22%, rgba(14,13,11,0) 38%, rgba(14,13,11,0.6) 62%, rgba(14,13,11,0.96) 100%); }
-.card-top { position: absolute; top: 120px; left: 16px; right: 16px; display: flex; align-items: center; justify-content: space-between; z-index: 5; }
-.badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px 5px 8px; border-radius: 999px; background: rgba(14,13,11,0.55); backdrop-filter: blur(10px); border: 1px solid rgba(244,241,234,0.14); color: var(--ink); font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
-.badge-dot { width: 6px; height: 6px; border-radius: 999px; }
-.meta-time { font-family: 'Geist Mono', monospace; font-size: 10.5px; color: var(--ink-2); }
-.card-body { position: absolute; bottom: 0; left: 0; right: 0; padding: 0 70px 28px 20px; z-index: 5; }
-.kicker { font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 10px; }
-.headline { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 30px; line-height: 1.04; letter-spacing: -0.015em; color: var(--ink); margin: 0 0 12px; cursor: pointer; }
-.summary { font-size: 14px; line-height: 1.45; color: rgba(244,241,234,0.82); margin: 0 0 18px; max-width: 30ch; }
-.card-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.meta { display: flex; align-items: center; gap: 8px; font-family: 'Geist Mono', monospace; font-size: 10.5px; color: var(--ink-2); }
-.source { color: var(--ink); }
-.sep { color: var(--ink-3); }
-.cta { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; background: var(--ink); color: var(--bg); border: none; border-radius: 999px; font-family: 'Geist', sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: transform .15s; }
-.cta:hover { transform: translateY(-1px); }
-.rail { position: absolute; right: 12px; bottom: 130px; display: flex; flex-direction: column; gap: 10px; z-index: 6; }
-.rail-btn { width: 40px; height: 40px; border-radius: 999px; background: rgba(14,13,11,0.5); backdrop-filter: blur(10px); border: 1px solid rgba(244,241,234,0.14); color: var(--ink); display: grid; place-items: center; cursor: pointer; transition: all .2s; }
-.rail-btn:hover { background: rgba(14,13,11,0.75); transform: scale(1.05); }
-.rail-btn.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.rail-ai { background: rgba(232,80,58,0.18); border-color: rgba(232,80,58,0.4); color: #f0a094; }
-.hint { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; align-items: center; gap: 5px; padding: 5px 11px; background: rgba(14,13,11,0.6); backdrop-filter: blur(8px); border: 1px solid var(--line); border-radius: 999px; font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); pointer-events: none; animation: pulseHint 2.4s ease-in-out infinite; }
-@keyframes pulseHint { 0%, 100% { transform: translate(-50%, 0); opacity: 0.7; } 50% { transform: translate(-50%, -6px); opacity: 1; } }
-.card-ad { background: linear-gradient(180deg, #14110d 0%, #0e0d0b 60%, #1a1612 100%); }
-.ad-shell { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 100px 28px 60px; text-align: center; }
-.ad-label { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px 5px 8px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(244,241,234,0.04); color: var(--ink-2); font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; align-self: center; margin-bottom: 24px; }
-.ad-dot { width: 5px; height: 5px; border-radius: 999px; background: var(--ink-3); }
-.ad-frame { width: 100%; aspect-ratio: 336/280; max-width: 300px; margin: 0 auto; border: 1px dashed rgba(244,241,234,0.22); border-radius: 16px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; background: rgba(244,241,234,0.02); position: relative; }
-.ad-mark { position: absolute; top: 12px; right: 12px; font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--ink-3); }
-.ad-headline { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 32px; color: var(--ink); }
-.ad-sub { font-family: 'Geist Mono', monospace; font-size: 10.5px; color: var(--ink-2); }
-.ad-note { margin-top: 22px; font-size: 12.5px; line-height: 1.55; color: var(--ink-2); max-width: 30ch; margin-left: auto; margin-right: auto; }
-.sheet { position: absolute; inset: 0; z-index: 50; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); animation: fadeIn .25s ease; display: none; }
-.sheet.on { display: block; }
-@keyframes fadeIn { from { opacity: 0; } }
-.sheet-inner { position: absolute; left: 0; right: 0; bottom: 0; height: 92%; background: var(--bg); border-radius: 28px 28px 0 0; overflow-y: auto; scrollbar-width: none; animation: slideUp .35s cubic-bezier(.22,1,.36,1); }
-.sheet-inner::-webkit-scrollbar { display: none; }
-@keyframes slideUp { from { transform: translateY(40%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-.sheet-close { position: absolute; top: 14px; right: 14px; z-index: 4; width: 34px; height: 34px; border-radius: 999px; background: rgba(14,13,11,0.7); backdrop-filter: blur(8px); border: 1px solid var(--line-2); color: var(--ink); display: grid; place-items: center; cursor: pointer; }
-.sheet-hero { width: 100%; height: 220px; background-size: cover; background-position: center; position: relative; }
-.sheet-hero-shade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(14,13,11,0) 30%, var(--bg) 100%); }
-.sheet-hero .badge { position: absolute; bottom: 16px; left: 18px; background: rgba(14,13,11,0.75); }
-.sheet-body { padding: 20px 22px 60px; }
-.sheet-headline { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 30px; line-height: 1.08; letter-spacing: -0.015em; margin: 6px 0 14px; }
-.meta-row { padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
-.sheet-lead { font-family: 'Instrument Serif', serif; font-size: 18px; font-style: italic; line-height: 1.45; margin: 0 0 18px; }
-.sheet-text { font-size: 14.5px; line-height: 1.65; color: rgba(244,241,234,0.88); margin: 0 0 16px; }
-.inline-ad { margin: 22px 0; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(244,241,234,0.02); }
-.ad-label-small { display: block; font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
-.inline-ad-box { height: 80px; border: 1px dashed var(--line-2); border-radius: 8px; display: grid; place-items: center; font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--ink-2); }
-.sheet-actions { display: flex; gap: 8px; margin-top: 24px; }
-.pill { display: inline-flex; align-items: center; gap: 7px; padding: 10px 14px; border-radius: 999px; background: transparent; border: 1px solid var(--line-2); color: var(--ink); font-family: 'Geist', sans-serif; font-size: 13px; cursor: pointer; }
-.pill:hover { background: rgba(244,241,234,0.06); }
-.pill.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.icon { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.icon-sm { width: 14px; height: 14px; }
-.icon-lg { width: 20px; height: 20px; }
-</style>
+
+<link rel="stylesheet" href="/styles.css">
+
+<!--
+  AdSense loader. Uncomment and replace ca-pub-XXXX with your publisher ID
+  ONCE your AdSense account is approved.
+-->
+<!--
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
 </head>
 <body>
 <div class="phone">
@@ -168,388 +50,37 @@ body {
     <div class="cats" id="cats"></div>
     <div class="progress" id="progress"></div>
   </header>
-  <main class="feed" id="feed"></main>
-  <div class="hint" id="hint">
+
+  <main class="feed" id="feed">
+    <div class="loading" id="loading">
+      <div class="loading-pulse"></div>
+      <span class="loading-label" id="loadingLabel">Fetching the latest…</span>
+    </div>
+  </main>
+
+  <div class="hint" id="hint" hidden>
     <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg>
     <span id="hintText">swipe up</span>
   </div>
+
   <div class="sheet" id="sheet">
     <div class="sheet-inner" id="sheetInner"></div>
   </div>
+
+  <div class="toast" id="toast" hidden></div>
 </div>
 
+<script src="/ads.js" defer></script>
+<script src="/app.js" defer></script>
 <script>
-(function() {
-  'use strict';
-
-  var LABELS = {
-    en: {
-      hint: 'swipe up',
-      readingTime: 'min read',
-      cta: 'Read more',
-      save: 'Save',
-      saved: 'Saved',
-      share: 'Share',
-      ad: 'Advertisement',
-      adHead: 'Ad space',
-      adSub: 'In-feed slot \u00B7 AdSense-ready',
-      adNote: 'Ads appear in the same editorial frame as stories \u2014 clearly labeled, never breaking the reading flow.',
-      inArticleAd: 'In-article slot \u00B7 728 \u00D7 90 or responsive',
-      cats: ['All','Auction','Exhibition','Artists','Market','Museum','Biennale','Restitution']
-    },
-    de: {
-      hint: 'weiterwischen',
-      readingTime: 'Min Lesezeit',
-      cta: 'Lesen',
-      save: 'Speichern',
-      saved: 'Gespeichert',
-      share: 'Teilen',
-      ad: 'Anzeige',
-      adHead: 'Werbeplatz',
-      adSub: 'In-Feed-Slot \u00B7 AdSense-ready',
-      adNote: 'Anzeigen erscheinen im selben Editorial-Frame wie Beitr\u00E4ge \u2014 klar gekennzeichnet, ohne den Lesefluss zu brechen.',
-      inArticleAd: 'In-Article-Slot \u00B7 728 \u00D7 90 oder responsiv',
-      cats: ['Alle','Auktion','Ausstellung','K\u00FCnstler:innen','Markt','Museum','Biennale','Restitution']
-    }
-  };
-
-  var CAT_KEYS = ['all','auction','exhibition','artists','market','museum','biennale','restitution'];
-
-  // Picsum seeds — guaranteed to load, give us moody varied photography
-  var IMG = function(seed) { return 'https://picsum.photos/seed/' + seed + '/800/1200'; };
-
-  var STORIES = [
-    {
-      id: 1, cat: 'auction', accent: '#e8503a',
-      image: IMG('kunst-richter'),
-      source: 'Monopol',
-      time_en: '2h ago', time_de: 'vor 2 Std', read: 3,
-      kicker_en: "Sotheby's London", kicker_de: "Sotheby's London",
-      headline_en: "Richter's abstract sale shatters all expectations",
-      headline_de: "Richters Abstraktes Bild sprengt alle Erwartungen",
-      summary_en: 'The 1989 canvas changed hands last night for \u20AC32.4M \u2014 a new auction record for a work of this period.',
-      summary_de: 'Das 1989 entstandene Gemaelde wechselte gestern Abend fuer 32,4 Mio. \u20AC den Besitzer \u2014 ein neuer Auktionsrekord.',
-      body_en: "At Sotheby's London evening sale yesterday, Gerhard Richter's abstract work realised \u20AC32.4 million including premium, more than doubling its estimate. Three telephone bidders drove the price up in a five-minute duel before an anonymous Asian buyer secured the work. Market watchers read it as a clear signal: the market for German postwar painting is stabilising, and Richter's abstract phase of the late 1980s is more sought-after than ever.",
-      body_de: "Bei der gestrigen Abendauktion bei Sotheby's London erzielte Gerhard Richters abstraktes Werk 32,4 Millionen Euro inklusive Aufgeld und uebertraf die Schaetzung um mehr als das Doppelte. Drei Telefonbieter trieben den Preis in einem fuenfminuetigen Duell nach oben, bevor ein anonymer Kaeufer aus Asien den Zuschlag erhielt. Marktbeobachter sehen darin ein deutliches Signal: Der Markt fuer deutsche Nachkriegsmalerei stabilisiert sich, und Richters abstrakte Phase der spaeten 80er ist gefragter denn je."
-    },
-    {
-      id: 2, cat: 'exhibition', accent: '#d4a574',
-      image: IMG('kunst-klint'),
-      source: 'Frieze',
-      time_en: '4h ago', time_de: 'vor 4 Std', read: 5,
-      kicker_en: 'Tate Modern, London', kicker_de: 'Tate Modern, London',
-      headline_en: 'Hilma af Klint returns \u2014 more radical than ever',
-      headline_de: 'Hilma af Klint kehrt zurueck \u2014 radikaler als je zuvor',
-      summary_en: 'The first major retrospective in a decade shows 230 works, including 40 watercolours never publicly exhibited.',
-      summary_de: 'Die erste umfassende Retrospektive seit zehn Jahren zeigt 230 Werke, darunter 40 nie oeffentlich gezeigte Aquarelle.',
-      body_en: 'Tate Modern has opened a retrospective that is more than a reunion. Curator Tracey Bashkoff frames the Swedish painter not as a spiritual outsider but as a serious pioneer of abstraction \u2014 years before Kandinsky, Malevich and Mondrian. The 40 previously unseen watercolours come from a folder discovered last year in the family Stockholm archive.',
-      body_de: 'Die Tate Modern hat eine Retrospektive eroeffnet, die mehr ist als ein Wiedersehen. Kuratorin Tracey Bashkoff stellt die schwedische Malerin nicht als spirituelle Aussenseiterin dar, sondern als ernstzunehmende Pionierin der Abstraktion \u2014 Jahre vor Kandinsky, Malewitsch und Mondrian.'
-    },
-    {
-      id: 3, cat: 'market', accent: '#c8553d',
-      image: IMG('kunst-lagos'),
-      source: 'ArtReview',
-      time_en: '6h ago', time_de: 'vor 6 Std', read: 7,
-      kicker_en: 'Market analysis', kicker_de: 'Marktanalyse',
-      headline_en: 'Young painting from Lagos: Why the West is listening now',
-      headline_de: 'Junge Malerei aus Lagos: Warum der Westen jetzt zuhoert',
-      summary_en: 'Three Nigerian galleries open European outposts in 2026. A boom \u2014 or the next speculative bubble?',
-      summary_de: 'Drei nigerianische Galerien eroeffnen 2026 Dependancen in Europa. Ein Boom \u2014 oder die naechste Spekulationsblase?',
-      body_en: 'A generation of artists is forming in Lagos that no longer waits for Western galleries to validate them. Three of the most important houses are opening outposts in Brussels, Berlin and London in 2026.',
-      body_de: 'In Lagos formiert sich eine Kuenstlergeneration, die sich nicht mehr ueber westliche Galerien validieren laesst. Drei der wichtigsten Haeuser eroeffnen 2026 Dependancen in Bruessel, Berlin und London.'
-    },
-    { id: 4, isAd: true },
-    {
-      id: 5, cat: 'biennale', accent: '#a8b89f',
-      image: IMG('kunst-venice'),
-      source: 'e-flux',
-      time_en: '8h ago', time_de: 'vor 8 Std', read: 4,
-      kicker_en: 'Venice 2026', kicker_de: 'Venedig 2026',
-      headline_en: 'First Biennale names: A clear break with tradition',
-      headline_de: 'Erste Namen der Biennale: Ein deutlicher Bruch mit der Tradition',
-      summary_en: 'Curator Mariam Ghani centres indigenous and diasporic voices \u2014 and for the first time since 1995, not a single US art-world star.',
-      summary_de: 'Kuratorin Mariam Ghani setzt auf indigene und diasporische Stimmen \u2014 und verzichtet erstmals seit 1995 auf einen einzigen US-amerikanischen Star.',
-      body_en: 'The release of the first 47 names for the 61st Venice Biennale reads like a programmatic statement.',
-      body_de: 'Die Veroeffentlichung der ersten 47 Namen fuer die 61. Venedig-Biennale liest sich wie eine programmatische Geste.'
-    },
-    {
-      id: 6, cat: 'artists', accent: '#8b6f47',
-      image: IMG('kunst-kiefer'),
-      source: 'Le Monde',
-      time_en: '12h ago', time_de: 'vor 12 Std', read: 6,
-      kicker_en: 'Barjac, southern France', kicker_de: 'Barjac, Suedfrankreich',
-      headline_en: 'Anselm Kiefer opens his Gesamtkunstwerk to the public',
-      headline_de: 'Anselm Kiefer oeffnet sein Gesamtkunstwerk fuer die Oeffentlichkeit',
-      summary_en: "After 30 years, La Ribaute \u2014 Kiefer's 40-hectare studio of towers, tunnels and pavilions \u2014 becomes permanently accessible.",
-      summary_de: 'Nach 30 Jahren wird La Ribaute \u2014 Kiefers 40 Hektar grosses Atelier mit Tuermen, Tunneln und Pavillons \u2014 dauerhaft begehbar.',
-      body_en: 'For three decades it was a myth that only curators and collectors could enter. Now Anselm Kiefer opens his estate La Ribaute in Barjac to the public.',
-      body_de: 'Drei Jahrzehnte lang war es ein Mythos, zu dem nur Kuratoren und Sammler Zutritt hatten. Jetzt oeffnet Anselm Kiefer sein Anwesen La Ribaute in Barjac fuer die Oeffentlichkeit.'
-    },
-    {
-      id: 7, cat: 'restitution', accent: '#9b8579',
-      image: IMG('kunst-restitution'),
-      source: 'SZ',
-      time_en: 'yesterday', time_de: 'gestern', read: 4,
-      kicker_en: 'Munich', kicker_de: 'Muenchen',
-      headline_en: 'Bavarian State Collections return three works to heirs',
-      headline_de: 'Bayerische Sammlungen restituieren drei Werke an Erben',
-      summary_en: 'After eight years of research, two Corinth paintings and a Pissarro will be handed to the descendants of the Bernheimer family.',
-      summary_de: 'Nach acht Jahren Recherche werden zwei Gemaelde von Lovis Corinth und ein Pissarro an die Nachkommen der Familie Bernheimer uebergeben.',
-      body_en: 'The Bavarian State Painting Collections yesterday announced the restitution of three works sold under duress after 1933. The provenance research took eight years.',
-      body_de: 'Die Bayerischen Staatsgemaeldesammlungen haben gestern die Restitution dreier Werke verkuendet, die nach 1933 unter Druck verkauft wurden.'
-    },
-    {
-      id: 8, cat: 'museum', accent: '#7a9e9f',
-      image: IMG('kunst-marx'),
-      source: 'Tagesspiegel',
-      time_en: '1d ago', time_de: 'vor 1 Tag', read: 5,
-      kicker_en: 'Berlin-Mitte', kicker_de: 'Berlin-Mitte',
-      headline_en: 'Marx Collection moves into its own building at the Kulturforum',
-      headline_de: 'Sammlung Marx zieht in eigenen Bau am Kulturforum',
-      summary_en: 'The long-awaited extension opens in autumn \u2014 with Beuys, Rauschenberg, Twombly and an unexpected emphasis on contemporary photography.',
-      summary_de: 'Der lang erwartete Erweiterungsbau oeffnet im Herbst \u2014 mit Beuys, Rauschenberg, Twombly und einem unerwarteten Schwerpunkt auf zeitgenoessischer Fotografie.',
-      body_en: 'After six years of construction, the extension at the Kulturforum opens in October.',
-      body_de: 'Nach sechs Jahren Bauzeit eroeffnet im Oktober der Erweiterungsbau am Kulturforum.'
-    },
-    { id: 9, isAd: true },
-    {
-      id: 10, cat: 'market', accent: '#b8946f',
-      image: IMG('kunst-ai'),
-      source: 'Right Click Save',
-      time_en: '1d ago', time_de: 'vor 1 Tag', read: 8,
-      kicker_en: 'Digital art', kicker_de: 'Digitalkunst',
-      headline_en: 'Generative AI editions: The quiet market behind the hype',
-      headline_de: 'Generative KI-Editions: Der stille Markt hinter dem Hype',
-      summary_en: 'While NFTs grabbed headlines, another digital market took shape \u2014 quiet, curated, six-figure.',
-      summary_de: 'Waehrend NFTs Schlagzeilen machten, etabliert sich ein anderer digitaler Markt \u2014 leise, kuratiert und im sechsstelligen Bereich.',
-      body_en: 'Platforms like Verse, Feral File and Right Click Save have built a market for generative editions over the past two years.',
-      body_de: 'Plattformen wie Verse, Feral File und Right Click Save haben in den vergangenen zwei Jahren einen Markt fuer generative Editions etabliert.'
-    },
-    {
-      id: 11, cat: 'artists', accent: '#d4a574',
-      image: IMG('kunst-zwirner'),
-      source: 'art magazin',
-      time_en: '2d ago', time_de: 'vor 2 Tagen', read: 4,
-      kicker_en: 'Hamburg', kicker_de: 'Hamburg',
-      headline_en: 'Zwirner opens second German location in the Speicherstadt',
-      headline_de: 'Zwirner eroeffnet zweiten deutschen Standort in der Speicherstadt',
-      summary_en: 'After Berlin, Hamburg \u2014 the mega-gallerist makes a statement for the North.',
-      summary_de: 'Nach Berlin folgt jetzt Hamburg \u2014 der Mega-Galerist setzt ein Zeichen fuer den Norden.',
-      body_en: "David Zwirner will open an 1,800 sqm space in a warehouse in Hamburg's HafenCity in March 2026.",
-      body_de: 'David Zwirner eroeffnet im Maerz 2026 einen 1.800 qm grossen Ausstellungsraum in einem Speicher in Hamburgs HafenCity.'
-    }
-  ];
-
-  var ICONS = {
-    bookmark: '<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>',
-    bookmarkOn: '<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/><path d="m9 10 2 2 4-4"/>',
-    share: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>',
-    sparkles: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/>',
-    close: '<path d="M18 6 6 18M6 6l12 12"/>',
-    chev: '<path d="m18 15-6-6-6 6"/>',
-    chevDown: '<path d="m6 9 6 6 6-6"/>'
-  };
-
-  var state = { lang: 'en', cat: 'all', saved: {}, currentIdx: 0 };
-
-  function t(key) { return LABELS[state.lang][key]; }
-  function catLabel(key) {
-    var i = CAT_KEYS.indexOf(key);
-    return LABELS[state.lang].cats[i];
-  }
-  function getText(story, key) { return story[key + '_' + state.lang]; }
-  function filteredStories() {
-    if (state.cat === 'all') return STORIES;
-    var out = [];
-    for (var i = 0; i < STORIES.length; i++) {
-      if (STORIES[i].isAd || STORIES[i].cat === state.cat) out.push(STORIES[i]);
-    }
-    return out;
-  }
-
-  function renderCats() {
-    var html = '';
-    for (var i = 0; i < CAT_KEYS.length; i++) {
-      var key = CAT_KEYS[i];
-      var label = LABELS[state.lang].cats[i];
-      var cls = (state.cat === key) ? ' on' : '';
-      html += '<button class="cat' + cls + '" data-cat="' + key + '">' + label + '</button>';
-    }
-    var el = document.getElementById('cats');
-    el.innerHTML = html;
-    var btns = el.querySelectorAll('.cat');
-    for (var j = 0; j < btns.length; j++) {
-      btns[j].addEventListener('click', function(e) {
-        state.cat = e.currentTarget.getAttribute('data-cat');
-        renderCats();
-        renderFeed();
-        document.getElementById('feed').scrollTo({ top: 0 });
+  // Register service worker for PWA / offline
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/sw.js').catch(function (err) {
+        console.warn('SW registration failed:', err);
       });
-    }
-  }
-
-  function renderProgress() {
-    var items = filteredStories();
-    var html = '';
-    for (var i = 0; i < items.length; i++) {
-      html += '<span' + (i === state.currentIdx ? ' class="on"' : '') + '></span>';
-    }
-    document.getElementById('progress').innerHTML = html;
-  }
-
-  function storyHTML(s, idx) {
-    var saved = state.saved[s.id];
-    var iconBookmark = saved ? ICONS.bookmarkOn : ICONS.bookmark;
-    var savedClass = saved ? ' on' : '';
-    return '' +
-      '<article class="card" data-idx="' + idx + '" data-id="' + s.id + '">' +
-        '<div class="card-img" style="background-image:url(\'' + s.image + '\')"></div>' +
-        '<div class="card-grad" style="background:linear-gradient(135deg,' + s.accent + ' 0%,transparent 60%)"></div>' +
-        '<div class="card-shade"></div>' +
-        '<div class="card-top">' +
-          '<span class="badge"><span class="badge-dot" style="background:' + s.accent + '"></span>' + catLabel(s.cat) + '</span>' +
-          '<span class="meta-time">' + getText(s, 'time') + '</span>' +
-        '</div>' +
-        '<div class="card-body">' +
-          '<div class="kicker">' + getText(s, 'kicker') + '</div>' +
-          '<h2 class="headline" data-expand="' + s.id + '">' + getText(s, 'headline') + '</h2>' +
-          '<p class="summary">' + getText(s, 'summary') + '</p>' +
-          '<div class="card-foot">' +
-            '<div class="meta"><span class="source">' + s.source + '</span><span class="sep">\u00B7</span><span>' + s.read + ' ' + t('readingTime') + '</span></div>' +
-            '<button class="cta" data-expand="' + s.id + '"><span>' + t('cta') + '</span><svg class="icon icon-sm" viewBox="0 0 24 24">' + ICONS.chev + '</svg></button>' +
-          '</div>' +
-        '</div>' +
-        '<div class="rail">' +
-          '<button class="rail-btn' + savedClass + '" data-save="' + s.id + '" aria-label="Save"><svg class="icon icon-lg" viewBox="0 0 24 24">' + iconBookmark + '</svg></button>' +
-          '<button class="rail-btn" aria-label="Share"><svg class="icon icon-lg" viewBox="0 0 24 24">' + ICONS.share + '</svg></button>' +
-          '<button class="rail-btn rail-ai" aria-label="AI"><svg class="icon icon-lg" viewBox="0 0 24 24">' + ICONS.sparkles + '</svg></button>' +
-        '</div>' +
-      '</article>';
-  }
-
-  function adHTML(idx) {
-    return '' +
-      '<article class="card card-ad" data-idx="' + idx + '">' +
-        '<div class="ad-shell">' +
-          '<div class="ad-label"><span class="ad-dot"></span>' + t('ad') + '</div>' +
-          '<div class="ad-frame">' +
-            '<div class="ad-mark">336 \u00D7 280</div>' +
-            '<div class="ad-headline">' + t('adHead') + '</div>' +
-            '<div class="ad-sub">' + t('adSub') + '</div>' +
-          '</div>' +
-          '<div class="ad-note">' + t('adNote') + '</div>' +
-        '</div>' +
-      '</article>';
-  }
-
-  function renderFeed() {
-    var items = filteredStories();
-    var html = '';
-    for (var i = 0; i < items.length; i++) {
-      html += items[i].isAd ? adHTML(i) : storyHTML(items[i], i);
-    }
-    document.getElementById('feed').innerHTML = html;
-    bindFeedEvents();
-    state.currentIdx = 0;
-    renderProgress();
-  }
-
-  function bindFeedEvents() {
-    var saves = document.querySelectorAll('[data-save]');
-    for (var i = 0; i < saves.length; i++) {
-      saves[i].addEventListener('click', function(e) {
-        e.stopPropagation();
-        var id = e.currentTarget.getAttribute('data-save');
-        state.saved[id] = !state.saved[id];
-        renderFeed();
-      });
-    }
-    var expands = document.querySelectorAll('[data-expand]');
-    for (var j = 0; j < expands.length; j++) {
-      expands[j].addEventListener('click', function(e) {
-        var id = e.currentTarget.getAttribute('data-expand');
-        openSheet(id);
-      });
-    }
-  }
-
-  function onScroll() {
-    var feed = document.getElementById('feed');
-    var idx = Math.round(feed.scrollTop / feed.clientHeight);
-    if (idx !== state.currentIdx) {
-      state.currentIdx = idx;
-      renderProgress();
-      document.getElementById('hint').style.display = idx === 0 ? 'flex' : 'none';
-    }
-  }
-
-  function openSheet(id) {
-    var s = null;
-    for (var i = 0; i < STORIES.length; i++) {
-      if (String(STORIES[i].id) === String(id)) { s = STORIES[i]; break; }
-    }
-    if (!s) return;
-    var saved = state.saved[s.id];
-    var html = '' +
-      '<button class="sheet-close" id="sheetClose"><svg class="icon" viewBox="0 0 24 24">' + ICONS.close + '</svg></button>' +
-      '<div class="sheet-hero" style="background-image:url(\'' + s.image + '\')">' +
-        '<div class="sheet-hero-shade"></div>' +
-        '<span class="badge"><span class="badge-dot" style="background:' + s.accent + '"></span>' + catLabel(s.cat) + '</span>' +
-      '</div>' +
-      '<div class="sheet-body">' +
-        '<div class="kicker">' + getText(s, 'kicker') + '</div>' +
-        '<h1 class="sheet-headline">' + getText(s, 'headline') + '</h1>' +
-        '<div class="meta meta-row"><span class="source">' + s.source + '</span><span class="sep">\u00B7</span><span>' + getText(s, 'time') + '</span><span class="sep">\u00B7</span><span>' + s.read + ' ' + t('readingTime') + '</span></div>' +
-        '<p class="sheet-lead">' + getText(s, 'summary') + '</p>' +
-        '<p class="sheet-text">' + getText(s, 'body') + '</p>' +
-        '<div class="inline-ad"><span class="ad-label-small">' + t('ad') + '</span><div class="inline-ad-box">' + t('inArticleAd') + '</div></div>' +
-        '<div class="sheet-actions">' +
-          '<button class="pill' + (saved ? ' on' : '') + '" id="sheetSave"><svg class="icon icon-sm" viewBox="0 0 24 24">' + (saved ? ICONS.bookmarkOn : ICONS.bookmark) + '</svg>' + (saved ? t('saved') : t('save')) + '</button>' +
-          '<button class="pill"><svg class="icon icon-sm" viewBox="0 0 24 24">' + ICONS.share + '</svg>' + t('share') + '</button>' +
-        '</div>' +
-      '</div>';
-    document.getElementById('sheetInner').innerHTML = html;
-    document.getElementById('sheet').classList.add('on');
-    document.getElementById('sheetClose').addEventListener('click', closeSheet);
-    document.getElementById('sheetSave').addEventListener('click', function() {
-      state.saved[s.id] = !state.saved[s.id];
-      openSheet(s.id);
-      renderFeed();
-    });
-    document.getElementById('sheet').addEventListener('click', function(e) {
-      if (e.target.id === 'sheet') closeSheet();
     });
   }
-  function closeSheet() {
-    document.getElementById('sheet').classList.remove('on');
-  }
-
-  function init() {
-    var langButtons = document.querySelectorAll('#lang button');
-    for (var i = 0; i < langButtons.length; i++) {
-      langButtons[i].addEventListener('click', function(e) {
-        state.lang = e.currentTarget.getAttribute('data-lang');
-        var btns = document.querySelectorAll('#lang button');
-        for (var k = 0; k < btns.length; k++) {
-          btns[k].classList.toggle('on', btns[k].getAttribute('data-lang') === state.lang);
-        }
-        document.documentElement.lang = state.lang;
-        document.getElementById('hintText').textContent = t('hint');
-        renderCats();
-        renderFeed();
-      });
-    }
-    document.getElementById('feed').addEventListener('scroll', onScroll);
-    renderCats();
-    renderFeed();
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
 </script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-05-13T10:14:10.608001+00:00",
+  "category": "exhibition",
+  "count": 1,
+  "stories": [
+    {
+      "id": "seed-welcome",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": "https://picsum.photos/seed/kp-welcome/800/1200",
+      "source": "Kunstpuls",
+      "url": null,
+      "publishedAt": "2026-05-13T10:14:10.606637+00:00",
+      "time_en": "just now",
+      "time_de": "gerade eben",
+      "read": 2,
+      "kicker_en": "Welcome",
+      "kicker_de": "Willkommen",
+      "headline_en": "Kunstpuls is fetching the latest news",
+      "headline_de": "Kunstpuls holt gerade die aktuellen News",
+      "summary_en": "Once the news pipeline runs, real stories from six international art-news sources will replace this seed content. Swipe up to see how the feed feels.",
+      "summary_de": "Sobald die News-Pipeline läuft, werden echte Stories aus sechs internationalen Kunst-Quellen diese Seed-Inhalte ersetzen. Wisch nach oben, um das Feed-Gefühl zu testen.",
+      "body_en": "Kunstpuls aggregates The Art Newspaper, Artnet News, Hyperallergic, Frieze, e-flux and ArtAsiaPacific. Each item is compressed into a two-sentence card by Claude, classified into one of eight categories, and matched with an accent colour. The full source is one tap away.",
+      "body_de": "Kunstpuls aggregiert The Art Newspaper, Artnet News, Hyperallergic, Frieze, e-flux und ArtAsiaPacific. Jeder Eintrag wird von Claude auf zwei Sätze verdichtet, in eine von acht Kategorien einsortiert und einer Akzentfarbe zugeordnet. Die Originalquelle ist einen Tap entfernt."
+    }
+  ]
+}

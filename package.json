@@ -1,0 +1,17 @@
+{
+  "name": "kunstpuls",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Art world news, in one breath. PWA.",
+  "scripts": {
+    "build:news": "node scripts/fetch-news.mjs",
+    "serve": "npx --yes serve ."
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

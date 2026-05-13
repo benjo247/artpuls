@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-05-13T10:14:10.608450+00:00",
+  "category": "museum",
+  "count": 1,
+  "stories": [
+    {
+      "id": "seed-archive",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": "https://picsum.photos/seed/kp-archive/800/1200",
+      "source": "Kunstpuls",
+      "url": null,
+      "publishedAt": "2026-05-13T10:14:10.606741+00:00",
+      "time_en": "just now",
+      "time_de": "gerade eben",
+      "read": 2,
+      "kicker_en": "How it works",
+      "kicker_de": "So funktioniert es",
+      "headline_en": "Every story permanently archived from day one",
+      "headline_de": "Jede Story wird ab Tag eins dauerhaft archiviert",
+      "summary_en": "The build pipeline deduplicates against the master archive, processes only new items, and grows over time. Each story gets a permanent shareable URL.",
+      "summary_de": "Die Build-Pipeline dedupliziert gegen das Master-Archiv, verarbeitet nur Neues und wächst über die Zeit. Jede Story bekommt eine permanente teilbare URL.",
+      "body_en": "Latest 72 hours load instantly on app open. Scroll to the end and older stories load automatically. Share any article and the recipient gets a proper preview with the headline, image, and summary, server-rendered for social platforms and search engines.",
+      "body_de": "Die letzten 72 Stunden laden beim App-Start sofort. Am Ende des Feeds werden ältere Stories automatisch nachgeladen. Teile einen Artikel — der Empfänger sieht eine richtige Vorschau mit Headline, Bild und Zusammenfassung, server-gerendert für Social Media und Suchmaschinen."
+    }
+  ]
+}
