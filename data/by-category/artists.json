@@ -1,6 +1,27 @@
 {
-  "generatedAt": "2026-05-13T10:14:10.608112+00:00",
+  "generatedAt": "2026-05-13T16:15:34.751Z",
   "category": "artists",
-  "count": 0,
-  "stories": []
+  "count": 1,
+  "stories": [
+    {
+      "id": "s-62xHiLx_Qne_fD",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": "https://storage.ghost.io/c/16/43/16435400-f27e-4b41-b5f7-d0c24f5ce4de/content/images/2026/05/Jeffar-Khaldi--Remove-the-Invisible-Blindfold--Installation-view--2010-2.JPG",
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/people/staying-curious-isabelle-de-caters-on-20-years-of-gallery-isabelle/",
+      "publishedAt": "2026-05-12T10:01:12.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 4,
+      "kicker_en": "Gallery Isabelle, Gulf region",
+      "kicker_de": "Gallery Isabelle, Golfregion",
+      "headline_en": "Gallery Isabelle Marks 20 Years in the Gulf Art Market",
+      "headline_de": "Gallery Isabelle feiert 20 Jahre am Golf Kunstmarkt",
+      "summary_en": "Gallery Isabelle founder Isabelle de Caters reflects on two decades of establishing and sustaining an independent gallery space in the Gulf region. The milestone conversation explores the challenges and opportunities of operating in this evolving art market.",
+      "summary_de": "Die Gründerin der Gallery Isabelle, Isabelle de Caters, reflektiert über zwei Jahrzehnte des Aufbaus und der Aufrechterhaltung eines unabhängigen Galerieraums in der Golfregion. Das Jubiläumsgespräch erforscht Herausforderungen und Chancen der Arbeit in diesem sich entwickelnden Kunstmarkt.",
+      "body_en": "Isabelle de Caters' twenty-year trajectory with Gallery Isabelle documents the transformation of the Gulf's contemporary art landscape. Her interview with ArtAsiaPacific provides insight into the strategic decisions and curatorial principles that have guided the gallery's programming and artist representation. De Caters discusses the particularities of building a sustainable gallery practice within a regional market characterized by rapid expansion and increasing international engagement. The conversation underscores both the institutional resilience required to maintain an independent gallery and the evolving opportunities for contemporary art dialogue in the Gulf.",
+      "body_de": "Isabelle de Caters' zwanzigjähriger Weg mit der Gallery Isabelle dokumentiert die Transformation der zeitgenössischen Kunstlandschaft des Golfs. Ihr Interview mit ArtAsiaPacific bietet Einblicke in die strategischen Entscheidungen und kuratorischen Prinzipien, die das Programm und die Künstlervertretung der Galerie geleitet haben. De Caters erörtert die Besonderheiten beim Aufbau einer nachhaltigen Galerispraxis in einem Markt, der durch schnelle Expansion und zunehmende internationale Beteiligung gekennzeichnet ist. Das Gespräch unterstreicht sowohl die institutionelle Widerstandsfähigkeit, die notwendig ist, um eine unabhängige Galerie zu erhalten, als auch die sich entwickelnden Möglichkeiten für zeitgenössische Kunstdialoge am Golf."
+    }
+  ]
 }
