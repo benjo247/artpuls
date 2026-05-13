@@ -1,6 +1,27 @@
 {
-  "generatedAt": "2026-05-13T18:15:19.397Z",
+  "generatedAt": "2026-05-13T19:02:51.381Z",
   "category": "restitution",
-  "count": 0,
-  "stories": []
+  "count": 1,
+  "stories": [
+    {
+      "id": "s-OaEWeqsp6Z1FTq",
+      "cat": "restitution",
+      "accent": "#9b8579",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/cranach-friedrich-portrait-dresden-return-2772879",
+      "publishedAt": "2026-05-13T18:59:54.000Z",
+      "time_en": "just now",
+      "time_de": "gerade eben",
+      "read": 3,
+      "kicker_en": "Dresden State Collections",
+      "kicker_de": "Staatliche Kunstsammlungen Dresden",
+      "headline_en": "Cranach Painting Lost in WWII Returns to Dresden",
+      "headline_de": "Cranach-Gemälde aus WWII kehrt nach Dresden zurück",
+      "summary_en": "A small-scale painting by Lucas Cranach, missing since World War II, has been recovered and returned to the Dresden State Art Collections. The work is among more than 500 pieces documented as lost from the institution.",
+      "summary_de": "Ein Gemälde von Lucas Cranach, das seit dem Zweiten Weltkrieg vermisst wurde, ist wiederhergestellt und in die Staatlichen Kunstsammlungen Dresden zurückgekehrt. Das Werk gehört zu mehr als 500 dokumentierten Verlusten der Institution.",
+      "body_en": "The painting's recovery marks a significant step in the ongoing repatriation efforts by the Dresden State Art Collections, which suffered extensive losses during the Nazi era and subsequent conflicts. The institution has maintained detailed records of its missing works, facilitating identification and return processes across decades. This restitution exemplifies the persistent archival work required to trace artworks displaced by twentieth-century warfare and systematic looting. The Cranach painting joins a growing number of German cultural treasures being restored to their original collections.",
+      "body_de": "Die Wiederherstellung des Gemäldes stellt einen wichtigen Fortschritt in den laufenden Rückerstattungsbemühungen der Staatlichen Kunstsammlungen Dresden dar, die in der Nazizeit und bei nachfolgenden Konflikten erhebliche Verluste erlitten. Die Institution hat detaillierte Aufzeichnungen ihrer fehlenden Werke gepflegt, um Identifizierung und Rückgabeverfahren über Jahrzehnte hinweg zu erleichtern. Diese Restitution verdeutlicht die hartnäckige Archivarbeit, die erforderlich ist, um Kunstwerke nachzuverfolgenc, die durch Kriegshandlungen des 20. Jahrhunderts und systematische Plünderung vertrieben wurden. Das Cranach-Gemälde reiht sich in eine wachsende Zahl deutscher Kulturgüter ein, die ihren ursprünglichen Sammlungen zurückgegeben werden."
+    }
+  ]
 }
