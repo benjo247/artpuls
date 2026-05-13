@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-05-13T18:15:19.399Z",
+  "month": "2023-03",
+  "count": 1,
+  "stories": [
+    {
+      "id": "s-w6FK_EmhUuj4Pn",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Monopol",
+      "url": "https://www.monopol-magazin.de/klimaaktivisten-beschmieren-palazzo-vecchio",
+      "publishedAt": "2023-03-18T06:35:12.000Z",
+      "time_en": "Mar 18",
+      "time_de": "18. März",
+      "read": 3,
+      "kicker_en": "Florence, Italy",
+      "kicker_de": "Florenz, Italien",
+      "headline_en": "Climate Activists Deface Palazzo Vecchio",
+      "headline_de": "Klimaaktivisten beschmieren Palazzo Vecchio",
+      "summary_en": "Climate activists spray-painted Florence's historic Palazzo Vecchio in protest. The incident raises ongoing tensions between art preservation and activist expression.",
+      "summary_de": "Klimaaktivisten besprühten das historische Palazzo Vecchio in Florenz als Protest. Der Vorfall zeigt fortbestehende Spannungen zwischen Kunstschutz und aktivistischem Ausdruck.",
+      "body_en": "The action targeted the Renaissance palazzo as a symbol of institutional inaction on climate change. Activists used non-permanent paint in their statement. The incident sparked debate about the ethics of protest art and damage to cultural heritage, with responses ranging from condemnation of vandalism to sympathy for the underlying environmental message.",
+      "body_de": "Die Aktion zielte auf den Renaissance-Palazzo als Symbol institutionellen Versagens in der Klimakrise. Aktivisten nutzten nicht-permanente Farbe für ihre Aussage. Der Vorfall löste Diskussionen über die Ethik von Protestkunst und Beschädigungen des Kulturerbes aus, mit Reaktionen vom Vandalismus-Vorwurf bis zur Sympathie für die Umweltbotschaft."
+    }
+  ]
+}
