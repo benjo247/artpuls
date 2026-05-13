@@ -2,7 +2,6 @@ name: Fetch news
 
 on:
   schedule:
-    # 3x daily at 06:07, 11:07, 17:07 UTC
     - cron: '7 6,11,17 * * *'
   workflow_dispatch:
   push:
@@ -25,13 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
         with:
-          fetch-depth: 0   # full history so rebase works cleanly
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
           node-version: '20'
-          package-manager-cache: false   # we don't have a lock file in the repo
+          package-manager-cache: false
 
       - name: Install dependencies
         run: npm install --no-audit --no-fund
@@ -43,7 +42,7 @@ jobs:
 
       - name: Commit generated files
         run: |
-          git config user.name "kunstpuls-bot"
+          git config user.name "artpulse-bot"
           git config user.email "bot@users.noreply.github.com"
           git add data/ sitemap.xml
           if git diff --staged --quiet; then
@@ -51,7 +50,6 @@ jobs:
             exit 0
           fi
           git commit -m "chore(news): update $(date -u +'%Y-%m-%d %H:%M UTC')"
-          # Retry push with rebase if remote has new commits (race condition handling)
           for i in 1 2 3; do
             if git push; then
               echo "Push successful on attempt $i"
