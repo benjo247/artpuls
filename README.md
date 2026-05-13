@@ -1,4 +1,4 @@
-# Kunstpuls
+# ArtPulse
 
 **The art world, in one breath.** A Shorts-style PWA for international art news — six sources, AI-compressed every 2 hours, served as a clean editorial feed with a growing archive.
 
@@ -30,7 +30,7 @@ A static PWA + one scheduled GitHub Action. No server, no database, no auth. Fre
 ## File overview
 
 ```
-kunstpuls/
+artpulse/
 ├── index.html               # PWA shell
 ├── styles.css               # full editorial design
 ├── app.js                   # UI, language, sheet, save, load-older, deep-links
@@ -102,14 +102,14 @@ The script is idempotent — running it multiple times only processes genuinely 
 
 ### 1) Push to GitHub
 
-Create a new repo at https://github.com/new (name it `kunstpuls`).
+Create a new repo at https://github.com/new (name it `artpulse`).
 
 ```bash
 git init
 git add .
 git commit -m "initial commit"
 git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/kunstpuls.git
+git remote add origin https://github.com/YOUR-USERNAME/artpulse.git
 git push -u origin main
 ```
 
@@ -128,7 +128,7 @@ You'll get a fresh archive populated within ~60 seconds. From there it runs ever
 
 ### 4) Deploy on Vercel
 
-https://vercel.com → **Add New → Project** → import the `kunstpuls` repo. Settings stay at defaults. Click **Deploy**.
+https://vercel.com → **Add New → Project** → import the `artpulse` repo. Settings stay at defaults. Click **Deploy**.
 
 About 30 seconds later you have a live URL. Every push to `main` triggers a redeploy.
 

@@ -1,4 +1,4 @@
-# Kunstpuls — Launch Strategy
+# ArtPulse — Launch Strategy
 
 Ein vierphasiger Plan vom ersten Live-Gang bis zur etablierten Marke. Realistisch, nicht hochstilisiert. Die Zeitachsen sind eng — wenn etwas länger braucht, ist das okay.
 
@@ -60,7 +60,7 @@ Ein vierphasiger Plan vom ersten Live-Gang bis zur etablierten Marke. Realistisc
 ### Channels
 
 **Instagram (DEIN wichtigster Kanal als Künstler)**
-- Eigenes `@kunstpuls`-Konto, aber: deine eigene Reichweite als Maler ist der erste Verstärker. Ein Reel im Atelier-Setting: „Hier ist, was ich gebaut habe und warum." Authentisch, eine Story zu Beginn, eine zum Launch, eine alle 2 Wochen.
+- Eigenes `@artpulse`-Konto, aber: deine eigene Reichweite als Maler ist der erste Verstärker. Ein Reel im Atelier-Setting: „Hier ist, was ich gebaut habe und warum." Authentisch, eine Story zu Beginn, eine zum Launch, eine alle 2 Wochen.
 - Visueller Content: Screenshots der schönsten Karten, animiert. Ein Reel pro Woche, „diese Woche in der Kunstwelt in 60 Sekunden".
 
 **X / Twitter**
@@ -68,11 +68,11 @@ Ein vierphasiger Plan vom ersten Live-Gang bis zur etablierten Marke. Realistisc
 - Eine Mini-Serie: „Heute morgen aus dem Feed:" mit drei Schlagzeilen + Link zur App. Täglich.
 
 **Are.na**
-- Sehr kunstaffine Plattform, gut für Discoverability bei Kreativen. Ein „Kunstpuls"-Channel pflegen mit besonders schönen Stories.
+- Sehr kunstaffine Plattform, gut für Discoverability bei Kreativen. Ein „ArtPulse"-Channel pflegen mit besonders schönen Stories.
 
 **Newsletter (Schritt 2 im Funnel)**
 - Wöchentlicher Digest als E-Mail-Newsletter. **Buttondown** oder **Beehiiv** (free tiers).
-- Sign-up direkt in Kunstpuls einbauen — als sanfte Card alle 20 Stories, nicht aufdringlich.
+- Sign-up direkt in ArtPulse einbauen — als sanfte Card alle 20 Stories, nicht aufdringlich.
 - Newsletter ist später dein wertvollstes Asset (siehe Monetarisierung).
 
 **Reddit**
@@ -99,7 +99,7 @@ Diese personalen Elemente sind nicht nice-to-have. Sie sind der Grund, warum Leu
 **Ziel:** 10.000 DAU (Daily Active Users) und erste echte Einnahmen.
 
 ### SEO als Hebel
-Jede Story bekommt eine eigene Permalink-URL: `kunstpuls.app/story/<id>`. Server-side rendering einer minimalen HTML-Version dieser Seiten (eine Vercel Edge Function, ~50 Zeilen). Damit kann Google indexieren.
+Jede Story bekommt eine eigene Permalink-URL: `artpulse.app/story/<id>`. Server-side rendering einer minimalen HTML-Version dieser Seiten (eine Vercel Edge Function, ~50 Zeilen). Damit kann Google indexieren.
 - Long-tail Suchen einfangen: „Richter Auktion 2026", „Documenta 2027 Liste", „Restitution München"
 - Innerhalb 3–6 Monaten kann SEO zu 30–50% deines Traffics werden.
 
@@ -124,7 +124,7 @@ Jede Story bekommt eine eigene Permalink-URL: `kunstpuls.app/story/<id>`. Server
 
 Aber: bis du hier bist, hast du genug Daten, um diese Phase neu zu planen. Nicht jetzt detailliert ausplanen. Was du wissen musst:
 
-- An diesem Punkt ist die kritische Frage: bleibt Kunstpuls dein Side-Project (Cashflow-Maschine, deine Stimme im Kunst-Diskurs) oder versucht es zum Hauptprojekt zu werden?
+- An diesem Punkt ist die kritische Frage: bleibt ArtPulse dein Side-Project (Cashflow-Maschine, deine Stimme im Kunst-Diskurs) oder versucht es zum Hauptprojekt zu werden?
 - Beide Wege sind valide. Side-Project: 50k DAU = ~5–15k €/Monat passiv, läuft mit 5h Wartung pro Woche. Hauptprojekt: VC-Fundraising, Team aufbauen, Newsletter zu echtem Medium ausbauen.
 
 ---
@@ -132,7 +132,7 @@ Aber: bis du hier bist, hast du genug Daten, um diese Phase neu zu planen. Nicht
 ## Anti-Patterns — Was du nicht tun solltest
 
 - **Keine Cold-DMs an Influencer:innen.** Funktioniert nicht und brennt Beziehungen.
-- **Kein Push für virale Tricks.** Kunstpuls funktioniert nicht durch Hot Takes. Funktioniert durch Vertrauen und Konsistenz.
+- **Kein Push für virale Tricks.** ArtPulse funktioniert nicht durch Hot Takes. Funktioniert durch Vertrauen und Konsistenz.
 - **Keinen App Store nutzen.** Eine PWA reicht. iOS-/Android-Apps sind 6 Monate Arbeit für 5% mehr Reichweite.
 - **Kein A/B-Testing in den ersten 3 Monaten.** Du hast zu wenige Daten. Vertraue auf Geschmack.
 

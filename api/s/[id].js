@@ -14,7 +14,7 @@
 
 export const config = { runtime: 'edge' };
 
-const SITE_URL = 'https://kunstpuls.app';
+const SITE_URL = 'https://artpulse.app';
 
 function escapeHTML(s) {
   if (s == null) return '';
@@ -34,7 +34,7 @@ function renderHTML(story, lang) {
   const kicker   = story[`kicker_${lang}`]   || story.kicker_en   || '';
   const image    = story.image || `${SITE_URL}/icons/icon-512.png`;
   const url      = `${SITE_URL}/s/${story.id}`;
-  const title    = `${headline} — Kunstpuls`;
+  const title    = `${headline} — ArtPulse`;
   const desc     = summary.slice(0, 200);
 
   return `<!DOCTYPE html>
@@ -53,7 +53,7 @@ function renderHTML(story, lang) {
 <meta property="og:title" content="${escapeHTML(headline)}">
 <meta property="og:description" content="${escapeHTML(desc)}">
 <meta property="og:image" content="${escapeHTML(image)}">
-<meta property="og:site_name" content="Kunstpuls">
+<meta property="og:site_name" content="ArtPulse">
 <meta property="article:published_time" content="${story.publishedAt}">
 <meta property="article:section" content="${story.cat}">
 
@@ -73,7 +73,7 @@ ${JSON.stringify({
   image: [image],
   datePublished: story.publishedAt,
   author: { '@type': 'Organization', name: story.source },
-  publisher: { '@type': 'Organization', name: 'Kunstpuls' },
+  publisher: { '@type': 'Organization', name: 'ArtPulse' },
   mainEntityOfPage: url
 })}
 </script>

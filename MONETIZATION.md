@@ -1,4 +1,4 @@
-# Kunstpuls — Monetization Strategy
+# ArtPulse — Monetization Strategy
 
 Realistische Einnahmequellen, gestapelt nach Traffic-Stufe. AdSense ist die Basis, aber nicht das Ziel — die wirklich rentable Schicht liegt darüber.
 
@@ -12,7 +12,7 @@ Wie Newsletters, Magazine und Editorial-Apps wirklich Geld verdienen — gestape
 ┌─────────────────────────────────────────────────┐
 │  6. Events & Sponsorships          (Jahr 2+)    │
 │  5. Editorial Commerce             (Monat 9+)   │
-│  4. Premium-Abo (Kunstpuls Pro)    (Monat 6+)   │
+│  4. Premium-Abo (ArtPulse Pro)    (Monat 6+)   │
 │  3. Direkte Anzeigen (Galerien)    (Monat 4+)   │
 │  2. Affiliate (Bücher, Material)   (Monat 3+)   │
 │  1. Display Ads (AdSense)          (Monat 2+)   │
@@ -112,7 +112,7 @@ Galerien haben oft keine eigene Werbeabteilung. Der Weg ist persönlich:
 
 ---
 
-## Schicht 4 — Kunstpuls Pro (Premium-Abo)
+## Schicht 4 — ArtPulse Pro (Premium-Abo)
 
 **Wann starten:** Monat 6, mindestens 5.000 DAU, klare Habit-Daten (User:innen kommen 4+ Tage/Woche).
 
@@ -150,11 +150,11 @@ Eine Galerie oder Künstler:in zahlt für einen redaktionellen Studio-Besuch. Du
 **Preis:** 2.500–5.000 € pro Visit.
 
 ### Emerging Artist Spotlight
-Eine Karte pro Woche zeigt eine aufstrebende Künstler:in. Kunstpuls kuratiert (du wählst aus). Künstler:in oder Galerie zahlt ~500 €.
+Eine Karte pro Woche zeigt eine aufstrebende Künstler:in. ArtPulse kuratiert (du wählst aus). Künstler:in oder Galerie zahlt ~500 €.
 **Preis:** 500 €/Woche, 2.000 €/Monat zusätzlich.
 
 ### Marktberichte
-Quartalsweise einen 10-seitigen PDF-Marktbericht („Kunstpuls Q3 Market Report") für Sammler:innen und Berater:innen. Verkauf für 49 € pro Report oder Pro-Abo-Bonus.
+Quartalsweise einen 10-seitigen PDF-Marktbericht („ArtPulse Q3 Market Report") für Sammler:innen und Berater:innen. Verkauf für 49 € pro Report oder Pro-Abo-Bonus.
 
 ---
 
@@ -162,8 +162,8 @@ Quartalsweise einen 10-seitigen PDF-Marktbericht („Kunstpuls Q3 Market Report"
 
 **Idee:** Live-Formate, die nur funktionieren wenn du Marke bist.
 
-- **Kunstpuls Salon** — quartalsweise Veranstaltung in Berlin/Hamburg/Wien, 30 Sammler:innen + ein:e Künstler:in. Sponsoren zahlen 5–15k pro Event.
-- **Kunstpuls × Art Fair** — eigener Sponsored Panel auf Berlin Art Week. Bringt Sichtbarkeit und Einnahmen zugleich.
+- **ArtPulse Salon** — quartalsweise Veranstaltung in Berlin/Hamburg/Wien, 30 Sammler:innen + ein:e Künstler:in. Sponsoren zahlen 5–15k pro Event.
+- **ArtPulse × Art Fair** — eigener Sponsored Panel auf Berlin Art Week. Bringt Sichtbarkeit und Einnahmen zugleich.
 - **Members-Only Tours** — exklusive Atelier-Besuche für Pro-Subscribers, mit Aufpreis als zusätzliches Event-Ticket.
 
 Hier kommt deine eigene Künstler-Identität voll zum Tragen. Niemand bei Artnet oder Frieze kann das machen — du als Maler:in schon.

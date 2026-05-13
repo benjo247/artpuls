@@ -1,5 +1,5 @@
-/* Kunstpuls — app logic.
-   Loads latest news, renders the feed, handles language, saves, and the article sheet. */
+/* ArtPulse — app logic.
+   Loads stories.json, renders the feed, handles language, saves, and the article sheet. */
 
 (function () {
   'use strict';
@@ -116,7 +116,6 @@
 
   function toast(msg) {
     var el = document.getElementById('toast');
-    if (!el) return;
     el.textContent = msg;
     el.hidden = false;
     clearTimeout(toast._t);
@@ -134,7 +133,7 @@
       })
       .then(function (data) {
         state.stories = injectAds(data.stories || []);
-        state.hasMore = (data.stories || []).length >= 24;
+        state.hasMore = (data.stories || []).length >= 24;  // assume archive has more
       })
       .catch(function (err) {
         console.warn('Failed to load latest.json:', err);
@@ -146,28 +145,32 @@
   function loadOlder() {
     if (state.loadingMore || !state.hasMore) return;
     state.loadingMore = true;
+    // Pull the relevant pool — by-category if filtered, archive otherwise
     var path = state.cat === 'all' ? '/data/archive.json' : '/data/by-category/' + state.cat + '.json';
     fetch(path, { cache: 'no-cache' })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         state.loadingMore = false;
         if (!data || !data.stories) { state.hasMore = false; return; }
+        // Skip stories already shown (in latest) and append the rest
         var seen = {};
         for (var i = 0; i < state.stories.length; i++) {
           if (state.stories[i].id) seen[state.stories[i].id] = true;
         }
         var older = data.stories.filter(function (s) { return !seen[s.id]; });
         if (older.length === 0) { state.hasMore = false; return; }
+        // Append older stories (re-inject ads through the full list)
         var combined = state.stories.filter(function (s) { return !s.isAd; }).concat(older);
         state.stories = injectAds(combined);
-        renderFeed(true);
+        renderFeed(true);  // preserve scroll position
       })
       .catch(function () { state.loadingMore = false; });
   }
 
   function injectAds(stories) {
-    if (window.KunstpulsAds && window.KunstpulsAds.injectInto) {
-      return window.KunstpulsAds.injectInto(stories);
+    // Delegate to ads.js if loaded, otherwise simple fallback
+    if (window.ArtPulseAds && window.ArtPulseAds.injectInto) {
+      return window.ArtPulseAds.injectInto(stories);
     }
     return stories;
   }
@@ -182,7 +185,6 @@
       html += '<button class="cat' + cls + '" data-cat="' + key + '">' + escapeHTML(label) + '</button>';
     }
     var el = document.getElementById('cats');
-    if (!el) return;
     el.innerHTML = html;
     var btns = el.querySelectorAll('.cat');
     for (var j = 0; j < btns.length; j++) {
@@ -195,19 +197,17 @@
     state.currentIdx = 0;
     renderCats();
     renderFeed();
-    var feed = document.getElementById('feed');
-    if (feed) feed.scrollTo({ top: 0 });
+    document.getElementById('feed').scrollTo({ top: 0 });
   }
 
   function renderProgress() {
     var items = filteredStories();
     var html = '';
-    var max = Math.min(items.length, 30);
+    var max = Math.min(items.length, 30);  // cap visible dots
     for (var i = 0; i < max; i++) {
       html += '<span' + (i === state.currentIdx ? ' class="on"' : '') + '></span>';
     }
-    var p = document.getElementById('progress');
-    if (p) p.innerHTML = html;
+    document.getElementById('progress').innerHTML = html;
   }
 
   function storyHTML(s, idx) {
@@ -244,22 +244,23 @@
   }
 
   function adHTML(adMarker, idx) {
-    if (window.KunstpulsAds && window.KunstpulsAds.renderInFeed) {
-      return window.KunstpulsAds.renderInFeed(adMarker).replace(
+    if (window.ArtPulseAds && window.ArtPulseAds.renderInFeed) {
+      // Inject data-idx for progress tracking
+      return window.ArtPulseAds.renderInFeed(adMarker).replace(
         '<article class="card card-ad"',
         '<article class="card card-ad" data-idx="' + idx + '"'
       );
     }
+    // Fallback if ads.js didn't load
     return '<article class="card card-ad" data-idx="' + idx + '"><div class="ad-shell"><div class="ad-label">Advertisement</div></div></article>';
   }
 
   function renderFeed(preserveScroll) {
     var items = filteredStories();
     var feed = document.getElementById('feed');
-    if (!feed) return;
     var prevScroll = preserveScroll ? feed.scrollTop : 0;
     if (!items.length) {
-      feed.innerHTML = '<div class="loading"><span class="loading-label" id="loadingLabel">' + t('empty') + '</span></div>';
+      feed.innerHTML = '<div class="loading"><span class="loading-label">' + t('empty') + '</span></div>';
       return;
     }
     var html = '';
@@ -274,10 +275,10 @@
       state.currentIdx = 0;
       renderProgress();
     }
-    var hint = document.getElementById('hint');
-    if (hint) hint.hidden = false;
-    if (window.KunstpulsAds && window.KunstpulsAds.activate) {
-      window.KunstpulsAds.activate(feed);
+    document.getElementById('hint').hidden = false;
+    // Trigger AdSense rendering for any new <ins> tags
+    if (window.ArtPulseAds && window.ArtPulseAds.activate) {
+      window.ArtPulseAds.activate(feed);
     }
   }
 
@@ -333,14 +334,14 @@
 
   function onScroll() {
     var feed = document.getElementById('feed');
-    if (!feed) return;
     var idx = Math.round(feed.scrollTop / feed.clientHeight);
     if (idx !== state.currentIdx) {
       state.currentIdx = idx;
       renderProgress();
       var hint = document.getElementById('hint');
-      if (hint) hint.hidden = idx !== 0;
+      hint.hidden = idx !== 0;
     }
+    // Auto-load older when user is 3 cards from the end
     var items = filteredStories();
     if (state.hasMore && !state.loadingMore && idx >= items.length - 3) {
       loadOlder();
@@ -373,8 +374,8 @@
         '<div class="meta meta-row"><span class="source">' + escapeHTML(s.source || '') + '</span><span class="sep">\u00B7</span><span>' + escapeHTML(getText(s, 'time')) + '</span><span class="sep">\u00B7</span><span>' + (s.read || 3) + ' ' + t('readingTime') + '</span></div>' +
         '<p class="sheet-lead">' + escapeHTML(getText(s, 'summary')) + '</p>' +
         '<p class="sheet-text">' + escapeHTML(getText(s, 'body')) + '</p>' +
-        (window.KunstpulsAds && window.KunstpulsAds.renderInArticle
-          ? window.KunstpulsAds.renderInArticle()
+        (window.ArtPulseAds && window.ArtPulseAds.renderInArticle
+          ? window.ArtPulseAds.renderInArticle()
           : '<div class="inline-ad"><span class="ad-label-small">' + t('ad') + '</span><div class="inline-ad-box">' + t('inArticleAd') + '</div></div>') +
         sourceLink +
         '<div class="sheet-actions">' +
@@ -383,20 +384,20 @@
         '</div>' +
       '</div>';
 
-    var sheetInner = document.getElementById('sheetInner');
-    var sheet = document.getElementById('sheet');
-    if (!sheetInner || !sheet) return;
-    sheetInner.innerHTML = html;
-    sheet.classList.add('on');
+    document.getElementById('sheetInner').innerHTML = html;
+    document.getElementById('sheet').classList.add('on');
+    // Push URL state for deep-linkable / shareable article
     try {
       var url = '/s/' + encodeURIComponent(s.id);
       if (window.location.pathname !== url) {
         window.history.pushState({ storyId: s.id }, '', url);
       }
     } catch (e) {}
-    document.title = getText(s, 'headline') + ' — Kunstpuls';
-    if (window.KunstpulsAds && window.KunstpulsAds.activate) {
-      window.KunstpulsAds.activate(sheetInner);
+    // Update document title and meta description for in-app navigation
+    document.title = getText(s, 'headline') + ' — ArtPulse';
+    // Trigger AdSense rendering for in-article slot
+    if (window.ArtPulseAds && window.ArtPulseAds.activate) {
+      window.ArtPulseAds.activate(document.getElementById('sheetInner'));
     }
     document.getElementById('sheetClose').addEventListener('click', function () { closeSheet(); });
     document.getElementById('sheetSave').addEventListener('click', function () {
@@ -406,23 +407,22 @@
       renderFeed();
     });
     document.getElementById('sheetShare').addEventListener('click', function () {
-      var url2 = s.url || window.location.href;
+      var url = s.url || window.location.href;
       var title = getText(s, 'headline');
       if (navigator.share) {
-        navigator.share({ title: title, url: url2 }).catch(function () {});
+        navigator.share({ title: title, url: url }).catch(function () {});
       } else if (navigator.clipboard) {
-        navigator.clipboard.writeText(url2).then(function () { toast('Link copied'); });
+        navigator.clipboard.writeText(url).then(function () { toast('Link copied'); });
       }
     });
-    sheet.addEventListener('click', function (e) {
+    document.getElementById('sheet').addEventListener('click', function (e) {
       if (e.target.id === 'sheet') closeSheet();
     });
   }
 
   function closeSheet(fromPopstate) {
-    var sheet = document.getElementById('sheet');
-    if (sheet) sheet.classList.remove('on');
-    document.title = 'Kunstpuls — Art world, in one breath';
+    document.getElementById('sheet').classList.remove('on');
+    document.title = 'ArtPulse — Art world, in one breath';
     if (!fromPopstate && window.location.pathname.indexOf('/s/') === 0) {
       try { window.history.pushState({}, '', '/'); } catch (e) {}
     }
@@ -449,6 +449,7 @@
   }
 
   function init() {
+    // Language buttons
     var langButtons = document.querySelectorAll('#lang button');
     for (var i = 0; i < langButtons.length; i++) {
       langButtons[i].addEventListener('click', function (e) {
@@ -457,22 +458,23 @@
     }
     setLang(state.lang);
 
+    // Detect deep-link to /s/<id> — open that story after load
     var m = window.location.pathname.match(/^\/s\/([\w-]+)$/);
     if (m) state.pendingDeepLink = m[1];
 
+    // Handle back-button while sheet is open
     window.addEventListener('popstate', function () {
-      var sheet = document.getElementById('sheet');
-      if (sheet && sheet.classList.contains('on')) {
+      if (document.getElementById('sheet').classList.contains('on')) {
         closeSheet(true);
       }
     });
 
-    var feed = document.getElementById('feed');
-    if (feed) feed.addEventListener('scroll', onScroll, { passive: true });
+    document.getElementById('feed').addEventListener('scroll', onScroll, { passive: true });
 
     renderCats();
     loadStories().then(function () {
       renderFeed();
+      // Resolve deep-link if present
       if (state.pendingDeepLink) {
         var id = state.pendingDeepLink;
         state.pendingDeepLink = null;
@@ -480,6 +482,7 @@
         if (s) {
           openSheet(id);
         } else {
+          // Story might be in archive but not in latest — fetch archive once
           fetch('/data/archive.json').then(function (r) { return r.json(); }).then(function (data) {
             if (!data || !data.stories) return;
             var found = data.stories.find(function (x) { return String(x.id) === String(id); });

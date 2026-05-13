@@ -1,4 +1,4 @@
-/* Kunstpuls — AdSense integration & placement logic.
+/* ArtPulse — AdSense integration & placement logic.
  *
  * Kept separate from app.js so you can tune frequency, slots, and rules
  * without touching the main app. To go live:
@@ -177,7 +177,7 @@
   }
 
   // ====== Public API ======
-  window.KunstpulsAds = {
+  window.ArtPulseAds = {
     config: CONFIG,
     injectInto: injectInto,
     renderInFeed: renderInFeed,
