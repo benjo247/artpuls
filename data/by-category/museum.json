@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-13T16:26:36.838Z",
+  "generatedAt": "2026-05-13T16:56:01.594Z",
   "category": "museum",
-  "count": 5,
+  "count": 6,
   "stories": [
     {
       "id": "s-drt_HwVRR_FLQq",
@@ -71,8 +71,8 @@
       "source": "Hyperallergic",
       "url": "https://hyperallergic.com/archaeologists-discover-mummy-buried-with-lines-from-homers-iliad/",
       "publishedAt": "2026-05-12T19:40:00.000Z",
-      "time_en": "20h ago",
-      "time_de": "vor 20 Std",
+      "time_en": "21h ago",
+      "time_de": "vor 21 Std",
       "read": 3,
       "kicker_en": "Egypt, Ancient History",
       "kicker_de": "Ägypten, Antike Geschichte",
@@ -82,6 +82,26 @@
       "summary_de": "Archäologen in Ägypten haben eine Mumie gefunden, die mit Papyrusrollen mit Zeilen aus Homers Ilias bestattet wurde. Die Entdeckung unterstreicht Homers durchdringende Einfluss im antiken Mittelmeerraum.",
       "body_en": "The papyrus fragments found with the burial demonstrate that Greek literary texts circulated widely throughout Egypt during antiquity. Homer's works were not confined to Greece but traveled across trade routes and cultural networks. The inclusion of Iliadic passages with the deceased suggests both literary sophistication and spiritual significance attached to the text. This archaeological evidence contributes to scholarly understanding of how Greek culture was adopted and adapted in Hellenistic Egypt.",
       "body_de": "Die mit dem Grab gefundenen Papyrusfragmente zeigen, dass griechische literarische Texte während der Antike weit verbreitet in Ägypten zirkulierten. Homers Werke waren nicht auf Griechenland beschränkt, sondern reisten über Handelsrouten und Kulturnetze. Die Einbeziehung von Ilias-Passagen bei dem Verstorbenen deutet sowohl auf literarische Raffinesse als auch auf spirituelle Bedeutung des Textes hin. Dieses archäologische Material trägt zum gelehrten Verständnis bei, wie griechische Kultur im hellenistischen Ägypten angenommen und angepasst wurde."
+    },
+    {
+      "id": "s-0wb-mHBqKQA1Ku",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": "https://storage.ghost.io/c/51/f8/51f871d8-b6be-4a73-b958-0ca4fff0110a/content/images/2026/05/eeob.jpg",
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/hundreds-lambast-trumps-7-5m-plan-to-whitewash-eisenhower-building/",
+      "publishedAt": "2026-05-12T18:58:10.000Z",
+      "time_en": "21h ago",
+      "time_de": "vor 21 Std",
+      "read": 3,
+      "kicker_en": "Eisenhower Building, Washington DC",
+      "kicker_de": "Eisenhower-Gebäude, Washington DC",
+      "headline_en": "Preservationists Oppose $7.5M Eisenhower Renovation",
+      "headline_de": "Denkmalschützer lehnen 7,5-Mio-Dollar-Renovierung ab",
+      "summary_en": "Over 2,000 architects, preservationists, and citizens have protested a proposed $7.5 million renovation plan for the Eisenhower Building. Opponents warn the project risks permanent damage to the historic structure.",
+      "summary_de": "Über 2.000 Architekten, Denkmalschützer und Bürger protestieren gegen einen geplanten 7,5-Millionen-Dollar-Renovierungsplan für das Eisenhower-Gebäude. Gegner warnen vor permanenten Schäden am historischen Bauwerk.",
+      "body_en": "A coalition of architects, preservationists, and concerned citizens has mobilized significant opposition to a proposed $7.5 million renovation of Washington DC's Eisenhower Building. The petition, signed by over 2,000 individuals and organizations, expresses concern that the modernization plan could irreversibly compromise the building's historic integrity and architectural significance. Critics argue that the scope and methods of the proposed work threaten key features of the structure. The pushback reflects broader debates over preservation versus modernization in federal building maintenance.",
+      "body_de": "Eine Koalition von Architekten, Denkmalschützern und besorgten Bürgern hat erhebliche Opposition gegen eine geplante 7,5-Millionen-Dollar-Renovierung des Eisenhower-Gebäudes in Washington DC mobilisiert. Die von über 2.000 Einzelpersonen und Organisationen unterzeichnete Petition äußert Bedenken, dass der Modernisierungsplan die historische Integrität und architektonische Bedeutung des Gebäudes unwiederbringlich beeinträchtigen könnte. Kritiker argumentieren, dass Umfang und Methoden der geplanten Arbeiten wichtige Strukturmerkmale gefährden."
     },
     {
       "id": "s-BqDoYc0hEpw6gV",

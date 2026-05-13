@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-05-13T16:26:36.838Z",
+  "generatedAt": "2026-05-13T16:56:01.594Z",
   "category": "artists",
-  "count": 1,
+  "count": 3,
   "stories": [
+    {
+      "id": "s-dKbjVRFRqPx6OQ",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": "https://storage.ghost.io/c/51/f8/51f871d8-b6be-4a73-b958-0ca4fff0110a/content/images/2026/05/IDF-grid.jpg",
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/idf-soldiers-hide-from-our-gaze/",
+      "publishedAt": "2026-05-13T16:42:11.000Z",
+      "time_en": "just now",
+      "time_de": "gerade eben",
+      "read": 3,
+      "kicker_en": "Documentary Photography",
+      "kicker_de": "Dokumentarfotografie",
+      "headline_en": "Israeli Soldier Portraits Turn Backs to Camera",
+      "headline_de": "Israelische Soldatenporträts zeigen Rückseiten",
+      "summary_en": "Official portraits depict Israeli soldiers with their backs turned to the camera, ostensibly for anonymity. Critics interpret the gesture as an implicit acknowledgment of legal culpability for wartime conduct.",
+      "summary_de": "Offizielle Porträts zeigen israelische Soldaten mit dem Rücken zur Kamera, angeblich zum Schutz ihrer Anonymität. Kritiker interpretieren die Geste als implizite Anerkennung rechtlicher Verantwortung für Kriegshandlungen.",
+      "body_en": "A series of official military portraits has emerged depicting Israeli soldiers facing away from the camera. The stated intention is to provide anonymity and protection for the subjects. However, observers and critics have reinterpreted this compositional choice as a symbolic gesture suggesting guilt or culpability regarding actions during armed conflict. The image strategy raises questions about institutional accountability and the representation of military personnel during controversial military operations.",
+      "body_de": "Eine Serie von offiziellen Militärporträts zeigt israelische Soldaten, die sich von der Kamera abwenden. Die erklärte Absicht ist der Schutz der Identität und Anonymität der abgebildeten Personen. Beobachter und Kritiker haben diese Kompositionswahl jedoch als symbolische Geste interpretiert, die Schuld oder Verantwortung für Handlungen während des bewaffneten Konflikts suggeriert. Die Bildstrategie wirft Fragen zur institutionellen Rechenschaftspflicht auf."
+    },
     {
       "id": "s-62xHiLx_Qne_fD",
       "cat": "artists",
@@ -22,6 +42,26 @@
       "summary_de": "Die Gründerin der Gallery Isabelle, Isabelle de Caters, reflektiert über zwei Jahrzehnte des Aufbaus und der Aufrechterhaltung eines unabhängigen Galerieraums in der Golfregion. Das Jubiläumsgespräch erforscht Herausforderungen und Chancen der Arbeit in diesem sich entwickelnden Kunstmarkt.",
       "body_en": "Isabelle de Caters' twenty-year trajectory with Gallery Isabelle documents the transformation of the Gulf's contemporary art landscape. Her interview with ArtAsiaPacific provides insight into the strategic decisions and curatorial principles that have guided the gallery's programming and artist representation. De Caters discusses the particularities of building a sustainable gallery practice within a regional market characterized by rapid expansion and increasing international engagement. The conversation underscores both the institutional resilience required to maintain an independent gallery and the evolving opportunities for contemporary art dialogue in the Gulf.",
       "body_de": "Isabelle de Caters' zwanzigjähriger Weg mit der Gallery Isabelle dokumentiert die Transformation der zeitgenössischen Kunstlandschaft des Golfs. Ihr Interview mit ArtAsiaPacific bietet Einblicke in die strategischen Entscheidungen und kuratorischen Prinzipien, die das Programm und die Künstlervertretung der Galerie geleitet haben. De Caters erörtert die Besonderheiten beim Aufbau einer nachhaltigen Galerispraxis in einem Markt, der durch schnelle Expansion und zunehmende internationale Beteiligung gekennzeichnet ist. Das Gespräch unterstreicht sowohl die institutionelle Widerstandsfähigkeit, die notwendig ist, um eine unabhängige Galerie zu erhalten, als auch die sich entwickelnden Möglichkeiten für zeitgenössische Kunstdialoge am Golf."
+    },
+    {
+      "id": "s-Pl-x1TrzX0-WU7",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": "https://storage.ghost.io/c/16/43/16435400-f27e-4b41-b5f7-d0c24f5ce4de/content/images/2026/05/1-Dian-Suci.jpg",
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/news/dian-suci-wins-10th-max-mara-art-prize-for-women/",
+      "publishedAt": "2026-05-08T02:00:33.000Z",
+      "time_en": "5d ago",
+      "time_de": "vor 5 Tagen",
+      "read": 2,
+      "kicker_en": "Max Mara Art Prize, Global",
+      "kicker_de": "Max-Mara-Kunstpreis, Global",
+      "headline_en": "Indonesian Artist Dian Suci Wins Max Mara Prize",
+      "headline_de": "Indonesische Künstlerin Dian Suci gewinnt Max-Mara-Preis",
+      "summary_en": "Yogyakarta-based artist Dian Suci receives the 10th Max Mara Art Prize for Women, becoming the first Indonesian artist to win the award. The recognition marks a significant milestone for artistic representation from Southeast Asia.",
+      "summary_de": "Die in Yogyakarta ansässige Künstlerin Dian Suci erhält den 10. Max-Mara-Kunstpreis für Frauen und ist damit die erste indonesische Künstlerin, die den Preis gewinnt. Die Auszeichnung markiert einen wichtigen Meilenstein für künstlerische Repräsentation aus Südostasien.",
+      "body_en": "Dian Suci, an artist based in Yogyakarta, Indonesia, has been awarded the 10th iteration of the Max Mara Art Prize for Women. This achievement marks a historic first for Indonesia, as Suci is the inaugural recipient of the prestigious award from her country. The Max Mara Prize recognizes and supports female artists of international significance, providing both financial support and exhibition opportunities. Suci's selection reflects growing international recognition of Southeast Asian artistic practices and the prize's commitment to global artistic representation.",
+      "body_de": "Dian Suci, eine in Yogyakarta, Indonesien, ansässige Künstlerin, erhält die 10. Ausgabe des Max-Mara-Kunstpreises für Frauen. Diese Leistung markiert einen historischen Meilenstein für Indonesien, da Suci die erste Preisträgerin des renommierten Preises aus ihrem Land ist. Der Max-Mara-Preis würdigt und unterstützt Künstlerinnen von internationaler Bedeutung durch finanzielle Unterstützung und Ausstellungsmöglichkeiten. Sucis Auswahl spiegelt die wachsende internationale Anerkennung südostasiatischer künstlerischer Praktiken wider."
     }
   ]
 }

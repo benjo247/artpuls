@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-13T16:26:36.838Z",
+  "generatedAt": "2026-05-13T16:56:01.594Z",
   "category": "biennale",
-  "count": 7,
+  "count": 8,
   "stories": [
     {
       "id": "s-dKXPjYQFIqmZJw",
@@ -31,8 +31,8 @@
       "source": "ArtAsiaPacific",
       "url": "https://www.artasiapacific.com/news/kader-attia-to-curate-the-2027-kochi-muziris-biennale/",
       "publishedAt": "2026-05-13T04:53:44.000Z",
-      "time_en": "11h ago",
-      "time_de": "vor 11 Std",
+      "time_en": "12h ago",
+      "time_de": "vor 12 Std",
       "read": 3,
       "kicker_en": "Kochi-Muziris 2027",
       "kicker_de": "Kochi-Muziris 2027",
@@ -142,6 +142,26 @@
       "summary_de": "Ungefähr 27 von 100 nationalen Pavillons schlossen ganz oder teilweise in Solidarität mit Protestierenden, die die Ausschließung Israels von der 61. Venedig Biennale forderten. Der Streik stellt eine erhebliche institutionelle Störung bei der großen internationalen Kunstevent dar.",
       "body_en": "The closure of nearly a quarter of the Venice Biennale's national pavilions constitutes one of the most visible acts of institutional resistance in recent biennale history. Participating pavilions coordinated their shutdown in response to demands for Israel's exclusion, framing the action as solidarity with broader protests against the biennale's programming choices. The scale of the closure—affecting 27 exhibition spaces simultaneously—disrupted visitor access and generated significant media attention regarding the political dimensions of international art institutions. This action reflects growing tensions within the global art world over issues of political responsibility and institutional stance.",
       "body_de": "Die Schließung von fast einem Viertel der nationalen Pavillons der Venedig Biennale stellt einen der sichtbarsten Akte des institutionellen Widerstands in der jüngeren Biennale-Geschichte dar. Die teilnehmenden Pavillons koordinierten ihre Schließung als Reaktion auf Forderungen nach Israels Ausschluss und rahmten die Aktion als Solidarität mit breiteren Protesten gegen die Programmentscheidungen der Biennale ein. Das Ausmaß der Schließung—27 Ausstellungsflächen gleichzeitig betroffen—unterbrach den Besucherzugang und erzeugte erhebliche Medienaufmerksamkeit bezüglich der politischen Dimensionen internationaler Kunstinstitutionen. Diese Aktion spiegelt wachsende Spannungen in der globalen Kunstwelt über Fragen politischer Verantwortung und institutioneller Haltung wider."
+    },
+    {
+      "id": "s-7u6a1WwgJeu8Ev",
+      "cat": "biennale",
+      "accent": "#a8b89f",
+      "image": "https://storage.ghost.io/c/16/43/16435400-f27e-4b41-b5f7-d0c24f5ce4de/content/images/2026/05/Protestors_at_the_Russian_Pavilion_during_2026_Venice_Biennale_01.jpeg",
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/news/protests-and-shutdowns-engulf-61st-venice-biennale-opening/",
+      "publishedAt": "2026-05-07T10:55:32.000Z",
+      "time_en": "6d ago",
+      "time_de": "vor 6 Tagen",
+      "read": 3,
+      "kicker_en": "Venice Biennale 2025",
+      "kicker_de": "Venedig Biennale 2025",
+      "headline_en": "Protests Disrupt 61st Venice Biennale Opening",
+      "headline_de": "Proteste unterbrechen Eröffnung der 61. Venedig Biennale",
+      "summary_en": "The opening of the 61st Venice Biennale was marked by widespread protests from artists, unions, and activists. The demonstrations set a contentious tone for the world's leading contemporary art exhibition.",
+      "summary_de": "Die Eröffnung der 61. Venedig Biennale war von massiven Protesten von Künstlern, Gewerkschaften und Aktivisten geprägt. Die Demonstrationen setzten einen kontroversen Ton für die führende zeitgenössische Kunstausstellung der Welt.",
+      "body_en": "The opening of the 61st Venice Biennale has been marked by significant protest activity from artists, labor unions, and activist groups. The demonstrations preceded and accompanied the inaugural events of the exhibition, establishing an adversarial framework for the biennial's programming. The protests reflect ongoing tensions surrounding labor conditions, institutional practices, and representation within the global art system. These actions underscore broader conversations about equity and accountability within major art institutions.",
+      "body_de": "Die Eröffnung der 61. Venedig Biennale war von erheblicher Protestaktivität von Künstlern, Gewerkschaften und Aktivistenkollektiven geprägt. Die Demonstrationen begleiteten die Eröffnungsveranstaltungen der Ausstellung und setzten einen kritischen Rahmen für die Programmierung der Biennale. Die Proteste spiegeln anhaltende Spannungen zu Arbeitsbedingungen, institutionellen Praktiken und Repräsentation im globalen Kunstsystem wider. Diese Aktionen unterstreichen breitere Diskussionen über Gerechtigkeit und Rechenschaftspflicht in großen Kunstinstitutionen."
     }
   ]
 }
