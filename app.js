@@ -47,10 +47,7 @@
   var CAT_KEYS = ['all', 'auction', 'exhibition', 'artists', 'market', 'museum', 'biennale', 'restitution'];
 
   var ICONS = {
-    bookmark: '<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>',
-    bookmarkOn: '<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/><path d="m9 10 2 2 4-4"/>',
     share: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>',
-    sparkles: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/>',
     close: '<path d="M18 6 6 18M6 6l12 12"/>',
     chev: '<path d="m18 15-6-6-6 6"/>',
     external: '<path d="M7 17 17 7M7 7h10v10"/>'
@@ -65,22 +62,12 @@
       return browserLang.indexOf('de') === 0 ? 'de' : 'en';
     })(),
     cat: 'all',
-    saved: (function () {
-      try {
-        var raw = localStorage.getItem('kp-saved');
-        return raw ? JSON.parse(raw) : {};
-      } catch (e) { return {}; }
-    })(),
     currentIdx: 0,
     stories: [],
     hasMore: true,
     loadingMore: false,
     pendingDeepLink: null
   };
-
-  function persistSaved() {
-    try { localStorage.setItem('kp-saved', JSON.stringify(state.saved)); } catch (e) {}
-  }
 
   // ---------- Helpers ----------
   function t(key) { return LABELS[state.lang][key]; }
@@ -106,10 +93,10 @@
   }
 
   function filteredStories() {
-    if (state.cat === 'all') return state.stories;
+    if (state.cat === 'all') return state.stories.slice();
     var out = [];
     for (var i = 0; i < state.stories.length; i++) {
-      if (state.stories[i].isAd || state.stories[i].cat === state.cat) out.push(state.stories[i]);
+      if (state.stories[i].cat === state.cat) out.push(state.stories[i]);
     }
     return out;
   }
@@ -132,7 +119,7 @@
         return r.json();
       })
       .then(function (data) {
-        state.stories = injectAds(data.stories || []);
+        state.stories = data.stories || [];  // raw, ads injected at render time
         state.hasMore = (data.stories || []).length >= 24;  // assume archive has more
       })
       .catch(function (err) {
@@ -159,9 +146,9 @@
         }
         var older = data.stories.filter(function (s) { return !seen[s.id]; });
         if (older.length === 0) { state.hasMore = false; return; }
-        // Append older stories (re-inject ads through the full list)
-        var combined = state.stories.filter(function (s) { return !s.isAd; }).concat(older);
-        state.stories = injectAds(combined);
+        // Append older stories. Ads are injected at render time on the filtered list,
+        // so we keep state.stories pure (no ad markers).
+        state.stories = state.stories.concat(older);
         renderFeed(true);  // preserve scroll position
       })
       .catch(function () { state.loadingMore = false; });
@@ -211,9 +198,6 @@
   }
 
   function storyHTML(s, idx) {
-    var saved = !!state.saved[s.id];
-    var iconBookmark = saved ? ICONS.bookmarkOn : ICONS.bookmark;
-    var savedClass = saved ? ' on' : '';
     var accent = s.accent || '#e8503a';
     var image = s.image || ('https://picsum.photos/seed/' + encodeURIComponent(s.id) + '/800/1200');
 
@@ -236,9 +220,7 @@
           '</div>' +
         '</div>' +
         '<div class="rail">' +
-          '<button class="rail-btn' + savedClass + '" data-save="' + escapeAttr(s.id) + '" aria-label="' + t('save') + '"><svg class="icon icon-lg" viewBox="0 0 24 24">' + iconBookmark + '</svg></button>' +
           '<button class="rail-btn" data-share="' + escapeAttr(s.id) + '" aria-label="' + t('share') + '"><svg class="icon icon-lg" viewBox="0 0 24 24">' + ICONS.share + '</svg></button>' +
-          '<button class="rail-btn rail-ai" aria-label="AI summary"><svg class="icon icon-lg" viewBox="0 0 24 24">' + ICONS.sparkles + '</svg></button>' +
         '</div>' +
       '</article>';
   }
@@ -263,6 +245,9 @@
       feed.innerHTML = '<div class="loading"><span class="loading-label">' + t('empty') + '</span></div>';
       return;
     }
+    // Inject ads on the FILTERED list so per-category views obey all placement
+    // rules (first-ad-position, intervals, sensitive-categories, never-last).
+    items = injectAds(items);
     var html = '';
     for (var i = 0; i < items.length; i++) {
       html += items[i].isAd ? adHTML(items[i], i) : storyHTML(items[i], i);
@@ -283,10 +268,6 @@
   }
 
   function bindFeedEvents() {
-    var saves = document.querySelectorAll('[data-save]');
-    for (var i = 0; i < saves.length; i++) {
-      saves[i].addEventListener('click', onSaveClick);
-    }
     var expands = document.querySelectorAll('[data-expand]');
     for (var j = 0; j < expands.length; j++) {
       expands[j].addEventListener('click', onExpandClick);
@@ -295,15 +276,6 @@
     for (var k = 0; k < shares.length; k++) {
       shares[k].addEventListener('click', onShareClick);
     }
-  }
-
-  function onSaveClick(e) {
-    e.stopPropagation();
-    var id = e.currentTarget.getAttribute('data-save');
-    state.saved[id] = !state.saved[id];
-    persistSaved();
-    renderFeed();
-    toast(state.saved[id] ? t('saved') : t('save'));
   }
 
   function onExpandClick(e) {
@@ -316,7 +288,7 @@
     var id = e.currentTarget.getAttribute('data-share');
     var s = findStory(id);
     if (!s) return;
-    var url = s.url || window.location.href;
+    var url = window.location.origin + '/s/' + encodeURIComponent(s.id);
     var title = getText(s, 'headline');
     if (navigator.share) {
       navigator.share({ title: title, url: url }).catch(function () {});
@@ -352,7 +324,6 @@
   function openSheet(id) {
     var s = findStory(id);
     if (!s || s.isAd) return;
-    var saved = !!state.saved[s.id];
     var accent = s.accent || '#e8503a';
     var image = s.image || ('https://picsum.photos/seed/' + encodeURIComponent(s.id) + '/800/1200');
     var sourceLink = s.url ? (
@@ -379,7 +350,6 @@
           : '<div class="inline-ad"><span class="ad-label-small">' + t('ad') + '</span><div class="inline-ad-box">' + t('inArticleAd') + '</div></div>') +
         sourceLink +
         '<div class="sheet-actions">' +
-          '<button class="pill' + (saved ? ' on' : '') + '" id="sheetSave"><svg class="icon icon-sm" viewBox="0 0 24 24">' + (saved ? ICONS.bookmarkOn : ICONS.bookmark) + '</svg>' + (saved ? t('saved') : t('save')) + '</button>' +
           '<button class="pill" id="sheetShare"><svg class="icon icon-sm" viewBox="0 0 24 24">' + ICONS.share + '</svg>' + t('share') + '</button>' +
         '</div>' +
       '</div>';
@@ -400,19 +370,13 @@
       window.ArtPulseAds.activate(document.getElementById('sheetInner'));
     }
     document.getElementById('sheetClose').addEventListener('click', function () { closeSheet(); });
-    document.getElementById('sheetSave').addEventListener('click', function () {
-      state.saved[s.id] = !state.saved[s.id];
-      persistSaved();
-      openSheet(s.id);
-      renderFeed();
-    });
     document.getElementById('sheetShare').addEventListener('click', function () {
-      var url = s.url || window.location.href;
+      var shareUrl = window.location.origin + '/s/' + encodeURIComponent(s.id);
       var title = getText(s, 'headline');
       if (navigator.share) {
-        navigator.share({ title: title, url: url }).catch(function () {});
+        navigator.share({ title: title, url: shareUrl }).catch(function () {});
       } else if (navigator.clipboard) {
-        navigator.clipboard.writeText(url).then(function () { toast('Link copied'); });
+        navigator.clipboard.writeText(shareUrl).then(function () { toast('Link copied'); });
       }
     });
     document.getElementById('sheet').addEventListener('click', function (e) {
@@ -487,7 +451,7 @@
             if (!data || !data.stories) return;
             var found = data.stories.find(function (x) { return String(x.id) === String(id); });
             if (found) {
-              state.stories = injectAds([found].concat(state.stories.filter(function (x) { return !x.isAd; })));
+              state.stories = [found].concat(state.stories);
               renderFeed();
               openSheet(id);
             }

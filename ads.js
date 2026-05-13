@@ -71,12 +71,15 @@
   // ====== Placement decision ======
   function injectInto(stories) {
     /* Takes a list of stories, returns a list with ad markers inserted
-       at intelligent positions. Each ad marker has { isAd: true, slot: 'inFeed', id: 'ad-N' } */
+       at intelligent positions. Each ad marker has { isAd: true, slot: 'inFeed', id: 'ad-N' }.
+       PURE function — does not mutate session counter, so it's safe to call
+       on every render (e.g. when user switches category). When AdSense is live,
+       actual impressions are frequency-capped server-side by Google. */
     var session = getSession();
     var interval = session.isNew ? CONFIG.rules.intervalNewUser : CONFIG.rules.intervalReturning;
     var first = CONFIG.rules.firstAdPosition;
-    var maxAds = CONFIG.rules.maxPerSession - session.adsShown;
-    if (maxAds <= 0) return stories;
+    var maxAds = CONFIG.rules.maxPerSession;
+    if (maxAds <= 0 || !stories || !stories.length) return stories || [];
 
     var out = [];
     var adsInserted = 0;
@@ -93,20 +96,17 @@
       var position = i + 1;  // 1-indexed
       var afterFirst = position >= first;
       var atInterval = (position - first) % interval === 0;
+      var notLast = (i < stories.length - 1);  // never as final card
 
-      if (afterFirst && atInterval && !sensitiveAhead && adsInserted < maxAds) {
+      if (afterFirst && atInterval && !sensitiveAhead && notLast && adsInserted < maxAds) {
         out.push({
           isAd: true,
           slot: 'inFeed',
-          id: 'ad-feed-' + position + '-' + Date.now()
+          id: 'ad-feed-' + position
         });
         adsInserted++;
       }
     }
-
-    // Update session counter
-    session.adsShown += adsInserted;
-    persistSession(session);
 
     return out;
   }

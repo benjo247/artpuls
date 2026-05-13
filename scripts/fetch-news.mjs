@@ -40,17 +40,23 @@ if (!API_KEY) {
 const SITE_URL = (process.env.SITE_URL || 'https://artpulse.app').replace(/\/$/, '');
 
 const MODEL = 'claude-haiku-4-5-20251001';
-const ITEMS_PER_SOURCE = 8;
+const ITEMS_PER_SOURCE = 6;
 const LATEST_HOURS = 72;
 const SITEMAP_LIMIT = 5000;
 
+// 10 international sources — verified working or strong best-guess URLs.
+// Failed feeds are logged as warnings and the run continues with the others.
 const SOURCES = [
-  { name: 'The Art Newspaper', url: 'https://www.theartnewspaper.com/rss', defaultCat: 'museum' },
-  { name: 'Artnet News',       url: 'https://news.artnet.com/feed',         defaultCat: 'market'  },
-  { name: 'Hyperallergic',     url: 'https://hyperallergic.com/feed/',      defaultCat: 'exhibition' },
-  { name: 'Frieze',            url: 'https://www.frieze.com/rss.xml',       defaultCat: 'exhibition' },
-  { name: 'e-flux',            url: 'https://www.e-flux.com/announcements/feed/', defaultCat: 'exhibition' },
-  { name: 'ArtAsiaPacific',    url: 'https://artasiapacific.com/feed',      defaultCat: 'exhibition' }
+  { name: 'The Art Newspaper', url: 'https://www.theartnewspaper.com/rss.xml',  defaultCat: 'museum' },
+  { name: 'Artnet News',       url: 'https://news.artnet.com/feed',             defaultCat: 'market'  },
+  { name: 'Hyperallergic',     url: 'https://hyperallergic.com/feed/',          defaultCat: 'exhibition' },
+  { name: 'ArtAsiaPacific',    url: 'https://artasiapacific.com/feed',          defaultCat: 'exhibition' },
+  { name: 'Ocula',             url: 'https://ocula.com/magazine/feed/',         defaultCat: 'exhibition' },
+  { name: 'ArtReview',         url: 'https://artreview.com/rss.xml',            defaultCat: 'exhibition' },
+  { name: 'ARTnews',           url: 'https://www.artnews.com/feed/',            defaultCat: 'market' },
+  { name: 'Mousse Magazine',   url: 'https://www.moussemagazine.it/feed/',      defaultCat: 'exhibition' },
+  { name: 'Monopol',           url: 'https://www.monopol-magazin.de/rss.xml',   defaultCat: 'exhibition' },
+  { name: 'Wallpaper',         url: 'https://www.wallpaper.com/rss',            defaultCat: 'exhibition' }
 ];
 
 const ACCENTS = {
@@ -282,7 +288,10 @@ async function run() {
 
   const parser = new Parser({
     timeout: 15000,
-    headers: { 'User-Agent': 'ArtPulse/1.0 (+https://artpulse.app)' }
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Accept': 'application/rss+xml, application/xml, text/xml, */*'
+    }
   });
 
   console.log(`\nFetching ${SOURCES.length} sources...`);
@@ -384,7 +393,12 @@ async function run() {
   buildSitemap(archive.stories);
 }
 
-run().catch(err => {
-  console.error('FATAL:', err);
-  process.exit(1);
-});
+run()
+  .then(() => {
+    console.log('\nDone. Exiting cleanly.');
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error('FATAL:', err);
+    process.exit(1);
+  });

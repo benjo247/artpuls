@@ -14,8 +14,6 @@
 
 export const config = { runtime: 'edge' };
 
-const SITE_URL = 'https://artpulse.app';
-
 function escapeHTML(s) {
   if (s == null) return '';
   return String(s)
@@ -26,14 +24,14 @@ function escapeHTML(s) {
     .replace(/'/g, '&#39;');
 }
 
-function renderHTML(story, lang) {
+function renderHTML(story, lang, siteUrl) {
   lang = lang === 'de' ? 'de' : 'en';
   const headline = story[`headline_${lang}`] || story.headline_en || '';
   const summary  = story[`summary_${lang}`]  || story.summary_en  || '';
   const body     = story[`body_${lang}`]     || story.body_en     || '';
   const kicker   = story[`kicker_${lang}`]   || story.kicker_en   || '';
-  const image    = story.image || `${SITE_URL}/icons/icon-512.png`;
-  const url      = `${SITE_URL}/s/${story.id}`;
+  const image    = story.image || `${siteUrl}/icons/og-default.png`;
+  const url      = `${siteUrl}/s/${story.id}`;
   const title    = `${headline} — ArtPulse`;
   const desc     = summary.slice(0, 200);
 
@@ -176,7 +174,7 @@ export default async function handler(req) {
       return new Response('Story not found', { status: 404 });
     }
 
-    return new Response(renderHTML(story, lang), {
+    return new Response(renderHTML(story, lang, url.origin), {
       status: 200,
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
