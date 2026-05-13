@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e0d0b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>Subscribe — ArtPulse Weekly</title>
+<meta name="description" content="The art world, in one breath. Every Sunday at 10am. Ten stories. Four-minute read. Free.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="ArtPulse Weekly — Sunday mornings, delivered">
+<meta property="og:description" content="The ten stories that actually matter, condensed by us. Free, every Sunday.">
+<meta property="og:image" content="https://artpulse.app/icons/og-default.png">
+<meta property="og:url" content="https://artpulse.app/subscribe">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArtPulse">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0e0d0b;
+    --bg-elev: #1a1715;
+    --fg: #f4f1ea;
+    --fg-muted: #a8a097;
+    --fg-fade: rgba(244, 241, 234, 0.06);
+    --fg-border: rgba(244, 241, 234, 0.12);
+    --accent: #e8503a;
+    --serif: 'Instrument Serif', 'Times New Roman', serif;
+    --sans: 'Geist', system-ui, -apple-system, sans-serif;
+    --mono: 'Geist Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    line-height: 1.5;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Phone-shaped wrapper to match the app feel */
+  .frame {
+    width: 100%;
+    max-width: 440px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 22px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Subtle vermillion atmosphere in top-right */
+  .frame::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(232, 80, 58, 0.18) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ---------- Header ---------- */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .back-link {
+    width: 36px;
+    height: 36px;
+    background: var(--fg-fade);
+    border: 1px solid var(--fg-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fg);
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .back-link:hover { background: rgba(244, 241, 234, 0.1); }
+  .back-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+  .logo {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--fg);
+    text-decoration: none;
+  }
+  .logo-dot {
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-bottom: -1px;
+  }
+  .logo em { font-style: italic; }
+
+  .header-spacer { width: 36px; }
+
+  /* ---------- Main body ---------- */
+  .body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---------- States: form & confirmation ---------- */
+  .state { display: none; flex: 1; flex-direction: column; }
+  .state.on { display: flex; }
+
+  /* ===== Form state ===== */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .title {
+    font-family: var(--serif);
+    font-size: 56px;
+    line-height: 0.94;
+    margin: 0 0 20px;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+  .title em { font-style: italic; }
+  .lead {
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.4;
+    color: var(--fg-muted);
+    margin: 0 0 36px;
+    max-width: 380px;
+  }
+  .bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .bullets li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .bullets svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    stroke: var(--accent);
+    fill: none;
+    stroke-width: 2;
+    margin-top: 2px;
+  }
+  .bullets span {
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--fg);
+  }
+
+  /* Form */
+  .form {
+    margin-top: auto;
+  }
+  .input {
+    width: 100%;
+    background: var(--fg-fade);
+    border: 1px solid var(--fg-border);
+    color: var(--fg);
+    padding: 16px 18px;
+    border-radius: 14px;
+    font-family: var(--sans);
+    font-size: 15px;
+    margin-bottom: 12px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+    -webkit-appearance: none;
+  }
+  .input::placeholder { color: var(--fg-muted); }
+  .input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(232, 80, 58, 0.06);
+  }
+  .input.error {
+    border-color: var(--accent);
+    background: rgba(232, 80, 58, 0.12);
+  }
+  .submit {
+    background: var(--accent);
+    color: var(--fg);
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+    transition: opacity 0.15s ease, transform 0.05s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    -webkit-appearance: none;
+  }
+  .submit:hover { opacity: 0.92; }
+  .submit:active { transform: scale(0.99); }
+  .submit:disabled { opacity: 0.6; cursor: wait; }
+  .submit svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2.5;
+  }
+  .submit-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(244, 241, 234, 0.3);
+    border-top-color: var(--fg);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display: none;
+  }
+  .submit.loading .submit-text,
+  .submit.loading .submit-arrow { display: none; }
+  .submit.loading .submit-spinner { display: inline-block; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .trust {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--fg-muted);
+    text-align: center;
+    margin-top: 16px;
+  }
+  .error-msg {
+    font-size: 13px;
+    color: var(--accent);
+    margin-top: 4px;
+    text-align: center;
+    min-height: 18px;
+  }
+
+  /* ===== Confirmation state ===== */
+  .confirm {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .confirm-icon {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: rgba(232, 80, 58, 0.15);
+    border: 1px solid rgba(232, 80, 58, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .confirm-icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--accent);
+    fill: none;
+    stroke-width: 2;
+  }
+  .confirm-title {
+    font-family: var(--serif);
+    font-size: 48px;
+    line-height: 0.95;
+    margin: 0 0 20px;
+    letter-spacing: -0.02em;
+  }
+  .confirm-title em { font-style: italic; }
+  .confirm-body {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--fg-muted);
+    max-width: 320px;
+    margin: 0 0 10px;
+  }
+  .confirm-email {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--fg);
+    margin: 18px 0 28px;
+    padding: 10px 18px;
+    background: var(--fg-fade);
+    border: 1px solid var(--fg-border);
+    border-radius: 100px;
+    word-break: break-all;
+    max-width: 100%;
+  }
+  .confirm-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+    margin-top: 24px;
+  }
+  .confirm-btn {
+    padding: 14px;
+    border-radius: 14px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    -webkit-appearance: none;
+  }
+  .confirm-btn.primary {
+    background: var(--fg);
+    color: var(--bg);
+  }
+  .confirm-btn.secondary {
+    background: transparent;
+    color: var(--fg-muted);
+    border: 1px solid var(--fg-border);
+  }
+  .confirm-btn.secondary:hover { color: var(--fg); }
+
+  /* ---------- Footer ---------- */
+  .foot {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--fg-muted);
+    text-align: center;
+    padding: 24px 0;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .foot a { color: var(--fg-muted); text-decoration: none; }
+  .foot a:hover { color: var(--fg); }
+  .foot .sep { margin: 0 8px; opacity: 0.4; }
+
+  /* Mobile tweaks */
+  @media (max-width: 380px) {
+    .title { font-size: 48px; }
+    .lead { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <header class="header">
+    <a href="/" class="back-link" aria-label="Back to feed">
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </a>
+    <a href="/" class="logo">
+      <span class="logo-dot"></span>
+      <span>Art<em>Pulse</em></span>
+    </a>
+    <div class="header-spacer"></div>
+  </header>
+
+  <main class="body">
+
+    <!-- ============ Form state ============ -->
+    <div class="state on" id="state-form">
+      <div class="eyebrow">ArtPulse Weekly</div>
+      <h1 class="title">The art world,<br><em>in one breath.</em></h1>
+      <p class="lead">Every Sunday at 10am. The ten stories that actually matter, condensed by us. Four-minute read.</p>
+
+      <ul class="bullets">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+          <span>Auction results, market shifts, gallery moves</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+          <span>One artist we think you should know this week</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+          <span>Free. No spam. Unsubscribe in one click.</span>
+        </li>
+      </ul>
+
+      <form class="form" id="form" novalidate>
+        <input
+          class="input"
+          id="email"
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          inputmode="email"
+          required
+        >
+        <button class="submit" type="submit" id="submit">
+          <span class="submit-text">Get the Sunday digest</span>
+          <svg class="submit-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <span class="submit-spinner"></span>
+        </button>
+        <div class="error-msg" id="error" role="alert" aria-live="polite"></div>
+        <div class="trust">Free · Sundays · Unsubscribe anytime</div>
+      </form>
+    </div>
+
+    <!-- ============ Confirmation state ============ -->
+    <div class="state" id="state-confirm">
+      <div class="confirm">
+        <div class="confirm-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        </div>
+        <h2 class="confirm-title">Check your<br><em>inbox.</em></h2>
+        <p class="confirm-body">We sent a confirmation link to</p>
+        <div class="confirm-email" id="confirm-email">your@email.com</div>
+        <p class="confirm-body">Tap the link there to start receiving the Sunday Digest. Your first one arrives this weekend.</p>
+        <div class="confirm-actions">
+          <a href="/" class="confirm-btn primary">Back to the feed</a>
+          <button class="confirm-btn secondary" id="edit-email">Wrong email? Edit</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="foot">
+    <a href="/">ArtPulse</a><span class="sep">·</span><a href="/">Back to feed</a>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var form        = document.getElementById('form');
+  var input       = document.getElementById('email');
+  var submit      = document.getElementById('submit');
+  var errorEl     = document.getElementById('error');
+  var stateForm   = document.getElementById('state-form');
+  var stateConfirm = document.getElementById('state-confirm');
+  var confirmEmail = document.getElementById('confirm-email');
+  var editBtn      = document.getElementById('edit-email');
+
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function showError(msg) {
+    errorEl.textContent = msg || '';
+    if (msg) input.classList.add('error');
+  }
+  function clearError() {
+    errorEl.textContent = '';
+    input.classList.remove('error');
+  }
+
+  input.addEventListener('input', clearError);
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearError();
+    var email = (input.value || '').trim().toLowerCase();
+    if (!email || !EMAIL_RE.test(email)) {
+      showError('Please enter a valid email address.');
+      input.focus();
+      return;
+    }
+
+    submit.classList.add('loading');
+    submit.disabled = true;
+
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    })
+    .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+    .then(function (res) {
+      submit.classList.remove('loading');
+      submit.disabled = false;
+      if (res.ok && res.data && res.data.ok) {
+        // Success — switch to confirmation state
+        confirmEmail.textContent = email;
+        stateForm.classList.remove('on');
+        stateConfirm.classList.add('on');
+        // Remember subscription so app stops showing the in-feed CTA
+        try { localStorage.setItem('ap-nl-state', 'subscribed'); } catch (e) {}
+        // Update URL for analytics
+        try { window.history.replaceState({}, '', '/subscribe?ok=1'); } catch (e) {}
+      } else {
+        var msg = 'Something went wrong. Please try again.';
+        if (res.data && res.data.error === 'invalid-email') msg = 'That email looks invalid. Try again?';
+        if (res.data && res.data.error === 'beehiiv-error' && res.data.detail) msg = res.data.detail;
+        showError(msg);
+      }
+    })
+    .catch(function () {
+      submit.classList.remove('loading');
+      submit.disabled = false;
+      showError('Network error. Check your connection and try again.');
+    });
+  });
+
+  editBtn.addEventListener('click', function () {
+    stateConfirm.classList.remove('on');
+    stateForm.classList.add('on');
+    input.focus();
+    input.select();
+  });
+
+  // If user landed with ?ok=1 (refresh), show confirm state
+  if (window.location.search.indexOf('ok=1') !== -1) {
+    var saved = '';
+    try { saved = localStorage.getItem('ap-nl-email') || ''; } catch (e) {}
+    if (saved) confirmEmail.textContent = saved;
+    stateForm.classList.remove('on');
+    stateConfirm.classList.add('on');
+  }
+})();
+</script>
+
+</body>
+</html>

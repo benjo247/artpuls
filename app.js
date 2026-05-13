@@ -162,6 +162,56 @@
     return stories;
   }
 
+  function injectNewsletter(items) {
+    /* Insert a Newsletter CTA card after the 5th story (counting non-ad items).
+       Skip if user already subscribed or if we've shown it in this session. */
+    var subscribed = false;
+    var shownThisSession = false;
+    try {
+      subscribed = localStorage.getItem('ap-nl-state') === 'subscribed';
+      shownThisSession = sessionStorage.getItem('ap-nl-shown') === '1';
+    } catch (e) {}
+    if (subscribed || shownThisSession) return items;
+
+    var storyCount = 0;
+    for (var i = 0; i < items.length; i++) {
+      if (!items[i].isAd && !items[i].isNewsletter) storyCount++;
+      if (storyCount === 5) {
+        // Mark as shown so we don't re-inject on every render this session
+        try { sessionStorage.setItem('ap-nl-shown', '1'); } catch (e) {}
+        return items.slice(0, i + 1)
+          .concat([{ isNewsletter: true, id: 'nl-cta' }])
+          .concat(items.slice(i + 1));
+      }
+    }
+    return items;
+  }
+
+  function nlHTML(item, idx) {
+    return '' +
+      '<article class="card card-nl" data-idx="' + idx + '">' +
+        '<div class="nl-shell">' +
+          '<div>' +
+            '<div class="nl-eyebrow">From the editors</div>' +
+            '<h3 class="nl-headline">Sunday<br>mornings,<br><em>delivered.</em></h3>' +
+            '<p class="nl-body">The week\u2019s 10 most important stories. In four minutes. To your inbox.</p>' +
+            '<ul class="nl-bullets">' +
+              '<li>Auction results &amp; market moves</li>' +
+              '<li>Major openings worldwide</li>' +
+              '<li>One artist worth knowing</li>' +
+            '</ul>' +
+          '</div>' +
+          '<div>' +
+            '<a class="nl-cta" href="/subscribe" data-nl-go>' +
+              '<span>Subscribe to the digest</span>' +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+            '</a>' +
+            '<div class="nl-fine">Free \u00B7 Sundays \u00B7 Unsubscribe anytime</div>' +
+          '</div>' +
+        '</div>' +
+      '</article>';
+  }
+
   // ---------- Rendering ----------
   function renderCats() {
     var html = '';
@@ -248,9 +298,13 @@
     // Inject ads on the FILTERED list so per-category views obey all placement
     // rules (first-ad-position, intervals, sensitive-categories, never-last).
     items = injectAds(items);
+    // Inject the Newsletter CTA after the 5th story (once per session).
+    items = injectNewsletter(items);
     var html = '';
     for (var i = 0; i < items.length; i++) {
-      html += items[i].isAd ? adHTML(items[i], i) : storyHTML(items[i], i);
+      if (items[i].isAd) html += adHTML(items[i], i);
+      else if (items[i].isNewsletter) html += nlHTML(items[i], i);
+      else html += storyHTML(items[i], i);
     }
     feed.innerHTML = html;
     bindFeedEvents();
