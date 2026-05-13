@@ -23,14 +23,15 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0   # full history so rebase works cleanly
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '20'
+          package-manager-cache: false   # we don't have a lock file in the repo
 
       - name: Install dependencies
         run: npm install --no-audit --no-fund
