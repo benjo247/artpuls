@@ -576,17 +576,19 @@
     return '' +
       '<a href="' + url + '" class="d-hero">' +
         visual +
-        '<div class="d-hero-meta">' +
-          '<span class="d-badge ' + catClass + '">' + cat + '</span>' +
-          (timeStr ? '<span class="d-meta-sep">·</span><span class="d-meta-dim">' + timeStr + '</span>' : '') +
-        '</div>' +
-        '<h1 class="d-hero-headline">' + headline + '</h1>' +
-        (summary ? '<p class="d-hero-summary">' + summary + '</p>' : '') +
-        '<div class="d-hero-source">' +
-          (source ? '<span>' + source + '</span>' : '') +
-          '<span class="d-readlink">' + escapeHTML(t('readFullStory')) +
-            ' <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
-          '</span>' +
+        '<div class="d-hero-content">' +
+          '<div class="d-hero-meta">' +
+            '<span class="d-badge ' + catClass + '">' + cat + '</span>' +
+            (timeStr ? '<span class="d-meta-sep">·</span><span class="d-meta-dim">' + timeStr + '</span>' : '') +
+          '</div>' +
+          '<h1 class="d-hero-headline">' + headline + '</h1>' +
+          (summary ? '<p class="d-hero-summary">' + summary + '</p>' : '') +
+          '<div class="d-hero-source">' +
+            (source ? '<span>' + source + '</span>' : '') +
+            '<span class="d-readlink">' + escapeHTML(t('readFullStory')) +
+              ' <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+            '</span>' +
+          '</div>' +
         '</div>' +
       '</a>';
   }
