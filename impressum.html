@@ -16,7 +16,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -73,10 +73,24 @@
   .back-link:hover { background: rgba(244, 241, 234, 0.1); }
   .back-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
   .logo {
-    font-family: var(--serif); font-size: 22px;
-    display: flex; align-items: center; gap: 8px;
+    font-family: 'Geist', var(--sans);
+    font-size: 22px;
+    line-height: 1;
+    display: inline-flex; align-items: baseline;
     color: var(--fg); text-decoration: none;
   }
+  .logo .art { font-weight: 900; letter-spacing: -0.015em; }
+  .logo .pulse { font-weight: 500; letter-spacing: -0.025em; }
+  .logo .dot {
+    display: inline-block;
+    width: 0.32em; height: 0.32em;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-left: 0.08em;
+    vertical-align: baseline;
+    flex-shrink: 0;
+  }
+  /* Legacy kept for backwards compat */
   .logo-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; margin-bottom: -1px; }
   .logo em { font-style: italic; }
   .lang-toggle {
@@ -173,8 +187,7 @@
       <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
     </a>
     <a href="/" class="logo">
-      <span class="logo-dot"></span>
-      <span>Art<em>Pulse</em></span>
+      <span class="art">art</span><span class="pulse">pulse</span><span class="dot" aria-hidden="true"></span>
     </a>
     <div class="lang-toggle" id="langToggle">
       <button type="button" data-lang="de" class="on">DE</button>

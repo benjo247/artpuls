@@ -79,9 +79,13 @@ body {
   -webkit-backdrop-filter: blur(8px);
 }
 .header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.logo { display: flex; align-items: baseline; gap: 8px; font-family: 'Instrument Serif', serif; font-size: 22px; letter-spacing: -0.01em; color: inherit; text-decoration: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.logo { display: inline-flex; align-items: baseline; font-family: 'Geist', -apple-system, system-ui, sans-serif; font-size: 22px; line-height: 1; color: inherit; text-decoration: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .logo:hover { opacity: 0.85; }
 .logo:active { transform: scale(0.98); }
+.logo .art { font-weight: 900; letter-spacing: -0.015em; }
+.logo .pulse { font-weight: 500; letter-spacing: -0.025em; }
+.logo .dot { display: inline-block; width: 0.32em; height: 0.32em; background: var(--accent); border-radius: 50%; margin-left: 0.08em; vertical-align: baseline; flex-shrink: 0; }
+/* Legacy styles kept for backwards compat with any stale markup, harmless if unused */
 .logo-mark { color: var(--accent); font-size: 10px; transform: translateY(-3px); }
 .logo em { font-style: italic; }
 .header-actions { display: flex; gap: 6px; align-items: center; }
@@ -736,13 +740,25 @@ body.no-scroll {
   flex-shrink: 0;
 }
 .drawer-title {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Geist', -apple-system, system-ui, sans-serif;
   font-size: 22px;
-  display: flex;
+  display: inline-flex;
   align-items: baseline;
-  gap: 8px;
-  letter-spacing: -0.01em;
+  line-height: 1;
 }
+.drawer-title .art { font-weight: 900; letter-spacing: -0.015em; }
+.drawer-title .pulse { font-weight: 500; letter-spacing: -0.025em; }
+.drawer-title .dot {
+  display: inline-block;
+  width: 0.32em;
+  height: 0.32em;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-left: 0.08em;
+  vertical-align: baseline;
+  flex-shrink: 0;
+}
+/* Legacy styles kept for backwards compat */
 .drawer-title em { font-style: italic; }
 .drawer-title .logo-mark {
   width: 7px;
@@ -1010,14 +1026,27 @@ body.no-scroll {
   gap: 32px;
 }
 .d-logo {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Geist', -apple-system, system-ui, sans-serif;
   font-size: 28px;
   line-height: 1;
-  display: flex; align-items: center; gap: 10px;
-  letter-spacing: -0.012em;
+  display: inline-flex;
+  align-items: baseline;
   color: var(--fg);
   text-decoration: none;
 }
+.d-logo .art { font-weight: 900; letter-spacing: -0.015em; }
+.d-logo .pulse { font-weight: 500; letter-spacing: -0.025em; }
+.d-logo .dot {
+  display: inline-block;
+  width: 0.32em;
+  height: 0.32em;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-left: 0.08em;
+  vertical-align: baseline;
+  flex-shrink: 0;
+}
+/* Legacy styles kept for backwards compat */
 .d-logo .logo-mark {
   width: 9px; height: 9px;
   background: var(--accent);
@@ -1421,16 +1450,27 @@ body.no-scroll {
   gap: 48px;
 }
 .d-footer-brand h2 {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Geist', -apple-system, system-ui, sans-serif;
   font-size: 28px;
   line-height: 1;
   margin: 0 0 16px;
-  letter-spacing: -0.02em;
-  font-weight: 400;
-  display: flex; align-items: center; gap: 10px;
+  font-weight: 500;
+  display: inline-flex; align-items: baseline;
   color: var(--fg);
 }
-.d-footer-brand h2 .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+.d-footer-brand h2 .art { font-weight: 900; letter-spacing: -0.015em; }
+.d-footer-brand h2 .pulse { font-weight: 500; letter-spacing: -0.025em; }
+.d-footer-brand h2 .dot {
+  display: inline-block;
+  width: 0.32em;
+  height: 0.32em;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-left: 0.08em;
+  vertical-align: baseline;
+  flex-shrink: 0;
+}
+/* Legacy kept for backwards compat */
 .d-footer-brand h2 em { font-style: italic; }
 .d-footer-brand p {
   font-family: 'Instrument Serif', serif;

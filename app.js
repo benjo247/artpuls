@@ -440,7 +440,7 @@
 
     // ========= Masthead =========
     html += '<header class="d-masthead"><div class="d-masthead-row">';
-    html += '<a href="/" class="d-logo" id="dLogo"><span class="logo-mark"></span>Art<em>Pulse</em></a>';
+    html += '<a href="/" class="d-logo" id="dLogo"><span class="art">art</span><span class="pulse">pulse</span><span class="dot" aria-hidden="true"></span></a>';
     html += '<div class="d-actions">';
     html += '<button class="d-icon-btn" id="dSearchBtn" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>';
     html += '<div class="lang" id="dLang">' +
@@ -683,7 +683,7 @@
       '<footer class="d-footer">' +
         '<div class="d-footer-inner">' +
           '<div class="d-footer-brand">' +
-            '<h2><span class="dot"></span>Art<em>Pulse</em></h2>' +
+            '<h2><span class="art">art</span><span class="pulse">pulse</span><span class="dot" aria-hidden="true"></span></h2>' +
             '<p>' + escapeHTML(t('footerTagline')) + '</p>' +
           '</div>' +
           '<div class="d-footer-col">' +
@@ -736,7 +736,7 @@
 
     // Reuse masthead from magazine view, but logo navigates home
     html += '<header class="d-masthead"><div class="d-masthead-row">';
-    html += '<a href="/" class="d-logo"><span class="logo-mark"></span>Art<em>Pulse</em></a>';
+    html += '<a href="/" class="d-logo"><span class="art">art</span><span class="pulse">pulse</span><span class="dot" aria-hidden="true"></span></a>';
     html += '<div class="d-actions">';
     html += '<a href="/" class="d-back-home" id="dBackHome">' +
               '<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>' +
