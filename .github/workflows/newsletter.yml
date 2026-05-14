@@ -1,0 +1,102 @@
+name: newsletter
+
+# Monthly: 1st of each month at 09:00 UTC (10:00 winter / 11:00 summer Berlin).
+# Plus: manual trigger anytime for testing.
+on:
+  schedule:
+    - cron: '0 9 1 * *'
+  workflow_dispatch:
+
+jobs:
+  build-newsletter:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build newsletter draft
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/build-newsletter.mjs
+
+      - name: Create GitHub Issue with draft
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const html = fs.readFileSync('newsletter-draft.html', 'utf-8');
+            const meta = JSON.parse(fs.readFileSync('newsletter-meta.json', 'utf-8'));
+
+            const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+                            'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+            const now = new Date();
+            const issueLabel = `${months[now.getMonth()]} ${now.getFullYear()}`;
+
+            const body = [
+              `## 📰 Newsletter-Draft: ArtPulse · ${issueLabel}`,
+              ``,
+              `**Subject-Line:** \`${meta.subject}\``,
+              `**Stories:** ${meta.count}`,
+              `**Kategorien:** ${meta.categories.join(', ')}`,
+              `**Generiert:** ${meta.generatedAt}`,
+              ``,
+              `---`,
+              ``,
+              `### Send-Workflow`,
+              ``,
+              `1. **Beehiiv öffnen** → New Post`,
+              `2. **HTML einfügen**: Im Editor das 3-Punkt-Menü → "View HTML" → unten kopierten HTML reinpasten`,
+              `3. **Subject** oben einfügen: \`${meta.subject}\``,
+              `4. **Preview** checken (besonders auf Mobile)`,
+              `5. **Send** (oder Schedule für später)`,
+              ``,
+              `Zeitaufwand: ~3 Minuten.`,
+              ``,
+              `---`,
+              ``,
+              `### HTML zum Kopieren`,
+              ``,
+              `<details>`,
+              `<summary><b>HTML anzeigen</b> (zum Kopieren ausklappen)</summary>`,
+              ``,
+              '```html',
+              html,
+              '```',
+              ``,
+              `</details>`,
+              ``,
+              `---`,
+              ``,
+              `_Automatisch generiert via \`.github/workflows/newsletter.yml\` mit \`scripts/build-newsletter.mjs\`. Bei Fragen oder Issues: dieses Issue kommentieren._`
+            ].join('\n');
+
+            // GitHub Issue body limit is 65,536 chars. Warn if we're close.
+            if (body.length > 60000) {
+              console.warn(`Body length ${body.length} approaching GitHub limit. Consider attaching HTML as artifact.`);
+            }
+
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `📰 Newsletter Draft: ${meta.subject}`,
+              body: body
+            });
+
+            console.log(`Created issue #${issue.data.number}: ${issue.data.html_url}`);
+
+      - name: Upload HTML as artifact (backup)
+        uses: actions/upload-artifact@v4
+        with:
+          name: newsletter-draft
+          path: |
+            newsletter-draft.html
+            newsletter-meta.json
+          retention-days: 90
