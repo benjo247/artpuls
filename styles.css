@@ -1242,13 +1242,14 @@ body.no-scroll {
 /* ===== Story grid (3 columns) ===== */
 .d-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 48px var(--d-gap);
 }
 .d-card {
   display: flex; flex-direction: column;
   text-decoration: none;
   color: var(--fg);
+  min-width: 0;  /* prevent grid track from being forced wider by content */
   transition: opacity .2s ease;
 }
 .d-card:hover { opacity: 0.94; }
@@ -1504,25 +1505,27 @@ body.no-scroll {
 
 /* ============================================================
    TYPOGRAPHY FALLBACK CARDS (for stories without images)
-   Same dimensions as image cards. Category-tinted gradient
-   background, oversized quote mark, italic serif headline as
-   the visual. Elegant editorial fallback rather than a
-   generic default image.
+   Same dimensions as image cards. The HEADLINE itself IS the
+   visual — big italic serif filling the card. Tiny quote mark
+   as a decorative accent, never the main element.
    ============================================================ */
 .d-card-typo,
 .d-hero-typo {
+  width: 100%;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
   padding: 28px 28px 22px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   text-decoration: none;
   color: var(--fg);
   transition: transform .25s cubic-bezier(.2,.8,.2,1);
-  border: 1px solid rgba(244, 241, 234, 0.06);
+  border: 1px solid rgba(244, 241, 234, 0.08);
   background-color: var(--bg-elev, #161311);
+  background-image:
+    radial-gradient(ellipse at top right, rgba(232, 80, 58, 0.04), transparent 60%);
 }
 .d-card-typo {
   aspect-ratio: 4 / 3;
@@ -1531,39 +1534,58 @@ body.no-scroll {
 .d-hero-typo {
   aspect-ratio: 4 / 3;
   margin-bottom: 0;
-  padding: 32px 32px 28px;
+  padding: 40px 44px;
 }
 .d-card:hover .d-card-typo { transform: translateY(-2px); }
 .d-hero:hover .d-hero-typo { transform: translateY(-2px); }
 
+/* Tiny accent dot in top-left + corner mark — subtle, not screaming */
 .d-typo-mark {
   position: absolute;
-  top: -18px;
-  left: 18px;
+  top: 16px;
+  left: 22px;
   font-family: 'Instrument Serif', serif;
-  font-size: 160px;
+  font-size: 36px;
   line-height: 1;
-  color: rgba(244, 241, 234, 0.08);
+  color: var(--accent);
+  opacity: 0.7;
   pointer-events: none;
   user-select: none;
 }
 .d-hero-typo .d-typo-mark {
-  font-size: 240px;
-  top: -32px;
-  left: 36px;
+  font-size: 52px;
+  top: 24px;
+  left: 32px;
 }
+
+/* Category-tinted accent — overrides default vermillion if class present */
+.d-typo-auction    { background-image: radial-gradient(ellipse at top right, rgba(232,  80,  58, 0.06), transparent 60%); }
+.d-typo-auction    .d-typo-mark { color: var(--cat-auction); }
+.d-typo-exhibition { background-image: radial-gradient(ellipse at top right, rgba(212, 165, 116, 0.06), transparent 60%); }
+.d-typo-exhibition .d-typo-mark { color: var(--cat-exhibition); }
+.d-typo-artists    { background-image: radial-gradient(ellipse at top right, rgba(176, 137, 103, 0.06), transparent 60%); }
+.d-typo-artists    .d-typo-mark { color: var(--cat-artists); }
+.d-typo-market     { background-image: radial-gradient(ellipse at top right, rgba(200,  85,  61, 0.06), transparent 60%); }
+.d-typo-market     .d-typo-mark { color: var(--cat-market); }
+.d-typo-museum     { background-image: radial-gradient(ellipse at top right, rgba(122, 158, 159, 0.06), transparent 60%); }
+.d-typo-museum     .d-typo-mark { color: var(--cat-museum); }
+.d-typo-biennale   { background-image: radial-gradient(ellipse at top right, rgba(168, 184, 159, 0.06), transparent 60%); }
+.d-typo-biennale   .d-typo-mark { color: var(--cat-biennale); }
+.d-typo-restitution{ background-image: radial-gradient(ellipse at top right, rgba(155, 133, 121, 0.06), transparent 60%); }
+.d-typo-restitution.d-typo-mark { color: var(--cat-restitution); }
 
 .d-card-typo-headline {
   font-family: 'Instrument Serif', serif;
   font-style: italic;
-  font-size: clamp(22px, 2vw, 28px);
-  line-height: 1.15;
-  letter-spacing: -0.005em;
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
   color: var(--fg);
   position: relative;
   z-index: 1;
+  margin-top: auto;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

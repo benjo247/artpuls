@@ -122,7 +122,14 @@
     return i >= 0 ? LABELS[state.lang].cats[i] : key;
   }
   function getText(story, key) {
-    return story[key + '_' + state.lang] || story[key + '_en'] || story[key] || '';
+    // Defensive: skip whitespace-only strings, fall back through language chain
+    var primary = story[key + '_' + state.lang];
+    if (primary && String(primary).trim()) return primary;
+    var fallback = story[key + '_en'];
+    if (fallback && String(fallback).trim()) return fallback;
+    var legacy = story[key];
+    if (legacy && String(legacy).trim()) return legacy;
+    return '';
   }
   function escapeHTML(s) {
     if (s == null) return '';
