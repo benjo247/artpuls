@@ -33,16 +33,21 @@
 <div class="phone">
   <header class="header">
     <div class="header-top">
-      <div class="logo">
-        <span class="logo-mark">&bull;</span>
-        <span>Art<em>Pulse</em></span>
+      <div class="header-left">
+        <button class="icon-btn icon-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <a class="logo" id="logo" href="/" aria-label="ArtPulse home">
+          <span class="logo-mark">&bull;</span>
+          <span>Art<em>Pulse</em></span>
+        </a>
       </div>
       <div class="header-actions">
         <div class="lang" id="lang">
           <button data-lang="en" class="on">EN</button>
           <button data-lang="de">DE</button>
         </div>
-        <button class="icon-btn" aria-label="Search">
+        <button class="icon-btn" id="searchBtn" aria-label="Search">
           <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         </button>
       </div>
@@ -68,6 +73,67 @@
   </div>
 
   <div class="toast" id="toast" hidden></div>
+
+  <!-- ============ Slide-in Drawer (left) ============ -->
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Main menu">
+    <div class="drawer-head">
+      <span class="drawer-title"><span class="logo-mark">&bull;</span>Art<em>Pulse</em></span>
+      <button class="icon-btn" id="drawerClose" aria-label="Close menu">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="/subscribe" class="drawer-link drawer-link-primary">
+        <span class="drawer-link-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        </span>
+        <span>
+          <span class="drawer-link-label">Subscribe to the digest</span>
+          <span class="drawer-link-meta">The Sunday newsletter</span>
+        </span>
+      </a>
+      <div class="drawer-divider"></div>
+      <a href="/impressum" class="drawer-link">
+        <span class="drawer-link-label">Impressum</span>
+      </a>
+      <a href="/datenschutz" class="drawer-link">
+        <span class="drawer-link-label">Datenschutz</span>
+      </a>
+    </nav>
+    <div class="drawer-foot">
+      <span class="drawer-foot-mono">artpulse.app · 2026</span>
+    </div>
+  </aside>
+
+  <!-- ============ Search Overlay ============ -->
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+    <div class="search-bar">
+      <button class="icon-btn" id="searchClose" aria-label="Close search">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <input
+        class="search-input"
+        id="searchInput"
+        type="search"
+        placeholder="Search artists, exhibitions, museums…"
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+        enterkeyhint="search"
+        aria-label="Search">
+      <button class="icon-btn search-clear" id="searchClear" aria-label="Clear" hidden>
+        <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="search-results" id="searchResults">
+      <div class="search-empty">
+        <p class="search-empty-title">Search the archive</p>
+        <p class="search-empty-sub">Find artists, exhibitions, auction news and more across every story.</p>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script src="/ads.js" defer></script>

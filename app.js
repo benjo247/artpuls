@@ -230,11 +230,36 @@
   }
 
   function onCatClick(e) {
-    state.cat = e.currentTarget.getAttribute('data-cat');
+    var nextCat = e.currentTarget.getAttribute('data-cat');
+    var feed = document.getElementById('feed');
+    if (nextCat === state.cat) {
+      // Same category re-tapped — treat as "scroll to top" shortcut
+      feed.scrollTo({ top: 0, behavior: 'smooth' });
+      state.currentIdx = 0;
+      renderProgress();
+      return;
+    }
+    state.cat = nextCat;
     state.currentIdx = 0;
     renderCats();
     renderFeed();
-    document.getElementById('feed').scrollTo({ top: 0 });
+    feed.scrollTo({ top: 0 });
+  }
+
+  function onLogoClick(e) {
+    // On the feed page: scroll to top instead of full page nav.
+    // On any other page (e.g. /subscribe): let the default link nav happen.
+    if (window.location.pathname === '/' || window.location.pathname === '') {
+      e.preventDefault();
+      // Close article sheet if open
+      if (document.getElementById('sheet').classList.contains('on')) {
+        closeSheet();
+      }
+      var feed = document.getElementById('feed');
+      feed.scrollTo({ top: 0, behavior: 'smooth' });
+      state.currentIdx = 0;
+      renderProgress();
+    }
   }
 
   function renderProgress() {
@@ -466,7 +491,243 @@
     if (state.stories && state.stories.length > 0) renderFeed();
   }
 
+  // ====================================================
+  // Drawer (left slide-in menu)
+  // ====================================================
+  function openDrawer() {
+    var d = document.getElementById('drawer');
+    var bd = document.getElementById('drawerBackdrop');
+    var burger = document.getElementById('burger');
+    if (!d || !bd) return;
+    bd.hidden = false;
+    // Force reflow so transition triggers
+    void bd.offsetHeight;
+    d.classList.add('on');
+    bd.classList.add('on');
+    d.setAttribute('aria-hidden', 'false');
+    if (burger) burger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('no-scroll');
+  }
+  function closeDrawer() {
+    var d = document.getElementById('drawer');
+    var bd = document.getElementById('drawerBackdrop');
+    var burger = document.getElementById('burger');
+    if (!d || !bd) return;
+    d.classList.remove('on');
+    bd.classList.remove('on');
+    d.setAttribute('aria-hidden', 'true');
+    if (burger) burger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('no-scroll');
+    // Hide backdrop after transition (250ms in CSS)
+    setTimeout(function () { if (!bd.classList.contains('on')) bd.hidden = true; }, 300);
+  }
+
+  // ====================================================
+  // Search overlay
+  // ====================================================
+  var searchState = {
+    archive: null,        // cached archive.json on first open
+    debounceTimer: null,
+    lastQuery: ''
+  };
+
+  function openSearch() {
+    var ov = document.getElementById('searchOverlay');
+    var input = document.getElementById('searchInput');
+    if (!ov || !input) return;
+    ov.classList.add('on');
+    ov.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+    // Focus after the transition starts so iOS keyboard appears reliably
+    setTimeout(function () { input.focus(); }, 60);
+    // Lazy-load full archive on first open (we already have latest in state)
+    if (!searchState.archive) {
+      fetch('/data/archive.json')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (data && data.stories) searchState.archive = data.stories;
+        })
+        .catch(function () { /* fall back to state.stories on error */ });
+    }
+  }
+  function closeSearch() {
+    var ov = document.getElementById('searchOverlay');
+    var input = document.getElementById('searchInput');
+    var clear = document.getElementById('searchClear');
+    if (!ov) return;
+    ov.classList.remove('on');
+    ov.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+    if (input) {
+      input.value = '';
+      input.blur();
+    }
+    if (clear) clear.hidden = true;
+    searchState.lastQuery = '';
+    renderSearchEmpty();
+  }
+
+  function onSearchInput() {
+    var input = document.getElementById('searchInput');
+    var clear = document.getElementById('searchClear');
+    if (!input) return;
+    var q = (input.value || '').trim();
+    if (clear) clear.hidden = !q;
+    clearTimeout(searchState.debounceTimer);
+    searchState.debounceTimer = setTimeout(function () {
+      if (q === searchState.lastQuery) return;
+      searchState.lastQuery = q;
+      runSearch(q);
+    }, 180);
+  }
+
+  function runSearch(q) {
+    if (!q) { renderSearchEmpty(); return; }
+    var corpus = searchState.archive || state.stories || [];
+    var qLower = q.toLowerCase();
+    var hits = [];
+    for (var i = 0; i < corpus.length; i++) {
+      var s = corpus[i];
+      if (!s) continue;
+      var hay = [
+        s.headline_en, s.headline_de,
+        s.summary_en, s.summary_de,
+        s.body_en, s.body_de,
+        s.kicker_en, s.kicker_de,
+        s.source, s.cat
+      ].filter(Boolean).join(' \u0000 ').toLowerCase();
+      if (hay.indexOf(qLower) !== -1) hits.push(s);
+      if (hits.length >= 50) break;  // cap visible results
+    }
+    renderSearchResults(hits, q);
+  }
+
+  function renderSearchEmpty() {
+    var results = document.getElementById('searchResults');
+    if (!results) return;
+    results.innerHTML =
+      '<div class="search-empty">' +
+        '<p class="search-empty-title">Search the archive</p>' +
+        '<p class="search-empty-sub">Find artists, exhibitions, auction news and more across every story.</p>' +
+      '</div>';
+  }
+
+  function renderSearchResults(hits, q) {
+    var results = document.getElementById('searchResults');
+    if (!results) return;
+    if (!hits.length) {
+      results.innerHTML =
+        '<div class="search-empty">' +
+          '<p class="search-empty-title">No matches for &ldquo;' + escapeHTML(q) + '&rdquo;</p>' +
+          '<p class="search-empty-sub">Try a different artist name, museum, or topic.</p>' +
+        '</div>';
+      return;
+    }
+    var html = '<div class="search-meta">' + hits.length + ' result' + (hits.length === 1 ? '' : 's') + '</div>';
+    for (var i = 0; i < hits.length; i++) {
+      html += searchResultHTML(hits[i]);
+    }
+    results.innerHTML = html;
+    var nodes = results.querySelectorAll('[data-search-id]');
+    for (var j = 0; j < nodes.length; j++) {
+      nodes[j].addEventListener('click', onSearchResultClick);
+    }
+  }
+
+  function searchResultHTML(s) {
+    var image = s.image
+      ? '<div class="sr-img" style="background-image:url(' + JSON.stringify(s.image).replace(/^"|"$/g, '') + ')"></div>'
+      : '<div class="sr-img sr-img-empty"></div>';
+    var headline = escapeHTML(getText(s, 'headline'));
+    var summary = escapeHTML(getText(s, 'summary') || '').slice(0, 120);
+    var cat = catLabel(s.cat || 'all');
+    var source = escapeHTML(s.source || '');
+    return '' +
+      '<a class="sr-item" href="/s/' + encodeURIComponent(s.id) + '" data-search-id="' + escapeAttr(s.id) + '">' +
+        image +
+        '<div class="sr-body">' +
+          '<div class="sr-meta">' + cat + (source ? ' &middot; ' + source : '') + '</div>' +
+          '<div class="sr-headline">' + headline + '</div>' +
+          (summary ? '<div class="sr-summary">' + summary + (summary.length === 120 ? '\u2026' : '') + '</div>' : '') +
+        '</div>' +
+      '</a>';
+  }
+
+  function onSearchResultClick(e) {
+    var id = e.currentTarget.getAttribute('data-search-id');
+    var s = findStory(id);
+    if (s) {
+      // Story is loaded in feed — open sheet directly
+      e.preventDefault();
+      closeSearch();
+      openSheet(id);
+    } else if (searchState.archive) {
+      // Pull from archive into state.stories, then open sheet
+      var found = null;
+      for (var i = 0; i < searchState.archive.length; i++) {
+        if (String(searchState.archive[i].id) === String(id)) { found = searchState.archive[i]; break; }
+      }
+      if (found) {
+        e.preventDefault();
+        state.stories = [found].concat(state.stories);
+        renderFeed();
+        closeSearch();
+        openSheet(id);
+      }
+      // else: fall through to default link nav to /s/:id
+    }
+  }
+
   function init() {
+    // Logo: scroll-to-top on home, navigate-home elsewhere
+    var logo = document.getElementById('logo');
+    if (logo) logo.addEventListener('click', onLogoClick);
+
+    // Burger menu
+    var burger = document.getElementById('burger');
+    var drawerClose = document.getElementById('drawerClose');
+    var drawerBackdrop = document.getElementById('drawerBackdrop');
+    if (burger) burger.addEventListener('click', openDrawer);
+    if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+    if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+    // Close drawer when any link inside is clicked (so it shuts before nav)
+    var drawerLinks = document.querySelectorAll('.drawer-link');
+    for (var di = 0; di < drawerLinks.length; di++) {
+      drawerLinks[di].addEventListener('click', function () { closeDrawer(); });
+    }
+
+    // Search
+    var searchBtn = document.getElementById('searchBtn');
+    var searchClose = document.getElementById('searchClose');
+    var searchClear = document.getElementById('searchClear');
+    var searchInput = document.getElementById('searchInput');
+    if (searchBtn) searchBtn.addEventListener('click', openSearch);
+    if (searchClose) searchClose.addEventListener('click', closeSearch);
+    if (searchClear) searchClear.addEventListener('click', function () {
+      var input = document.getElementById('searchInput');
+      if (input) { input.value = ''; input.focus(); }
+      searchClear.hidden = true;
+      searchState.lastQuery = '';
+      renderSearchEmpty();
+    });
+    if (searchInput) {
+      searchInput.addEventListener('input', onSearchInput);
+      searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { e.preventDefault(); closeSearch(); }
+      });
+    }
+
+    // Global ESC closes drawer, search, or sheet (in that order of precedence)
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      var drawer = document.getElementById('drawer');
+      var search = document.getElementById('searchOverlay');
+      var sheet = document.getElementById('sheet');
+      if (drawer && drawer.classList.contains('on')) { closeDrawer(); return; }
+      if (search && search.classList.contains('on')) { closeSearch(); return; }
+      if (sheet && sheet.classList.contains('on')) { closeSheet(); }
+    });
+
     // Language buttons
     var langButtons = document.querySelectorAll('#lang button');
     for (var i = 0; i < langButtons.length; i++) {
