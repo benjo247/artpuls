@@ -2,7 +2,7 @@ name: Fetch news
 
 on:
   schedule:
-    - cron: '7 */2 * * *'   # every 2 hours at minute 7
+    - cron: '7 6,11,17 * * *'   # 3x daily: 06:07, 11:07, 17:07 UTC (~morning/noon/evening CET)
   workflow_dispatch:       # manual trigger button in GitHub UI
   push:
     branches: [main]
