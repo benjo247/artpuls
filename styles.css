@@ -1575,3 +1575,104 @@ body.no-scroll {
 .d-typo-museum     { background: linear-gradient(135deg, rgba(122,158,159,0.26), rgba(122,158,159,0.04)) var(--bg-elev, #161311); }
 .d-typo-biennale   { background: linear-gradient(135deg, rgba(168,184,159,0.24), rgba(168,184,159,0.04)) var(--bg-elev, #161311); }
 .d-typo-restitution{ background: linear-gradient(135deg, rgba(155,133,121,0.26), rgba(155,133,121,0.04)) var(--bg-elev, #161311); }
+
+/* ============================================================
+   DESKTOP ARTICLE VIEW (deep-link reader)
+   Shown on /s/:id at >=1024px. Replaces the magazine layout.
+   ============================================================ */
+.d-back-home {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  background: rgba(244, 241, 234, 0.05);
+  border: 1px solid var(--d-rule);
+  border-radius: 100px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color .15s ease, background .15s ease;
+}
+.d-back-home:hover { color: var(--fg); background: rgba(244, 241, 234, 0.1); }
+.d-back-home svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+.d-article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px var(--d-side, 48px) 64px;
+}
+.d-article-hero {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bg-elev, #161311);
+  border-radius: 4px;
+  margin-bottom: 40px;
+}
+.d-article-body { }
+.d-article-meta {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 24px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  flex-wrap: wrap;
+}
+.d-article-kicker {
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin: 0 0 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.d-article-kicker::before { content: ''; width: 22px; height: 1px; background: var(--accent); }
+.d-article-headline {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(40px, 4.5vw, 60px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  margin: 0 0 24px;
+  color: var(--fg);
+}
+.d-article-headline em { font-style: italic; color: var(--d-fg-2, #d8d1c4); }
+.d-article-summary {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--d-fg-2, #d8d1c4);
+  margin: 0 0 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--d-rule);
+}
+.d-article-content {
+  font-family: 'Geist', sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--fg);
+  margin: 0 0 40px;
+}
+.d-article-content p { margin: 0 0 18px; }
+.d-article-content p:last-child { margin-bottom: 0; }
+.d-article-source {
+  padding-top: 28px;
+  border-top: 1px solid var(--d-rule);
+}
+.d-article-source .d-readlink {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding-bottom: 2px;
+}
+.d-article-source .d-readlink svg { width: 12px; height: 12px; }
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .d-article { padding: 36px 32px 48px; }
+}

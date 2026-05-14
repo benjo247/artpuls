@@ -402,8 +402,27 @@
     var root = document.getElementById('desktop');
     if (!root) return;
     var stories = filteredStories();
-    var hero = stories[0] || null;
-    var rest = stories.slice(1);
+
+    // Pick a hero with visual impact: first story with an image.
+    // Falls back to first story if none have images (typo hero).
+    var hero = null;
+    var heroIndex = -1;
+    for (var k = 0; k < stories.length; k++) {
+      if (stories[k] && stories[k].image) {
+        hero = stories[k];
+        heroIndex = k;
+        break;
+      }
+    }
+    if (!hero && stories.length > 0) {
+      hero = stories[0];
+      heroIndex = 0;
+    }
+    // Build the rest excluding the hero (preserving newest-first order)
+    var rest = [];
+    for (var k2 = 0; k2 < stories.length; k2++) {
+      if (k2 !== heroIndex) rest.push(stories[k2]);
+    }
 
     var html = '';
 
@@ -504,12 +523,41 @@
     return base + ' · ' + stamp;
   }
 
+  // Relative time formatter for card/hero meta lines
+  // ("just now", "5h ago", "yesterday", "14 May")
+  function formatRelTime(iso, lang) {
+    if (!iso) return '';
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '';
+    var diff = Date.now() - d.getTime();
+    var sec = Math.floor(diff / 1000);
+    var min = Math.floor(sec / 60);
+    var hr = Math.floor(min / 60);
+    var day = Math.floor(hr / 24);
+    if (lang === 'de') {
+      if (sec < 60) return 'gerade eben';
+      if (min < 60) return 'vor ' + min + ' Min';
+      if (hr < 24) return 'vor ' + hr + ' Std';
+      if (day === 1) return 'gestern';
+      if (day < 7) return 'vor ' + day + ' Tagen';
+      var deMonths = ['Jan', 'Feb', 'M\u00E4r', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
+      return d.getDate() + '. ' + deMonths[d.getMonth()];
+    }
+    if (sec < 60) return 'just now';
+    if (min < 60) return min + 'm ago';
+    if (hr < 24) return hr + 'h ago';
+    if (day === 1) return 'yesterday';
+    if (day < 7) return day + 'd ago';
+    var enMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return d.getDate() + ' ' + enMonths[d.getMonth()];
+  }
+
   function desktopHeroHTML(s) {
     var hasImage = !!s.image;
     var headline = escapeHTML(getText(s, 'headline'));
     var summary = escapeHTML(getText(s, 'summary') || '');
     var source = escapeHTML(s.source || '');
-    var timeStr = escapeHTML(getText(s, 'time') || '');
+    var timeStr = escapeHTML(formatRelTime(s.publishedAt, state.lang));
     var catKey = s.cat || 'all';
     var cat = escapeHTML(catLabel(catKey));
     var catClass = 'cat-' + catKey;
@@ -548,7 +596,7 @@
     var headline = escapeHTML(getText(s, 'headline'));
     var summary = escapeHTML(getText(s, 'summary') || '');
     var source = escapeHTML(s.source || '');
-    var timeStr = escapeHTML(getText(s, 'time') || '');
+    var timeStr = escapeHTML(formatRelTime(s.publishedAt, state.lang));
     var catKey = s.cat || 'all';
     var cat = escapeHTML(catLabel(catKey));
     var catClass = 'cat-' + catKey;
@@ -647,6 +695,104 @@
           '<span>artpulse.app</span>' +
         '</div>' +
       '</footer>';
+  }
+
+  // ====================================================
+  // Desktop ARTICLE view — when user lands on /s/:id deep-link
+  // Replaces the magazine layout with a focused reader.
+  // ====================================================
+  function renderDesktopArticle(s) {
+    var root = document.getElementById('desktop');
+    if (!root || !s) return;
+
+    var headline = escapeHTML(getText(s, 'headline'));
+    var summary = escapeHTML(getText(s, 'summary') || '');
+    var body = escapeHTML(getText(s, 'body') || '').replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>');
+    var kicker = escapeHTML(getText(s, 'kicker') || '');
+    var source = escapeHTML(s.source || '');
+    var sourceUrl = s.url || '';
+    var timeStr = escapeHTML(formatRelTime(s.publishedAt, state.lang));
+    var catKey = s.cat || 'all';
+    var cat = escapeHTML(catLabel(catKey));
+    var catClass = 'cat-' + catKey;
+    var image = s.image;
+
+    var html = '';
+
+    // Reuse masthead from magazine view, but logo navigates home
+    html += '<header class="d-masthead"><div class="d-masthead-row">';
+    html += '<a href="/" class="d-logo"><span class="logo-mark"></span>Art<em>Pulse</em></a>';
+    html += '<div class="d-actions">';
+    html += '<a href="/" class="d-back-home" id="dBackHome">' +
+              '<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>' +
+              '<span>' + escapeHTML(state.lang === 'de' ? 'Zur \u00DCbersicht' : 'Back to feed') + '</span>' +
+            '</a>';
+    html += '<div class="lang" id="dLang">' +
+            '<button data-lang="en"' + (state.lang === 'en' ? ' class="on"' : '') + '>EN</button>' +
+            '<button data-lang="de"' + (state.lang === 'de' ? ' class="on"' : '') + '>DE</button>' +
+            '</div>';
+    html += '<a href="/subscribe" class="d-subscribe-pill">' + escapeHTML(t('subscribe')) + '</a>';
+    html += '</div></div></header>';
+
+    // Article
+    html += '<article class="d-article">';
+    if (image) {
+      html += '<div class="d-article-hero" style="background-image:url(' + JSON.stringify(image).replace(/^"|"$/g, '') + ')"></div>';
+    }
+    html += '<div class="d-article-body">';
+    html += '<div class="d-article-meta">';
+    html += '<span class="d-badge ' + catClass + '">' + cat + '</span>';
+    if (source) html += '<span class="d-meta-sep">\u00B7</span><span class="d-meta-dim">' + source + '</span>';
+    if (timeStr) html += '<span class="d-meta-sep">\u00B7</span><span class="d-meta-dim">' + timeStr + '</span>';
+    html += '</div>';
+    if (kicker) html += '<p class="d-article-kicker">' + kicker + '</p>';
+    html += '<h1 class="d-article-headline">' + headline + '</h1>';
+    if (summary) html += '<p class="d-article-summary">' + summary + '</p>';
+    if (body) html += '<div class="d-article-content"><p>' + body + '</p></div>';
+    if (sourceUrl) {
+      html += '<div class="d-article-source">' +
+        '<a href="' + escapeAttr(sourceUrl) + '" target="_blank" rel="noopener" class="d-readlink">' +
+          escapeHTML(state.lang === 'de' ? 'Bei ' + (source || 'der Quelle') + ' weiterlesen' : 'Read full story at ' + (source || 'source')) +
+          ' <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+        '</a>' +
+      '</div>';
+    }
+    html += '</div></article>';
+
+    // Footer
+    html += desktopFooterHTML();
+
+    root.innerHTML = html;
+    bindDesktopArticleEvents();
+    // Scroll to top on render
+    window.scrollTo({ top: 0 });
+  }
+
+  function bindDesktopArticleEvents() {
+    // Language toggle re-renders the same article in the new language
+    var langBtns = document.querySelectorAll('#dLang button');
+    for (var j = 0; j < langBtns.length; j++) {
+      langBtns[j].addEventListener('click', function (e) {
+        setLang(e.currentTarget.getAttribute('data-lang'));
+        // setLang triggers renderActive(); we need to re-render the article view
+        var path = location.pathname.match(/^\/s\/([\w-]+)$/);
+        if (path) {
+          var s = findStory(path[1]);
+          if (s) renderDesktopArticle(s);
+        }
+      });
+    }
+    // Footer category links navigate back to home filtered by category
+    var navBtns = document.querySelectorAll('[data-d-cat]');
+    for (var i = 0; i < navBtns.length; i++) {
+      navBtns[i].addEventListener('click', function (e) {
+        e.preventDefault();
+        var cat = e.currentTarget.getAttribute('data-d-cat');
+        state.cat = cat || 'all';
+        // Navigate to home with cat set
+        location.href = '/';
+      });
+    }
   }
 
   function bindDesktopEvents() {
@@ -1164,25 +1310,26 @@
           if (isDesktop) renderActive();
         });
       }
-      // Resolve deep-link if present (mobile: opens sheet; desktop: navigates to permalink)
+      // Resolve deep-link if present.
+      // Mobile: opens story sheet over the feed.
+      // Desktop: replaces magazine view with a full article view.
       if (state.pendingDeepLink) {
         var id = state.pendingDeepLink;
         state.pendingDeepLink = null;
-        if (isDesktop) {
-          // On desktop, deep links go through the /s/ permalink page (Edge Function)
-          // — keep simple, no in-page modal yet
-          return;
-        }
         var s = findStory(id);
         if (s) {
-          openSheet(id);
+          if (isDesktop) renderDesktopArticle(s);
+          else openSheet(id);
         } else {
           // Story might be in archive but not in latest — fetch archive once
-          fetch('/data/archive.json').then(function (r) { return r.json(); }).then(function (data) {
+          fetch('/data/archive.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
             if (!data || !data.stories) return;
             var found = data.stories.find(function (x) { return String(x.id) === String(id); });
-            if (found) {
-              state.stories = [found].concat(state.stories);
+            if (!found) return;
+            state.stories = [found].concat(state.stories);
+            if (isDesktop) {
+              renderDesktopArticle(found);
+            } else {
               renderActive();
               openSheet(id);
             }
