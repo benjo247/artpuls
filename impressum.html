@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -9,7 +9,7 @@
 <meta name="robots" content="noindex, follow">
 
 <title>Impressum — ArtPulse</title>
-<meta name="description" content="Impressum gemäß § 5 TMG für ArtPulse.">
+<meta name="description" content="Impressum / Legal notice für ArtPulse gemäß § 5 TMG.">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
@@ -59,111 +59,109 @@
     padding: 18px 0;
     flex-shrink: 0;
     border-bottom: 1px solid var(--fg-border);
+    gap: 12px;
   }
   .back-link {
     width: 36px; height: 36px;
     background: var(--fg-fade);
     border: 1px solid var(--fg-border);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--fg);
-    text-decoration: none;
-    transition: background .15s ease;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--fg); text-decoration: none;
+    transition: background .15s ease; flex-shrink: 0;
   }
   .back-link:hover { background: rgba(244, 241, 234, 0.1); }
   .back-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
   .logo {
-    font-family: var(--serif);
-    font-size: 22px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--fg);
-    text-decoration: none;
+    font-family: var(--serif); font-size: 22px;
+    display: flex; align-items: center; gap: 8px;
+    color: var(--fg); text-decoration: none;
   }
   .logo-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; margin-bottom: -1px; }
   .logo em { font-style: italic; }
-  .header-spacer { width: 36px; }
+  .lang-toggle {
+    display: flex;
+    background: var(--fg-fade);
+    border: 1px solid var(--fg-border);
+    border-radius: 100px;
+    padding: 3px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .lang-toggle button {
+    background: none; border: none;
+    color: var(--fg-muted);
+    padding: 6px 12px; border-radius: 100px;
+    cursor: pointer;
+    font-family: inherit; font-size: inherit; font-weight: inherit;
+    letter-spacing: 0.05em;
+    transition: color .15s ease;
+  }
+  .lang-toggle button.on { background: var(--fg); color: var(--bg); }
+
+  [data-lang="de"] .content-en { display: none; }
+  [data-lang="en"] .content-de { display: none; }
 
   main { padding: 48px 0 24px; flex: 1; }
   .meta {
-    font-family: var(--mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: var(--accent);
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-family: var(--mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--accent); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px;
   }
   .meta::before { content: ''; width: 22px; height: 1px; background: var(--accent); }
   h1 {
-    font-family: var(--serif);
-    font-size: clamp(48px, 8vw, 64px);
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    margin: 0 0 32px;
-    font-weight: 400;
+    font-family: var(--serif); font-size: clamp(48px, 8vw, 64px);
+    line-height: 0.95; letter-spacing: -0.02em;
+    margin: 0 0 32px; font-weight: 400;
   }
   h1 em { font-style: italic; color: var(--fg-muted); }
-
   h2 {
-    font-family: var(--serif);
-    font-size: 22px;
-    line-height: 1.2;
-    margin: 36px 0 12px;
-    font-weight: 400;
-    letter-spacing: -0.005em;
+    font-family: var(--serif); font-size: 22px;
+    line-height: 1.2; margin: 36px 0 12px;
+    font-weight: 400; letter-spacing: -0.005em;
   }
-
   p, address { font-size: 15px; color: var(--fg); margin: 0 0 14px; font-style: normal; }
   address { line-height: 1.5; }
   a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(232, 80, 58, 0.35); }
   a:hover { border-bottom-color: var(--accent); }
   strong { font-weight: 500; }
-
   .placeholder {
-    display: inline-block;
-    padding: 1px 6px;
+    display: inline-block; padding: 1px 6px;
     background: rgba(232, 80, 58, 0.12);
     border: 1px dashed rgba(232, 80, 58, 0.4);
-    color: var(--accent);
-    border-radius: 3px;
-    font-family: var(--mono);
-    font-size: 12px;
+    color: var(--accent); border-radius: 3px;
+    font-family: var(--mono); font-size: 12px;
   }
   .notice {
-    margin: 24px 0;
-    padding: 18px 20px;
+    margin: 24px 0; padding: 18px 20px;
     background: rgba(232, 80, 58, 0.08);
     border-left: 3px solid var(--accent);
-    font-size: 13px;
-    color: var(--fg-muted);
+    font-size: 13px; color: var(--fg-muted);
     line-height: 1.5;
   }
   .notice strong { color: var(--accent); }
-
   .foot {
-    margin-top: 48px;
-    padding: 24px 0;
+    margin-top: 48px; padding: 24px 0;
     border-top: 1px solid var(--fg-border);
-    font-family: var(--mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    font-family: var(--mono); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.14em;
     color: var(--fg-muted);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    align-items: center;
+    display: flex; flex-wrap: wrap; gap: 16px;
+    justify-content: center; align-items: center;
   }
   .foot a { color: var(--fg-muted); border: none; }
   .foot a:hover { color: var(--fg); }
   .foot .sep { opacity: 0.4; }
+
+  @media (min-width: 768px) {
+    .frame { max-width: 760px; padding: 0 40px; }
+    main { padding: 64px 0 32px; }
+    p, address { font-size: 16px; }
+    h2 { font-size: 26px; margin-top: 44px; }
+  }
 </style>
 </head>
 <body>
@@ -178,10 +176,14 @@
       <span class="logo-dot"></span>
       <span>Art<em>Pulse</em></span>
     </a>
-    <div class="header-spacer"></div>
+    <div class="lang-toggle" id="langToggle">
+      <button type="button" data-lang="de" class="on">DE</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
   </header>
 
-  <main>
+  <!-- ================ GERMAN ================ -->
+  <main class="content-de" lang="de">
     <div class="meta">Rechtliches</div>
     <h1>Impressum</h1>
 
@@ -199,9 +201,7 @@
     </address>
 
     <h2>Kontakt</h2>
-    <p>
-      E-Mail: <span class="placeholder">hello@artpulse.app</span>
-    </p>
+    <p>E-Mail: <span class="placeholder">hello@artpulse.app</span></p>
 
     <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
     <address>
@@ -216,33 +216,68 @@
       <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
       Unsere E-Mail-Adresse finden Sie oben im Impressum.
     </p>
-    <p>
-      Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-    </p>
+    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
 
     <h2>Haftung für Inhalte</h2>
-    <p>
-      Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-    </p>
-    <p>
-      Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-    </p>
+    <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+    <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
 
     <h2>Haftung für Links</h2>
-    <p>
-      Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
-    </p>
-    <p>
-      Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
-    </p>
+    <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+    <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
 
     <h2>Urheberrecht</h2>
+    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+    <p>Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+  </main>
+
+  <!-- ================ ENGLISH ================ -->
+  <main class="content-en" lang="en">
+    <div class="meta">Legal</div>
+    <h1>Legal <em>notice.</em></h1>
+
+    <div class="notice">
+      <strong>Note:</strong> This page is currently a work in progress. Placeholders will be replaced with final details before public launch. The German version (DE) is the legally binding one under § 5 TMG.
+    </div>
+
+    <h2>Information pursuant to § 5 TMG (German Telemedia Act)</h2>
+    <address>
+      <span class="placeholder">Full name</span><br>
+      <span class="placeholder">c/o Impressumservice / Business address</span><br>
+      <span class="placeholder">Street and number</span><br>
+      <span class="placeholder">Postal code, City</span><br>
+      Germany
+    </address>
+
+    <h2>Contact</h2>
+    <p>Email: <span class="placeholder">hello@artpulse.app</span></p>
+
+    <h2>Responsible for content according to § 18 sec. 2 MStV (German Interstate Media Treaty)</h2>
+    <address>
+      <span class="placeholder">Full name</span><br>
+      <span class="placeholder">c/o Impressumservice / Business address</span><br>
+      <span class="placeholder">Postal code, City</span>
+    </address>
+
+    <h2>Dispute resolution</h2>
     <p>
-      Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+      The European Commission provides a platform for online dispute resolution (ODR):
+      <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
+      Our email address can be found above.
     </p>
-    <p>
-      Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
-    </p>
+    <p>We are neither willing nor obligated to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+
+    <h2>Liability for content</h2>
+    <p>As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 sec. 1 TMG. According to §§ 8 to 10 TMG, however, we as a service provider are not obligated to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity.</p>
+    <p>Obligations to remove or block the use of information under general laws remain unaffected. Liability in this regard is only possible from the moment of knowledge of a specific legal infringement. Upon becoming aware of corresponding legal violations, we will remove this content immediately.</p>
+
+    <h2>Liability for links</h2>
+    <p>Our offer contains links to external third-party websites over whose content we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the linked pages is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking. No illegal content was apparent at that time.</p>
+    <p>However, a permanent content review of the linked pages is not reasonable without concrete evidence of a legal violation. Upon becoming aware of legal violations, we will remove such links immediately.</p>
+
+    <h2>Copyright</h2>
+    <p>The content and works on these pages created by the site operators are subject to German copyright law. Reproduction, processing, distribution, and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator.</p>
+    <p>Downloads and copies of this page are only permitted for private, non-commercial use. Insofar as the content on this page was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please notify us. Upon becoming aware of legal violations, we will remove such content immediately.</p>
   </main>
 
   <footer class="foot">
@@ -254,6 +289,38 @@
   </footer>
 
 </div>
+
+<script>
+  // Bilingual toggle — reads/writes localStorage 'kp-lang' (shared with main app)
+  (function () {
+    var html = document.documentElement;
+    var toggle = document.getElementById('langToggle');
+    if (!toggle) return;
+    var saved;
+    try { saved = localStorage.getItem('kp-lang'); } catch (e) {}
+    var lang = (saved === 'en' || saved === 'de') ? saved : 'de';
+    applyLang(lang);
+
+    toggle.addEventListener('click', function (e) {
+      var btn = e.target.closest('button[data-lang]');
+      if (!btn) return;
+      var newLang = btn.getAttribute('data-lang');
+      applyLang(newLang);
+      try { localStorage.setItem('kp-lang', newLang); } catch (e) {}
+    });
+
+    function applyLang(l) {
+      html.setAttribute('data-lang', l);
+      html.setAttribute('lang', l);
+      var buttons = toggle.querySelectorAll('button');
+      for (var i = 0; i < buttons.length; i++) {
+        if (buttons[i].getAttribute('data-lang') === l) buttons[i].classList.add('on');
+        else buttons[i].classList.remove('on');
+      }
+      document.title = (l === 'en') ? 'Legal notice — ArtPulse' : 'Impressum — ArtPulse';
+    }
+  })();
+</script>
 
 </body>
 </html>

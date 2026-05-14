@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -9,7 +9,7 @@
 <meta name="robots" content="noindex, follow">
 
 <title>Datenschutz — ArtPulse</title>
-<meta name="description" content="Datenschutzerklärung für ArtPulse gemäß Art. 13 DSGVO.">
+<meta name="description" content="Datenschutzerklärung / Privacy policy für ArtPulse gemäß Art. 13 DSGVO.">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
@@ -59,80 +59,81 @@
     padding: 18px 0;
     flex-shrink: 0;
     border-bottom: 1px solid var(--fg-border);
+    gap: 12px;
   }
   .back-link {
     width: 36px; height: 36px;
     background: var(--fg-fade);
     border: 1px solid var(--fg-border);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--fg);
-    text-decoration: none;
-    transition: background .15s ease;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--fg); text-decoration: none;
+    transition: background .15s ease; flex-shrink: 0;
   }
   .back-link:hover { background: rgba(244, 241, 234, 0.1); }
   .back-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
   .logo {
-    font-family: var(--serif);
-    font-size: 22px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--fg);
-    text-decoration: none;
+    font-family: var(--serif); font-size: 22px;
+    display: flex; align-items: center; gap: 8px;
+    color: var(--fg); text-decoration: none;
   }
   .logo-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; margin-bottom: -1px; }
   .logo em { font-style: italic; }
-  .header-spacer { width: 36px; }
+  .lang-toggle {
+    display: flex;
+    background: var(--fg-fade);
+    border: 1px solid var(--fg-border);
+    border-radius: 100px;
+    padding: 3px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .lang-toggle button {
+    background: none; border: none;
+    color: var(--fg-muted);
+    padding: 6px 12px; border-radius: 100px;
+    cursor: pointer;
+    font-family: inherit; font-size: inherit; font-weight: inherit;
+    letter-spacing: 0.05em;
+    transition: color .15s ease;
+  }
+  .lang-toggle button.on { background: var(--fg); color: var(--bg); }
+
+  [data-lang="de"] .content-en { display: none; }
+  [data-lang="en"] .content-de { display: none; }
 
   main { padding: 48px 0 24px; flex: 1; }
   .meta {
-    font-family: var(--mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: var(--accent);
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-family: var(--mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--accent); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px;
   }
   .meta::before { content: ''; width: 22px; height: 1px; background: var(--accent); }
   h1 {
-    font-family: var(--serif);
-    font-size: clamp(48px, 8vw, 64px);
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    margin: 0 0 16px;
-    font-weight: 400;
+    font-family: var(--serif); font-size: clamp(48px, 8vw, 64px);
+    line-height: 0.95; letter-spacing: -0.02em;
+    margin: 0 0 16px; font-weight: 400;
   }
   h1 em { font-style: italic; color: var(--fg-muted); }
   .lead {
-    font-family: var(--serif);
-    font-size: 19px;
-    color: var(--fg-muted);
-    margin: 0 0 32px;
+    font-family: var(--serif); font-size: 19px;
+    color: var(--fg-muted); margin: 0 0 32px;
     line-height: 1.4;
   }
   h2 {
-    font-family: var(--serif);
-    font-size: 26px;
-    line-height: 1.2;
-    margin: 48px 0 12px;
-    font-weight: 400;
-    letter-spacing: -0.005em;
+    font-family: var(--serif); font-size: 26px;
+    line-height: 1.2; margin: 48px 0 12px;
+    font-weight: 400; letter-spacing: -0.005em;
   }
   h2 em { font-style: italic; color: var(--fg-muted); }
   h3 {
     font-family: 'Geist', sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--accent);
-    margin: 28px 0 10px;
-    font-weight: 500;
+    font-size: 14px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--accent);
+    margin: 28px 0 10px; font-weight: 500;
   }
   p, li { font-size: 15px; color: var(--fg); margin: 0 0 12px; }
   ul { margin: 0 0 12px; padding-left: 24px; }
@@ -141,75 +142,62 @@
   a:hover { border-bottom-color: var(--accent); }
   strong { font-weight: 500; }
   code {
-    font-family: var(--mono);
-    font-size: 12px;
+    font-family: var(--mono); font-size: 12px;
     background: var(--fg-fade);
-    padding: 2px 6px;
-    border-radius: 3px;
+    padding: 2px 6px; border-radius: 3px;
     color: var(--fg);
   }
   .placeholder {
-    display: inline-block;
-    padding: 1px 6px;
+    display: inline-block; padding: 1px 6px;
     background: rgba(232, 80, 58, 0.12);
     border: 1px dashed rgba(232, 80, 58, 0.4);
-    color: var(--accent);
-    border-radius: 3px;
-    font-family: var(--mono);
-    font-size: 12px;
+    color: var(--accent); border-radius: 3px;
+    font-family: var(--mono); font-size: 12px;
   }
   .notice {
-    margin: 24px 0;
-    padding: 18px 20px;
+    margin: 24px 0; padding: 18px 20px;
     background: rgba(232, 80, 58, 0.08);
     border-left: 3px solid var(--accent);
-    font-size: 13px;
-    color: var(--fg-muted);
+    font-size: 13px; color: var(--fg-muted);
     line-height: 1.5;
   }
   .notice strong { color: var(--accent); }
   .toc {
-    padding: 22px 24px;
-    margin: 24px 0 40px;
-    background: var(--fg-fade);
-    border-radius: 4px;
+    padding: 22px 24px; margin: 24px 0 40px;
+    background: var(--fg-fade); border-radius: 4px;
   }
   .toc-title {
-    font-family: var(--mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: var(--fg-muted);
-    margin-bottom: 12px;
+    font-family: var(--mono); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--fg-muted); margin-bottom: 12px;
   }
   .toc ol {
-    margin: 0;
-    padding-left: 20px;
-    font-size: 13px;
-    line-height: 1.7;
+    margin: 0; padding-left: 20px;
+    font-size: 13px; line-height: 1.7;
   }
   .toc ol a { color: var(--fg); border: none; }
   .toc ol a:hover { color: var(--accent); }
   .toc ol li::marker { color: var(--fg-muted); font-family: var(--mono); font-size: 11px; }
-
   .foot {
-    margin-top: 48px;
-    padding: 24px 0;
+    margin-top: 48px; padding: 24px 0;
     border-top: 1px solid var(--fg-border);
-    font-family: var(--mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    font-family: var(--mono); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.14em;
     color: var(--fg-muted);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    align-items: center;
+    display: flex; flex-wrap: wrap; gap: 16px;
+    justify-content: center; align-items: center;
   }
   .foot a { color: var(--fg-muted); border: none; }
   .foot a:hover { color: var(--fg); }
   .foot .sep { opacity: 0.4; }
+
+  @media (min-width: 768px) {
+    .frame { max-width: 760px; padding: 0 40px; }
+    main { padding: 64px 0 32px; }
+    p, li { font-size: 16px; }
+    h2 { font-size: 30px; margin-top: 56px; }
+    .lead { font-size: 21px; }
+  }
 </style>
 </head>
 <body>
@@ -224,10 +212,14 @@
       <span class="logo-dot"></span>
       <span>Art<em>Pulse</em></span>
     </a>
-    <div class="header-spacer"></div>
+    <div class="lang-toggle" id="langToggle">
+      <button type="button" data-lang="de" class="on">DE</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
   </header>
 
-  <main>
+  <!-- ================ GERMAN ================ -->
+  <main class="content-de" lang="de">
     <div class="meta">Rechtliches</div>
     <h1>Daten<em>schutz.</em></h1>
     <p class="lead">Informationen zur Verarbeitung personenbezogener Daten gemäß Art. 13 DSGVO. Stand: <span class="placeholder">Datum</span>.</p>
@@ -239,22 +231,22 @@
     <div class="toc">
       <div class="toc-title">Inhalt</div>
       <ol>
-        <li><a href="#verantwortlich">Verantwortlicher</a></li>
-        <li><a href="#hosting">Hosting durch Vercel</a></li>
-        <li><a href="#logfiles">Server-Logfiles</a></li>
-        <li><a href="#local-storage">Lokale Speicherung im Browser</a></li>
-        <li><a href="#newsletter">Newsletter via Beehiiv</a></li>
-        <li><a href="#fonts">Schriftarten (Google Fonts)</a></li>
-        <li><a href="#sources">Externe Nachrichtenquellen</a></li>
-        <li><a href="#ki">KI-Verarbeitung (Anthropic)</a></li>
-        <li><a href="#cookies">Cookies</a></li>
-        <li><a href="#rights">Ihre Rechte</a></li>
-        <li><a href="#contact">Beschwerderecht &amp; Kontakt</a></li>
-        <li><a href="#changes">Änderungen dieser Erklärung</a></li>
+        <li><a href="#de-verantwortlich">Verantwortlicher</a></li>
+        <li><a href="#de-hosting">Hosting durch Vercel</a></li>
+        <li><a href="#de-logfiles">Server-Logfiles</a></li>
+        <li><a href="#de-local-storage">Lokale Speicherung im Browser</a></li>
+        <li><a href="#de-newsletter">Newsletter via Beehiiv</a></li>
+        <li><a href="#de-fonts">Schriftarten (Google Fonts)</a></li>
+        <li><a href="#de-sources">Externe Nachrichtenquellen</a></li>
+        <li><a href="#de-ki">KI-Verarbeitung (Anthropic)</a></li>
+        <li><a href="#de-cookies">Cookies</a></li>
+        <li><a href="#de-rights">Ihre Rechte</a></li>
+        <li><a href="#de-contact">Beschwerderecht &amp; Kontakt</a></li>
+        <li><a href="#de-changes">Änderungen dieser Erklärung</a></li>
       </ol>
     </div>
 
-    <h2 id="verantwortlich">1. Verantwortlicher</h2>
+    <h2 id="de-verantwortlich">1. Verantwortlicher</h2>
     <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
     <p>
       <span class="placeholder">Vollständiger Name</span><br>
@@ -264,18 +256,16 @@
     </p>
     <p>Weitere Angaben siehe <a href="/impressum">Impressum</a>.</p>
 
-    <h2 id="hosting">2. Hosting durch Vercel</h2>
+    <h2 id="de-hosting">2. Hosting durch Vercel</h2>
     <p>
       Diese Website wird gehostet bei der <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, USA. Beim Aufruf der Seite werden technisch notwendige Daten an die Server von Vercel übertragen, insbesondere IP-Adresse, abgerufene URL, Zeitstempel, User-Agent und Referrer.
     </p>
     <p>
       Vercel verarbeitet diese Daten in unserem Auftrag auf Grundlage eines Auftragsverarbeitungsvertrags (Art. 28 DSGVO) und ist durch das EU-U.S. Data Privacy Framework zertifiziert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionierenden Website).
     </p>
-    <p>
-      Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a>
-    </p>
+    <p>Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a></p>
 
-    <h2 id="logfiles">3. Server-Logfiles</h2>
+    <h2 id="de-logfiles">3. Server-Logfiles</h2>
     <p>Vercel erfasst automatisch Informationen, die der Browser übermittelt:</p>
     <ul>
       <li>IP-Adresse (anonymisiert oder gekürzt, je nach Konfiguration)</li>
@@ -288,7 +278,7 @@
       Diese Daten werden nicht mit anderen Datenquellen zusammengeführt und ausschließlich für die Sicherstellung des Betriebs sowie zur Abwehr von Angriffen genutzt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.
     </p>
 
-    <h2 id="local-storage">4. Lokale Speicherung im Browser</h2>
+    <h2 id="de-local-storage">4. Lokale Speicherung im Browser</h2>
     <p>
       Wir nutzen <strong>Local Storage</strong> und <strong>Session Storage</strong> für rein technisch notwendige Funktionen. Diese Daten werden ausschließlich in Ihrem Browser gespeichert und nicht an unsere Server übertragen:
     </p>
@@ -301,16 +291,14 @@
       Da diese Daten unbedingt erforderlich sind, um die von Ihnen gewünschten Funktionen bereitzustellen, ist keine Einwilligung erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG, Art. 6 Abs. 1 lit. f DSGVO).
     </p>
 
-    <h2 id="newsletter">5. Newsletter via Beehiiv</h2>
+    <h2 id="de-newsletter">5. Newsletter via Beehiiv</h2>
     <p>
       Sie können unseren wöchentlichen Newsletter <em>ArtPulse Weekly</em> abonnieren. Hierzu benötigen wir Ihre E-Mail-Adresse sowie Ihre Bestätigung, dass Sie mit dem Empfang einverstanden sind.
     </p>
-
     <h3>Anbieter</h3>
     <p>
       Der Versand erfolgt über die <strong>Beehiiv Inc.</strong>, 228 Park Ave S, PMB 30121, New York, NY 10003, USA. Beehiiv ist durch das EU-U.S. Data Privacy Framework zertifiziert. Mit Beehiiv besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO.
     </p>
-
     <h3>Verarbeitete Daten</h3>
     <ul>
       <li>E-Mail-Adresse</li>
@@ -319,33 +307,24 @@
       <li>IP-Adresse zum Zeitpunkt der Anmeldung</li>
       <li>Öffnungs- und Klickraten (zur Optimierung der Inhalte)</li>
     </ul>
-
     <h3>Rechtsgrundlage</h3>
     <p>
       Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Die Einwilligung kann jederzeit widerrufen werden — entweder über den „Abmelden"-Link in jeder E-Mail oder durch formlose Nachricht an die im Impressum genannte E-Mail-Adresse.
     </p>
-
     <h3>Speicherdauer</h3>
     <p>
       Ihre Daten werden gespeichert, solange Sie den Newsletter abonniert haben. Nach Abmeldung werden die Daten gelöscht oder anonymisiert, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
     </p>
+    <p>Weitere Informationen: <a href="https://www.beehiiv.com/privacy" target="_blank" rel="noopener">beehiiv.com/privacy</a></p>
 
-    <p>
-      Weitere Informationen: <a href="https://www.beehiiv.com/privacy" target="_blank" rel="noopener">beehiiv.com/privacy</a>
-    </p>
-
-    <h2 id="fonts">6. Schriftarten (Google Fonts)</h2>
+    <h2 id="de-fonts">6. Schriftarten (Google Fonts)</h2>
     <p>
       Für die Darstellung der Schriftarten <em>Instrument Serif</em>, <em>Geist</em> und <em>Geist Mono</em> nutzen wir Google Fonts, einen Dienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Beim Laden der Schriftarten wird Ihre IP-Adresse an Google übertragen.
     </p>
-    <p>
-      Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen Darstellung).
-    </p>
-    <p>
-      Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
-    </p>
+    <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen Darstellung).</p>
+    <p>Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
 
-    <h2 id="sources">7. Externe Nachrichtenquellen</h2>
+    <h2 id="de-sources">7. Externe Nachrichtenquellen</h2>
     <p>
       ArtPulse aggregiert öffentlich zugängliche RSS-Feeds internationaler Kunstmagazine und Nachrichtenseiten. Wir verarbeiten ausschließlich die in den RSS-Feeds enthaltenen öffentlichen Informationen (Titel, Beschreibung, Veröffentlichungszeitpunkt, Quellenangabe). Keine personenbezogenen Daten der Nutzer der jeweiligen Quellen werden erfasst.
     </p>
@@ -353,18 +332,16 @@
       Beim Anklicken eines Links zur Originalquelle wechseln Sie auf die Website des jeweiligen Anbieters. Für deren Datenverarbeitung sind wir nicht verantwortlich.
     </p>
 
-    <h2 id="ki">8. KI-Verarbeitung (Anthropic)</h2>
+    <h2 id="de-ki">8. KI-Verarbeitung (Anthropic)</h2>
     <p>
       Zur Erstellung der redaktionellen Zusammenfassungen nutzen wir das Sprachmodell <em>Claude</em> der <strong>Anthropic PBC</strong>, 548 Market St, PMB 90375, San Francisco, CA 94104, USA. An Anthropic werden ausschließlich die Inhalte der öffentlich zugänglichen RSS-Quellen übermittelt. Personenbezogene Daten von Nutzern werden nicht an Anthropic übertragen.
     </p>
     <p>
       Mit Anthropic besteht ein Auftragsverarbeitungsvertrag (Data Processing Addendum). Anthropic ist nach dem EU-U.S. Data Privacy Framework zertifiziert.
     </p>
-    <p>
-      Weitere Informationen: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">anthropic.com/legal/privacy</a>
-    </p>
+    <p>Weitere Informationen: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">anthropic.com/legal/privacy</a></p>
 
-    <h2 id="cookies">9. Cookies</h2>
+    <h2 id="de-cookies">9. Cookies</h2>
     <p>
       Diese Website verwendet derzeit <strong>keine Cookies zu Tracking- oder Analyse-Zwecken</strong>. Eingesetzt werden lediglich technisch notwendige Speichermechanismen im Browser (Local Storage, siehe Punkt 4), für die keine Einwilligung erforderlich ist.
     </p>
@@ -372,7 +349,7 @@
       Sollten wir in Zukunft Analyse- oder Werbedienste einsetzen (z.B. Plausible Analytics oder Google AdSense), werden wir vor Aktivierung Ihre Einwilligung über ein Consent-Management-System einholen und diese Datenschutzerklärung entsprechend aktualisieren.
     </p>
 
-    <h2 id="rights">10. Ihre Rechte</h2>
+    <h2 id="de-rights">10. Ihre Rechte</h2>
     <p>Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:</p>
     <ul>
       <li><strong>Recht auf Auskunft</strong> (Art. 15 DSGVO) — Sie können Auskunft darüber verlangen, ob und welche personenbezogenen Daten wir über Sie verarbeiten.</li>
@@ -384,18 +361,172 @@
       <li><strong>Widerruf von Einwilligungen</strong> (Art. 7 Abs. 3 DSGVO) — Erteilte Einwilligungen (z.B. zum Newsletter-Empfang) können Sie jederzeit mit Wirkung für die Zukunft widerrufen.</li>
     </ul>
 
-    <h2 id="contact">11. Beschwerderecht &amp; Kontakt</h2>
-    <p>
-      Bei datenschutzrechtlichen Anfragen wenden Sie sich bitte an die unter Punkt 1 genannte Kontaktadresse.
-    </p>
+    <h2 id="de-contact">11. Beschwerderecht &amp; Kontakt</h2>
+    <p>Bei datenschutzrechtlichen Anfragen wenden Sie sich bitte an die unter Punkt 1 genannte Kontaktadresse.</p>
     <p>
       Unabhängig davon haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Eine Liste der zuständigen Behörden finden Sie unter:
       <a href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html" target="_blank" rel="noopener">bfdi.bund.de</a>.
     </p>
 
-    <h2 id="changes">12. Änderungen dieser Erklärung</h2>
+    <h2 id="de-changes">12. Änderungen dieser Erklärung</h2>
     <p>
       Wir behalten uns vor, diese Datenschutzerklärung an geänderte Rechtslagen oder Funktionalitäten anzupassen. Die jeweils aktuelle Version ist stets unter <a href="/datenschutz">artpulse.app/datenschutz</a> abrufbar.
+    </p>
+  </main>
+
+  <!-- ================ ENGLISH ================ -->
+  <main class="content-en" lang="en">
+    <div class="meta">Legal</div>
+    <h1>Privacy <em>policy.</em></h1>
+    <p class="lead">Information on the processing of personal data pursuant to Art. 13 GDPR. Last updated: <span class="placeholder">Date</span>.</p>
+
+    <div class="notice">
+      <strong>Note:</strong> This privacy policy is currently a work in progress and reflects the current technical state of ArtPulse. Before public launch, it will be finalized using a qualified privacy generator (e.g. <a href="https://datenschutz-generator.de" target="_blank" rel="noopener">datenschutz-generator.de</a>) and complemented with missing details (name, address, contact). The German version (DE) is the legally binding one for German users.
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">Contents</div>
+      <ol>
+        <li><a href="#en-controller">Controller</a></li>
+        <li><a href="#en-hosting">Hosting by Vercel</a></li>
+        <li><a href="#en-logfiles">Server logfiles</a></li>
+        <li><a href="#en-local-storage">Local storage in the browser</a></li>
+        <li><a href="#en-newsletter">Newsletter via Beehiiv</a></li>
+        <li><a href="#en-fonts">Fonts (Google Fonts)</a></li>
+        <li><a href="#en-sources">External news sources</a></li>
+        <li><a href="#en-ki">AI processing (Anthropic)</a></li>
+        <li><a href="#en-cookies">Cookies</a></li>
+        <li><a href="#en-rights">Your rights</a></li>
+        <li><a href="#en-contact">Right to complain &amp; contact</a></li>
+        <li><a href="#en-changes">Changes to this policy</a></li>
+      </ol>
+    </div>
+
+    <h2 id="en-controller">1. Controller</h2>
+    <p>Responsible for the data processing on this website is:</p>
+    <p>
+      <span class="placeholder">Full name</span><br>
+      <span class="placeholder">c/o Impressumservice / Address</span><br>
+      <span class="placeholder">Postal code, City</span>, Germany<br>
+      Email: <span class="placeholder">hello@artpulse.app</span>
+    </p>
+    <p>For further details see <a href="/impressum">Legal notice</a>.</p>
+
+    <h2 id="en-hosting">2. Hosting by Vercel</h2>
+    <p>
+      This website is hosted by <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, USA. When accessing the site, technically necessary data is transmitted to Vercel's servers, in particular IP address, requested URL, timestamp, user agent, and referrer.
+    </p>
+    <p>
+      Vercel processes this data on our behalf under a Data Processing Agreement (Art. 28 GDPR) and is certified under the EU-U.S. Data Privacy Framework. Legal basis: Art. 6 (1) (f) GDPR (legitimate interest in a functioning website).
+    </p>
+    <p>More info: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a></p>
+
+    <h2 id="en-logfiles">3. Server logfiles</h2>
+    <p>Vercel automatically captures information that the browser transmits:</p>
+    <ul>
+      <li>IP address (anonymized or truncated, depending on configuration)</li>
+      <li>Date and time of access</li>
+      <li>Requested URL and HTTP status code</li>
+      <li>User agent (browser and operating system information)</li>
+      <li>Referrer (previously visited page)</li>
+    </ul>
+    <p>
+      This data is not combined with other data sources and is used exclusively to ensure the operation of the service and to defend against attacks. Legal basis: Art. 6 (1) (f) GDPR.
+    </p>
+
+    <h2 id="en-local-storage">4. Local storage in the browser</h2>
+    <p>
+      We use <strong>Local Storage</strong> and <strong>Session Storage</strong> for strictly technically necessary functions. This data is stored exclusively in your browser and is not transmitted to our servers:
+    </p>
+    <ul>
+      <li><code>kp-lang</code> — Your language preference (EN or DE), so your choice persists between visits</li>
+      <li><code>ap-nl-state</code> — Newsletter prompt state (e.g. "subscribed"), so the newsletter offer is not shown repeatedly</li>
+      <li><code>ap-nl-shown</code> — Session-scoped flag, so the newsletter CTA appears only once per visit</li>
+    </ul>
+    <p>
+      Since this data is strictly necessary to provide the functions you have requested, no consent is required (§ 25 (2) (2) TDDDG, Art. 6 (1) (f) GDPR).
+    </p>
+
+    <h2 id="en-newsletter">5. Newsletter via Beehiiv</h2>
+    <p>
+      You can subscribe to our weekly newsletter <em>ArtPulse Weekly</em>. To do so, we need your email address and your confirmation that you agree to receive it.
+    </p>
+    <h3>Provider</h3>
+    <p>
+      Delivery is handled by <strong>Beehiiv Inc.</strong>, 228 Park Ave S, PMB 30121, New York, NY 10003, USA. Beehiiv is certified under the EU-U.S. Data Privacy Framework. We have a Data Processing Agreement with Beehiiv pursuant to Art. 28 GDPR.
+    </p>
+    <h3>Data processed</h3>
+    <ul>
+      <li>Email address</li>
+      <li>Time of subscription</li>
+      <li>Confirmation of subscription (double opt-in)</li>
+      <li>IP address at time of subscription</li>
+      <li>Open and click rates (to optimize content)</li>
+    </ul>
+    <h3>Legal basis</h3>
+    <p>
+      Art. 6 (1) (a) GDPR (consent). Consent can be withdrawn at any time — either via the "unsubscribe" link in any email or by informal notice to the email address listed in the Legal notice.
+    </p>
+    <h3>Retention period</h3>
+    <p>
+      Your data is stored for as long as you remain subscribed to the newsletter. Upon unsubscription, data is deleted or anonymized, unless statutory retention obligations require otherwise.
+    </p>
+    <p>More info: <a href="https://www.beehiiv.com/privacy" target="_blank" rel="noopener">beehiiv.com/privacy</a></p>
+
+    <h2 id="en-fonts">6. Fonts (Google Fonts)</h2>
+    <p>
+      To render the typefaces <em>Instrument Serif</em>, <em>Geist</em>, and <em>Geist Mono</em>, we use Google Fonts, a service by Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. When the fonts load, your IP address is transmitted to Google.
+    </p>
+    <p>Legal basis: Art. 6 (1) (f) GDPR (legitimate interest in consistent visual presentation).</p>
+    <p>More info: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+
+    <h2 id="en-sources">7. External news sources</h2>
+    <p>
+      ArtPulse aggregates publicly available RSS feeds from international art magazines and news sites. We process only the public information contained in those feeds (title, description, publication time, source attribution). No personal data of the respective sources' users is collected.
+    </p>
+    <p>
+      When you click a link to the original source, you leave our site and visit the respective provider. We are not responsible for their data processing.
+    </p>
+
+    <h2 id="en-ki">8. AI processing (Anthropic)</h2>
+    <p>
+      To produce editorial summaries we use the <em>Claude</em> language model by <strong>Anthropic PBC</strong>, 548 Market St, PMB 90375, San Francisco, CA 94104, USA. Only the contents of publicly available RSS sources are sent to Anthropic. No personal user data is transmitted.
+    </p>
+    <p>
+      A Data Processing Addendum is in place with Anthropic. Anthropic is certified under the EU-U.S. Data Privacy Framework.
+    </p>
+    <p>More info: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">anthropic.com/legal/privacy</a></p>
+
+    <h2 id="en-cookies">9. Cookies</h2>
+    <p>
+      This website currently uses <strong>no tracking or analytics cookies</strong>. Only technically necessary storage mechanisms in the browser are used (Local Storage, see section 4), for which no consent is required.
+    </p>
+    <p>
+      Should we add analytics or advertising services in the future (e.g. Plausible Analytics or Google AdSense), we will obtain your consent via a consent management system before activation and update this privacy policy accordingly.
+    </p>
+
+    <h2 id="en-rights">10. Your rights</h2>
+    <p>You have the following rights regarding personal data we hold about you:</p>
+    <ul>
+      <li><strong>Right of access</strong> (Art. 15 GDPR) — You may request information about whether and what personal data we process about you.</li>
+      <li><strong>Right to rectification</strong> (Art. 16 GDPR) — You may request the correction of inaccurate data.</li>
+      <li><strong>Right to erasure</strong> (Art. 17 GDPR) — You may request deletion of your data, unless statutory retention obligations apply.</li>
+      <li><strong>Right to restriction</strong> (Art. 18 GDPR) — You may request restriction of processing.</li>
+      <li><strong>Right to data portability</strong> (Art. 20 GDPR) — You may receive your data in a machine-readable format.</li>
+      <li><strong>Right to object</strong> (Art. 21 GDPR) — You may object to processing based on legitimate interests.</li>
+      <li><strong>Withdrawal of consent</strong> (Art. 7 (3) GDPR) — Consents you have given (e.g. for newsletter receipt) can be withdrawn at any time with effect for the future.</li>
+    </ul>
+
+    <h2 id="en-contact">11. Right to complain &amp; contact</h2>
+    <p>For data protection inquiries, please contact us at the address given in section 1.</p>
+    <p>
+      You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR). A list of competent authorities is available at:
+      <a href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html" target="_blank" rel="noopener">bfdi.bund.de</a>.
+    </p>
+
+    <h2 id="en-changes">12. Changes to this policy</h2>
+    <p>
+      We reserve the right to update this privacy policy to reflect legal changes or new functionality. The current version is always available at <a href="/datenschutz">artpulse.app/datenschutz</a>.
     </p>
   </main>
 
@@ -408,6 +539,38 @@
   </footer>
 
 </div>
+
+<script>
+  // Bilingual toggle — reads/writes localStorage 'kp-lang' (shared with main app)
+  (function () {
+    var html = document.documentElement;
+    var toggle = document.getElementById('langToggle');
+    if (!toggle) return;
+    var saved;
+    try { saved = localStorage.getItem('kp-lang'); } catch (e) {}
+    var lang = (saved === 'en' || saved === 'de') ? saved : 'de';
+    applyLang(lang);
+
+    toggle.addEventListener('click', function (e) {
+      var btn = e.target.closest('button[data-lang]');
+      if (!btn) return;
+      var newLang = btn.getAttribute('data-lang');
+      applyLang(newLang);
+      try { localStorage.setItem('kp-lang', newLang); } catch (e) {}
+    });
+
+    function applyLang(l) {
+      html.setAttribute('data-lang', l);
+      html.setAttribute('lang', l);
+      var buttons = toggle.querySelectorAll('button');
+      for (var i = 0; i < buttons.length; i++) {
+        if (buttons[i].getAttribute('data-lang') === l) buttons[i].classList.add('on');
+        else buttons[i].classList.remove('on');
+      }
+      document.title = (l === 'en') ? 'Privacy policy — ArtPulse' : 'Datenschutz — ArtPulse';
+    }
+  })();
+</script>
 
 </body>
 </html>
