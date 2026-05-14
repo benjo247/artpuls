@@ -108,7 +108,11 @@
     stories: [],
     hasMore: true,
     loadingMore: false,
-    pendingDeepLink: null
+    pendingDeepLink: null,
+    // Desktop view state — 'magazine' (home grid) or 'article' (deep-link reader)
+    // Used to prevent race-conditions where async loaders overwrite the article view.
+    currentView: null,
+    archiveLoaded: false
   };
 
   // ---------- Helpers ----------
@@ -401,6 +405,7 @@
   function renderDesktop() {
     var root = document.getElementById('desktop');
     if (!root) return;
+    state.currentView = 'magazine';
     var stories = filteredStories();
 
     // Pick a hero with visual impact: first story with an image.
@@ -706,6 +711,7 @@
   function renderDesktopArticle(s) {
     var root = document.getElementById('desktop');
     if (!root || !s) return;
+    state.currentView = 'article';
 
     var headline = escapeHTML(getText(s, 'headline'));
     var summary = escapeHTML(getText(s, 'summary') || '');
@@ -1023,10 +1029,13 @@
     if (hintTextEl) hintTextEl.textContent = t('hint');
     if (loadingLabelEl) loadingLabelEl.textContent = t('loading');
     renderCats();
-    // Only re-render the feed if stories are already loaded.
+    // Only re-render if stories are already loaded.
     // On first setLang() during init, stories are still empty — re-rendering then
     // would replace the loading element and crash later code that references it.
-    if (state.stories && state.stories.length > 0) renderActive();
+    // Also skip on article view — the article-view click handler re-renders itself.
+    if (state.stories && state.stories.length > 0 && state.currentView !== 'article') {
+      renderActive();
+    }
   }
 
   // ====================================================
@@ -1305,39 +1314,66 @@
 
     renderCats();
     loadStories().then(function () {
-      renderActive();
-      // On desktop, load full archive in background so the grid fills with more content
-      if (isDesktop && !state.archiveLoaded) {
-        loadFullArchive().then(function () {
-          if (isDesktop) renderActive();
-        });
-      }
-      // Resolve deep-link if present.
-      // Mobile: opens story sheet over the feed.
-      // Desktop: replaces magazine view with a full article view.
-      if (state.pendingDeepLink) {
-        var id = state.pendingDeepLink;
-        state.pendingDeepLink = null;
-        var s = findStory(id);
-        if (s) {
-          if (isDesktop) renderDesktopArticle(s);
-          else openSheet(id);
-        } else {
-          // Story might be in archive but not in latest — fetch archive once
-          fetch('/data/archive.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
-            if (!data || !data.stories) return;
-            var found = data.stories.find(function (x) { return String(x.id) === String(id); });
-            if (!found) return;
-            state.stories = [found].concat(state.stories);
-            if (isDesktop) {
-              renderDesktopArticle(found);
-            } else {
-              renderActive();
-              openSheet(id);
-            }
-          }).catch(function () {});
+      var deepLinkId = state.pendingDeepLink;
+      state.pendingDeepLink = null;
+
+      if (deepLinkId) {
+        // We landed on a /s/:id URL — render the right view for that ID
+        resolveDeepLink(deepLinkId);
+      } else {
+        // Normal landing — magazine view (or mobile feed)
+        renderActive();
+        // Desktop: pull full archive in background to fill the grid
+        if (isDesktop && !state.archiveLoaded) {
+          loadFullArchive().then(function () {
+            // Only re-render if we're still on the magazine view
+            // (user may have navigated to an article view in the meantime)
+            if (isDesktop && state.currentView !== 'article') renderActive();
+          });
         }
       }
+    });
+  }
+
+  function resolveDeepLink(id) {
+    var s = findStory(id);
+    if (s) {
+      // Story is already in state.stories — render immediately
+      if (isDesktop) renderDesktopArticle(s);
+      else openSheet(id);
+      // On desktop also lazy-load full archive for footer category counts
+      if (isDesktop && !state.archiveLoaded) loadFullArchive();
+      return;
+    }
+    // Story not in latest — fetch archive
+    fetch('/data/archive.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+      if (!data || !data.stories) {
+        // Archive unavailable — fall back to home view (better than blank page)
+        renderActive();
+        return;
+      }
+      var found = data.stories.find(function (x) { return String(x.id) === String(id); });
+      // Merge archive into state.stories (dedup by id) so the rest of the app sees it
+      var existingIds = {};
+      for (var i = 0; i < state.stories.length; i++) existingIds[String(state.stories[i].id)] = true;
+      for (var j = 0; j < data.stories.length; j++) {
+        var sx = data.stories[j];
+        if (sx && !existingIds[String(sx.id)]) state.stories.push(sx);
+      }
+      state.archiveLoaded = true;
+      if (!found) {
+        // Story doesn't exist in any data file — show home view
+        renderActive();
+        return;
+      }
+      if (isDesktop) {
+        renderDesktopArticle(found);
+      } else {
+        renderActive();
+        openSheet(id);
+      }
+    }).catch(function () {
+      renderActive();
     });
   }
 
