@@ -43,6 +43,9 @@
       aboutLabel: 'About',
       legalLabel: 'Legal',
       subscribeNewsletter: 'Subscribe to newsletter',
+      readFullStory: 'Read full story',
+      stories: 'stories',
+      story: 'story',
       cats: ['All', 'Auction', 'Exhibition', 'Artists', 'Market', 'Museum', 'Biennale', 'Restitution']
     },
     de: {
@@ -76,6 +79,9 @@
       aboutLabel: 'Information',
       legalLabel: 'Rechtliches',
       subscribeNewsletter: 'Newsletter abonnieren',
+      readFullStory: 'Story lesen',
+      stories: 'Stories',
+      story: 'Story',
       cats: ['Alle', 'Auktion', 'Ausstellung', 'K\u00FCnstler:innen', 'Markt', 'Museum', 'Biennale', 'Restitution']
     }
   };
@@ -401,56 +407,101 @@
 
     var html = '';
 
-    // Header
-    html += '<header class="d-header"><div class="d-header-inner">';
+    // ========= Masthead =========
+    html += '<header class="d-masthead"><div class="d-masthead-row">';
     html += '<a href="/" class="d-logo" id="dLogo"><span class="logo-mark"></span>Art<em>Pulse</em></a>';
-    html += '<nav class="d-nav" id="dNav">';
-    for (var c = 0; c < CAT_KEYS.length; c++) {
-      var k = CAT_KEYS[c];
-      html += '<button type="button" data-d-cat="' + k + '"' + (state.cat === k ? ' class="on"' : '') + '>' + escapeHTML(catLabel(k)) + '</button>';
-    }
-    html += '</nav>';
     html += '<div class="d-actions">';
+    html += '<button class="d-icon-btn" id="dSearchBtn" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>';
     html += '<div class="lang" id="dLang">' +
             '<button data-lang="en"' + (state.lang === 'en' ? ' class="on"' : '') + '>EN</button>' +
             '<button data-lang="de"' + (state.lang === 'de' ? ' class="on"' : '') + '>DE</button>' +
             '</div>';
-    html += '<button class="icon-btn" id="dSearchBtn" aria-label="Search"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>';
-    html += '<a href="/subscribe" class="d-subscribe-btn">' + escapeHTML(t('subscribe')) + '</a>';
+    html += '<a href="/subscribe" class="d-subscribe-pill">' + escapeHTML(t('subscribe')) + '</a>';
     html += '</div></div></header>';
 
-    // Hero (or empty state if no stories)
+    // ========= Category bar (separate row) =========
+    html += '<div class="d-catbar"><div class="d-catbar-row">';
+    for (var c = 0; c < CAT_KEYS.length; c++) {
+      var k = CAT_KEYS[c];
+      html += '<button type="button" class="d-catlink' + (state.cat === k ? ' on' : '') + '" data-d-cat="' + k + '">' + escapeHTML(catLabel(k)) + '</button>';
+    }
+    html += '<span class="d-cattime">' + escapeHTML(latestUpdateText()) + '</span>';
+    html += '</div></div>';
+
+    // ========= Main content =========
+    html += '<main class="d-main">';
+
+    // Hero (or empty state)
     if (!hero) {
-      html += '<div class="d-empty"><p class="d-empty-title">Nothing here yet.</p><p class="d-empty-sub">Check back soon — new stories arrive three times daily.</p></div>';
+      html += '<div class="d-empty"><p class="d-empty-title">' + escapeHTML(t('empty')) + '</p><p class="d-empty-sub">Check back soon — new stories arrive three times daily.</p></div>';
     } else {
       html += desktopHeroHTML(hero);
     }
 
-    // Rail
-    html += '<div class="d-rail"><div class="d-rail-line"></div><span class="d-rail-label">' + escapeHTML(t('latestUpdated')) + '</span><div class="d-rail-line"></div></div>';
-
-    // Grid
+    // Section title + grid
     if (rest.length > 0) {
-      html += '<div class="d-grid-wrap">';
-      html += '<div class="d-grid-head"><h2 class="d-grid-title">' + escapeHTML(t('thisWeekHeadline')) + '</h2></div>';
+      var count = Math.min(rest.length, 15);
+      html += '<div class="d-section">';
+      html += '<h2 class="d-section-title">' + escapeHTML(t('thisWeekHeadline')) + '</h2>';
+      html += '<span class="d-section-count">' + count + ' ' + escapeHTML(count === 1 ? t('story') : t('stories')) + '</span>';
+      html += '</div>';
       html += '<div class="d-grid">';
-      var max = Math.min(rest.length, 15);  // show up to 15 stories in the main grid
-      for (var i = 0; i < max; i++) html += desktopCardHTML(rest[i]);
-      html += '</div></div>';
+      // Split grid: first 6 cards, then newsletter strip, then more cards
+      var firstBatch = Math.min(count, 6);
+      for (var i = 0; i < firstBatch; i++) html += desktopCardHTML(rest[i]);
+      html += '</div>';
+
+      // Newsletter strip mid-grid (unless subscribed)
+      var subscribed = false;
+      try { subscribed = localStorage.getItem('ap-nl-state') === 'subscribed'; } catch (e) {}
+      if (!subscribed && count > firstBatch) {
+        html += desktopNewsletterHTML();
+        html += '<div class="d-grid">';
+        for (var j = firstBatch; j < count; j++) html += desktopCardHTML(rest[j]);
+        html += '</div>';
+      } else if (count > firstBatch) {
+        // Continue grid without break if already subscribed
+        html += '<div class="d-grid" style="margin-top:48px">';
+        for (var j2 = firstBatch; j2 < count; j2++) html += desktopCardHTML(rest[j2]);
+        html += '</div>';
+        // Still show subscribe strip if there are only few stories
+      }
+      if (subscribed === false && count <= firstBatch) {
+        // Fallback: show newsletter strip after main grid if no second batch
+        html += desktopNewsletterHTML();
+      }
     }
 
-    // Newsletter strip (only show if user hasn't subscribed)
-    var subscribed = false;
-    try { subscribed = localStorage.getItem('ap-nl-state') === 'subscribed'; } catch (e) {}
-    if (!subscribed) {
-      html += desktopNewsletterHTML();
-    }
+    html += '</main>';
 
-    // Footer
+    // ========= Footer =========
     html += desktopFooterHTML();
 
     root.innerHTML = html;
     bindDesktopEvents();
+  }
+
+  // Friendly "Updated 3× daily · timestamp" line for the category bar
+  function latestUpdateText() {
+    var base = (state.lang === 'de') ? 'Aktualisiert 3× täglich' : 'Updated 3× daily';
+    // Try to find the newest publication time
+    var newest = null;
+    for (var i = 0; i < state.stories.length; i++) {
+      var p = state.stories[i].publishedAt || state.stories[i].time_iso;
+      if (p) {
+        var d = new Date(p);
+        if (!isNaN(d.getTime()) && (!newest || d > newest)) newest = d;
+      }
+    }
+    if (!newest) return base;
+    // Format: "14 May 11:07 UTC" / "14. Mai 11:07 UTC"
+    var months = (state.lang === 'de')
+      ? ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
+      : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var pad = function (n) { return n < 10 ? '0' + n : String(n); };
+    var stamp = newest.getUTCDate() + ' ' + months[newest.getUTCMonth()] + ' ' +
+                pad(newest.getUTCHours()) + ':' + pad(newest.getUTCMinutes()) + ' UTC';
+    return base + ' · ' + stamp;
   }
 
   function desktopHeroHTML(s) {
@@ -458,41 +509,38 @@
     var headline = escapeHTML(getText(s, 'headline'));
     var summary = escapeHTML(getText(s, 'summary') || '');
     var source = escapeHTML(s.source || '');
-    var timeStr = escapeHTML(getText(s, 'time') || s.publishedAt || '');
+    var timeStr = escapeHTML(getText(s, 'time') || '');
     var catKey = s.cat || 'all';
     var cat = escapeHTML(catLabel(catKey));
+    var catClass = 'cat-' + catKey;
     var url = '/s/' + encodeURIComponent(s.id);
 
-    var leftPanel;
+    var visual;
     if (hasImage) {
-      leftPanel = '<a href="' + url + '" class="d-hero-img" style="background-image:url(' + JSON.stringify(s.image).replace(/^"|"$/g, '') + ')" aria-label="Featured story">' +
-        '<span class="d-hero-badge">' + cat + '</span>' +
-      '</a>';
+      visual = '<div class="d-hero-image" style="background-image:url(' + JSON.stringify(s.image).replace(/^"|"$/g, '') + ')"></div>';
     } else {
-      // Typography hero — no photo, big italic headline on category-tinted background
-      leftPanel = '<a href="' + url + '" class="d-hero-typo d-typo-' + escapeAttr(catKey) + '" aria-label="Featured story">' +
-        '<span class="d-hero-badge">' + cat + '</span>' +
+      visual = '<div class="d-hero-typo d-typo-' + escapeAttr(catKey) + '">' +
         '<span class="d-typo-mark">&ldquo;</span>' +
         '<span class="d-hero-typo-headline">' + headline + '</span>' +
-      '</a>';
+      '</div>';
     }
 
     return '' +
-      '<section class="d-hero">' +
-        leftPanel +
-        '<div class="d-hero-content">' +
-          '<div class="d-hero-meta">' +
-            '<span>' + escapeHTML(t('featured')) + '</span>' +
-            (source ? '<span class="dot"></span><span>' + source + '</span>' : '') +
-            (timeStr ? '<span class="dot"></span><span>' + timeStr + '</span>' : '') +
-          '</div>' +
-          '<h1 class="d-hero-headline">' + headline + '</h1>' +
-          (summary ? '<p class="d-hero-summary">' + summary + '</p>' : '') +
-          '<a href="' + url + '" class="d-hero-read">' + escapeHTML(t('readStory')) +
-            ' <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
-          '</a>' +
+      '<a href="' + url + '" class="d-hero">' +
+        visual +
+        '<div class="d-hero-meta">' +
+          '<span class="d-badge ' + catClass + '">' + cat + '</span>' +
+          (timeStr ? '<span class="d-meta-sep">·</span><span class="d-meta-dim">' + timeStr + '</span>' : '') +
         '</div>' +
-      '</section>';
+        '<h1 class="d-hero-headline">' + headline + '</h1>' +
+        (summary ? '<p class="d-hero-summary">' + summary + '</p>' : '') +
+        '<div class="d-hero-source">' +
+          (source ? '<span>' + source + '</span>' : '') +
+          '<span class="d-readlink">' + escapeHTML(t('readFullStory')) +
+            ' <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+          '</span>' +
+        '</div>' +
+      '</a>';
   }
 
   function desktopCardHTML(s) {
@@ -503,17 +551,14 @@
     var timeStr = escapeHTML(getText(s, 'time') || '');
     var catKey = s.cat || 'all';
     var cat = escapeHTML(catLabel(catKey));
+    var catClass = 'cat-' + catKey;
     var url = '/s/' + encodeURIComponent(s.id);
 
     var visual;
     if (hasImage) {
-      visual = '<div class="d-card-img" style="background-image:url(' + JSON.stringify(s.image).replace(/^"|"$/g, '') + ')">' +
-        '<span class="d-card-badge">' + cat + '</span>' +
-      '</div>';
+      visual = '<div class="d-card-image" style="background-image:url(' + JSON.stringify(s.image).replace(/^"|"$/g, '') + ')"></div>';
     } else {
-      // Typography card variant — same aspect ratio, headline becomes the visual
       visual = '<div class="d-card-typo d-typo-' + escapeAttr(catKey) + '">' +
-        '<span class="d-card-badge">' + cat + '</span>' +
         '<span class="d-typo-mark">&ldquo;</span>' +
         '<span class="d-card-typo-headline">' + headline + '</span>' +
       '</div>';
@@ -523,12 +568,17 @@
       '<a href="' + url + '" class="d-card">' +
         visual +
         '<div class="d-card-meta">' +
-          (source ? '<span>' + source + '</span>' : '') +
-          (source && timeStr ? '<span class="dot"></span>' : '') +
-          (timeStr ? '<span>' + timeStr + '</span>' : '') +
+          '<span class="d-badge ' + catClass + '">' + cat + '</span>' +
+          (timeStr ? '<span class="d-meta-sep">·</span><span class="d-meta-dim">' + timeStr + '</span>' : '') +
         '</div>' +
         '<h3 class="d-card-headline">' + headline + '</h3>' +
         (summary ? '<p class="d-card-summary">' + summary + '</p>' : '') +
+        '<div class="d-card-bottom">' +
+          (source ? '<span class="d-card-source">' + source + '</span>' : '<span></span>') +
+          '<span class="d-readlink">' + escapeHTML(t('readStory')) +
+            ' <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+          '</span>' +
+        '</div>' +
       '</a>';
   }
 
@@ -553,6 +603,20 @@
   }
 
   function desktopFooterHTML() {
+    // Build category counts from current state
+    var counts = {};
+    for (var i = 0; i < state.stories.length; i++) {
+      var k = state.stories[i].cat || 'all';
+      counts[k] = (counts[k] || 0) + 1;
+    }
+    var sectionsLis = '';
+    var sectionCats = ['auction', 'exhibition', 'artists', 'market', 'museum', 'biennale', 'restitution'];
+    for (var c = 0; c < sectionCats.length; c++) {
+      var sk = sectionCats[c];
+      sectionsLis += '<li><a href="#" data-d-cat="' + sk + '">' + escapeHTML(catLabel(sk)) + '</a>' +
+                     (counts[sk] ? '<span class="count">' + counts[sk] + '</span>' : '') + '</li>';
+    }
+
     return '' +
       '<footer class="d-footer">' +
         '<div class="d-footer-inner">' +
@@ -562,13 +626,7 @@
           '</div>' +
           '<div class="d-footer-col">' +
             '<h4>' + escapeHTML(t('sectionsLabel')) + '</h4>' +
-            '<ul>' +
-              '<li><a href="#" data-d-cat="auction">' + escapeHTML(catLabel('auction')) + '</a></li>' +
-              '<li><a href="#" data-d-cat="exhibition">' + escapeHTML(catLabel('exhibition')) + '</a></li>' +
-              '<li><a href="#" data-d-cat="artists">' + escapeHTML(catLabel('artists')) + '</a></li>' +
-              '<li><a href="#" data-d-cat="market">' + escapeHTML(catLabel('market')) + '</a></li>' +
-              '<li><a href="#" data-d-cat="museum">' + escapeHTML(catLabel('museum')) + '</a></li>' +
-            '</ul>' +
+            '<ul>' + sectionsLis + '</ul>' +
           '</div>' +
           '<div class="d-footer-col">' +
             '<h4>' + escapeHTML(t('aboutLabel')) + '</h4>' +
@@ -585,14 +643,14 @@
           '</div>' +
         '</div>' +
         '<div class="d-footer-meta">' +
-          '<span>\u00A9 2026 ArtPulse \u00B7 Made in Berlin</span>' +
+          '<span>© 2026 ArtPulse · Made in Berlin</span>' +
           '<span>artpulse.app</span>' +
         '</div>' +
       '</footer>';
   }
 
   function bindDesktopEvents() {
-    // Category nav
+    // Category nav (top bar + footer links share data-d-cat)
     var navBtns = document.querySelectorAll('[data-d-cat]');
     for (var i = 0; i < navBtns.length; i++) {
       navBtns[i].addEventListener('click', onDesktopCatClick);
@@ -604,7 +662,7 @@
         setLang(e.currentTarget.getAttribute('data-lang'));
       });
     }
-    // Logo: scroll to top of desktop view
+    // Logo: scroll-to-top
     var dLogo = document.getElementById('dLogo');
     if (dLogo) dLogo.addEventListener('click', function (e) {
       e.preventDefault();
@@ -641,13 +699,13 @@
     var email = (input.value || '').trim().toLowerCase();
     var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!EMAIL_RE.test(email)) {
-      status.textContent = 'Please enter a valid email address.';
+      status.textContent = (state.lang === 'de') ? 'Bitte gib eine g\u00FCltige E-Mail-Adresse ein.' : 'Please enter a valid email address.';
       status.classList.remove('success');
       input.focus();
       return;
     }
     submit.disabled = true;
-    status.textContent = 'Subscribing\u2026';
+    status.textContent = (state.lang === 'de') ? 'Wird abonniert\u2026' : 'Subscribing\u2026';
     status.classList.remove('success');
     fetch('/api/subscribe', {
       method: 'POST',
@@ -658,23 +716,25 @@
       .then(function (res) {
         submit.disabled = false;
         if (res.ok && res.data && res.data.ok) {
-          status.textContent = 'Check your inbox to confirm.';
+          status.textContent = (state.lang === 'de') ? 'Schau in dein Postfach zur Best\u00E4tigung.' : 'Check your inbox to confirm.';
           status.classList.add('success');
           input.value = '';
           try { localStorage.setItem('ap-nl-state', 'subscribed'); } catch (e) {}
-          // Hide newsletter strip on next render
           setTimeout(function () { renderActive(); }, 2500);
         } else {
-          var msg = 'Something went wrong. Please try again.';
-          if (res.data && res.data.error === 'invalid-email') msg = 'That email looks invalid.';
+          var msg = (state.lang === 'de') ? 'Etwas lief schief. Bitte erneut versuchen.' : 'Something went wrong. Please try again.';
+          if (res.data && res.data.error === 'invalid-email') {
+            msg = (state.lang === 'de') ? 'Diese E-Mail-Adresse scheint ung\u00FCltig.' : 'That email looks invalid.';
+          }
           status.textContent = msg;
         }
       })
       .catch(function () {
         submit.disabled = false;
-        status.textContent = 'Network error. Please try again.';
+        status.textContent = (state.lang === 'de') ? 'Netzwerkfehler. Bitte erneut versuchen.' : 'Network error. Please try again.';
       });
   }
+
 
   function bindFeedEvents() {
     var expands = document.querySelectorAll('[data-expand]');
