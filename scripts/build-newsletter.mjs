@@ -20,6 +20,7 @@ import fs from 'node:fs/promises';
 
 const ARCHIVE_PATH = 'data/archive.json';
 const OUTPUT_HTML = 'newsletter-draft.html';
+const OUTPUT_SNIPPET = 'newsletter-snippet.html';
 const OUTPUT_META = 'newsletter-meta.json';
 
 const MODEL = 'claude-haiku-4-5-20251001';
@@ -175,21 +176,25 @@ Write a 3-4 sentence editorial intro. Note 1-2 themes or connections between the
   return await callClaude(prompt, 400);
 }
 
-async function generateSubject(stories) {
+async function generateSubject(stories, lang = 'de') {
   const topHeadlines = stories.slice(0, 3).map(s =>
-    pickText(s, 'headline', 'de')
+    pickText(s, 'headline', lang)
   ).filter(Boolean).join(' | ');
 
-  const prompt = `Generiere eine Email-Subject-Line für einen monatlichen Kunstnachrichten-Newsletter. Maximal 55 Zeichen. Konkret, nicht reißerisch, kein Clickbait. Bezugnahme auf 1-2 Themen aus den Stories ist gut. Sprache: Deutsch.
+  const prompt = lang === 'de' ? `Generiere eine Email-Subject-Line für einen monatlichen Kunstnachrichten-Newsletter. Maximal 55 Zeichen. Konkret, nicht reißerisch, kein Clickbait. Bezugnahme auf 1-2 Themen aus den Stories ist gut. Sprache: Deutsch.
 
 Hauptstories dieser Ausgabe:
 ${topHeadlines}
 
-Antwort: NUR die Subject-Line. Keine Anführungszeichen. Keine Erklärung.`;
+Antwort: NUR die Subject-Line. Keine Anführungszeichen. Keine Erklärung.` : `Generate an email subject line for a monthly art news newsletter. Maximum 55 characters. Concrete, not sensationalist, no clickbait. Referencing 1-2 themes from the stories is good. Language: English.
+
+Top stories of this issue:
+${topHeadlines}
+
+Response: ONLY the subject line. No quotation marks. No explanation.`;
 
   let subject = await callClaude(prompt, 80);
   subject = subject.replace(/^["'„]|["'"]$/g, '').trim();
-  // Hard cap at 65 chars to be safe
   if (subject.length > 65) subject = subject.slice(0, 62) + '...';
   return subject;
 }
@@ -351,31 +356,47 @@ async function main() {
     process.exit(1);
   }
 
-  console.log('Generating editorial intro (German)...');
-  const introDE = await generateIntro(selected, 'de');
-  console.log('Intro DE:', introDE);
+  // Generate both languages in parallel
+  console.log('Generating EN intro + subject...');
+  const [introEN, subjectEN] = await Promise.all([
+    generateIntro(selected, 'en'),
+    generateSubject(selected, 'en'),
+  ]);
+  console.log('EN intro:', introEN);
+  console.log('EN subject:', subjectEN);
 
-  console.log('Generating subject line...');
-  const subject = await generateSubject(selected);
-  console.log('Subject:', subject);
+  console.log('Generating DE intro + subject...');
+  const [introDE, subjectDE] = await Promise.all([
+    generateIntro(selected, 'de'),
+    generateSubject(selected, 'de'),
+  ]);
+  console.log('DE intro:', introDE);
+  console.log('DE subject:', subjectDE);
 
-  console.log('Rendering DE newsletter HTML...');
-  const htmlDE = renderNewsletter({
-    intro: introDE,
-    stories: selected,
-    issueDate: new Date(),
-    lang: 'de',
-  });
+  console.log('Rendering newsletter HTML (EN + DE)...');
+  const htmlEN = renderNewsletter({ intro: introEN, stories: selected, issueDate: new Date(), lang: 'en' });
+  const htmlDE = renderNewsletter({ intro: introDE, stories: selected, issueDate: new Date(), lang: 'de' });
 
-  await fs.writeFile(OUTPUT_HTML, htmlDE);
+  // Extract paste-ready snippets (no <html>/<head>/<body> wrappers)
+  const extractBody = (html) => {
+    const m = html.match(/<body[^>]*>([\s\S]*)<\/body>/);
+    return m ? m[1].trim() : html;
+  };
+
+  await fs.writeFile('newsletter-en.html', htmlEN);
+  await fs.writeFile('newsletter-de.html', htmlDE);
+  await fs.writeFile('newsletter-snippet-en.html', extractBody(htmlEN));
+  await fs.writeFile('newsletter-snippet-de.html', extractBody(htmlDE));
+
   await fs.writeFile(OUTPUT_META, JSON.stringify({
-    subject,
+    subjectEN,
+    subjectDE,
     count: selected.length,
     categories: [...new Set(selected.map(s => s.cat))],
     generatedAt: new Date().toISOString(),
   }, null, 2));
 
-  console.log(`Wrote ${OUTPUT_HTML} (${htmlDE.length} chars) and ${OUTPUT_META}.`);
+  console.log(`Done. Wrote 4 HTML files (full + snippets, EN + DE) and meta.`);
 }
 
 main().catch(err => {

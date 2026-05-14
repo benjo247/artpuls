@@ -32,61 +32,76 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const html = fs.readFileSync('newsletter-draft.html', 'utf-8');
+            const snippetEN = fs.readFileSync('newsletter-snippet-en.html', 'utf-8');
+            const snippetDE = fs.readFileSync('newsletter-snippet-de.html', 'utf-8');
             const meta = JSON.parse(fs.readFileSync('newsletter-meta.json', 'utf-8'));
 
-            const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
-                            'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                            'July', 'August', 'September', 'October', 'November', 'December'];
             const now = new Date();
             const issueLabel = `${months[now.getMonth()]} ${now.getFullYear()}`;
 
             const body = [
-              `## 📰 Newsletter-Draft: ArtPulse · ${issueLabel}`,
+              `## 📰 Newsletter draft: ArtPulse · ${issueLabel}`,
               ``,
-              `**Subject-Line:** \`${meta.subject}\``,
+              `**EN Subject:** \`${meta.subjectEN}\``,
+              `**DE Subject:** \`${meta.subjectDE}\``,
               `**Stories:** ${meta.count}`,
-              `**Kategorien:** ${meta.categories.join(', ')}`,
-              `**Generiert:** ${meta.generatedAt}`,
+              `**Categories:** ${meta.categories.join(', ')}`,
+              `**Generated:** ${meta.generatedAt}`,
               ``,
               `---`,
               ``,
               `### Send-Workflow`,
               ``,
-              `1. **Beehiiv öffnen** → New Post`,
-              `2. **HTML einfügen**: Im Editor das 3-Punkt-Menü → "View HTML" → unten kopierten HTML reinpasten`,
-              `3. **Subject** oben einfügen: \`${meta.subject}\``,
-              `4. **Preview** checken (besonders auf Mobile)`,
-              `5. **Send** (oder Schedule für später)`,
+              `1. **Beehiiv öffnen** → Start writing (neuer Post)`,
+              `2. **Title** oben einfügen: \`${meta.subjectEN}\` (oder DE-Version)`,
+              `3. Im Body-Editor **\`/html\`** tippen → "HTML Snippet" auswählen`,
+              `4. Snippet unten (EN oder DE) komplett kopieren und einfügen`,
+              `5. **Preview** → **Send Test Email** an dich selbst`,
+              `6. Wenn alles passt: **Send** (oder Schedule)`,
               ``,
-              `Zeitaufwand: ~3 Minuten.`,
+              `Aktueller Plan: **EN ist primär** (Hauptanteil Erstnutzer ist englischsprachig). DE-Version ist Backup bzw. für später wenn Sprach-Segmentierung in Beehiiv eingerichtet ist.`,
               ``,
               `---`,
               ``,
-              `### HTML zum Kopieren`,
+              `### English Snippet (paste-ready)`,
               ``,
               `<details>`,
-              `<summary><b>HTML anzeigen</b> (zum Kopieren ausklappen)</summary>`,
+              `<summary><b>EN-Snippet anzeigen</b></summary>`,
               ``,
               '```html',
-              html,
+              snippetEN,
               '```',
               ``,
               `</details>`,
               ``,
               `---`,
               ``,
-              `_Automatisch generiert via \`.github/workflows/newsletter.yml\` mit \`scripts/build-newsletter.mjs\`. Bei Fragen oder Issues: dieses Issue kommentieren._`
+              `### Deutsches Snippet (paste-ready)`,
+              ``,
+              `<details>`,
+              `<summary><b>DE-Snippet anzeigen</b></summary>`,
+              ``,
+              '```html',
+              snippetDE,
+              '```',
+              ``,
+              `</details>`,
+              ``,
+              `---`,
+              ``,
+              `_Automatisch generiert. Komplettes HTML (mit Wrapper, beide Sprachen) als Artifact am Workflow-Run angehängt._`
             ].join('\n');
 
-            // GitHub Issue body limit is 65,536 chars. Warn if we're close.
             if (body.length > 60000) {
-              console.warn(`Body length ${body.length} approaching GitHub limit. Consider attaching HTML as artifact.`);
+              console.warn(`Body length ${body.length} approaching GitHub limit.`);
             }
 
             const issue = await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `📰 Newsletter Draft: ${meta.subject}`,
+              title: `📰 Newsletter Draft: ${meta.subjectEN}`,
               body: body
             });
 
@@ -97,6 +112,9 @@ jobs:
         with:
           name: newsletter-draft
           path: |
-            newsletter-draft.html
+            newsletter-en.html
+            newsletter-de.html
+            newsletter-snippet-en.html
+            newsletter-snippet-de.html
             newsletter-meta.json
           retention-days: 90
