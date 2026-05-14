@@ -1316,3 +1316,88 @@ body.no-scroll {
   .d-header-inner { gap: 32px; }
   .d-nav { gap: 18px; }
 }
+
+/* ============================================================
+   TYPOGRAPHY FALLBACK CARDS (for stories without images)
+   Same dimensions as image cards. Category-tinted gradient
+   background, oversized quote mark, italic serif headline as
+   the visual. Elegant editorial fallback rather than a
+   generic default image.
+   ============================================================ */
+.d-card-typo,
+.d-hero-typo {
+  aspect-ratio: 4 / 3;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  padding: 28px 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  color: var(--fg);
+  transition: transform .4s ease;
+  border: 1px solid rgba(244, 241, 234, 0.06);
+}
+.d-card-typo { margin-bottom: 18px; }
+.d-hero-typo { margin: 0; }
+.d-card:hover .d-card-typo { transform: scale(1.012); }
+.d-hero:hover .d-hero-typo { transform: scale(1.005); }
+
+.d-typo-mark {
+  position: absolute;
+  top: -18px;
+  left: 18px;
+  font-family: 'Instrument Serif', serif;
+  font-size: 160px;
+  line-height: 1;
+  color: rgba(244, 241, 234, 0.08);
+  pointer-events: none;
+  user-select: none;
+}
+.d-hero-typo .d-typo-mark {
+  font-size: 240px;
+  top: -32px;
+  left: 28px;
+}
+
+.d-card-typo-headline {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--fg);
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.d-hero-typo-headline {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Category-colored backgrounds for typography cards
+   Soft 135deg gradient — accent color top-left fading to base */
+.d-typo-all        { background: linear-gradient(135deg, rgba(232,80,58,0.22),  rgba(232,80,58,0.04))  var(--bg-elev, #15130f); }
+.d-typo-auction    { background: linear-gradient(135deg, rgba(232,80,58,0.24),  rgba(232,80,58,0.04))  var(--bg-elev, #15130f); }
+.d-typo-exhibition { background: linear-gradient(135deg, rgba(212,165,116,0.24), rgba(212,165,116,0.04)) var(--bg-elev, #15130f); }
+.d-typo-artists    { background: linear-gradient(135deg, rgba(139,111,71,0.28),  rgba(139,111,71,0.04)) var(--bg-elev, #15130f); }
+.d-typo-market     { background: linear-gradient(135deg, rgba(200,85,61,0.24),  rgba(200,85,61,0.04))  var(--bg-elev, #15130f); }
+.d-typo-museum     { background: linear-gradient(135deg, rgba(122,158,159,0.26), rgba(122,158,159,0.04)) var(--bg-elev, #15130f); }
+.d-typo-biennale   { background: linear-gradient(135deg, rgba(168,184,159,0.24), rgba(168,184,159,0.04)) var(--bg-elev, #15130f); }
+.d-typo-restitution{ background: linear-gradient(135deg, rgba(155,133,121,0.26), rgba(155,133,121,0.04)) var(--bg-elev, #15130f); }

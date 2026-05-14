@@ -434,7 +434,7 @@
       html += '<div class="d-grid-wrap">';
       html += '<div class="d-grid-head"><h2 class="d-grid-title">' + escapeHTML(t('thisWeekHeadline')) + '</h2></div>';
       html += '<div class="d-grid">';
-      var max = Math.min(rest.length, 9);  // show up to 9 in first grid
+      var max = Math.min(rest.length, 15);  // show up to 15 stories in the main grid
       for (var i = 0; i < max; i++) html += desktopCardHTML(rest[i]);
       html += '</div></div>';
     }
@@ -454,18 +454,32 @@
   }
 
   function desktopHeroHTML(s) {
-    var image = s.image || '/icons/og-default.png';
+    var hasImage = !!s.image;
     var headline = escapeHTML(getText(s, 'headline'));
     var summary = escapeHTML(getText(s, 'summary') || '');
     var source = escapeHTML(s.source || '');
     var timeStr = escapeHTML(getText(s, 'time') || s.publishedAt || '');
-    var cat = escapeHTML(catLabel(s.cat || 'all'));
+    var catKey = s.cat || 'all';
+    var cat = escapeHTML(catLabel(catKey));
     var url = '/s/' + encodeURIComponent(s.id);
+
+    var leftPanel;
+    if (hasImage) {
+      leftPanel = '<a href="' + url + '" class="d-hero-img" style="background-image:url(' + JSON.stringify(s.image).replace(/^"|"$/g, '') + ')" aria-label="Featured story">' +
+        '<span class="d-hero-badge">' + cat + '</span>' +
+      '</a>';
+    } else {
+      // Typography hero — no photo, big italic headline on category-tinted background
+      leftPanel = '<a href="' + url + '" class="d-hero-typo d-typo-' + escapeAttr(catKey) + '" aria-label="Featured story">' +
+        '<span class="d-hero-badge">' + cat + '</span>' +
+        '<span class="d-typo-mark">&ldquo;</span>' +
+        '<span class="d-hero-typo-headline">' + headline + '</span>' +
+      '</a>';
+    }
+
     return '' +
       '<section class="d-hero">' +
-        '<a href="' + url + '" class="d-hero-img" style="background-image:url(' + JSON.stringify(image).replace(/^"|"$/g, '') + ')" aria-label="Featured story">' +
-          '<span class="d-hero-badge">' + cat + '</span>' +
-        '</a>' +
+        leftPanel +
         '<div class="d-hero-content">' +
           '<div class="d-hero-meta">' +
             '<span>' + escapeHTML(t('featured')) + '</span>' +
@@ -482,18 +496,32 @@
   }
 
   function desktopCardHTML(s) {
-    var image = s.image || '/icons/og-default.png';
+    var hasImage = !!s.image;
     var headline = escapeHTML(getText(s, 'headline'));
     var summary = escapeHTML(getText(s, 'summary') || '');
     var source = escapeHTML(s.source || '');
     var timeStr = escapeHTML(getText(s, 'time') || '');
-    var cat = escapeHTML(catLabel(s.cat || 'all'));
+    var catKey = s.cat || 'all';
+    var cat = escapeHTML(catLabel(catKey));
     var url = '/s/' + encodeURIComponent(s.id);
+
+    var visual;
+    if (hasImage) {
+      visual = '<div class="d-card-img" style="background-image:url(' + JSON.stringify(s.image).replace(/^"|"$/g, '') + ')">' +
+        '<span class="d-card-badge">' + cat + '</span>' +
+      '</div>';
+    } else {
+      // Typography card variant — same aspect ratio, headline becomes the visual
+      visual = '<div class="d-card-typo d-typo-' + escapeAttr(catKey) + '">' +
+        '<span class="d-card-badge">' + cat + '</span>' +
+        '<span class="d-typo-mark">&ldquo;</span>' +
+        '<span class="d-card-typo-headline">' + headline + '</span>' +
+      '</div>';
+    }
+
     return '' +
       '<a href="' + url + '" class="d-card">' +
-        '<div class="d-card-img" style="background-image:url(' + JSON.stringify(image).replace(/^"|"$/g, '') + ')">' +
-          '<span class="d-card-badge">' + cat + '</span>' +
-        '</div>' +
+        visual +
         '<div class="d-card-meta">' +
           (source ? '<span>' + source + '</span>' : '') +
           (source && timeStr ? '<span class="dot"></span>' : '') +
@@ -1070,6 +1098,12 @@
     renderCats();
     loadStories().then(function () {
       renderActive();
+      // On desktop, load full archive in background so the grid fills with more content
+      if (isDesktop && !state.archiveLoaded) {
+        loadFullArchive().then(function () {
+          if (isDesktop) renderActive();
+        });
+      }
       // Resolve deep-link if present (mobile: opens sheet; desktop: navigates to permalink)
       if (state.pendingDeepLink) {
         var id = state.pendingDeepLink;
@@ -1110,13 +1144,42 @@
     }
   }
 
+  // Load the full archive (all stories ever) and merge into state.stories.
+  // Desktop renders many more cards than the mobile feed, so it needs the
+  // full corpus, not just the latest 72h window from latest.json.
+  function loadFullArchive() {
+    if (state.archiveLoaded) return Promise.resolve();
+    return fetch('/data/archive.json', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data || !data.stories || !data.stories.length) return;
+        var existingIds = {};
+        for (var i = 0; i < state.stories.length; i++) {
+          existingIds[String(state.stories[i].id)] = true;
+        }
+        var additional = [];
+        for (var j = 0; j < data.stories.length; j++) {
+          var s = data.stories[j];
+          if (s && !existingIds[String(s.id)]) additional.push(s);
+        }
+        // Append archive entries after the latest ones (preserves newest-first order)
+        state.stories = state.stories.concat(additional);
+        state.archiveLoaded = true;
+      })
+      .catch(function () { /* fall through with latest only */ });
+  }
+
   function onViewportChange(e) {
     var nextDesktop = e.matches;
     if (nextDesktop === isDesktop) return;
     isDesktop = nextDesktop;
     applyViewportMode();
-    // Re-render into the now-visible tree (data already loaded)
-    if (state.stories && state.stories.length > 0) renderActive();
+    // When entering desktop for the first time mid-session, pull full archive
+    if (isDesktop && !state.archiveLoaded) {
+      loadFullArchive().then(function () { if (isDesktop) renderActive(); });
+    } else if (state.stories && state.stories.length > 0) {
+      renderActive();
+    }
   }
 
   if (document.readyState === 'loading') {
