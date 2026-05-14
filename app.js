@@ -4,6 +4,12 @@
 (function () {
   'use strict';
 
+  // ====== Viewport mode ======
+  // Threshold: >=1024px is desktop magazine layout, else mobile swipe feed.
+  // Updated on resize; the UI re-renders if the user crosses the breakpoint.
+  var DESKTOP_MQ = window.matchMedia('(min-width: 1024px)');
+  var isDesktop = DESKTOP_MQ.matches;
+
   // ---------- UI strings ----------
   var LABELS = {
     en: {
@@ -22,6 +28,21 @@
       empty: 'Nothing here yet. Pull to refresh.',
       offline: 'Offline \u2014 showing cached stories.',
       readSource: 'Read at source',
+      // Desktop-only
+      subscribe: 'Subscribe',
+      featured: 'Featured',
+      readStory: 'Read the story',
+      latestUpdated: 'Latest \u00B7 Updated three times daily',
+      thisWeekHeadline: 'This week',
+      nlEyebrow: 'ArtPulse Weekly',
+      nlTitle1: 'Sunday mornings,',
+      nlTitle2: 'delivered.',
+      nlBody: 'Ten stories. Four-minute read. The art world, condensed by us. Every Sunday at 10am.',
+      footerTagline: 'International art news, in one breath. Three times daily, edited by us.',
+      sectionsLabel: 'Sections',
+      aboutLabel: 'About',
+      legalLabel: 'Legal',
+      subscribeNewsletter: 'Subscribe to newsletter',
       cats: ['All', 'Auction', 'Exhibition', 'Artists', 'Market', 'Museum', 'Biennale', 'Restitution']
     },
     de: {
@@ -40,6 +61,21 @@
       empty: 'Noch nichts. Zum Aktualisieren ziehen.',
       offline: 'Offline \u2014 gespeicherte Stories.',
       readSource: 'Bei der Quelle lesen',
+      // Desktop-only
+      subscribe: 'Abonnieren',
+      featured: 'Ausgew\u00E4hlt',
+      readStory: 'Story lesen',
+      latestUpdated: 'Aktuell \u00B7 Dreimal t\u00E4glich aktualisiert',
+      thisWeekHeadline: 'Diese Woche',
+      nlEyebrow: 'ArtPulse Weekly',
+      nlTitle1: 'Sonntagmorgen,',
+      nlTitle2: 'frei Haus.',
+      nlBody: 'Zehn Stories. Vier Minuten Lesezeit. Die Kunstwelt, kondensiert von uns. Jeden Sonntag um 10 Uhr.',
+      footerTagline: 'Internationale Kunst-News, in einem Atemzug. Dreimal t\u00E4glich, redigiert von uns.',
+      sectionsLabel: 'Rubriken',
+      aboutLabel: 'Information',
+      legalLabel: 'Rechtliches',
+      subscribeNewsletter: 'Newsletter abonnieren',
       cats: ['Alle', 'Auktion', 'Ausstellung', 'K\u00FCnstler:innen', 'Markt', 'Museum', 'Biennale', 'Restitution']
     }
   };
@@ -346,6 +382,272 @@
     }
   }
 
+  // ====================================================
+  // Desktop magazine renderer
+  // Builds the entire desktop view into #desktop. Called from
+  // renderActive(); state.stories and state.cat are shared with mobile.
+  // ====================================================
+  function renderActive() {
+    if (isDesktop) renderDesktop();
+    else renderFeed();
+  }
+
+  function renderDesktop() {
+    var root = document.getElementById('desktop');
+    if (!root) return;
+    var stories = filteredStories();
+    var hero = stories[0] || null;
+    var rest = stories.slice(1);
+
+    var html = '';
+
+    // Header
+    html += '<header class="d-header"><div class="d-header-inner">';
+    html += '<a href="/" class="d-logo" id="dLogo"><span class="logo-mark"></span>Art<em>Pulse</em></a>';
+    html += '<nav class="d-nav" id="dNav">';
+    for (var c = 0; c < CAT_KEYS.length; c++) {
+      var k = CAT_KEYS[c];
+      html += '<button type="button" data-d-cat="' + k + '"' + (state.cat === k ? ' class="on"' : '') + '>' + escapeHTML(catLabel(k)) + '</button>';
+    }
+    html += '</nav>';
+    html += '<div class="d-actions">';
+    html += '<div class="lang" id="dLang">' +
+            '<button data-lang="en"' + (state.lang === 'en' ? ' class="on"' : '') + '>EN</button>' +
+            '<button data-lang="de"' + (state.lang === 'de' ? ' class="on"' : '') + '>DE</button>' +
+            '</div>';
+    html += '<button class="icon-btn" id="dSearchBtn" aria-label="Search"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>';
+    html += '<a href="/subscribe" class="d-subscribe-btn">' + escapeHTML(t('subscribe')) + '</a>';
+    html += '</div></div></header>';
+
+    // Hero (or empty state if no stories)
+    if (!hero) {
+      html += '<div class="d-empty"><p class="d-empty-title">Nothing here yet.</p><p class="d-empty-sub">Check back soon — new stories arrive three times daily.</p></div>';
+    } else {
+      html += desktopHeroHTML(hero);
+    }
+
+    // Rail
+    html += '<div class="d-rail"><div class="d-rail-line"></div><span class="d-rail-label">' + escapeHTML(t('latestUpdated')) + '</span><div class="d-rail-line"></div></div>';
+
+    // Grid
+    if (rest.length > 0) {
+      html += '<div class="d-grid-wrap">';
+      html += '<div class="d-grid-head"><h2 class="d-grid-title">' + escapeHTML(t('thisWeekHeadline')) + '</h2></div>';
+      html += '<div class="d-grid">';
+      var max = Math.min(rest.length, 9);  // show up to 9 in first grid
+      for (var i = 0; i < max; i++) html += desktopCardHTML(rest[i]);
+      html += '</div></div>';
+    }
+
+    // Newsletter strip (only show if user hasn't subscribed)
+    var subscribed = false;
+    try { subscribed = localStorage.getItem('ap-nl-state') === 'subscribed'; } catch (e) {}
+    if (!subscribed) {
+      html += desktopNewsletterHTML();
+    }
+
+    // Footer
+    html += desktopFooterHTML();
+
+    root.innerHTML = html;
+    bindDesktopEvents();
+  }
+
+  function desktopHeroHTML(s) {
+    var image = s.image || '/icons/og-default.png';
+    var headline = escapeHTML(getText(s, 'headline'));
+    var summary = escapeHTML(getText(s, 'summary') || '');
+    var source = escapeHTML(s.source || '');
+    var timeStr = escapeHTML(getText(s, 'time') || s.publishedAt || '');
+    var cat = escapeHTML(catLabel(s.cat || 'all'));
+    var url = '/s/' + encodeURIComponent(s.id);
+    return '' +
+      '<section class="d-hero">' +
+        '<a href="' + url + '" class="d-hero-img" style="background-image:url(' + JSON.stringify(image).replace(/^"|"$/g, '') + ')" aria-label="Featured story">' +
+          '<span class="d-hero-badge">' + cat + '</span>' +
+        '</a>' +
+        '<div class="d-hero-content">' +
+          '<div class="d-hero-meta">' +
+            '<span>' + escapeHTML(t('featured')) + '</span>' +
+            (source ? '<span class="dot"></span><span>' + source + '</span>' : '') +
+            (timeStr ? '<span class="dot"></span><span>' + timeStr + '</span>' : '') +
+          '</div>' +
+          '<h1 class="d-hero-headline">' + headline + '</h1>' +
+          (summary ? '<p class="d-hero-summary">' + summary + '</p>' : '') +
+          '<a href="' + url + '" class="d-hero-read">' + escapeHTML(t('readStory')) +
+            ' <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+          '</a>' +
+        '</div>' +
+      '</section>';
+  }
+
+  function desktopCardHTML(s) {
+    var image = s.image || '/icons/og-default.png';
+    var headline = escapeHTML(getText(s, 'headline'));
+    var summary = escapeHTML(getText(s, 'summary') || '');
+    var source = escapeHTML(s.source || '');
+    var timeStr = escapeHTML(getText(s, 'time') || '');
+    var cat = escapeHTML(catLabel(s.cat || 'all'));
+    var url = '/s/' + encodeURIComponent(s.id);
+    return '' +
+      '<a href="' + url + '" class="d-card">' +
+        '<div class="d-card-img" style="background-image:url(' + JSON.stringify(image).replace(/^"|"$/g, '') + ')">' +
+          '<span class="d-card-badge">' + cat + '</span>' +
+        '</div>' +
+        '<div class="d-card-meta">' +
+          (source ? '<span>' + source + '</span>' : '') +
+          (source && timeStr ? '<span class="dot"></span>' : '') +
+          (timeStr ? '<span>' + timeStr + '</span>' : '') +
+        '</div>' +
+        '<h3 class="d-card-headline">' + headline + '</h3>' +
+        (summary ? '<p class="d-card-summary">' + summary + '</p>' : '') +
+      '</a>';
+  }
+
+  function desktopNewsletterHTML() {
+    return '' +
+      '<div class="d-nl-strip"><div class="d-nl-card">' +
+        '<div>' +
+          '<div class="d-nl-eyebrow">' + escapeHTML(t('nlEyebrow')) + '</div>' +
+          '<h2 class="d-nl-title">' + escapeHTML(t('nlTitle1')) + '<br><em>' + escapeHTML(t('nlTitle2')) + '</em></h2>' +
+          '<p class="d-nl-body">' + escapeHTML(t('nlBody')) + '</p>' +
+        '</div>' +
+        '<form class="d-nl-form" id="dNlForm" novalidate>' +
+          '<div class="d-nl-form-col">' +
+            '<input class="d-nl-input" id="dNlInput" type="email" placeholder="your@email.com" autocomplete="email" required>' +
+            '<div class="d-nl-status" id="dNlStatus" role="alert" aria-live="polite"></div>' +
+          '</div>' +
+          '<button type="submit" class="d-nl-submit" id="dNlSubmit">' + escapeHTML(t('subscribe')) +
+            '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+          '</button>' +
+        '</form>' +
+      '</div></div>';
+  }
+
+  function desktopFooterHTML() {
+    return '' +
+      '<footer class="d-footer">' +
+        '<div class="d-footer-inner">' +
+          '<div class="d-footer-brand">' +
+            '<h2><span class="dot"></span>Art<em>Pulse</em></h2>' +
+            '<p>' + escapeHTML(t('footerTagline')) + '</p>' +
+          '</div>' +
+          '<div class="d-footer-col">' +
+            '<h4>' + escapeHTML(t('sectionsLabel')) + '</h4>' +
+            '<ul>' +
+              '<li><a href="#" data-d-cat="auction">' + escapeHTML(catLabel('auction')) + '</a></li>' +
+              '<li><a href="#" data-d-cat="exhibition">' + escapeHTML(catLabel('exhibition')) + '</a></li>' +
+              '<li><a href="#" data-d-cat="artists">' + escapeHTML(catLabel('artists')) + '</a></li>' +
+              '<li><a href="#" data-d-cat="market">' + escapeHTML(catLabel('market')) + '</a></li>' +
+              '<li><a href="#" data-d-cat="museum">' + escapeHTML(catLabel('museum')) + '</a></li>' +
+            '</ul>' +
+          '</div>' +
+          '<div class="d-footer-col">' +
+            '<h4>' + escapeHTML(t('aboutLabel')) + '</h4>' +
+            '<ul>' +
+              '<li><a href="/subscribe">' + escapeHTML(t('subscribeNewsletter')) + '</a></li>' +
+            '</ul>' +
+          '</div>' +
+          '<div class="d-footer-col">' +
+            '<h4>' + escapeHTML(t('legalLabel')) + '</h4>' +
+            '<ul>' +
+              '<li><a href="/impressum">Impressum</a></li>' +
+              '<li><a href="/datenschutz">Datenschutz</a></li>' +
+            '</ul>' +
+          '</div>' +
+        '</div>' +
+        '<div class="d-footer-meta">' +
+          '<span>\u00A9 2026 ArtPulse \u00B7 Made in Berlin</span>' +
+          '<span>artpulse.app</span>' +
+        '</div>' +
+      '</footer>';
+  }
+
+  function bindDesktopEvents() {
+    // Category nav
+    var navBtns = document.querySelectorAll('[data-d-cat]');
+    for (var i = 0; i < navBtns.length; i++) {
+      navBtns[i].addEventListener('click', onDesktopCatClick);
+    }
+    // Language toggle
+    var langBtns = document.querySelectorAll('#dLang button');
+    for (var j = 0; j < langBtns.length; j++) {
+      langBtns[j].addEventListener('click', function (e) {
+        setLang(e.currentTarget.getAttribute('data-lang'));
+      });
+    }
+    // Logo: scroll to top of desktop view
+    var dLogo = document.getElementById('dLogo');
+    if (dLogo) dLogo.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    // Search button (reuses existing search overlay)
+    var dSearch = document.getElementById('dSearchBtn');
+    if (dSearch) dSearch.addEventListener('click', openSearch);
+    // Newsletter form
+    var nlForm = document.getElementById('dNlForm');
+    if (nlForm) nlForm.addEventListener('submit', onDesktopNewsletterSubmit);
+  }
+
+  function onDesktopCatClick(e) {
+    e.preventDefault();
+    var nextCat = e.currentTarget.getAttribute('data-d-cat');
+    if (!nextCat) return;
+    if (nextCat === state.cat) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    state.cat = nextCat;
+    state.currentIdx = 0;
+    renderActive();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function onDesktopNewsletterSubmit(e) {
+    e.preventDefault();
+    var input = document.getElementById('dNlInput');
+    var submit = document.getElementById('dNlSubmit');
+    var status = document.getElementById('dNlStatus');
+    if (!input || !submit || !status) return;
+    var email = (input.value || '').trim().toLowerCase();
+    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!EMAIL_RE.test(email)) {
+      status.textContent = 'Please enter a valid email address.';
+      status.classList.remove('success');
+      input.focus();
+      return;
+    }
+    submit.disabled = true;
+    status.textContent = 'Subscribing\u2026';
+    status.classList.remove('success');
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    })
+      .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+      .then(function (res) {
+        submit.disabled = false;
+        if (res.ok && res.data && res.data.ok) {
+          status.textContent = 'Check your inbox to confirm.';
+          status.classList.add('success');
+          input.value = '';
+          try { localStorage.setItem('ap-nl-state', 'subscribed'); } catch (e) {}
+          // Hide newsletter strip on next render
+          setTimeout(function () { renderActive(); }, 2500);
+        } else {
+          var msg = 'Something went wrong. Please try again.';
+          if (res.data && res.data.error === 'invalid-email') msg = 'That email looks invalid.';
+          status.textContent = msg;
+        }
+      })
+      .catch(function () {
+        submit.disabled = false;
+        status.textContent = 'Network error. Please try again.';
+      });
+  }
+
   function bindFeedEvents() {
     var expands = document.querySelectorAll('[data-expand]');
     for (var j = 0; j < expands.length; j++) {
@@ -488,7 +790,7 @@
     // Only re-render the feed if stories are already loaded.
     // On first setLang() during init, stories are still empty — re-rendering then
     // would replace the loading element and crash later code that references it.
-    if (state.stories && state.stories.length > 0) renderFeed();
+    if (state.stories && state.stories.length > 0) renderActive();
   }
 
   // ====================================================
@@ -654,6 +956,12 @@
   }
 
   function onSearchResultClick(e) {
+    // On desktop, let the default link nav to /s/:id happen — the Edge Function
+    // serves a proper page. Just close the search overlay first.
+    if (isDesktop) {
+      closeSearch();
+      return;  // do not preventDefault — link navigates normally
+    }
     var id = e.currentTarget.getAttribute('data-search-id');
     var s = findStory(id);
     if (s) {
@@ -670,7 +978,7 @@
       if (found) {
         e.preventDefault();
         state.stories = [found].concat(state.stories);
-        renderFeed();
+        renderActive();
         closeSearch();
         openSheet(id);
       }
@@ -750,13 +1058,27 @@
 
     document.getElementById('feed').addEventListener('scroll', onScroll, { passive: true });
 
+    // Reflect viewport mode in DOM (so CSS shows the right tree)
+    applyViewportMode();
+    // Listen for breakpoint crossing
+    if (DESKTOP_MQ.addEventListener) {
+      DESKTOP_MQ.addEventListener('change', onViewportChange);
+    } else if (DESKTOP_MQ.addListener) {
+      DESKTOP_MQ.addListener(onViewportChange);  // Safari < 14 fallback
+    }
+
     renderCats();
     loadStories().then(function () {
-      renderFeed();
-      // Resolve deep-link if present
+      renderActive();
+      // Resolve deep-link if present (mobile: opens sheet; desktop: navigates to permalink)
       if (state.pendingDeepLink) {
         var id = state.pendingDeepLink;
         state.pendingDeepLink = null;
+        if (isDesktop) {
+          // On desktop, deep links go through the /s/ permalink page (Edge Function)
+          // — keep simple, no in-page modal yet
+          return;
+        }
         var s = findStory(id);
         if (s) {
           openSheet(id);
@@ -767,13 +1089,34 @@
             var found = data.stories.find(function (x) { return String(x.id) === String(id); });
             if (found) {
               state.stories = [found].concat(state.stories);
-              renderFeed();
+              renderActive();
               openSheet(id);
             }
           }).catch(function () {});
         }
       }
     });
+  }
+
+  function applyViewportMode() {
+    var phone = document.querySelector('.phone');
+    var desktop = document.getElementById('desktop');
+    if (isDesktop) {
+      if (phone) phone.setAttribute('aria-hidden', 'true');
+      if (desktop) desktop.removeAttribute('hidden');
+    } else {
+      if (phone) phone.removeAttribute('aria-hidden');
+      if (desktop) desktop.setAttribute('hidden', '');
+    }
+  }
+
+  function onViewportChange(e) {
+    var nextDesktop = e.matches;
+    if (nextDesktop === isDesktop) return;
+    isDesktop = nextDesktop;
+    applyViewportMode();
+    // Re-render into the now-visible tree (data already loaded)
+    if (state.stories && state.stories.length > 0) renderActive();
   }
 
   if (document.readyState === 'loading') {

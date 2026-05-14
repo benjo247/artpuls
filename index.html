@@ -74,7 +74,7 @@
 
   <div class="toast" id="toast" hidden></div>
 
-  <!-- ============ Slide-in Drawer (left) ============ -->
+  <!-- ============ Slide-in Drawer (left, mobile only) ============ -->
   <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
   <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Main menu">
     <div class="drawer-head">
@@ -106,35 +106,39 @@
     </div>
   </aside>
 
-  <!-- ============ Search Overlay ============ -->
-  <div class="search-overlay" id="searchOverlay" aria-hidden="true">
-    <div class="search-bar">
-      <button class="icon-btn" id="searchClose" aria-label="Close search">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-      <input
-        class="search-input"
-        id="searchInput"
-        type="search"
-        placeholder="Search artists, exhibitions, museums…"
-        autocomplete="off"
-        autocorrect="off"
-        spellcheck="false"
-        enterkeyhint="search"
-        aria-label="Search">
-      <button class="icon-btn search-clear" id="searchClear" aria-label="Clear" hidden>
-        <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <div class="search-results" id="searchResults">
-      <div class="search-empty">
-        <p class="search-empty-title">Search the archive</p>
-        <p class="search-empty-sub">Find artists, exhibitions, auction news and more across every story.</p>
-      </div>
+</div>
+<!-- /.phone -->
+
+<!-- ============ Search Overlay (lives outside .phone so it works on desktop too) ============ -->
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-bar">
+    <button class="icon-btn" id="searchClose" aria-label="Close search">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <input
+      class="search-input"
+      id="searchInput"
+      type="search"
+      placeholder="Search artists, exhibitions, museums…"
+      autocomplete="off"
+      autocorrect="off"
+      spellcheck="false"
+      enterkeyhint="search"
+      aria-label="Search">
+    <button class="icon-btn search-clear" id="searchClear" aria-label="Clear" hidden>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="search-results" id="searchResults">
+    <div class="search-empty">
+      <p class="search-empty-title">Search the archive</p>
+      <p class="search-empty-sub">Find artists, exhibitions, auction news and more across every story.</p>
     </div>
   </div>
-
 </div>
+
+<!-- ============ Desktop magazine view ============ -->
+<div class="desktop" id="desktop" hidden></div>
 
 <script src="/ads.js" defer></script>
 <script src="/app.js" defer></script>
