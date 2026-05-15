@@ -152,7 +152,7 @@ ${noscriptArticle}
   <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer-head">
-      <span class="drawer-title"><span class="logo-mark">&bull;</span>Art<em>Pulse</em></span>
+      <span class="drawer-title"><span class="art">art</span><span class="pulse">pulse</span><span class="dot" aria-hidden="true"></span></span>
       <button class="icon-btn" id="drawerClose" aria-label="Close"><svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
     <nav class="drawer-nav">
