@@ -137,7 +137,33 @@
   }
   .logo em { font-style: italic; }
 
-  .header-spacer { width: 36px; }
+  .lang {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--fg-border);
+    border-radius: 999px;
+    padding: 3px;
+    background: var(--fg-fade);
+  }
+  .lang button {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--fg-muted);
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 5px 9px;
+    border-radius: 999px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .lang button.on {
+    background: var(--fg);
+    color: var(--bg);
+  }
+  .lang button:not(.on):hover { color: var(--fg); }
 
   /* ---------- Main body ---------- */
   .body {
@@ -452,7 +478,10 @@
     <a href="/" class="logo">
       <span class="art">art</span><span class="pulse">pulse</span><span class="dot" aria-hidden="true"></span>
     </a>
-    <div class="header-spacer"></div>
+    <div class="lang" id="lang">
+      <button data-lang="en" class="on">EN</button>
+      <button data-lang="de">DE</button>
+    </div>
   </header>
 
   <main class="body">
@@ -460,21 +489,21 @@
     <!-- ============ Form state ============ -->
     <div class="state on" id="state-form">
       <div class="eyebrow">ArtPulse Monthly</div>
-      <h1 class="title">The art world,<br><em>in one breath.</em></h1>
-      <p class="lead">The first of every month. The stories that actually mattered, condensed by us. One quiet read.</p>
+      <h1 class="title" data-i18n-html="title">The art world,<br><em>in one breath.</em></h1>
+      <p class="lead" data-i18n="lead">The first of every month. The stories that actually mattered, condensed by us. One quiet read.</p>
 
       <ul class="bullets">
         <li>
           <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
-          <span>Auction results, market shifts, gallery moves</span>
+          <span data-i18n="bullet1">Auction results, market shifts, gallery moves</span>
         </li>
         <li>
           <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
-          <span>One artist we think you should know</span>
+          <span data-i18n="bullet2">One artist we think you should know</span>
         </li>
         <li>
           <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
-          <span>Free. No spam. Unsubscribe in one click.</span>
+          <span data-i18n="bullet3">Free. No spam. Unsubscribe in one click.</span>
         </li>
       </ul>
 
@@ -490,12 +519,12 @@
           required
         >
         <button class="submit" type="submit" id="submit">
-          <span class="submit-text">Get the monthly digest</span>
+          <span class="submit-text" data-i18n="button">Get the monthly digest</span>
           <svg class="submit-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           <span class="submit-spinner"></span>
         </button>
         <div class="error-msg" id="error" role="alert" aria-live="polite"></div>
-        <div class="trust">Free · Monthly · Unsubscribe anytime</div>
+        <div class="trust" data-i18n="trust">Free · Monthly · Unsubscribe anytime</div>
       </form>
     </div>
 
@@ -505,13 +534,13 @@
         <div class="confirm-icon">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
         </div>
-        <h2 class="confirm-title">Check your<br><em>inbox.</em></h2>
-        <p class="confirm-body">We sent a confirmation link to</p>
+        <h2 class="confirm-title" data-i18n-html="confirmTitle">Check your<br><em>inbox.</em></h2>
+        <p class="confirm-body" data-i18n="confirmBody1">We sent a confirmation link to</p>
         <div class="confirm-email" id="confirm-email">your@email.com</div>
-        <p class="confirm-body">Tap the link there to start receiving the Monthly Digest. Your first one arrives on the first of next month.</p>
+        <p class="confirm-body" data-i18n="confirmBody2">Tap the link there to start receiving the Monthly Digest. Your first one arrives on the first of next month.</p>
         <div class="confirm-actions">
-          <a href="/" class="confirm-btn primary">Back to the feed</a>
-          <button class="confirm-btn secondary" id="edit-email">Wrong email? Edit</button>
+          <a href="/" class="confirm-btn primary" data-i18n="backToFeed">Back to the feed</a>
+          <button class="confirm-btn secondary" id="edit-email" data-i18n="editEmail">Wrong email? Edit</button>
         </div>
       </div>
     </div>
@@ -528,6 +557,96 @@
 (function () {
   'use strict';
 
+  // ----- Bilingual labels (EN + DE) -----
+  var LABELS = {
+    en: {
+      title: 'The art world,<br><em>in one breath.</em>',
+      lead: 'The first of every month. The stories that actually mattered, condensed by us. One quiet read.',
+      bullet1: 'Auction results, market shifts, gallery moves',
+      bullet2: 'One artist we think you should know',
+      bullet3: 'Free. No spam. Unsubscribe in one click.',
+      button: 'Get the monthly digest',
+      trust: 'Free · Monthly · Unsubscribe anytime',
+      confirmTitle: 'Check your<br><em>inbox.</em>',
+      confirmBody1: 'We sent a confirmation link to',
+      confirmBody2: 'Tap the link there to start receiving the Monthly Digest. Your first one arrives on the first of next month.',
+      backToFeed: 'Back to the feed',
+      editEmail: 'Wrong email? Edit',
+      // Errors
+      errInvalidEmail: 'Please enter a valid email address.',
+      errGeneric: 'Something went wrong. Please try again.',
+      errInvalidEmailServer: 'That email looks invalid. Try again?',
+      errNetwork: 'Network error. Check your connection and try again.'
+    },
+    de: {
+      title: 'Die Kunstwelt,<br><em>in einem Atemzug.</em>',
+      lead: 'Am Ersten jeden Monats. Die Stories, die wirklich zählten — kondensiert von uns. Ein ruhiger Read.',
+      bullet1: 'Auktionsergebnisse, Marktbewegungen, Galerien',
+      bullet2: 'Ein:e Künstler:in, der/die einen Blick wert ist',
+      bullet3: 'Kostenlos. Kein Spam. Abbestellen mit einem Klick.',
+      button: 'Newsletter abonnieren',
+      trust: 'Kostenlos · Monatlich · Jederzeit abbestellbar',
+      confirmTitle: 'Schau in dein<br><em>Postfach.</em>',
+      confirmBody1: 'Wir haben einen Bestätigungslink geschickt an',
+      confirmBody2: 'Tippe auf den Link um den Monthly Digest zu starten. Die erste Ausgabe kommt am Ersten des nächsten Monats.',
+      backToFeed: 'Zurück zum Feed',
+      editEmail: 'Falsche E-Mail? Ändern',
+      // Errors
+      errInvalidEmail: 'Bitte gib eine gültige E-Mail-Adresse ein.',
+      errGeneric: 'Etwas ist schiefgegangen. Bitte erneut versuchen.',
+      errInvalidEmailServer: 'Diese E-Mail sieht ungültig aus. Erneut versuchen?',
+      errNetwork: 'Netzwerkfehler. Prüfe deine Verbindung und versuche es erneut.'
+    }
+  };
+
+  // Read saved lang from same key the main app uses
+  var lang = 'en';
+  try {
+    var saved = localStorage.getItem('kp-lang');
+    if (saved === 'de' || saved === 'en') lang = saved;
+  } catch (e) {}
+
+  function t(key) { return LABELS[lang][key]; }
+
+  function applyLang(newLang) {
+    if (newLang !== 'en' && newLang !== 'de') return;
+    lang = newLang;
+    try { localStorage.setItem('kp-lang', lang); } catch (e) {}
+    // Update <html lang>
+    document.documentElement.lang = lang;
+    // Update toggle buttons
+    var btns = document.querySelectorAll('#lang button');
+    for (var i = 0; i < btns.length; i++) {
+      if (btns[i].getAttribute('data-lang') === lang) btns[i].classList.add('on');
+      else btns[i].classList.remove('on');
+    }
+    // Update all text elements
+    var elsText = document.querySelectorAll('[data-i18n]');
+    for (var j = 0; j < elsText.length; j++) {
+      var k = elsText[j].getAttribute('data-i18n');
+      if (LABELS[lang][k] !== undefined) elsText[j].textContent = LABELS[lang][k];
+    }
+    var elsHtml = document.querySelectorAll('[data-i18n-html]');
+    for (var m = 0; m < elsHtml.length; m++) {
+      var hk = elsHtml[m].getAttribute('data-i18n-html');
+      if (LABELS[lang][hk] !== undefined) elsHtml[m].innerHTML = LABELS[lang][hk];
+    }
+  }
+
+  // Wire toggle clicks
+  var langEl = document.getElementById('lang');
+  if (langEl) {
+    langEl.addEventListener('click', function (e) {
+      var btn = e.target.closest('button[data-lang]');
+      if (!btn) return;
+      applyLang(btn.getAttribute('data-lang'));
+    });
+  }
+
+  // Apply on load
+  applyLang(lang);
+
+  // ----- Form logic -----
   var form        = document.getElementById('form');
   var input       = document.getElementById('email');
   var submit      = document.getElementById('submit');
@@ -555,7 +674,7 @@
     clearError();
     var email = (input.value || '').trim().toLowerCase();
     if (!email || !EMAIL_RE.test(email)) {
-      showError('Please enter a valid email address.');
+      showError(t('errInvalidEmail'));
       input.focus();
       return;
     }
@@ -582,8 +701,8 @@
         // Update URL for analytics
         try { window.history.replaceState({}, '', '/subscribe?ok=1'); } catch (e) {}
       } else {
-        var msg = 'Something went wrong. Please try again.';
-        if (res.data && res.data.error === 'invalid-email') msg = 'That email looks invalid. Try again?';
+        var msg = t('errGeneric');
+        if (res.data && res.data.error === 'invalid-email') msg = t('errInvalidEmailServer');
         if (res.data && res.data.error === 'beehiiv-error' && res.data.detail) msg = res.data.detail;
         showError(msg);
       }
@@ -591,7 +710,7 @@
     .catch(function () {
       submit.classList.remove('loading');
       submit.disabled = false;
-      showError('Network error. Check your connection and try again.');
+      showError(t('errNetwork'));
     });
   });
 
@@ -604,9 +723,9 @@
 
   // If user landed with ?ok=1 (refresh), show confirm state
   if (window.location.search.indexOf('ok=1') !== -1) {
-    var saved = '';
-    try { saved = localStorage.getItem('ap-nl-email') || ''; } catch (e) {}
-    if (saved) confirmEmail.textContent = saved;
+    var savedEmail = '';
+    try { savedEmail = localStorage.getItem('ap-nl-email') || ''; } catch (e) {}
+    if (savedEmail) confirmEmail.textContent = savedEmail;
     stateForm.classList.remove('on');
     stateConfirm.classList.add('on');
   }
