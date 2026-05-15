@@ -5,7 +5,7 @@
  *   - External images: cache as encountered, served from cache when possible
  */
 
-var VERSION = 'ap-v19';
+var VERSION = 'ap-v20';
 var SHELL_CACHE = 'kp-shell-' + VERSION;
 var DATA_CACHE = 'kp-data-' + VERSION;
 var IMG_CACHE = 'kp-img-' + VERSION;
