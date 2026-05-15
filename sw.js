@@ -5,7 +5,7 @@
  *   - External images: cache as encountered, served from cache when possible
  */
 
-var VERSION = 'ap-v23';
+var VERSION = 'ap-v24';
 var SHELL_CACHE = 'kp-shell-' + VERSION;
 var DATA_CACHE = 'kp-data-' + VERSION;
 var IMG_CACHE = 'kp-img-' + VERSION;
@@ -20,7 +20,8 @@ var SHELL = [
   '/icons/icon-192.png',
   '/icons/icon-512.png',
   '/icons/apple-touch-icon.png',
-  '/icons/favicon-32.png'
+  '/icons/favicon-32.png',
+  '/favicon.ico'
 ];
 
 self.addEventListener('install', function (event) {
