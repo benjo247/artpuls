@@ -34,10 +34,10 @@
       readStory: 'Read the story',
       latestUpdated: 'Latest \u00B7 Updated three times daily',
       thisWeekHeadline: 'This week',
-      nlEyebrow: 'ArtPulse Weekly',
-      nlTitle1: 'Sunday mornings,',
+      nlEyebrow: 'ArtPulse Monthly',
+      nlTitle1: 'The first of the month,',
       nlTitle2: 'delivered.',
-      nlBody: 'Ten stories. Four-minute read. The art world, condensed by us. Every Sunday at 10am.',
+      nlBody: 'Once a month. The stories that mattered, condensed in one read.',
       footerTagline: 'International art news, in one breath. Three times daily, edited by us.',
       sectionsLabel: 'Sections',
       aboutLabel: 'About',
@@ -70,10 +70,10 @@
       readStory: 'Story lesen',
       latestUpdated: 'Aktuell \u00B7 Dreimal t\u00E4glich aktualisiert',
       thisWeekHeadline: 'Diese Woche',
-      nlEyebrow: 'ArtPulse Weekly',
-      nlTitle1: 'Sonntagmorgen,',
+      nlEyebrow: 'ArtPulse Monthly',
+      nlTitle1: 'Den Ersten jeden Monats,',
       nlTitle2: 'frei Haus.',
-      nlBody: 'Zehn Stories. Vier Minuten Lesezeit. Die Kunstwelt, kondensiert von uns. Jeden Sonntag um 10 Uhr.',
+      nlBody: 'Einmal im Monat. Stories, die zählten — in einem Atemzug.',
       footerTagline: 'Internationale Kunst-News, in einem Atemzug. Dreimal t\u00E4glich, redigiert von uns.',
       sectionsLabel: 'Rubriken',
       aboutLabel: 'Information',
@@ -246,8 +246,8 @@
         '<div class="nl-shell">' +
           '<div>' +
             '<div class="nl-eyebrow">From the editors</div>' +
-            '<h3 class="nl-headline">Sunday<br>mornings,<br><em>delivered.</em></h3>' +
-            '<p class="nl-body">The week\u2019s 10 most important stories. In four minutes. To your inbox.</p>' +
+            '<h3 class="nl-headline">The first<br>of the month,<br><em>delivered.</em></h3>' +
+            '<p class="nl-body">Once a month. The stories that mattered, condensed in one read.</p>' +
             '<ul class="nl-bullets">' +
               '<li>Auction results &amp; market moves</li>' +
               '<li>Major openings worldwide</li>' +
@@ -259,7 +259,7 @@
               '<span>Subscribe to the digest</span>' +
               '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
             '</a>' +
-            '<div class="nl-fine">Free \u00B7 Sundays \u00B7 Unsubscribe anytime</div>' +
+            '<div class="nl-fine">Free \u00B7 Monthly \u00B7 Unsubscribe anytime</div>' +
           '</div>' +
         '</div>' +
       '</article>';
