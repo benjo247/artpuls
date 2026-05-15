@@ -265,9 +265,9 @@
             '<h3 class="nl-headline">The first<br>of the month,<br><em>delivered.</em></h3>' +
             '<p class="nl-body">Once a month. The stories that mattered, condensed in one read.</p>' +
             '<ul class="nl-bullets">' +
-              '<li>Auction results &amp; market moves</li>' +
-              '<li>Major openings worldwide</li>' +
-              '<li>One artist worth knowing</li>' +
+              '<li>Auctions, market &amp; galleries</li>' +
+              '<li>Exhibitions &amp; museum news</li>' +
+              '<li>Restitution, biennials, the rest</li>' +
             '</ul>' +
           '</div>' +
           '<div>' +
