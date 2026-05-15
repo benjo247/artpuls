@@ -589,7 +589,7 @@ body {
     linear-gradient(180deg, #f4f1ea 0%, #e8e3d8 100%);
   color: #1a1814;
   padding: 32px 24px;
-  padding-top: calc(120px + env(safe-area-inset-top, 0px));
+  padding-top: calc(170px + env(safe-area-inset-top, 0px));
   padding-bottom: max(32px, calc(env(safe-area-inset-bottom, 0px) + 24px));
   display: flex;
   flex-direction: column;
