@@ -161,6 +161,63 @@
     return String(s).replace(/"/g, '&quot;').replace(/</g, '&lt;');
   }
 
+  // ----- Semantic dedup: catch the same news story syndicated by multiple sources -----
+  // Compares normalized headline token sets via Jaccard similarity.
+  // Stories above the similarity threshold AND within the time window are treated as duplicates;
+  // the FIRST occurrence (by array order, which is already newest-first) is kept.
+  var _STOPWORDS = {
+    the:1, that:1, this:1, with:1, from:1, into:1, over:1, under:1,
+    after:1, before:1, about:1, where:1, when:1, while:1, than:1, then:1,
+    have:1, been:1, will:1, would:1, could:1, should:1, just:1, also:1,
+    more:1, other:1, their:1, there:1, these:1, those:1, what:1, which:1,
+    been:1, were:1, your:1
+  };
+  function _tokenize(s) {
+    if (!s) return [];
+    var raw = String(s).toLowerCase().replace(/[^a-z0-9äöüß\s]/g, ' ').split(/\s+/);
+    var out = [];
+    for (var i = 0; i < raw.length; i++) {
+      var w = raw[i];
+      if (w.length >= 4 && !_STOPWORDS[w]) out.push(w);
+    }
+    return out;
+  }
+  function _jaccard(a, b) {
+    if (!a.length || !b.length) return 0;
+    var sA = {}, sB = {};
+    for (var i = 0; i < a.length; i++) sA[a[i]] = true;
+    for (var j = 0; j < b.length; j++) sB[b[j]] = true;
+    var inter = 0, uni = {};
+    for (var k in sA) { uni[k] = true; if (sB[k]) inter++; }
+    for (var l in sB) uni[l] = true;
+    var u = 0;
+    for (var m in uni) u++;
+    return u === 0 ? 0 : inter / u;
+  }
+  function dedupStories(stories) {
+    if (!stories || stories.length < 2) return stories || [];
+    var THRESHOLD = 0.55;
+    var WINDOW_MS = 48 * 3600 * 1000;
+    var kept = [], keptTokens = [], keptTs = [];
+    for (var i = 0; i < stories.length; i++) {
+      var s = stories[i];
+      var headline = s.headline_en || s.headline_de || s.title || '';
+      var tokens = _tokenize(headline);
+      var ts = s.publishedAt ? new Date(s.publishedAt).getTime() : 0;
+      var isDup = false;
+      for (var j = 0; j < kept.length; j++) {
+        if (Math.abs(ts - keptTs[j]) > WINDOW_MS) continue;
+        if (_jaccard(tokens, keptTokens[j]) >= THRESHOLD) { isDup = true; break; }
+      }
+      if (!isDup) {
+        kept.push(s);
+        keptTokens.push(tokens);
+        keptTs.push(ts);
+      }
+    }
+    return kept;
+  }
+
   function filteredStories() {
     if (state.cat === 'all') return state.stories.slice();
     var out = [];
@@ -188,7 +245,7 @@
         return r.json();
       })
       .then(function (data) {
-        state.stories = data.stories || [];  // raw, ads injected at render time
+        state.stories = dedupStories(data.stories || []);  // raw, ads injected at render time
         state.hasMore = (data.stories || []).length >= 24;  // assume archive has more
       })
       .catch(function (err) {
@@ -217,7 +274,7 @@
         if (older.length === 0) { state.hasMore = false; return; }
         // Append older stories. Ads are injected at render time on the filtered list,
         // so we keep state.stories pure (no ad markers).
-        state.stories = state.stories.concat(older);
+        state.stories = dedupStories(state.stories.concat(older));
         renderFeed(true);  // preserve scroll position
       })
       .catch(function () { state.loadingMore = false; });
@@ -471,26 +528,12 @@
     state.currentView = 'magazine';
     var stories = filteredStories();
 
-    // Pick a hero with visual impact: first story with an image.
-    // Falls back to first story if none have images (typo hero).
-    var hero = null;
-    var heroIndex = -1;
-    for (var k = 0; k < stories.length; k++) {
-      if (stories[k] && stories[k].image) {
-        hero = stories[k];
-        heroIndex = k;
-        break;
-      }
-    }
-    if (!hero && stories.length > 0) {
-      hero = stories[0];
-      heroIndex = 0;
-    }
+    // Hero is always the newest story (stories[0]) to keep ordering consistent
+    // with mobile. The hero template handles both image and typo styles.
+    var hero = stories.length > 0 ? stories[0] : null;
+    var heroIndex = 0;
     // Build the rest excluding the hero (preserving newest-first order)
-    var rest = [];
-    for (var k2 = 0; k2 < stories.length; k2++) {
-      if (k2 !== heroIndex) rest.push(stories[k2]);
-    }
+    var rest = stories.slice(1);
 
     var html = '';
 
@@ -527,7 +570,7 @@
 
     // Section title + grid
     if (rest.length > 0) {
-      var count = Math.min(rest.length, 15);
+      var count = rest.length;
       html += '<div class="d-section">';
       html += '<h2 class="d-section-title">' + escapeHTML(t('thisWeekHeadline')) + '</h2>';
       html += '<span class="d-section-count">' + count + ' ' + escapeHTML(count === 1 ? t('story') : t('stories')) + '</span>';
