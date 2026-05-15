@@ -1,0 +1,26 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ArtPulse">
+  <!-- Dark warm background matching site bg -->
+  <rect width="1024" height="1024" fill="#0e0d0b"/>
+
+  <!--
+    Composition: "a" lowercase + red dot, centered on 1024 x 1024 canvas.
+    Standard (non-maskable) version - composition fills ~70% of canvas.
+
+    Geometry (Inter Black metrics):
+    - font-size 780
+    - dot radius 86 (diameter 172)
+    - baseline at y=719
+    - dot sits ON baseline (bottom touches baseline)
+  -->
+
+  <text
+    x="169"
+    y="719"
+    font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-weight="900"
+    font-size="780"
+    fill="#f4f1ea"
+  >a</text>
+
+  <circle cx="770" cy="633" r="86" fill="#e8503a"/>
+</svg>
