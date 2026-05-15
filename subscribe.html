@@ -519,6 +519,20 @@
           inputmode="email"
           required
         >
+        <!--
+          Honeypot: hidden from real users, attractive to bots that fill all fields.
+          Server rejects any submission where this is non-empty.
+          aria-hidden + tabindex=-1 keeps assistive tech away too.
+        -->
+        <input
+          type="text"
+          name="website"
+          id="website"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+          style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;"
+        >
         <button class="submit" type="submit" id="submit">
           <span class="submit-text" data-i18n="button">Get the monthly digest</span>
           <svg class="submit-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -683,10 +697,13 @@
     submit.classList.add('loading');
     submit.disabled = true;
 
+    var hp = document.getElementById('website');
+    var hpVal = hp ? hp.value : '';
+
     fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email })
+      body: JSON.stringify({ email: email, website: hpVal })
     })
     .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
     .then(function (res) {
