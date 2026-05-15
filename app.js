@@ -38,6 +38,14 @@
       nlTitle1: 'The first of the month,',
       nlTitle2: 'delivered.',
       nlBody: 'Once a month. The stories that mattered, condensed in one read.',
+      // Hero welcome (first-visit)
+      heroEyebrow: 'ArtPulse',
+      heroHeadline1: 'The art world,',
+      heroHeadline2: 'in one breath.',
+      heroBody: 'International art press, condensed. Free, no ads, no algorithm.',
+      heroCtaPrimary: 'Read today\u2019s stories',
+      heroCtaSecondary: 'Get it monthly',
+      heroFine: 'Free \u00B7 Monthly \u00B7 Unsubscribe anytime',
       footerTagline: 'International art news, in one breath. Three times daily, edited by us.',
       sectionsLabel: 'Sections',
       aboutLabel: 'About',
@@ -74,6 +82,14 @@
       nlTitle1: 'Den Ersten jeden Monats,',
       nlTitle2: 'frei Haus.',
       nlBody: 'Einmal im Monat. Stories, die zählten — in einem Atemzug.',
+      // Hero welcome (first-visit)
+      heroEyebrow: 'ArtPulse',
+      heroHeadline1: 'Die Kunstwelt,',
+      heroHeadline2: 'in einem Atemzug.',
+      heroBody: 'Internationale Kunstpresse, kondensiert. Kostenlos, ohne Werbung, ohne Algorithmus.',
+      heroCtaPrimary: 'Heutige Stories lesen',
+      heroCtaSecondary: 'Monatlich per Mail',
+      heroFine: 'Kostenlos \u00B7 Monatlich \u00B7 Jederzeit abbestellbar',
       footerTagline: 'Internationale Kunst-News, in einem Atemzug. Dreimal t\u00E4glich, redigiert von uns.',
       sectionsLabel: 'Rubriken',
       aboutLabel: 'Information',
@@ -265,6 +281,43 @@
       '</article>';
   }
 
+  function injectHero(items) {
+    /* Prepend the welcome hero on first visit (until dismissed via X or CTA). */
+    var dismissed = false;
+    try { dismissed = localStorage.getItem('ap-hero-dismissed') === '1'; } catch (e) {}
+    if (dismissed) return items;
+    return [{ isHero: true, id: 'hero-welcome' }].concat(items);
+  }
+
+  function heroHTML(item, idx) {
+    return '' +
+      '<article class="card card-hero" data-idx="' + idx + '">' +
+        '<div class="hero-shell">' +
+          '<button class="hero-dismiss" data-hero-dismiss aria-label="Dismiss welcome">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
+          '</button>' +
+          '<div class="hero-top">' +
+            '<div class="hero-eyebrow">' + escapeHTML(t('heroEyebrow')) + '</div>' +
+            '<h1 class="hero-headline">' + escapeHTML(t('heroHeadline1')) + '<br><em>' + escapeHTML(t('heroHeadline2')) + '</em></h1>' +
+            '<p class="hero-body">' + escapeHTML(t('heroBody')) + '</p>' +
+          '</div>' +
+          '<div class="hero-bottom">' +
+            '<div class="hero-ctas">' +
+              '<button class="hero-cta hero-cta-primary" data-hero-read type="button">' +
+                '<span>' + escapeHTML(t('heroCtaPrimary')) + '</span>' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+              '</button>' +
+              '<a class="hero-cta hero-cta-secondary" href="/subscribe" data-hero-subscribe>' +
+                '<span>' + escapeHTML(t('heroCtaSecondary')) + '</span>' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>' +
+              '</a>' +
+            '</div>' +
+            '<div class="hero-fine">' + escapeHTML(t('heroFine')) + '</div>' +
+          '</div>' +
+        '</div>' +
+      '</article>';
+  }
+
   // ---------- Rendering ----------
   function renderCats() {
     var html = '';
@@ -378,10 +431,13 @@
     items = injectAds(items);
     // Inject the Newsletter CTA after the 5th story (once per session).
     items = injectNewsletter(items);
+    // Prepend the welcome hero on first visit (LocalStorage flag dismisses it).
+    items = injectHero(items);
     var html = '';
     for (var i = 0; i < items.length; i++) {
       if (items[i].isAd) html += adHTML(items[i], i);
       else if (items[i].isNewsletter) html += nlHTML(items[i], i);
+      else if (items[i].isHero) html += heroHTML(items[i], i);
       else html += storyHTML(items[i], i);
     }
     feed.innerHTML = html;
@@ -906,6 +962,29 @@
     for (var k = 0; k < shares.length; k++) {
       shares[k].addEventListener('click', onShareClick);
     }
+    // Hero welcome (first-visit) handlers
+    var heroDismiss = document.querySelector('[data-hero-dismiss]');
+    if (heroDismiss) heroDismiss.addEventListener('click', onHeroDismiss);
+    var heroRead = document.querySelector('[data-hero-read]');
+    if (heroRead) heroRead.addEventListener('click', onHeroDismiss);
+    var heroSubscribe = document.querySelector('[data-hero-subscribe]');
+    if (heroSubscribe) heroSubscribe.addEventListener('click', function () {
+      try { localStorage.setItem('ap-hero-dismissed', '1'); } catch (e) {}
+      // Default <a> navigation proceeds.
+    });
+  }
+
+  function onHeroDismiss() {
+    try { localStorage.setItem('ap-hero-dismissed', '1'); } catch (e) {}
+    var heroEl = document.querySelector('.card-hero');
+    if (!heroEl) return;
+    heroEl.classList.add('hero-dismissing');
+    setTimeout(function () {
+      heroEl.remove();
+      var feed = document.getElementById('feed');
+      if (feed) feed.scrollTo({ top: 0, behavior: 'auto' });
+      renderProgress();
+    }, 380);
   }
 
   function onExpandClick(e) {
@@ -1238,7 +1317,94 @@
     }
   }
 
+  // ---------- Welcome screen (first-visit overlay) ----------
+  function initWelcome() {
+    var FLAG = 'kp-welcome-seen';
+    try {
+      if (localStorage.getItem(FLAG) === '1') return;
+    } catch (e) { return; }
+
+    var welcome = document.getElementById('welcome');
+    if (!welcome) return;
+
+    var WLABELS = {
+      en: {
+        line1: 'The art world,',
+        line2: 'in one breath.',
+        body: 'International art press, daily. Two sentences per story. Bilingual. No login.',
+        read: 'Read today',
+        monthly: 'Get it monthly'
+      },
+      de: {
+        line1: 'Die Kunstwelt,',
+        line2: 'in einem Atemzug.',
+        body: 'Internationale Kunstpresse, t\u00E4glich. Zwei S\u00E4tze pro Story. Zweisprachig. Kein Login.',
+        read: 'Heute lesen',
+        monthly: 'Per Mail bekommen'
+      }
+    };
+
+    var initialLang = state.lang;
+
+    function applyLang(lang) {
+      var L = WLABELS[lang] || WLABELS.en;
+      welcome.querySelector('.welcome-line-1').textContent = L.line1;
+      welcome.querySelector('.welcome-line-2 em').textContent = L.line2;
+      document.getElementById('welcomeBody').textContent = L.body;
+      document.getElementById('welcomeReadLabel').textContent = L.read;
+      document.getElementById('welcomeSubscribeLabel').textContent = L.monthly;
+      var btns = welcome.querySelectorAll('.welcome-lang-btn');
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].classList.toggle('on', btns[i].getAttribute('data-lang') === lang);
+      }
+      state.lang = lang;
+      try { localStorage.setItem('kp-lang', lang); } catch (e) {}
+      document.documentElement.lang = lang;
+    }
+
+    // Render initial lang from existing state (browser or persisted)
+    applyLang(state.lang);
+
+    // Show welcome
+    welcome.classList.add('on');
+    welcome.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    function dismiss(navigateUrl) {
+      try { localStorage.setItem(FLAG, '1'); } catch (e) {}
+      if (navigateUrl) {
+        window.location.href = navigateUrl;
+        return;
+      }
+      // If lang changed during welcome, reload so main app picks it up cleanly
+      if (state.lang !== initialLang) {
+        window.location.reload();
+        return;
+      }
+      welcome.classList.remove('on');
+      welcome.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('welcomeClose').addEventListener('click', function () { dismiss(null); });
+    document.getElementById('welcomeRead').addEventListener('click', function () { dismiss(null); });
+    document.getElementById('welcomeSubscribe').addEventListener('click', function (e) {
+      e.preventDefault();
+      dismiss('/subscribe');
+    });
+
+    var langBtns = welcome.querySelectorAll('.welcome-lang-btn');
+    for (var i = 0; i < langBtns.length; i++) {
+      langBtns[i].addEventListener('click', function () {
+        applyLang(this.getAttribute('data-lang'));
+      });
+    }
+  }
+
   function init() {
+    // Welcome screen (first visit only) — runs early so it overlays the loading state
+    initWelcome();
+
     // Logo: scroll-to-top on home, navigate-home elsewhere
     var logo = document.getElementById('logo');
     if (logo) logo.addEventListener('click', onLogoClick);
