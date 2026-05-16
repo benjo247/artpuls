@@ -32,8 +32,8 @@
       subscribe: 'Subscribe',
       featured: 'Featured',
       readStory: 'Read the story',
-      latestUpdated: 'Latest \u00B7 Updated three times daily',
       thisWeekHeadline: 'This week',
+      emptyDesktop: 'Check back soon.',
       nlEyebrow: 'artpulse monthly',
       nlTitle1: 'The first of the month,',
       nlTitle2: 'delivered.',
@@ -44,11 +44,13 @@
       detailNlBody: 'Once a month \u2014 the stories that mattered, bilingual, free.',
       detailNlPlaceholder: 'your@email.com',
       detailNlFine: 'Free \u00B7 Bilingual \u00B7 Unsubscribe anytime',
-      footerTagline: 'International art news, in one breath. Three times daily, edited by us.',
+      footerTagline: 'The international art press, condensed. In English and German.',
       sectionsLabel: 'Sections',
       aboutLabel: 'About',
       legalLabel: 'Legal',
       subscribeNewsletter: 'Subscribe to newsletter',
+      aboutPage: 'About artpulse',
+      reportBug: 'Report a bug',
       readFullStory: 'Read full story',
       stories: 'stories',
       story: 'story',
@@ -74,8 +76,8 @@
       subscribe: 'Abonnieren',
       featured: 'Ausgew\u00E4hlt',
       readStory: 'Story lesen',
-      latestUpdated: 'Aktuell \u00B7 Dreimal t\u00E4glich aktualisiert',
       thisWeekHeadline: 'Diese Woche',
+      emptyDesktop: 'Schau später wieder vorbei.',
       nlEyebrow: 'artpulse monthly',
       nlTitle1: 'Den Ersten jeden Monats,',
       nlTitle2: 'frei Haus.',
@@ -86,11 +88,13 @@
       detailNlBody: 'Einmal im Monat \u2014 die Stories, die zählten. Zweisprachig, kostenlos.',
       detailNlPlaceholder: 'deine@email.de',
       detailNlFine: 'Kostenlos \u00B7 Zweisprachig \u00B7 Jederzeit abbestellbar',
-      footerTagline: 'Internationale Kunst-News, in einem Atemzug. Dreimal t\u00E4glich, redigiert von uns.',
+      footerTagline: 'Die internationale Kunstpresse, kondensiert. In Englisch und Deutsch.',
       sectionsLabel: 'Rubriken',
       aboutLabel: 'Information',
       legalLabel: 'Rechtliches',
       subscribeNewsletter: 'Newsletter abonnieren',
+      aboutPage: 'Über artpulse',
+      reportBug: 'Bug melden',
       readFullStory: 'Story lesen',
       stories: 'Stories',
       story: 'Story',
@@ -578,6 +582,7 @@
     html += '<header class="d-masthead"><div class="d-masthead-row">';
     html += '<a href="/" class="d-logo" id="dLogo"><span class="art">art</span><span class="pulse">pulse</span><span class="dot" aria-hidden="true"></span></a>';
     html += '<div class="d-actions">';
+    html += '<a href="/about" class="d-nav-link">' + escapeHTML(t('aboutPage')) + '</a>';
     html += '<button class="d-icon-btn" id="dSearchBtn" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>';
     html += '<div class="lang" id="dLang">' +
             '<button data-lang="en"' + (state.lang === 'en' ? ' class="on"' : '') + '>EN</button>' +
@@ -600,7 +605,7 @@
 
     // Hero (or empty state)
     if (!hero) {
-      html += '<div class="d-empty"><p class="d-empty-title">' + escapeHTML(t('empty')) + '</p><p class="d-empty-sub">Check back soon — new stories arrive three times daily.</p></div>';
+      html += '<div class="d-empty"><p class="d-empty-title">' + escapeHTML(t('empty')) + '</p><p class="d-empty-sub">' + escapeHTML(t('emptyDesktop')) + '</p></div>';
     } else {
       html += desktopHeroHTML(hero);
     }
@@ -648,9 +653,9 @@
     bindDesktopEvents();
   }
 
-  // Friendly "Updated 3× daily · timestamp" line for the category bar
+  // "Latest · timestamp" line for the category bar — no frequency claims
   function latestUpdateText() {
-    var base = (state.lang === 'de') ? 'Aktualisiert 3× täglich' : 'Updated 3× daily';
+    var base = (state.lang === 'de') ? 'Aktualisiert' : 'Updated';
     // Try to find the newest publication time
     var newest = null;
     for (var i = 0; i < state.stories.length; i++) {
@@ -856,7 +861,9 @@
           '<div class="d-footer-col">' +
             '<h4>' + escapeHTML(t('aboutLabel')) + '</h4>' +
             '<ul>' +
+              '<li><a href="/about">' + escapeHTML(t('aboutPage')) + '</a></li>' +
               '<li><a href="/subscribe">' + escapeHTML(t('subscribeNewsletter')) + '</a></li>' +
+              '<li><a href="#" class="d-footer-bug" id="dFooterBug">' + escapeHTML(t('reportBug')) + '</a></li>' +
             '</ul>' +
           '</div>' +
           '<div class="d-footer-col">' +
@@ -905,6 +912,7 @@
               '<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>' +
               '<span>' + escapeHTML(state.lang === 'de' ? 'Zur \u00DCbersicht' : 'Back to feed') + '</span>' +
             '</a>';
+    html += '<a href="/about" class="d-nav-link">' + escapeHTML(t('aboutPage')) + '</a>';
     html += '<div class="lang" id="dLang">' +
             '<button data-lang="en"' + (state.lang === 'en' ? ' class="on"' : '') + '>EN</button>' +
             '<button data-lang="de"' + (state.lang === 'de' ? ' class="on"' : '') + '>DE</button>' +
@@ -995,6 +1003,12 @@
     // Search button (reuses existing search overlay)
     var dSearch = document.getElementById('dSearchBtn');
     if (dSearch) dSearch.addEventListener('click', openSearch);
+    // Footer: Report a bug — mailto with diagnostics
+    var dFooterBug = document.getElementById('dFooterBug');
+    if (dFooterBug) dFooterBug.addEventListener('click', function (e) {
+      e.preventDefault();
+      reportBug();
+    });
     // Newsletter form
     var nlForm = document.getElementById('dNlForm');
     if (nlForm) nlForm.addEventListener('submit', onDesktopNewsletterSubmit);
