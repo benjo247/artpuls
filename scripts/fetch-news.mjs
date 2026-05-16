@@ -131,15 +131,152 @@ function timeAgo(date, lang) {
   return d.toLocaleDateString('en-US', { day: '2-digit', month: 'short' });
 }
 
+/**
+ * Extract an image URL from an RSS item, trying many sources in order:
+ * 1. <enclosure> (RSS 2.0)
+ * 2. <media:content> — handles arrays, picks the highest-resolution variant
+ * 3. <media:thumbnail> — fallback if no media:content
+ * 4. <itunes:image> — occasionally used by news publishers
+ * 5. <description> HTML — separate field from content:encoded
+ * 6. content:encoded / content / summary HTML — last resort
+ *
+ * For HTML sources, tries <img src>, <img data-src>, and <picture><source srcset>.
+ * Resolves relative URLs against the item link. Filters tracking pixels.
+ */
 function extractImage(item) {
-  if (item.enclosure && item.enclosure.url) return item.enclosure.url;
+  // 1. <enclosure>
+  if (item.enclosure && item.enclosure.url && isUsableImage(item.enclosure.url)) {
+    return resolveUrl(item.enclosure.url, item.link);
+  }
+
+  // 2. <media:content> — can be a single object or an array of variants
   const mc = item['media:content'];
-  if (mc && mc.$ && mc.$.url) return mc.$.url;
+  if (mc) {
+    const variants = Array.isArray(mc) ? mc : [mc];
+    let best = null;
+    let bestArea = 0;
+    for (const v of variants) {
+      if (!v || !v.$ || !v.$.url) continue;
+      const url = v.$.url;
+      if (!isUsableImage(url)) continue;
+      // Prefer largest resolution if width/height are specified
+      const w = parseInt(v.$.width, 10) || 0;
+      const h = parseInt(v.$.height, 10) || 0;
+      const area = w * h;
+      if (area > bestArea || best === null) {
+        best = url;
+        bestArea = area;
+      }
+    }
+    if (best) return resolveUrl(best, item.link);
+  }
+
+  // 3. <media:thumbnail>
   const mt = item['media:thumbnail'];
-  if (mt && mt.$ && mt.$.url) return mt.$.url;
-  const html = item['content:encoded'] || item.content || item.summary || '';
-  const m = String(html).match(/<img[^>]+src=["']([^"']+)["']/i);
-  return m ? m[1] : null;
+  if (mt) {
+    const variants = Array.isArray(mt) ? mt : [mt];
+    for (const v of variants) {
+      if (v && v.$ && v.$.url && isUsableImage(v.$.url)) {
+        return resolveUrl(v.$.url, item.link);
+      }
+    }
+  }
+
+  // 4. <itunes:image>
+  const itu = item['itunes:image'];
+  if (itu) {
+    const href = (itu.$ && itu.$.href) || itu.href || (typeof itu === 'string' ? itu : null);
+    if (href && isUsableImage(href)) return resolveUrl(href, item.link);
+  }
+
+  // 5/6. HTML fields — try description separately first, then content fallbacks
+  const htmlSources = [
+    item.description,
+    item['content:encoded'],
+    item.content,
+    item.summary
+  ].filter(Boolean);
+
+  for (const html of htmlSources) {
+    const found = extractImageFromHtml(String(html));
+    if (found && isUsableImage(found)) {
+      return resolveUrl(found, item.link);
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Try multiple HTML img extraction patterns. Returns first valid URL.
+ * Patterns checked: <img src>, <img data-src>, <img data-lazy>,
+ * <picture><source srcset>, plain <source srcset>.
+ */
+function extractImageFromHtml(html) {
+  // 1. <img src> — most common
+  const imgSrc = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+  if (imgSrc) return imgSrc[1];
+
+  // 2. <img data-src> — common for lazy-loaded images
+  const imgDataSrc = html.match(/<img[^>]+data-src=["']([^"']+)["']/i);
+  if (imgDataSrc) return imgDataSrc[1];
+
+  // 3. <img data-lazy-src> — WordPress plugin pattern
+  const imgDataLazy = html.match(/<img[^>]+data-lazy[^=]*=["']([^"']+)["']/i);
+  if (imgDataLazy) return imgDataLazy[1];
+
+  // 4. <source srcset> — pick first URL before any descriptor like "1x" or "640w"
+  const srcset = html.match(/<source[^>]+srcset=["']([^"']+)["']/i);
+  if (srcset) {
+    const first = srcset[1].split(',')[0].trim().split(/\s+/)[0];
+    if (first) return first;
+  }
+
+  return null;
+}
+
+/**
+ * Filter out URLs that are clearly not usable as story images:
+ * - Tracking pixels (1×1, "pixel", "beacon", "track" in URL)
+ * - Ad/analytics domains
+ * - SVG icons (often UI chrome, not real images)
+ * - Data URIs (typically tiny placeholders)
+ */
+function isUsableImage(url) {
+  if (!url || typeof url !== 'string') return false;
+  if (url.startsWith('data:')) return false;
+  const lower = url.toLowerCase();
+  // Tracking pixel patterns
+  if (/[/_-](pixel|beacon|track|stat|analytics|counter)[/_.-]/.test(lower)) return false;
+  if (/[?&](w|width|h|height)=1(&|$)/.test(lower)) return false;
+  // 1x1 spacer GIFs
+  if (/\b1x1\b/.test(lower) || /\bspacer\b/.test(lower) || /\bblank\.gif\b/.test(lower)) return false;
+  // SVG icons (usually UI chrome)
+  if (lower.endsWith('.svg')) return false;
+  // Avatars / share buttons often have these names
+  if (/\b(avatar|gravatar|icon|sprite|logo-only)\b/.test(lower) && !/\b(article|story|hero|featured)\b/.test(lower)) {
+    return false;
+  }
+  return true;
+}
+
+/**
+ * Resolve a possibly-relative image URL against the article's base URL.
+ * If `imageUrl` is already absolute (http/https/protocol-relative), return as-is.
+ */
+function resolveUrl(imageUrl, baseUrl) {
+  if (!imageUrl) return null;
+  // Already absolute
+  if (/^https?:\/\//i.test(imageUrl)) return imageUrl;
+  // Protocol-relative — assume https
+  if (imageUrl.startsWith('//')) return 'https:' + imageUrl;
+  // Need a base to resolve against
+  if (!baseUrl) return imageUrl;
+  try {
+    return new URL(imageUrl, baseUrl).href;
+  } catch {
+    return imageUrl;
+  }
 }
 
 const SYSTEM_PROMPT = `You are the news editor for ArtPulse, an international art-news app with a Shorts-style feed.
