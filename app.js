@@ -267,6 +267,32 @@
     return out;
   }
 
+  // ---------- Bug report ----------
+  // Opens user's mail client with subject + diagnostic info pre-filled.
+  // No backend required; reports land directly in Ben's inbox.
+  function reportBug() {
+    var lang = state.lang || 'en';
+    var subject = lang === 'de' ? 'artpulse bug-report' : 'artpulse bug report';
+    var heading = lang === 'de'
+      ? 'Was ist passiert (kurz):\n\n\nWas hättest du erwartet?\n\n\nWie reproduzieren (Schritte):\n1.\n2.\n3.'
+      : 'What happened (briefly):\n\n\nWhat did you expect to happen?\n\n\nHow to reproduce (steps):\n1.\n2.\n3.';
+    var footerLabel = lang === 'de'
+      ? '— Diagnose-Daten (bitte nicht bearbeiten):'
+      : '— Diagnostic info (please leave intact):';
+    var diag = [
+      footerLabel,
+      'URL: ' + window.location.href,
+      'User-Agent: ' + navigator.userAgent,
+      'Language: ' + lang,
+      'Screen: ' + window.screen.width + 'x' + window.screen.height,
+      'Time: ' + new Date().toISOString()
+    ].join('\n');
+    var body = heading + '\n\n\n' + diag;
+    var href = 'mailto:hello@artpulse.app?subject=' +
+      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = href;
+  }
+
   function toast(msg) {
     var el = document.getElementById('toast');
     el.textContent = msg;
@@ -1521,6 +1547,14 @@
     var drawerLinks = document.querySelectorAll('.drawer-link');
     for (var di = 0; di < drawerLinks.length; di++) {
       drawerLinks[di].addEventListener('click', function () { closeDrawer(); });
+    }
+    // Bug report — opens mailto with diagnostic info pre-filled
+    var bugLink = document.getElementById('drawerReportBug');
+    if (bugLink) {
+      bugLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        reportBug();
+      });
     }
 
     // Search

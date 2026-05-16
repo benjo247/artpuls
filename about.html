@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e0d0b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>About — artpulse</title>
+<meta name="description" content="Why artpulse exists, how to install it, and how to reach the person behind it.">
+
+<link rel="canonical" href="https://artpulse.app/about">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="artpulse">
+<meta property="og:title" content="About — artpulse">
+<meta property="og:description" content="A short letter from the painter who built this. Plus: how to install the PWA, and how to report a bug.">
+<meta property="og:url" content="https://artpulse.app/about">
+<meta property="og:image" content="https://artpulse.app/icons/og-default.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;900&family=Geist+Mono:wght@400;500&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0e0d0b;
+    --fg: #f4f1ea;
+    --fg-muted: #a8a097;
+    --fg-fade: rgba(244, 241, 234, 0.06);
+    --fg-border: rgba(244, 241, 234, 0.12);
+    --accent: #e8503a;
+    --serif: 'Instrument Serif', 'Times New Roman', serif;
+    --sans: 'Geist', system-ui, -apple-system, sans-serif;
+    --mono: 'Geist Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font-family: var(--sans); line-height: 1.6;
+    min-height: 100vh; min-height: 100dvh;
+    display: flex; justify-content: center;
+  }
+  .frame {
+    width: 100%; max-width: 720px; padding: 0 22px;
+    display: flex; flex-direction: column;
+    min-height: 100vh; min-height: 100dvh;
+  }
+
+  /* Header — identical to impressum/datenschutz */
+  .header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 18px);
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--fg-border);
+    gap: 12px;
+  }
+  .back-link {
+    width: 36px; height: 36px;
+    background: var(--fg-fade);
+    border: 1px solid var(--fg-border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--fg); text-decoration: none;
+    transition: background .15s ease; flex-shrink: 0;
+  }
+  .back-link:hover { background: rgba(244, 241, 234, 0.1); }
+  .back-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+  .logo {
+    font-family: 'Inter', var(--sans);
+    font-size: 22px; line-height: 1;
+    display: inline-flex; align-items: baseline;
+    color: var(--fg); text-decoration: none;
+    letter-spacing: -0.04em;
+  }
+  .logo .art { font-weight: 900; }
+  .logo .pulse { font-weight: 400; letter-spacing: -0.02em; }
+  .logo .dot {
+    display: inline-block;
+    width: 0.32em; height: 0.32em;
+    background: var(--accent); border-radius: 50%;
+    margin-left: 0.08em;
+    vertical-align: baseline; flex-shrink: 0;
+  }
+  .lang-toggle {
+    display: flex;
+    background: var(--fg-fade);
+    border: 1px solid var(--fg-border);
+    border-radius: 100px;
+    padding: 3px;
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    flex-shrink: 0;
+  }
+  .lang-toggle button {
+    background: none; border: none;
+    color: var(--fg-muted);
+    padding: 6px 12px; border-radius: 100px;
+    cursor: pointer;
+    font-family: inherit; font-size: inherit; font-weight: inherit;
+    letter-spacing: 0.05em;
+    transition: color .15s ease;
+  }
+  .lang-toggle button.on { background: var(--fg); color: var(--bg); }
+
+  [data-lang="de"] .content-en { display: none; }
+  [data-lang="en"] .content-de { display: none; }
+
+  main { padding: 48px 0 24px; flex: 1; }
+
+  /* Section meta */
+  .meta {
+    font-family: var(--mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--accent); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .meta::before { content: ''; width: 22px; height: 1px; background: var(--accent); }
+
+  h1 {
+    font-family: var(--serif); font-size: clamp(48px, 8vw, 64px);
+    line-height: 0.95; letter-spacing: -0.02em;
+    margin: 0 0 32px; font-weight: 400;
+  }
+  h1 em { font-style: italic; color: var(--fg-muted); }
+  h2 {
+    font-family: var(--serif); font-size: 26px;
+    line-height: 1.2; margin: 56px 0 18px;
+    font-weight: 400; letter-spacing: -0.005em;
+  }
+  h2 em { font-style: italic; color: var(--fg-muted); }
+
+  /* Letter block */
+  .letter p {
+    font-size: 17px; line-height: 1.7; color: var(--fg);
+    margin: 0 0 18px;
+  }
+  .letter .salute {
+    font-family: var(--serif); font-style: italic;
+    font-size: 22px; color: var(--fg-muted);
+    margin-bottom: 24px;
+  }
+  .letter .sign-off {
+    margin-top: 28px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.1em; color: var(--fg-muted);
+    text-transform: uppercase;
+  }
+  .letter .sign-off strong {
+    color: var(--fg); font-weight: 500;
+  }
+
+  /* How it works fact grid */
+  .facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 28px 0 0;
+  }
+  .fact {
+    background: var(--fg-fade);
+    border: 1px solid var(--fg-border);
+    border-radius: 10px;
+    padding: 22px 20px;
+  }
+  .fact .fact-num {
+    font-family: var(--serif);
+    font-size: 38px; line-height: 1;
+    color: var(--accent);
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .fact .fact-num em { font-style: italic; }
+  .fact .fact-label {
+    font-family: var(--mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--fg-muted); line-height: 1.4;
+  }
+
+  /* Install steps */
+  .install-block {
+    background: var(--fg-fade);
+    border: 1px solid var(--fg-border);
+    border-radius: 10px;
+    padding: 22px 22px 20px;
+    margin: 16px 0;
+  }
+  .install-block:first-of-type { margin-top: 24px; }
+  .install-platform {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .install-platform svg {
+    width: 16px; height: 16px;
+    stroke: currentColor; fill: none; stroke-width: 1.8;
+  }
+  .install-steps {
+    list-style: none; padding: 0; margin: 0;
+    counter-reset: step;
+  }
+  .install-steps li {
+    position: relative;
+    padding: 8px 0 8px 32px;
+    font-size: 14.5px; line-height: 1.55;
+    counter-increment: step;
+  }
+  .install-steps li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 8px;
+    width: 22px; height: 22px;
+    background: var(--fg-fade);
+    border: 1px solid var(--fg-border);
+    border-radius: 50%;
+    font-family: var(--mono); font-size: 11px;
+    color: var(--fg-muted);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Feedback button */
+  .feedback-cta {
+    margin: 28px 0 0;
+    padding: 28px 22px 26px;
+    background: linear-gradient(180deg, rgba(232, 80, 58, 0.06), rgba(232, 80, 58, 0.01));
+    border: 1px solid rgba(232, 80, 58, 0.22);
+    border-radius: 12px;
+    position: relative;
+  }
+  .feedback-cta::before {
+    content: ''; position: absolute;
+    top: 24px; left: -1px;
+    width: 3px; height: 38px;
+    background: var(--accent);
+    border-radius: 3px;
+  }
+  .feedback-cta h3 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 24px;
+    line-height: 1.15;
+    margin: 0 0 8px;
+    font-weight: 400;
+    color: var(--fg);
+  }
+  .feedback-cta p {
+    font-size: 14.5px;
+    color: var(--fg-muted);
+    margin: 0 0 18px;
+    line-height: 1.55;
+  }
+  .feedback-btn {
+    display: inline-flex; align-items: center;
+    gap: 10px;
+    padding: 12px 18px 12px 20px;
+    background: var(--accent);
+    color: var(--fg);
+    border-radius: 999px;
+    font-family: var(--sans); font-size: 14px;
+    font-weight: 500;
+    text-decoration: none; border: none;
+    cursor: pointer;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .feedback-btn:hover { background: #d44530; transform: translateY(-1px); }
+  .feedback-btn svg {
+    width: 16px; height: 16px;
+    stroke: currentColor; fill: none; stroke-width: 2.2;
+  }
+
+  /* Colophon */
+  .colophon {
+    margin-top: 28px;
+    padding: 22px 0 0;
+    border-top: 1px solid var(--fg-border);
+  }
+  .colophon dl {
+    margin: 0; display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px 18px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+  .colophon dt {
+    color: var(--fg-muted);
+    text-transform: uppercase; letter-spacing: 0.14em;
+  }
+  .colophon dd { margin: 0; color: var(--fg); }
+  .colophon a {
+    color: var(--fg);
+    border-bottom: 1px solid rgba(244, 241, 234, 0.2);
+  }
+
+  /* Generic */
+  p { font-size: 15px; color: var(--fg); margin: 0 0 14px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(232, 80, 58, 0.35); }
+  a:hover { border-bottom-color: var(--accent); }
+  strong { font-weight: 500; }
+
+  .foot {
+    margin-top: 48px; padding: 24px 0;
+    border-top: 1px solid var(--fg-border);
+    font-family: var(--mono); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--fg-muted);
+    display: flex; flex-wrap: wrap; gap: 16px;
+    justify-content: center; align-items: center;
+  }
+  .foot a { color: var(--fg-muted); border: none; }
+  .foot a:hover { color: var(--fg); }
+  .foot .sep { opacity: 0.4; }
+
+  @media (min-width: 768px) {
+    .frame { max-width: 760px; padding: 0 40px; }
+    main { padding: 64px 0 32px; }
+    p { font-size: 16px; }
+    .letter p { font-size: 18px; }
+    h2 { font-size: 30px; margin-top: 64px; }
+    .facts { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <header class="header">
+    <a href="/" class="back-link" aria-label="Back to feed">
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </a>
+    <a href="/" class="logo">
+      <span class="art">art</span><span class="pulse">pulse</span><span class="dot" aria-hidden="true"></span>
+    </a>
+    <div class="lang-toggle" id="langToggle">
+      <button type="button" data-lang="de" class="on">DE</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ DE ============ -->
+    <div class="content-de">
+      <div class="meta">Über · Issue 01</div>
+      <h1>Die Kunstwelt, <em>in einem Atemzug</em>.</h1>
+
+      <section class="letter">
+        <p class="salute">Liebe Leserin, lieber Leser,</p>
+        <p>artpulse gibt es, weil ich keine Lust mehr auf 200-Tab-Abende hatte, nur um in der Kunstwelt halbwegs am Laufenden zu bleiben. Die relevante Berichterstattung sitzt verstreut hinter Paywalls, in Newslettern, in Magazinen, vergraben unter allem was lauter ist.</p>
+        <p>Also habe ich gebaut, was ich selbst nutzen wollte: eine tägliche Übersicht der internationalen Kunstpresse, auf das Wesentliche verdichtet. Fünfzehn Quellen, dreimal täglich, jede Story auf zwei Sätze reduziert. In Englisch und Deutsch, kostenlos, ohne Anmeldung.</p>
+        <p>Hier läuft kein Algorithmus. Kein A/B-Test auf deine Aufmerksamkeit. Wir tracken nicht was du liest und verkaufen keine Daten. Wenn artpulse irgendwann Geld einnimmt, dann durch klar gekennzeichnete Display-Anzeigen — nicht durch das, was du aus Versehen aufklickst.</p>
+        <p>Nebenbei: Ich male. Das hier ist ein Nebenprojekt, gewachsen aus dem Wunsch ein besseres Werkzeug für meinen eigenen Alltag zu haben. Wenn es für dich funktioniert, freut mich das. Wenn nicht, sag Bescheid — der „Bug melden"-Button weiter unten geht direkt in mein Postfach.</p>
+        <p class="sign-off">— <strong>Ben</strong>, Berlin · Mai 2026</p>
+      </section>
+
+      <h2>Wie es <em>funktioniert</em></h2>
+      <div class="facts">
+        <div class="fact"><div class="fact-num">15</div><div class="fact-label">Quellen<br>international</div></div>
+        <div class="fact"><div class="fact-num">3<em>×</em></div><div class="fact-label">Updates<br>pro Tag</div></div>
+        <div class="fact"><div class="fact-num">2</div><div class="fact-label">Sätze<br>pro Story</div></div>
+        <div class="fact"><div class="fact-num">0</div><div class="fact-label">Cookies,<br>Tracking</div></div>
+      </div>
+
+      <h2>App <em>installieren</em></h2>
+      <p style="color: var(--fg-muted); font-size: 14.5px; margin-top: -8px;">
+        artpulse ist eine PWA — du kannst sie wie eine echte App auf den Homescreen legen. Keine Stores, kein Update-Zwang.
+      </p>
+
+      <div class="install-block">
+        <div class="install-platform">
+          <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
+          iPhone · Safari
+        </div>
+        <ol class="install-steps">
+          <li>Öffne <strong>artpulse.app</strong> in Safari (nicht Chrome — geht nur in Safari).</li>
+          <li>Tippe auf das <strong>Teilen-Symbol</strong> ↑ in der unteren Leiste (Quadrat mit Pfeil nach oben).</li>
+          <li>Scrolle runter und wähle <strong>„Zum Home-Bildschirm"</strong>.</li>
+          <li>Bestätige oben rechts mit <strong>„Hinzufügen"</strong> — fertig.</li>
+        </ol>
+      </div>
+
+      <div class="install-block">
+        <div class="install-platform">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="0.5" fill="currentColor" stroke="none"/></svg>
+          Android · Chrome
+        </div>
+        <ol class="install-steps">
+          <li>Öffne <strong>artpulse.app</strong> in Chrome.</li>
+          <li>Tippe auf das <strong>⋮ Menü</strong> oben rechts.</li>
+          <li>Wähle <strong>„App installieren"</strong> oder „Zum Startbildschirm hinzufügen".</li>
+          <li>Bestätigen — das Icon erscheint auf dem Homescreen.</li>
+        </ol>
+      </div>
+
+      <div class="install-block">
+        <div class="install-platform">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="1"/><line x1="2" y1="20" x2="22" y2="20"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+          Desktop · Chrome / Edge / Safari
+        </div>
+        <ol class="install-steps">
+          <li>Öffne <strong>artpulse.app</strong> im Browser.</li>
+          <li>Klicke auf das <strong>Installations-Symbol</strong> in der Adressleiste (kleiner Monitor mit Pfeil nach unten). Alternativ: Browser-Menü → „artpulse installieren".</li>
+          <li>Bestätige — artpulse läuft als eigenständiges Fenster, mit Dock-/Taskleisten-Icon.</li>
+        </ol>
+      </div>
+
+      <h2>Feedback &amp; <em>Bug Reports</em></h2>
+      <div class="feedback-cta">
+        <h3>Etwas funktioniert nicht?</h3>
+        <p>Klick den Button unten — öffnet deine Mail-App mit allen Diagnose-Infos vorausgefüllt. Schreibe nur kurz was passiert ist, den Rest erledigt der Auto-Fill. Geht direkt in mein Postfach, nicht in eine Support-Warteschlange.</p>
+        <button type="button" class="feedback-btn" onclick="reportBug()">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          Bug melden
+        </button>
+      </div>
+
+      <h2>Stack &amp; <em>Trust</em></h2>
+      <div class="colophon">
+        <dl>
+          <dt>Made in</dt><dd>Berlin · 2026</dd>
+          <dt>Hosting</dt><dd>Vercel (Deployment), Hetzner Falkenstein/DE (Analytics)</dd>
+          <dt>Editorial-KI</dt><dd>Anthropic Claude Haiku 4.5</dd>
+          <dt>Newsletter</dt><dd>Beehiiv (Double-Opt-In)</dd>
+          <dt>Analytics</dt><dd>Vercel Web Analytics — keine Cookies, keine personenbezogenen Daten</dd>
+          <dt>Quellen</dt><dd>15 RSS-Feeds, dreimal täglich aggregiert</dd>
+          <dt>Frontend-Code</dt><dd>Static PWA, kein Framework</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- ============ EN ============ -->
+    <div class="content-en">
+      <div class="meta">About · Issue 01</div>
+      <h1>The art world, <em>in one breath</em>.</h1>
+
+      <section class="letter">
+        <p class="salute">Dear reader,</p>
+        <p>artpulse exists because I got tired of swimming through 200-tab evenings just to half-catch up on what's happening in the art world. The coverage that matters is locked behind paywalls, scattered across newsletters and magazines, buried under everything that's louder.</p>
+        <p>So I built what I wanted to use myself: a daily digest of the international art press, condensed to the substance. Fifteen sources, three times a day, every story reduced to two sentences. In English and German, free, no sign-up.</p>
+        <p>There's no algorithm here. No A/B testing on your attention. We don't track what you read and don't sell your data. If artpulse ever earns money, it'll be through clearly labeled display ads — not through what you accidentally click.</p>
+        <p>For what it's worth: I paint. This is a side project that grew out of wanting a better tool for my own daily routine. If it works for you, that makes me happy. If it doesn't, tell me — the "report a bug" button below goes straight to my inbox, not a support queue.</p>
+        <p class="sign-off">— <strong>Ben</strong>, Berlin · May 2026</p>
+      </section>
+
+      <h2>How it <em>works</em></h2>
+      <div class="facts">
+        <div class="fact"><div class="fact-num">15</div><div class="fact-label">sources<br>international</div></div>
+        <div class="fact"><div class="fact-num">3<em>×</em></div><div class="fact-label">updates<br>per day</div></div>
+        <div class="fact"><div class="fact-num">2</div><div class="fact-label">sentences<br>per story</div></div>
+        <div class="fact"><div class="fact-num">0</div><div class="fact-label">cookies,<br>tracking</div></div>
+      </div>
+
+      <h2>Install <em>the app</em></h2>
+      <p style="color: var(--fg-muted); font-size: 14.5px; margin-top: -8px;">
+        artpulse is a PWA — you can add it to your home screen like a real app. No stores, no forced updates.
+      </p>
+
+      <div class="install-block">
+        <div class="install-platform">
+          <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
+          iPhone · Safari
+        </div>
+        <ol class="install-steps">
+          <li>Open <strong>artpulse.app</strong> in Safari (not Chrome — works only in Safari).</li>
+          <li>Tap the <strong>Share icon</strong> ↑ at the bottom (square with arrow up).</li>
+          <li>Scroll down and choose <strong>"Add to Home Screen"</strong>.</li>
+          <li>Confirm with <strong>"Add"</strong> in the top right — done.</li>
+        </ol>
+      </div>
+
+      <div class="install-block">
+        <div class="install-platform">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="0.5" fill="currentColor" stroke="none"/></svg>
+          Android · Chrome
+        </div>
+        <ol class="install-steps">
+          <li>Open <strong>artpulse.app</strong> in Chrome.</li>
+          <li>Tap the <strong>⋮ menu</strong> in the top right.</li>
+          <li>Select <strong>"Install app"</strong> or "Add to Home Screen".</li>
+          <li>Confirm — the icon appears on your home screen.</li>
+        </ol>
+      </div>
+
+      <div class="install-block">
+        <div class="install-platform">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="1"/><line x1="2" y1="20" x2="22" y2="20"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+          Desktop · Chrome / Edge / Safari
+        </div>
+        <ol class="install-steps">
+          <li>Open <strong>artpulse.app</strong> in your browser.</li>
+          <li>Click the <strong>install icon</strong> in the address bar (small monitor with down-arrow). Alternative: browser menu → "Install artpulse".</li>
+          <li>Confirm — artpulse runs as a standalone window with a dock/taskbar icon.</li>
+        </ol>
+      </div>
+
+      <h2>Feedback &amp; <em>bug reports</em></h2>
+      <div class="feedback-cta">
+        <h3>Something not working?</h3>
+        <p>Tap the button below — it opens your mail app with diagnostic info pre-filled. Just write briefly what happened, the auto-fill handles the rest. Goes straight to my inbox, not a support queue.</p>
+        <button type="button" class="feedback-btn" onclick="reportBug()">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          Report a bug
+        </button>
+      </div>
+
+      <h2>Stack &amp; <em>trust</em></h2>
+      <div class="colophon">
+        <dl>
+          <dt>Made in</dt><dd>Berlin · 2026</dd>
+          <dt>Hosting</dt><dd>Vercel (deployment), Hetzner Falkenstein/DE (analytics)</dd>
+          <dt>Editorial AI</dt><dd>Anthropic Claude Haiku 4.5</dd>
+          <dt>Newsletter</dt><dd>Beehiiv (double opt-in)</dd>
+          <dt>Analytics</dt><dd>Vercel Web Analytics — no cookies, no personal data</dd>
+          <dt>Sources</dt><dd>15 RSS feeds, aggregated three times daily</dd>
+          <dt>Frontend code</dt><dd>Static PWA, no framework</dd>
+        </dl>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="foot">
+    <a href="/">artpulse</a>
+    <span class="sep">·</span>
+    <a href="/impressum">Impressum</a>
+    <span class="sep">·</span>
+    <a href="/datenschutz">Datenschutz</a>
+    <span class="sep">·</span>
+    <a href="/subscribe">Newsletter</a>
+  </footer>
+
+</div>
+
+<script>
+  // Lang switch (mirror impressum behavior)
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('ap-lang'); } catch (e) {}
+    if (!saved) saved = (navigator.language || 'en').startsWith('de') ? 'de' : 'en';
+    document.documentElement.setAttribute('data-lang', saved);
+    document.documentElement.setAttribute('lang', saved);
+
+    var toggle = document.getElementById('langToggle');
+    var btns = toggle.querySelectorAll('button');
+    function update(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      btns.forEach(function (b) {
+        b.classList.toggle('on', b.getAttribute('data-lang') === lang);
+      });
+      try { localStorage.setItem('ap-lang', lang); } catch (e) {}
+    }
+    update(saved);
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () { update(b.getAttribute('data-lang')); });
+    });
+  })();
+
+  // Bug report: opens mailto with diagnostic info pre-filled
+  function reportBug() {
+    var lang = document.documentElement.getAttribute('data-lang') || 'en';
+    var subject = lang === 'de' ? 'artpulse bug-report' : 'artpulse bug report';
+    var heading = lang === 'de'
+      ? 'Was ist passiert (kurz):\n\n\nWas hättest du erwartet?\n\n\nWie reproduzieren (Schritte):\n1.\n2.\n3.'
+      : 'What happened (briefly):\n\n\nWhat did you expect to happen?\n\n\nHow to reproduce (steps):\n1.\n2.\n3.';
+    var footerLabel = lang === 'de'
+      ? '— Diagnose-Daten (bitte nicht bearbeiten):'
+      : '— Diagnostic info (please leave intact):';
+
+    var diag = [
+      footerLabel,
+      'URL: ' + window.location.href,
+      'User-Agent: ' + navigator.userAgent,
+      'Language: ' + lang,
+      'Screen: ' + window.screen.width + 'x' + window.screen.height,
+      'Time: ' + new Date().toISOString()
+    ].join('\n');
+
+    var body = heading + '\n\n\n' + diag;
+    var href = 'mailto:hello@artpulse.app?subject=' +
+      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = href;
+  }
+</script>
+
+</body>
+</html>
