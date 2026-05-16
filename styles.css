@@ -1328,7 +1328,7 @@ body.no-scroll {
   text-decoration: none;
   color: var(--fg);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 48px;
   align-items: center;
 }
