@@ -1,11 +1,11 @@
-/* ArtPulse Service Worker
+/* artpulse Service Worker
  * Strategy:
  *   - App shell (HTML, CSS, JS, fonts, icons): cache-first, populated on install + on use
  *   - stories.json: network-first with cache fallback (so users get fresh news but works offline)
  *   - External images: cache as encountered, served from cache when possible
  */
 
-var VERSION = 'ap-v33';
+var VERSION = 'ap-v35';
 var SHELL_CACHE = 'kp-shell-' + VERSION;
 var DATA_CACHE = 'kp-data-' + VERSION;
 var IMG_CACHE = 'kp-img-' + VERSION;
