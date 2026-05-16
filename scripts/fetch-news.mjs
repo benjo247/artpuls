@@ -524,6 +524,13 @@ async function run() {
   }
 
   archive.stories.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+
+  // Trending detection — multi-source clustering in the last 24h.
+  // Two stories from DIFFERENT sources whose headlines share enough tokens
+  // are flagged as trending (both/all members of the cluster).
+  // Recalculated on every run — yesterday's trending may not be today's.
+  detectTrending(archive.stories);
+
   writeFileSync(ARCHIVE_PATH, JSON.stringify({
     generatedAt: new Date().toISOString(),
     count: archive.stories.length,
@@ -534,6 +541,90 @@ async function run() {
   console.log('\nRebuilding derived files:');
   buildDerivedFiles(archive.stories);
   buildSitemap(archive.stories);
+}
+
+// ====================================================
+// Trending detection
+// ====================================================
+// A story is "trending" if AT LEAST ONE other story from a
+// DIFFERENT source published in the last 24h shares enough
+// headline tokens with it (Jaccard >= 0.30).
+// Both stories in such a pair get marked trending — so the
+// user sees the flag on whichever survives client-side dedup.
+//
+// Recalculated from scratch on every fetch-news run.
+// Stories naturally lose the flag as their cluster ages out.
+function tokenizeForTrending(text) {
+  const STOP = new Set([
+    // English
+    'the','a','an','and','or','but','of','for','to','in','on','at','by',
+    'with','from','as','is','are','was','were','be','been','being','this',
+    'that','these','those','it','its','his','her','their','our','have',
+    'has','had','will','would','can','could','should','may','might',
+    'after','before','over','into','about','against','than','then','also',
+    'amid','says','said','new','first','last','one','two','more','less',
+    // German
+    'der','die','das','den','dem','des','ein','eine','einen','einer',
+    'und','oder','aber','von','vom','für','mit','bei','an','am','auf',
+    'aus','nach','vor','bis','seit','über','unter','ist','sind','war',
+    'waren','sein','wird','werden','hat','haben','hatte','dass','sich',
+    'auch','noch','schon','sehr','mehr','neue','neuen','neuer','heute',
+    'gegen','wegen','sagt','sagte','beim','zum','zur','als','wie','wer'
+  ]);
+  return new Set(
+    String(text || '')
+      .toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9 ]/g, ' ')
+      .split(/\s+/)
+      .filter(w => w.length >= 4 && !STOP.has(w))
+  );
+}
+
+function jaccardSimilarity(a, b) {
+  if (!a.size || !b.size) return 0;
+  let intersection = 0;
+  for (const tok of a) if (b.has(tok)) intersection++;
+  const union = a.size + b.size - intersection;
+  return union === 0 ? 0 : intersection / union;
+}
+
+function detectTrending(stories) {
+  const TRENDING_THRESHOLD = 0.30;
+  const WINDOW_MS = 24 * 3600 * 1000;
+  const now = Date.now();
+
+  for (const s of stories) s.trending = false;
+
+  const recent = stories.filter(s => {
+    const t = new Date(s.publishedAt).getTime();
+    return !isNaN(t) && (now - t) < WINDOW_MS;
+  });
+
+  if (recent.length < 2) {
+    console.log(`  Trending: fewer than 2 stories in last 24h, skipping.`);
+    return;
+  }
+
+  const tokens = new Map();
+  for (const s of recent) {
+    tokens.set(s.id, tokenizeForTrending((s.headline_en || '') + ' ' + (s.headline_de || '')));
+  }
+
+  let trendingCount = 0;
+  for (let i = 0; i < recent.length; i++) {
+    for (let j = i + 1; j < recent.length; j++) {
+      const a = recent[i];
+      const b = recent[j];
+      if ((a.source || '').toLowerCase() === (b.source || '').toLowerCase()) continue;
+      const sim = jaccardSimilarity(tokens.get(a.id), tokens.get(b.id));
+      if (sim >= TRENDING_THRESHOLD) {
+        if (!a.trending) { a.trending = true; trendingCount++; }
+        if (!b.trending) { b.trending = true; trendingCount++; }
+      }
+    }
+  }
+  console.log(`  Trending: ${trendingCount} stories flagged across ${recent.length} recent (24h).`);
 }
 
 run()
