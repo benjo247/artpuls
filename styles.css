@@ -2184,3 +2184,50 @@ body.no-scroll {
 .d-hero-noimg.cat-biennale    { --bg1: var(--cat-bg-biennale-1);    --bg2: var(--cat-bg-biennale-2);    --cat-accent: var(--cat-bg-biennale-accent); }
 .d-hero-noimg.cat-restitution { --bg1: var(--cat-bg-restitution-1); --bg2: var(--cat-bg-restitution-2); --cat-accent: var(--cat-bg-restitution-accent); }
 .d-hero-noimg.cat-all         { --bg1: var(--cat-bg-all-1);         --bg2: var(--cat-bg-all-2);         --cat-accent: var(--cat-bg-all-accent); }
+
+/* ============ Sheet hero (no image variant) ============ */
+.sheet-hero.sheet-hero-noimg {
+  background: linear-gradient(160deg, var(--bg1, #2a2520), var(--bg2, #161310));
+  overflow: hidden;
+}
+.sheet-hero-noimg .sheet-hero-noimg-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at top right, rgba(244,241,234,0.05), transparent 60%),
+    radial-gradient(ellipse at bottom left, rgba(0,0,0,0.35), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.sheet-hero-noimg .sheet-hero-noimg-mark {
+  position: absolute;
+  top: 44%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: clamp(96px, 28vw, 120px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: rgba(244,241,234,0.92);
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+}
+.sheet-hero-noimg .sheet-hero-noimg-mark .sheet-hero-noimg-dot {
+  display: inline-block;
+  width: clamp(14px, 4vw, 18px);
+  height: clamp(14px, 4vw, 18px);
+  border-radius: 50%;
+  background: var(--accent);
+  margin-left: clamp(2px, 0.6vw, 4px);
+  transform: translateY(clamp(2px, 0.6vw, 3px));
+}
+
+/* Category palettes for sheet hero no-image */
+.sheet-hero-noimg.cat-auction     { --bg1: var(--cat-bg-auction-1);     --bg2: var(--cat-bg-auction-2); }
+.sheet-hero-noimg.cat-exhibition  { --bg1: var(--cat-bg-exhibition-1);  --bg2: var(--cat-bg-exhibition-2); }
+.sheet-hero-noimg.cat-museum      { --bg1: var(--cat-bg-museum-1);      --bg2: var(--cat-bg-museum-2); }
+.sheet-hero-noimg.cat-market      { --bg1: var(--cat-bg-market-1);      --bg2: var(--cat-bg-market-2); }
+.sheet-hero-noimg.cat-artists     { --bg1: var(--cat-bg-artists-1);     --bg2: var(--cat-bg-artists-2); }
+.sheet-hero-noimg.cat-biennale    { --bg1: var(--cat-bg-biennale-1);    --bg2: var(--cat-bg-biennale-2); }
+.sheet-hero-noimg.cat-restitution { --bg1: var(--cat-bg-restitution-1); --bg2: var(--cat-bg-restitution-2); }
+.sheet-hero-noimg.cat-all         { --bg1: var(--cat-bg-all-1);         --bg2: var(--cat-bg-all-2); }

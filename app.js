@@ -1098,7 +1098,8 @@
     } catch (e) {}
 
     var accent = s.accent || '#e8503a';
-    var image = s.image || ('https://picsum.photos/seed/' + encodeURIComponent(s.id) + '/800/1200');
+    var hasImage = !!s.image;
+    var catKey = s.cat || 'all';
     var sourceLink = s.url ? (
       '<a class="sheet-source-link" href="' + escapeAttr(s.url) + '" target="_blank" rel="noopener noreferrer">' +
         t('readSource') +
@@ -1106,12 +1107,21 @@
       '</a>'
     ) : '';
 
+    var heroBlock = hasImage
+      ? '<div class="sheet-hero" style="background-image:url(\'' + escapeAttr(s.image) + '\')">' +
+          '<div class="sheet-hero-shade"></div>' +
+          '<span class="badge"><span class="badge-dot" style="background:' + escapeAttr(accent) + '"></span>' + escapeHTML(catLabel(s.cat)) + '</span>' +
+        '</div>'
+      : '<div class="sheet-hero sheet-hero-noimg cat-' + escapeAttr(catKey) + '">' +
+          '<div class="sheet-hero-noimg-bg"></div>' +
+          '<div class="sheet-hero-shade"></div>' +
+          '<div class="sheet-hero-noimg-mark">a<span class="sheet-hero-noimg-dot"></span></div>' +
+          '<span class="badge"><span class="badge-dot" style="background:' + escapeAttr(accent) + '"></span>' + escapeHTML(catLabel(s.cat)) + '</span>' +
+        '</div>';
+
     var html = '' +
       '<button class="sheet-close" id="sheetClose" aria-label="Close"><svg class="icon" viewBox="0 0 24 24">' + ICONS.close + '</svg></button>' +
-      '<div class="sheet-hero" style="background-image:url(\'' + escapeAttr(image) + '\')">' +
-        '<div class="sheet-hero-shade"></div>' +
-        '<span class="badge"><span class="badge-dot" style="background:' + escapeAttr(accent) + '"></span>' + escapeHTML(catLabel(s.cat)) + '</span>' +
-      '</div>' +
+      heroBlock +
       '<div class="sheet-body">' +
         '<div class="kicker">' + escapeHTML(getText(s, 'kicker')) + '</div>' +
         '<h1 class="sheet-headline">' + escapeHTML(getText(s, 'headline')) + '</h1>' +
