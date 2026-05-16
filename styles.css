@@ -532,13 +532,27 @@ body {
 }
 
 /* ===== Story-detail newsletter prompt (engagement-triggered) =====
-   Editorial sign-off style — hairline separator, inline email field,
-   no card chrome. Sits at the end of the article like a colophon. */
+   Warm red card — refined version of the brand's accent palette.
+   3px accent bar on the left as a brand anchor. Inline email form. */
 .sheet-nl-prompt {
-  margin-top: 48px;
-  padding: 32px 0 0;
-  border-top: 1px solid rgba(244,241,234,0.10);
+  margin-top: 40px;
+  padding: 28px 24px 26px 28px;
+  background:
+    linear-gradient(180deg, rgba(232,80,58,0.05) 0%, rgba(232,80,58,0.01) 100%),
+    var(--bg-2);
+  border: 1px solid rgba(232,80,58,0.20);
+  border-radius: 12px;
   position: relative;
+}
+.sheet-nl-prompt::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: -1px;
+  width: 3px;
+  height: 38px;
+  background: var(--accent);
+  border-radius: 0 2px 2px 0;
 }
 .sheet-nl-head {
   display: flex;
@@ -553,17 +567,6 @@ body {
   text-transform: uppercase;
   color: var(--accent);
   font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-}
-.sheet-nl-eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
 }
 .sheet-nl-dismiss {
   background: transparent;
@@ -571,7 +574,7 @@ body {
   padding: 6px;
   margin: -6px;
   cursor: pointer;
-  color: rgba(244,241,234,0.3);
+  color: rgba(244,241,234,0.32);
   display: flex;
   align-items: center;
   border-radius: 4px;
@@ -585,28 +588,26 @@ body {
 .sheet-nl-title {
   font-family: 'Instrument Serif', serif;
   font-style: italic;
-  font-size: 30px;
-  line-height: 1.1;
+  font-size: 26px;
+  line-height: 1.15;
   letter-spacing: -0.005em;
   color: var(--ink);
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-weight: 400;
 }
 .sheet-nl-body {
   font-family: 'Geist', sans-serif;
-  font-size: 14px;
+  font-size: 13.5px;
   line-height: 1.5;
   color: rgba(244,241,234,0.65);
-  margin: 0 0 22px;
-  max-width: 36ch;
+  margin: 0 0 18px;
+  max-width: 34ch;
 }
-.sheet-nl-form {
-  margin: 0;
-}
+.sheet-nl-form { margin: 0; }
 .sheet-nl-field {
   display: flex;
   align-items: stretch;
-  border-bottom: 1px solid rgba(244,241,234,0.20);
+  border-bottom: 1px solid rgba(232,80,58,0.25);
   transition: border-color 0.2s ease;
 }
 .sheet-nl-field:focus-within {
@@ -639,7 +640,7 @@ body {
 .sheet-nl-submit {
   background: transparent;
   border: 0;
-  padding: 0 2px 0 16px;
+  padding: 0 2px 0 14px;
   cursor: pointer;
   color: var(--ink);
   display: flex;
@@ -671,12 +672,12 @@ body {
 }
 .sheet-nl-status.success { color: var(--accent); }
 .sheet-nl-fine {
-  margin: 18px 0 0;
+  margin: 14px 0 0;
   font-family: 'Geist Mono', monospace;
   font-size: 10px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
-  color: rgba(244,241,234,0.32);
+  color: rgba(244,241,234,0.40);
 }
 .pill {
   display: inline-flex; align-items: center; gap: 7px;
