@@ -160,6 +160,9 @@ ${noscriptArticle}
         <span class="drawer-link-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></span>
         <span><span class="drawer-link-label">Subscribe to the digest</span></span>
       </a>
+      <a href="/about" class="drawer-link"><span class="drawer-link-label">About artpulse</span></a>
+      <div class="drawer-divider"></div>
+      <a href="#" class="drawer-link" id="drawerReportBug"><span class="drawer-link-label">Report a bug</span></a>
       <div class="drawer-divider"></div>
       <a href="/impressum" class="drawer-link"><span class="drawer-link-label">Impressum</span></a>
       <a href="/datenschutz" class="drawer-link"><span class="drawer-link-label">Datenschutz</span></a>
