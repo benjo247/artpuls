@@ -16,9 +16,39 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 
+<!-- ============ PWA Splash Screens (apple-touch-startup-image) ============ -->
+<!-- iPhone 16 Pro Max — 430×932 @3x -->
+<link rel="apple-touch-startup-image" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/icons/splash/1320x2868.png">
+<!-- iPhone 16 Pro — 402×874 @3x -->
+<link rel="apple-touch-startup-image" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/icons/splash/1206x2622.png">
+<!-- iPhone 14/15/16 Plus, Pro Max — 430×932 @3x -->
+<link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/icons/splash/1290x2796.png">
+<!-- iPhone 14/15/16 Pro — 393×852 @3x -->
+<link rel="apple-touch-startup-image" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/icons/splash/1179x2556.png">
+<!-- iPhone 12/13/14 — 390×844 @3x -->
+<link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/icons/splash/1170x2532.png">
+<!-- iPhone 12/13 Pro Max — 428×926 @3x -->
+<link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/icons/splash/1284x2778.png">
+<!-- iPhone XS Max, 11 Pro Max — 414×896 @3x -->
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/icons/splash/1242x2688.png">
+<!-- iPhone X, XS, 11 Pro — 375×812 @3x -->
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/icons/splash/1125x2436.png">
+<!-- iPhone XR, 11 — 414×896 @2x -->
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/icons/splash/828x1792.png">
+<!-- iPad Pro 12.9" — 1024×1366 @2x -->
+<link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/icons/splash/2048x2732.png">
+<!-- iPad Pro 11", Air — 834×1194 @2x -->
+<link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/icons/splash/1668x2388.png">
+<!-- iPad Air older — 834×1112 @2x -->
+<link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/icons/splash/1668x2224.png">
+<!-- iPad 10.2" — 810×1080 @2x -->
+<link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/icons/splash/1620x2160.png">
+<!-- iPad 9.7" — 768×1024 @2x -->
+<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/icons/splash/1536x2048.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;900&family=Geist+Mono:wght@400;500&family=Inter:wght@400;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/styles.css">
 
@@ -31,6 +61,36 @@
 -->
 </head>
 <body>
+
+<!-- ============ Animated PWA Splash (cold-start fade) ============ -->
+<!-- Shown on every cold load, fades out once app.js signals ready.
+     CSS only — no FOUC. Inline styles to load before any external CSS. -->
+<div id="apSplash" style="position:fixed;inset:0;z-index:99999;background:radial-gradient(ellipse 60% 60% at center,rgba(232,80,58,0.05) 0%,transparent 70%),#0e0d0b;display:flex;align-items:center;justify-content:center;transition:opacity 0.4s ease;pointer-events:none;-webkit-font-smoothing:antialiased;">
+  <div style="position:relative;display:inline-flex;align-items:baseline;transform:translateY(-4%);">
+    <span style="font-family:Inter,sans-serif;font-weight:900;font-size:37vw;line-height:1;color:#f4f1ea;letter-spacing:-0.04em;">a</span>
+    <span style="position:relative;width:5.92vw;height:5.92vw;border-radius:50%;background:#e8503a;margin-left:0.93vw;transform:translateY(0.93vw);flex-shrink:0;">
+      <span style="content:'';position:absolute;inset:0;border-radius:50%;background:#e8503a;animation:apSplashPing 2.4s cubic-bezier(0,0,0.25,1) infinite;display:block;"></span>
+    </span>
+  </div>
+  <div style="position:absolute;bottom:6.5vh;left:50%;transform:translateX(-50%);font-family:'Geist Mono',monospace;font-size:2.6vw;letter-spacing:0.32em;text-transform:uppercase;color:#f4f1ea;white-space:nowrap;">
+    since<span style="display:inline-block;width:0.94vw;height:0.94vw;border-radius:50%;background:#e8503a;margin:0 2.2vw;vertical-align:middle;transform:translateY(-0.13vw);"></span>2026
+  </div>
+</div>
+<style>
+  @keyframes apSplashPing {
+    0%   { transform: scale(1);   opacity: 0.7; }
+    100% { transform: scale(3.5); opacity: 0;   }
+  }
+  /* On wider screens, cap mark size for desktop / tablet landscape */
+  @media (min-width: 700px) {
+    #apSplash > div:first-child > span:first-child { font-size: min(37vw, 280px) !important; }
+    #apSplash > div:first-child > span:last-child { width: min(5.92vw, 44px) !important; height: min(5.92vw, 44px) !important; }
+    #apSplash > div:last-child { font-size: min(2.6vw, 20px) !important; }
+  }
+  /* When app signals ready, fade out then remove pointer events */
+  #apSplash.ap-splash-hide { opacity: 0; pointer-events: none; }
+</style>
+
 <div class="phone">
   <header class="header">
     <div class="header-top">
@@ -108,41 +168,6 @@
 
 </div>
 <!-- /.phone -->
-
-<!-- ============ Welcome Screen (first visit, dismissible) ============ -->
-<div class="welcome" id="welcome" aria-hidden="true" role="dialog" aria-label="Welcome to ArtPulse">
-  <button class="welcome-close" id="welcomeClose" aria-label="Close welcome" type="button">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
-  </button>
-
-  <div class="welcome-content">
-    <div class="welcome-logo">
-      <span class="art">art</span><span class="pulse">pulse</span><span class="dot" aria-hidden="true"></span>
-    </div>
-
-    <h1 class="welcome-headline">
-      <span class="welcome-line-1">The art world,</span>
-      <span class="welcome-line-2"><em>in one breath.</em></span>
-    </h1>
-
-    <p class="welcome-body" id="welcomeBody">International art press, daily. Two sentences per story. Bilingual. No login.</p>
-
-    <div class="welcome-cta-group">
-      <button class="welcome-cta primary" id="welcomeRead" type="button">
-        <span id="welcomeReadLabel">Read today</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </button>
-      <a class="welcome-cta secondary" id="welcomeSubscribe" href="/subscribe">
-        <span id="welcomeSubscribeLabel">Get it monthly</span>
-      </a>
-    </div>
-
-    <div class="welcome-lang" id="welcomeLang">
-      <button class="welcome-lang-btn on" data-lang="en" type="button">EN</button>
-      <button class="welcome-lang-btn" data-lang="de" type="button">DE</button>
-    </div>
-  </div>
-</div>
 
 <!-- ============ Search Overlay (lives outside .phone so it works on desktop too) ============ -->
 <div class="search-overlay" id="searchOverlay" aria-hidden="true">
