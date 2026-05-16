@@ -39,11 +39,11 @@
       nlTitle2: 'delivered.',
       nlBody: 'Once a month. The stories that mattered, condensed in one read.',
       // Story-detail newsletter prompt (engagement-triggered)
-      detailNlEyebrow: 'Newsletter',
+      detailNlEyebrow: 'ArtPulse Monthly',
       detailNlTitle: 'The art press, condensed.',
       detailNlBody: 'Once a month \u2014 the stories that mattered, bilingual, free.',
-      detailNlCta: 'Subscribe for free',
-      detailNlDismiss: 'Maybe later',
+      detailNlPlaceholder: 'your@email.com',
+      detailNlFine: 'Free \u00B7 Bilingual \u00B7 Unsubscribe anytime',
       footerTagline: 'International art news, in one breath. Three times daily, edited by us.',
       sectionsLabel: 'Sections',
       aboutLabel: 'About',
@@ -81,11 +81,11 @@
       nlTitle2: 'frei Haus.',
       nlBody: 'Einmal im Monat. Stories, die zählten — in einem Atemzug.',
       // Story-detail newsletter prompt (engagement-triggered)
-      detailNlEyebrow: 'Newsletter',
+      detailNlEyebrow: 'ArtPulse Monthly',
       detailNlTitle: 'Die Kunstpresse, kondensiert.',
       detailNlBody: 'Einmal im Monat \u2014 die Stories, die zählten. Zweisprachig, kostenlos.',
-      detailNlCta: 'Kostenlos abonnieren',
-      detailNlDismiss: 'Sp\u00E4ter',
+      detailNlPlaceholder: 'deine@email.de',
+      detailNlFine: 'Kostenlos \u00B7 Zweisprachig \u00B7 Jederzeit abbestellbar',
       footerTagline: 'Internationale Kunst-News, in einem Atemzug. Dreimal t\u00E4glich, redigiert von uns.',
       sectionsLabel: 'Rubriken',
       aboutLabel: 'Information',
@@ -1064,14 +1064,25 @@
         '<div class="sheet-nl-head">' +
           '<span class="sheet-nl-eyebrow">' + escapeHTML(t('detailNlEyebrow')) + '</span>' +
           '<button class="sheet-nl-dismiss" id="sheetNlDismiss" aria-label="Dismiss" type="button">' +
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
+            '<svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
           '</button>' +
         '</div>' +
         '<h3 class="sheet-nl-title">' + escapeHTML(t('detailNlTitle')) + '</h3>' +
         '<p class="sheet-nl-body">' + escapeHTML(t('detailNlBody')) + '</p>' +
-        '<a class="sheet-nl-cta" href="/subscribe" id="sheetNlCta">' + escapeHTML(t('detailNlCta')) +
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
-        '</a>' +
+        '<form class="sheet-nl-form" id="sheetNlForm" novalidate>' +
+          '<div class="sheet-nl-field">' +
+            '<input class="sheet-nl-input" id="sheetNlInput" type="email" ' +
+              'placeholder="' + escapeAttr(t('detailNlPlaceholder')) + '" ' +
+              'autocomplete="email" inputmode="email" autocapitalize="off" ' +
+              'autocorrect="off" spellcheck="false" required>' +
+            '<button type="submit" class="sheet-nl-submit" id="sheetNlSubmit" ' +
+              'aria-label="' + escapeAttr(t('subscribe')) + '">' +
+              '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+            '</button>' +
+          '</div>' +
+          '<div class="sheet-nl-status" id="sheetNlStatus" role="alert" aria-live="polite"></div>' +
+        '</form>' +
+        '<p class="sheet-nl-fine">' + escapeHTML(t('detailNlFine')) + '</p>' +
       '</div>';
   }
 
@@ -1157,12 +1168,63 @@
         setTimeout(function () { prompt.remove(); }, 300);
       }
     });
-    var nlCta = document.getElementById('sheetNlCta');
-    if (nlCta) nlCta.addEventListener('click', function () {
-      // User clicked subscribe — treat as positive intent, mark as dismissed
-      // so it doesn't keep appearing if they bounce back without subscribing.
-      try { localStorage.setItem('ap-nl-detail-dismissed', '1'); } catch (e) {}
-    });
+    var nlForm = document.getElementById('sheetNlForm');
+    if (nlForm) nlForm.addEventListener('submit', onSheetNewsletterSubmit);
+  }
+
+  function onSheetNewsletterSubmit(e) {
+    e.preventDefault();
+    var input = document.getElementById('sheetNlInput');
+    var submit = document.getElementById('sheetNlSubmit');
+    var status = document.getElementById('sheetNlStatus');
+    if (!input || !submit || !status) return;
+    var email = (input.value || '').trim().toLowerCase();
+    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!EMAIL_RE.test(email)) {
+      status.textContent = (state.lang === 'de')
+        ? 'Bitte gib eine g\u00FCltige E-Mail-Adresse ein.'
+        : 'Please enter a valid email address.';
+      status.classList.remove('success');
+      input.focus();
+      return;
+    }
+    submit.disabled = true;
+    status.textContent = (state.lang === 'de') ? 'Wird abonniert\u2026' : 'Subscribing\u2026';
+    status.classList.remove('success');
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    })
+      .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+      .then(function (res) {
+        submit.disabled = false;
+        if (res.ok && res.data && res.data.ok) {
+          status.textContent = (state.lang === 'de')
+            ? 'Schau in dein Postfach zur Best\u00E4tigung.'
+            : 'Check your inbox to confirm.';
+          status.classList.add('success');
+          input.value = '';
+          input.disabled = true;
+          try { localStorage.setItem('ap-nl-state', 'subscribed'); } catch (e2) {}
+        } else {
+          var msg = (state.lang === 'de')
+            ? 'Etwas lief schief. Bitte erneut versuchen.'
+            : 'Something went wrong. Please try again.';
+          if (res.data && res.data.error === 'invalid-email') {
+            msg = (state.lang === 'de')
+              ? 'Diese E-Mail-Adresse scheint ung\u00FCltig.'
+              : 'That email looks invalid.';
+          }
+          status.textContent = msg;
+        }
+      })
+      .catch(function () {
+        submit.disabled = false;
+        status.textContent = (state.lang === 'de')
+          ? 'Netzwerkfehler. Bitte erneut versuchen.'
+          : 'Network error. Please try again.';
+      });
   }
 
   function closeSheet(fromPopstate) {
