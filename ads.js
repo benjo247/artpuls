@@ -75,6 +75,9 @@
        PURE function — does not mutate session counter, so it's safe to call
        on every render (e.g. when user switches category). When AdSense is live,
        actual impressions are frequency-capped server-side by Google. */
+    // Master switch — no ad markers injected when disabled (no placeholders shown).
+    if (!CONFIG.enabled) return stories || [];
+
     var session = getSession();
     var interval = session.isNew ? CONFIG.rules.intervalNewUser : CONFIG.rules.intervalReturning;
     var first = CONFIG.rules.firstAdPosition;
@@ -114,7 +117,10 @@
   // ====== Rendering ======
   function renderInFeed(adMarker) {
     /* Returns the HTML for a full-screen in-feed ad card. */
-    if (CONFIG.enabled && CONFIG.publisherId && CONFIG.slots.inFeed) {
+    // No placeholders when ads are disabled (injectInto already won't emit markers,
+    // but be defensive in case this is called directly).
+    if (!CONFIG.enabled) return '';
+    if (CONFIG.publisherId && CONFIG.slots.inFeed) {
       // Real AdSense markup
       return '' +
         '<article class="card card-ad" data-ad-id="' + adMarker.id + '">' +
@@ -146,7 +152,8 @@
 
   function renderInArticle() {
     /* Returns the HTML for an in-article ad slot. */
-    if (CONFIG.enabled && CONFIG.publisherId && CONFIG.slots.inArticle) {
+    if (!CONFIG.enabled) return '';
+    if (CONFIG.publisherId && CONFIG.slots.inArticle) {
       return '' +
         '<div class="inline-ad">' +
           '<span class="ad-label-small">Advertisement</span>' +

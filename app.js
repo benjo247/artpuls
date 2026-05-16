@@ -441,8 +441,8 @@
         '<article class="card card-ad" data-idx="' + idx + '"'
       );
     }
-    // Fallback if ads.js didn't load
-    return '<article class="card card-ad" data-idx="' + idx + '"><div class="ad-shell"><div class="ad-label">Advertisement</div></div></article>';
+    // Fallback if ads.js didn't load — render nothing (no placeholders)
+    return '';
   }
 
   function renderFeed(preserveScroll) {
@@ -1120,7 +1120,7 @@
         '<p class="sheet-text">' + escapeHTML(getText(s, 'body')) + '</p>' +
         (window.ArtPulseAds && window.ArtPulseAds.renderInArticle
           ? window.ArtPulseAds.renderInArticle()
-          : '<div class="inline-ad"><span class="ad-label-small">' + t('ad') + '</span><div class="inline-ad-box">' + t('inArticleAd') + '</div></div>') +
+          : '') +
         sourceLink +
         '<div class="sheet-actions">' +
           '<button class="pill" id="sheetShare"><svg class="icon icon-sm" viewBox="0 0 24 24">' + ICONS.share + '</svg>' + t('share') + '</button>' +
