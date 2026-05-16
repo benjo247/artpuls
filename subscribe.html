@@ -24,7 +24,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;900&family=Geist+Mono:wght@400;500&family=Inter:wght@400;900&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -109,7 +109,7 @@
   .back-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
 
   .logo {
-    font-family: 'Geist', var(--sans);
+    font-family: 'Inter', var(--sans);
     font-size: 22px;
     line-height: 1;
     display: inline-flex;
@@ -117,8 +117,9 @@
     color: var(--fg);
     text-decoration: none;
   }
-  .logo .art { font-weight: 900; letter-spacing: -0.015em; }
-  .logo .pulse { font-weight: 500; letter-spacing: -0.025em; }
+  .logo { letter-spacing: -0.04em; }
+  .logo .art { font-weight: 900; }
+  .logo .pulse { font-weight: 400; letter-spacing: -0.02em; }
   .logo .dot {
     display: inline-block;
     width: 0.32em;
@@ -716,7 +717,7 @@
         stateConfirm.classList.add('on');
         // Remember subscription so app stops showing the in-feed CTA
         try { localStorage.setItem('ap-nl-state', 'subscribed'); } catch (e) {}
-        // Update URL for analytics
+        // Reflect success state in URL (no tracking — just for browser history clarity)
         try { window.history.replaceState({}, '', '/subscribe?ok=1'); } catch (e) {}
       } else {
         var msg = t('errGeneric');

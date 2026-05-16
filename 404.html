@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e0d0b">
+<meta name="robots" content="noindex, follow">
+<title>Not found — ArtPulse</title>
+<meta name="description" content="This page no longer exists. The art world is at artpulse.app.">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0e0d0b;
+    --ink: #f4f1ea;
+    --ink-2: rgba(244,241,234,0.65);
+    --ink-3: rgba(244,241,234,0.32);
+    --accent: #e8503a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; min-height: 100vh; }
+  body {
+    background:
+      radial-gradient(ellipse 60% 60% at center, rgba(232,80,58,0.04) 0%, transparent 70%),
+      var(--bg);
+    color: var(--ink);
+    font-family: 'Geist', -apple-system, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    text-align: center;
+    min-height: 100vh;
+  }
+  .mark {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 128px;
+    line-height: 1;
+    color: rgba(244,241,234,0.92);
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+  }
+  .mark .dot {
+    display: inline-block;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-left: 4px;
+    transform: translateY(3px);
+  }
+  .eyebrow {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 42px;
+    line-height: 1.1;
+    font-weight: 400;
+    margin: 0 0 14px;
+    max-width: 18ch;
+  }
+  p {
+    color: var(--ink-2);
+    font-size: 15px;
+    line-height: 1.55;
+    max-width: 36ch;
+    margin: 0 auto 32px;
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 22px 13px 24px;
+    background: var(--accent);
+    color: var(--ink);
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: #d44530; transform: translateY(-1px); }
+  .cta svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+  .fine {
+    margin-top: 56px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  @media (max-width: 480px) {
+    .mark { font-size: 92px; margin-bottom: 28px; }
+    .mark .dot { width: 14px; height: 14px; transform: translateY(2px); }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+  <div class="mark">a<span class="dot"></span></div>
+  <div class="eyebrow">404 — not found</div>
+  <h1>This page is no longer here.</h1>
+  <p lang="en">The story may have been retired, or the link is wrong. The full archive lives on the home page.</p>
+  <a href="/" class="cta">
+    <span>Back to ArtPulse</span>
+    <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+  <div class="fine">artpulse · the art world in one breath</div>
+</body>
+</html>

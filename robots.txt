@@ -2,4 +2,20 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://kunstpuls.app/sitemap.xml
+# Block AI training crawlers (respect editorial work)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+Sitemap: https://artpulse.app/sitemap.xml
