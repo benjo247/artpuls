@@ -37,8 +37,8 @@ function renderHTML(story, lang, siteUrl, id) {
   const kicker   = hasStory ? (story[`kicker_${lang}`]   || story.kicker_en   || '') : '';
   const image    = hasStory && story.image ? story.image : `${siteUrl}/icons/og-default.png`;
   const url      = `${siteUrl}/s/${id}`;
-  const title    = hasStory ? `${headline} — ArtPulse` : 'ArtPulse — International art news, in one breath';
-  const descRaw  = hasStory ? summary : 'International art news, condensed three times daily. Read the story on ArtPulse.';
+  const title    = hasStory ? `${headline} — artpulse` : 'artpulse — International art news, in one breath';
+  const descRaw  = hasStory ? summary : 'International art news, condensed three times daily. Read the story on artpulse.';
   const desc     = descRaw.slice(0, 200);
 
   const ogTags = hasStory ? `
@@ -47,7 +47,7 @@ function renderHTML(story, lang, siteUrl, id) {
 <meta property="og:title" content="${escapeHTML(headline)}">
 <meta property="og:description" content="${escapeHTML(desc)}">
 <meta property="og:image" content="${escapeHTML(image)}">
-<meta property="og:site_name" content="ArtPulse">
+<meta property="og:site_name" content="artpulse">
 <meta property="article:published_time" content="${story.publishedAt || ''}">
 <meta property="article:section" content="${story.cat || ''}">
 
@@ -65,16 +65,16 @@ ${JSON.stringify({
   image: [image],
   datePublished: story.publishedAt,
   author: { '@type': 'Organization', name: story.source },
-  publisher: { '@type': 'Organization', name: 'ArtPulse' },
+  publisher: { '@type': 'Organization', name: 'artpulse' },
   mainEntityOfPage: url
 })}
 </script>` : `
 <meta property="og:type" content="website">
 <meta property="og:url" content="${url}">
-<meta property="og:title" content="ArtPulse">
+<meta property="og:title" content="artpulse">
 <meta property="og:description" content="${escapeHTML(desc)}">
 <meta property="og:image" content="${siteUrl}/icons/og-default.png">
-<meta property="og:site_name" content="ArtPulse">`;
+<meta property="og:site_name" content="artpulse">`;
 
   const noscriptArticle = hasStory ? `
 <noscript>
@@ -104,7 +104,7 @@ ${ogTags}
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;900&family=Geist+Mono:wght@400;500&family=Inter:wght@400;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -118,9 +118,8 @@ ${noscriptArticle}
         <button class="icon-btn icon-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
           <svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
-        <a class="logo" id="logo" href="/" aria-label="ArtPulse home">
-          <span class="logo-mark">&bull;</span>
-          <span>Art<em>Pulse</em></span>
+        <a class="logo" id="logo" href="/" aria-label="artpulse home">
+          <span class="art">art</span><span class="pulse">pulse</span><span class="dot" aria-hidden="true"></span>
         </a>
       </div>
       <div class="header-actions">
