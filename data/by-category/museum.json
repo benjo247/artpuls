@@ -1,8 +1,29 @@
 {
-  "generatedAt": "2026-05-16T12:17:33.976Z",
+  "generatedAt": "2026-05-16T18:02:25.637Z",
   "category": "museum",
-  "count": 34,
+  "count": 35,
   "stories": [
+    {
+      "id": "s-7nd3ieEAGzyPDB",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "Monopol",
+      "url": "https://www.monopol-magazin.de/henrike-naumann-preis-nachlass",
+      "publishedAt": "2026-05-16T13:51:24.000Z",
+      "time_en": "4h ago",
+      "time_de": "vor 4 Std",
+      "read": 2,
+      "kicker_en": "MMK Frankfurt",
+      "kicker_de": "MMK Frankfurt",
+      "headline_en": "MMK acquires Henrike Naumann estate",
+      "headline_de": "MMK übernimmt Nachlass von Henrike Naumann",
+      "summary_en": "Frankfurt's Museum für Moderne Kunst has acquired the estate of artist Henrike Naumann. The museum also established a prize bearing her name to honor her artistic legacy.",
+      "summary_de": "Das Frankfurter Museum für Moderne Kunst hat den Nachlass der Künstlerin Henrike Naumann übernommen. Das Museum etablierte zudem einen nach ihr benannten Preis, um ihr künstlerisches Erbe zu würdigen.",
+      "body_en": "The MMK Frankfurt announced the acquisition of Henrike Naumann's complete estate, marking a significant addition to the institution's holdings. The acquisition includes works, documentation, and materials spanning her artistic career. In conjunction with this, the museum has established a prize in Naumann's name to support emerging artists and sustain her influence on contemporary practice. This initiative reflects the museum's commitment to preserving and contextualizing important artistic legacies within its collection.",
+      "body_de": "Das MMK Frankfurt kündigte die Übernahme des kompletten Nachlasses der Künstlerin Henrike Naumann an, was eine bedeutende Erweiterung der Sammlungsbestände des Museums darstellt. Die Übernahme umfasst Werke, Dokumentation und Materialien aus ihrer künstlerischen Karriere. Damit verbunden richtete das Museum einen nach Naumann benannten Preis ein, um aufstrebende Künstler zu unterstützen und ihren Einfluss auf zeitgenössische Praktiken zu bewahren. Diese Initiative unterstreicht das Engagement des Museums, bedeutende künstlerische Vermächtnisse in seiner Sammlung zu bewahren und kontextualisieren.",
+      "trending": false
+    },
     {
       "id": "s-1sr-dCpDgXhiyR",
       "cat": "museum",
@@ -11,8 +32,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/more-than-100-seattle-art-museum-workers-plan-to-unionize-1234785795/",
       "publishedAt": "2026-05-15T19:19:58.000Z",
-      "time_en": "16h ago",
-      "time_de": "vor 16 Std",
+      "time_en": "22h ago",
+      "time_de": "vor 22 Std",
       "read": 2,
       "kicker_en": "Seattle Art Museum",
       "kicker_de": "Seattle Art Museum",
@@ -21,7 +42,8 @@
       "summary_en": "More than 100 employees at Seattle Art Museum announced plans to unionize, joining broader labor organizing efforts across U.S. cultural institutions. The campaign reflects growing momentum in museum worker advocacy.",
       "summary_de": "Mehr als 100 Mitarbeiter des Seattle Art Museum kündigten Gewerkschaftspläne an und schließen sich breiteren Arbeitskampforganisationen in amerikanischen Kulturinstitutionen an. Die Kampagne zeigt wachsende Dynamik in der Arbeitnehmerinitiativen von Museen.",
       "body_en": "Over 100 Seattle Art Museum employees announced unionization plans on Wednesday, joining a nationwide trend of labor organizing at American art institutions. The move reflects broader conversations about working conditions, compensation, and job security within the museum sector. Similar unionization efforts have emerged at major cultural institutions across the United States in recent years. SAM workers' campaign is part of a larger movement to improve labor standards in the arts.",
-      "body_de": "Über 100 Mitarbeiter des Seattle Art Museum kündigten am Mittwoch Gewerkschaftspläne an und schließen sich einem landesweiten Trend der Arbeitnehmerinitiativen an amerikanischen Kulturinstitutionen an. Der Schritt spiegelt breitere Gespräche über Arbeitsbedingungen, Entlohnung und Arbeitsplatzsicherheit im Museumswesen wider. Ähnliche Gewerkschaftskampagnen sind in den letzten Jahren in großen Kultureinrichtungen in den USA entstanden. Die SAM-Arbeitnehmer-Kampagne ist Teil einer größeren Bewegung zur Verbesserung der Arbeitsnormen in den Künsten."
+      "body_de": "Über 100 Mitarbeiter des Seattle Art Museum kündigten am Mittwoch Gewerkschaftspläne an und schließen sich einem landesweiten Trend der Arbeitnehmerinitiativen an amerikanischen Kulturinstitutionen an. Der Schritt spiegelt breitere Gespräche über Arbeitsbedingungen, Entlohnung und Arbeitsplatzsicherheit im Museumswesen wider. Ähnliche Gewerkschaftskampagnen sind in den letzten Jahren in großen Kultureinrichtungen in den USA entstanden. Die SAM-Arbeitnehmer-Kampagne ist Teil einer größeren Bewegung zur Verbesserung der Arbeitsnormen in den Künsten.",
+      "trending": false
     },
     {
       "id": "s-QIFzPdIEhPAWBT",
@@ -31,8 +53,8 @@
       "source": "Artnet News",
       "url": "https://news.artnet.com/art-world/borghese-gallery-backlash-expansion-2773658",
       "publishedAt": "2026-05-15T17:41:08.000Z",
-      "time_en": "18h ago",
-      "time_de": "vor 18 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 3,
       "kicker_en": "Borghese Gallery, Rome",
       "kicker_de": "Galerie Borghese, Rom",
@@ -41,7 +63,8 @@
       "summary_en": "The Borghese Gallery in Rome is moving forward with a new building plan despite community pushback. Details will be presented on May 19.",
       "summary_de": "Die Galerie Borghese in Rom schreitet trotz lokaler Widerstände voran mit einem neuen Bauprojekt. Die Details werden am 19. Mai präsentiert.",
       "body_en": "The prestigious Borghese Gallery, home to one of Italy's most significant art collections, has faced criticism from local residents and heritage advocates over its expansion plans. The museum scheduled an information session for May 19 to outline the project's scope, architectural design, and potential impact on the surrounding Villa Borghese. While institutional representatives argue the expansion is necessary to improve visitor experience and museum infrastructure, opponents worry about potential disruption to the historic Roman gardens and the character of the site. The decision represents a larger conversation about balancing institutional growth with preservation of cultural heritage.",
-      "body_de": "Die prestigeträchtige Galerie Borghese, die eine der bedeutendsten Kunstsammlungen Italiens beherbergt, ist auf Kritik von Anwohnern und Denkmalschutzadvokaten bezüglich ihrer Expansionspläne gestoßen. Das Museum kündigte eine Informationssitzung für den 19. Mai an, um den Umfang des Projekts, das architektonische Design und mögliche Auswirkungen auf die umliegenden Villa Borghese darzulegen. Während Institutionsvertreter argumentieren, dass die Erweiterung notwendig ist, um das Besuchererlebnis und die Museumsinfrastruktur zu verbessern, befürchten Gegner Störungen an den historischen römischen Gärten und des Charakters des Ortes. Die Entscheidung repräsentiert eine größere Diskussion über das Gleichgewicht zwischen institutionellem Wachstum und Erhaltung des Kulturerbes."
+      "body_de": "Die prestigeträchtige Galerie Borghese, die eine der bedeutendsten Kunstsammlungen Italiens beherbergt, ist auf Kritik von Anwohnern und Denkmalschutzadvokaten bezüglich ihrer Expansionspläne gestoßen. Das Museum kündigte eine Informationssitzung für den 19. Mai an, um den Umfang des Projekts, das architektonische Design und mögliche Auswirkungen auf die umliegenden Villa Borghese darzulegen. Während Institutionsvertreter argumentieren, dass die Erweiterung notwendig ist, um das Besuchererlebnis und die Museumsinfrastruktur zu verbessern, befürchten Gegner Störungen an den historischen römischen Gärten und des Charakters des Ortes. Die Entscheidung repräsentiert eine größere Diskussion über das Gleichgewicht zwischen institutionellem Wachstum und Erhaltung des Kulturerbes.",
+      "trending": false
     },
     {
       "id": "s-b2lJR0e-MBYQ-c",
@@ -51,8 +74,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/egypt-announces-current-excavation-season-finds-abu-el-naga-1234785765/",
       "publishedAt": "2026-05-15T16:21:38.000Z",
-      "time_en": "19h ago",
-      "time_de": "vor 19 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 2,
       "kicker_en": "Luxor, Abu el-Naga",
       "kicker_de": "Luxor, Abu el-Naga",
@@ -61,7 +84,8 @@
       "summary_en": "Egypt's Supreme Council of Antiquities has announced the discovery of a hidden tomb containing 3,500-year-old coffins at Abu el-Naga in Luxor. The find adds to recent archaeological discoveries in the region.",
       "summary_de": "Ägyptens Oberster Rat für Altertümer hat die Entdeckung eines verborgenen Grabes mit 3.500 Jahre alten Sarkophagen in Abu el-Naga in Luxor angekündigt. Der Fund ergänzt die jüngsten archäologischen Entdeckungen in der Region.",
       "body_en": "Egypt's Supreme Council of Antiquities has announced the discovery of a previously unknown tomb at Abu el-Naga, an archaeological site in Luxor's West Bank. The tomb contains coffins dating to approximately 3,500 years ago, representing artifacts from ancient Egypt's New Kingdom period. The site, located in an area of ongoing excavation and scholarly interest, contributes to the expanding archaeological record of elite burials in Theban necropolis. The announcement underscores Egypt's continued investment in archaeological research and documentation of its cultural heritage.",
-      "body_de": "Ägyptens Oberster Rat für Altertümer hat die Entdeckung eines bisher unbekannten Grabes in Abu el-Naga, einer archäologischen Stätte am Westufer von Luxor, angekündigt. Das Grab enthält Sarkophage aus etwa 3.500 Jahren, die Artefakte aus der Periode des Neuen Reiches des alten Ägyptens darstellen. Die Stätte im Gebiet der laufenden Ausgrabung und wissenschaftlichen Interesse trägt zum erweiterten archäologischen Bestand von Elitengräbern in der thebanischen Nekropole bei. Die Ankündigung unterstreicht Ägyptens fortgesetzte Investition in archäologische Forschung und Dokumentation seines Kulturerbes."
+      "body_de": "Ägyptens Oberster Rat für Altertümer hat die Entdeckung eines bisher unbekannten Grabes in Abu el-Naga, einer archäologischen Stätte am Westufer von Luxor, angekündigt. Das Grab enthält Sarkophage aus etwa 3.500 Jahren, die Artefakte aus der Periode des Neuen Reiches des alten Ägyptens darstellen. Die Stätte im Gebiet der laufenden Ausgrabung und wissenschaftlichen Interesse trägt zum erweiterten archäologischen Bestand von Elitengräbern in der thebanischen Nekropole bei. Die Ankündigung unterstreicht Ägyptens fortgesetzte Investition in archäologische Forschung und Dokumentation seines Kulturerbes.",
+      "trending": false
     },
     {
       "id": "s-VGG_LJK8CLOYpW",
@@ -71,8 +95,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/trump-miami-presidential-library-lawsuit-1234785760/",
       "publishedAt": "2026-05-15T16:07:24.000Z",
-      "time_en": "20h ago",
-      "time_de": "vor 20 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 2,
       "kicker_en": "Miami, Florida",
       "kicker_de": "Miami, Florida",
@@ -81,7 +105,8 @@
       "summary_en": "A new lawsuit has been filed against the planned Trump Presidential Library in Miami over disputed land transfer procedures. The White House has promoted the project as an architectural landmark.",
       "summary_de": "Gegen die geplante Trump-Präsidentenbibliothek in Miami wurde Klage wegen umstrittener Grundstücksübertragungen eingereicht. Das Weiße Haus bewirbt das Projekt als architektonisches Wahrzeichen.",
       "body_en": "The Trump Presidential Library project in Miami faces legal obstacles stemming from questions surrounding the land transfer process. White House spokesperson Davis Ingle has characterized the future building as \"one of the most magnificent buildings in the world,\" signaling the administration's commitment to the initiative. The lawsuit represents ongoing disputes over the site acquisition and development authorization for the facility.",
-      "body_de": "Die Trump-Präsidentenbibliothek in Miami sieht sich rechtlichen Hürden gegenüber, die sich aus Fragen zum Grundstücksübertragungsprozess ergeben. Ein Sprecher des Weißen Hauses hat das zukünftige Gebäude als \"eines der prächtigsten Gebäude der Welt\" charakterisiert und damit das Engagement der Verwaltung für das Projekt unterstrichen. Die Klage spiegelt anhaltende Dispute über die Grundstückserwerbung und Entwicklungsgenehmigung wider."
+      "body_de": "Die Trump-Präsidentenbibliothek in Miami sieht sich rechtlichen Hürden gegenüber, die sich aus Fragen zum Grundstücksübertragungsprozess ergeben. Ein Sprecher des Weißen Hauses hat das zukünftige Gebäude als \"eines der prächtigsten Gebäude der Welt\" charakterisiert und damit das Engagement der Verwaltung für das Projekt unterstrichen. Die Klage spiegelt anhaltende Dispute über die Grundstückserwerbung und Entwicklungsgenehmigung wider.",
+      "trending": false
     },
     {
       "id": "s-y1Maw7nz32ceeW",
@@ -91,8 +116,8 @@
       "source": "Monopol",
       "url": "https://www.monopol-magazin.de/dior-cruise-show-lacma-los-angeles-david-geffen-galleries",
       "publishedAt": "2026-05-15T14:20:16.000Z",
-      "time_en": "21h ago",
-      "time_de": "vor 21 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 2,
       "kicker_en": "Museum visits",
       "kicker_de": "Museumsbesuche",
@@ -101,7 +126,8 @@
       "summary_en": "Content insufficient to generate summary.",
       "summary_de": "Inhalt unzureichend für Zusammenfassung.",
       "body_en": "Insufficient content provided for detailed reporting.",
-      "body_de": "Unzureichender Inhalt für detaillierte Berichterstattung."
+      "body_de": "Unzureichender Inhalt für detaillierte Berichterstattung.",
+      "trending": false
     },
     {
       "id": "s-_I5zaNWkphX20j",
@@ -111,8 +137,8 @@
       "source": "Monopol",
       "url": "https://www.monopol-magazin.de/was-die-sanierung-des-pergamonmuseums-kostet",
       "publishedAt": "2026-05-15T12:29:24.000Z",
-      "time_en": "23h ago",
-      "time_de": "vor 23 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 3,
       "kicker_en": "Pergamon Museum, Berlin",
       "kicker_de": "Pergamonmuseum, Berlin",
@@ -121,7 +147,8 @@
       "summary_en": "The renovation of Berlin's Pergamon Museum faces increasing expenses as restoration work continues. The major institutional project addresses both structural and conservation requirements for the historic building and its collections.",
       "summary_de": "Die Sanierung des Berliner Pergamonmuseums verursacht steigende Kosten während die Restaurierungsarbeiten fortschreiten. Das bedeutende institutionelle Projekt befasst sich mit strukturellen und konservatorischen Anforderungen des historischen Gebäudes und seiner Sammlungen.",
       "body_en": "The Pergamon Museum, one of Berlin's most significant cultural institutions, requires comprehensive restoration to address aging infrastructure and conservation challenges. The ongoing renovation project involves careful planning to maintain the building's structural integrity while preserving its world-renowned collections. Rising costs reflect the complexity of restoring such a substantial historical structure. The project remains central to Berlin's commitment to maintaining its major museum institutions.",
-      "body_de": "Das Pergamonmuseum, eine der bedeutendsten Berliner Kulturinstitutionen, benötigt umfassende Sanierungsarbeiten zur Behebung von Infrastrukturproblemen und Konservierungsherausforderungen. Das laufende Renovierungsprojekt erfordert sorgfältige Planung zur Erhaltung der strukturellen Integrität des Gebäudes und zum Schutz seiner weltberühmten Sammlungen. Die steigenden Kosten spiegeln die Komplexität der Restaurierung einer derart substantiellen Historischen Struktur wider. Das Projekt bleibt zentral für Berlins Verpflichtung zur Instandhaltung seiner großen Museumsinstitutionen."
+      "body_de": "Das Pergamonmuseum, eine der bedeutendsten Berliner Kulturinstitutionen, benötigt umfassende Sanierungsarbeiten zur Behebung von Infrastrukturproblemen und Konservierungsherausforderungen. Das laufende Renovierungsprojekt erfordert sorgfältige Planung zur Erhaltung der strukturellen Integrität des Gebäudes und zum Schutz seiner weltberühmten Sammlungen. Die steigenden Kosten spiegeln die Komplexität der Restaurierung einer derart substantiellen Historischen Struktur wider. Das Projekt bleibt zentral für Berlins Verpflichtung zur Instandhaltung seiner großen Museumsinstitutionen.",
+      "trending": false
     },
     {
       "id": "s-Q01NIcl5tondhT",
@@ -141,7 +168,8 @@
       "summary_en": "Designer Patricia Urquiola has completed the Andaz Lisbon, a hotel project that combines vibrant colour palettes with carefully selected artworks reflecting the city's cultural character. The project demonstrates Urquiola's approach to creating immersive, culturally-informed interior environments.",
       "summary_de": "Designerin Patricia Urquiola hat das Andaz Lissabon fertiggestellt, ein Hotelprojekt, das lebendige Farbpaletten mit sorgfältig ausgewählten Kunstwerken verbindet, die den kulturellen Charakter der Stadt widerspiegeln. Das Projekt demonstriert Urquiolas Ansatz zur Schaffung immersiver, kulturell informierter Innenräume.",
       "body_en": "The Andaz Lisbon represents a mature expression of Patricia Urquiola's design philosophy, merging architectural form with curatorial intent. The hotel integrates colour-driven design strategies with a thoughtfully assembled art collection that engages with Lisbon's cultural identity and artistic heritage. Each space within the hotel reflects the designer's commitment to creating environments that are both visually dynamic and contextually relevant. The project exemplifies the contemporary luxury hotel as a platform for artistic expression and cultural dialogue, moving beyond conventional hospitality design.",
-      "body_de": "Das Andaz Lissabon stellt eine reife Ausdrucksform von Patricia Urquiolas Designphilosophie dar und verbindet architektonische Form mit kuratorischer Absicht. Das Hotel integriert farbgesteuerte Designstrategien mit einer durchdacht zusammengestellten Kunstsammlung, die sich mit Lissabons kultureller Identität und künstlerischem Erbe auseinandersetzt. Jeder Raum im Hotel spiegelt das Engagement der Designerin wider, Umgebungen zu schaffen, die sowohl visuell dynamisch als auch kontextuell relevant sind. Das Projekt exemplifiziert das zeitgenössische Luxushotel als Plattform für künstlerischen Ausdruck und kulturellen Dialog, der über konventionelles Hospitality-Design hinausgeht."
+      "body_de": "Das Andaz Lissabon stellt eine reife Ausdrucksform von Patricia Urquiolas Designphilosophie dar und verbindet architektonische Form mit kuratorischer Absicht. Das Hotel integriert farbgesteuerte Designstrategien mit einer durchdacht zusammengestellten Kunstsammlung, die sich mit Lissabons kultureller Identität und künstlerischem Erbe auseinandersetzt. Jeder Raum im Hotel spiegelt das Engagement der Designerin wider, Umgebungen zu schaffen, die sowohl visuell dynamisch als auch kontextuell relevant sind. Das Projekt exemplifiziert das zeitgenössische Luxushotel als Plattform für künstlerischen Ausdruck und kulturellen Dialog, der über konventionelles Hospitality-Design hinausgeht.",
+      "trending": false
     },
     {
       "id": "s-5MYa3mcFzpfPua",
@@ -161,7 +189,8 @@
       "summary_en": "The Metropolitan Museum of Art and the Neue Galerie New York have announced a merger, combining two major institutions. The consolidation reshapes the landscape of major art institutions in Manhattan.",
       "summary_de": "Das Metropolitan Museum of Art und die Neue Galerie New York haben eine Fusion angekündigt. Die Zusammenlegung verändert die Landschaft großer Kunstinstitutionen in Manhattan.",
       "body_en": "The merger of the Met and the Neue Galerie represents a significant consolidation of New York's museum landscape, bringing together two institutions with distinct collecting focuses and audiences. The Neue Galerie, founded in 1997 and dedicated to German and Austrian art, will integrate with the broader framework of the Met. This union raises questions about institutional identity, collection management, and how specialized curatorial perspectives will be maintained within a larger organizational structure.",
-      "body_de": "Die Fusion des Metropolitan Museums und der Neue Galerie stellt eine bedeutsame Konsolidierung der New Yorker Museumswelt dar und vereint zwei Institutionen mit unterschiedlichen Sammlungsschwerpunkten. Die Neue Galerie, 1997 gegründet und dem deutschen und österreichischen Kunstschaffen gewidmet, wird in den erweiterten Rahmen des Met integriert. Diese Verbindung wirft Fragen zu institutioneller Identität und kuratorischen Perspektiven auf."
+      "body_de": "Die Fusion des Metropolitan Museums und der Neue Galerie stellt eine bedeutsame Konsolidierung der New Yorker Museumswelt dar und vereint zwei Institutionen mit unterschiedlichen Sammlungsschwerpunkten. Die Neue Galerie, 1997 gegründet und dem deutschen und österreichischen Kunstschaffen gewidmet, wird in den erweiterten Rahmen des Met integriert. Diese Verbindung wirft Fragen zu institutioneller Identität und kuratorischen Perspektiven auf.",
+      "trending": false
     },
     {
       "id": "s-jjB4v0WMCaAlri",
@@ -181,7 +210,8 @@
       "summary_en": "The Metropolitan Museum will acquire Klimt's Portrait of Adele Bloch-Bauer I (1907) as part of a merger with the neighbouring Neue Galerie. The $135 million transaction significantly expands the Met's holdings.",
       "summary_de": "Das Metropolitan Museum wird Klimts Porträt Adele Bloch-Bauer I (1907) im Zuge einer Fusion mit der benachbarten Neuen Galerie erwerben. Die Transaktion im Wert von 135 Millionen Dollar erweitert die Bestände des Met erheblich.",
       "body_en": "America's largest art museum will absorb the Neue Galerie, founded by cosmetics heir Ronald S Lauder in 2001, in a transformative institutional merger. The acquisition includes Klimt's iconic Portrait of Adele Bloch-Bauer I (1907), valued at $135 million. The Neue Galerie has long specialized in German and Austrian art from the early twentieth century, with this Klimt serving as one of its signature works. The merger consolidates New York's art institutional landscape while significantly strengthening the Met's modern European collection.",
-      "body_de": "Americas größtes Kunstmuseum wird die Neue Galerie, gegründet vom Kosmetikerbe Ronald S Lauder im Jahr 2001, in einer transformativen institutionellen Fusion übernehmen. Die Akquisition umfasst Klimts ikonisches Porträt Adele Bloch-Bauer I (1907), bewertet auf 135 Millionen Dollar. Die Neue Galerie hat sich lange Zeit auf deutsche und österreichische Kunst des frühen zwanzigsten Jahrhunderts spezialisiert, wobei dieser Klimt eines ihrer Signaturwerke darstellt. Die Fusion konsolidiert New Yorks Kunstinstitutionslandschaft und stärkt die moderne europäische Sammlung des Met erheblich."
+      "body_de": "Americas größtes Kunstmuseum wird die Neue Galerie, gegründet vom Kosmetikerbe Ronald S Lauder im Jahr 2001, in einer transformativen institutionellen Fusion übernehmen. Die Akquisition umfasst Klimts ikonisches Porträt Adele Bloch-Bauer I (1907), bewertet auf 135 Millionen Dollar. Die Neue Galerie hat sich lange Zeit auf deutsche und österreichische Kunst des frühen zwanzigsten Jahrhunderts spezialisiert, wobei dieser Klimt eines ihrer Signaturwerke darstellt. Die Fusion konsolidiert New Yorks Kunstinstitutionslandschaft und stärkt die moderne europäische Sammlung des Met erheblich.",
+      "trending": false
     },
     {
       "id": "s-Amt5BAL7UuI3Pt",
@@ -201,7 +231,8 @@
       "summary_en": "Carolina Miranda examines the impact of LACMA's bold architectural renovation on the institution and the broader museum landscape. The redesign shapes debate about how major museums serve contemporary cities.",
       "summary_de": "Carolina Miranda untersucht die Auswirkungen von LACMAs kühner architektonischer Renovierung auf die Institution und die breitere Museumslandschaft. Die Neugestaltung prägt die Debatte darüber, wie große Museen zeitgenössische Städte bedienen.",
       "body_en": "LACMA's recently completed transformation represents a significant architectural statement for Los Angeles. The project prompts critical examination of the museum's role within its community and its positioning among American cultural institutions. Miranda's analysis addresses whether the bold redesign successfully addresses contemporary curatorial and visitor expectations. The initiative contributes to ongoing conversations about museum design and institutional identity in major metropolitan areas.",
-      "body_de": "LACMAs kürzlich abgeschlossene Umwandlung stellt eine bedeutende architektonische Aussage für Los Angeles dar. Das Projekt erfordert eine kritische Untersuchung der Rolle des Museums in seiner Gemeinde und seiner Positionierung unter amerikanischen Kulturinstitutionen. Mirandas Analyse befasst sich damit, ob die kühne Neugestaltung zeitgenössische kuratorische und Besucherererwartungen erfolgreich erfüllt. Die Initiative trägt zu laufenden Gesprächen über Museumsdesign und institutionelle Identität in großen Ballungsräumen bei."
+      "body_de": "LACMAs kürzlich abgeschlossene Umwandlung stellt eine bedeutende architektonische Aussage für Los Angeles dar. Das Projekt erfordert eine kritische Untersuchung der Rolle des Museums in seiner Gemeinde und seiner Positionierung unter amerikanischen Kulturinstitutionen. Mirandas Analyse befasst sich damit, ob die kühne Neugestaltung zeitgenössische kuratorische und Besucherererwartungen erfolgreich erfüllt. Die Initiative trägt zu laufenden Gesprächen über Museumsdesign und institutionelle Identität in großen Ballungsräumen bei.",
+      "trending": false
     },
     {
       "id": "s-nunhADifqa0tyG",
@@ -221,7 +252,8 @@
       "summary_en": "New York's Neue Galerie, housing Ronald Lauder's Austrian and German art collection, will merge with the Metropolitan Museum of Art. The consolidation affects one of Manhattan's most specialized art institutions.",
       "summary_de": "Die New Yorker Neue Galerie mit Ronald Lauders österreichischer und deutscher Kunstsammlung fusioniert mit dem Metropolitan Museum of Art. Die Konsolidierung betrifft eine der spezialisierteren Kunstinstitutionen Manhattans.",
       "body_en": "The Neue Galerie's merger with the Met represents a significant institutional reorganization in New York's museum landscape. Ronald Lauder's collection of Austrian and German art, including works by major Modernist figures, becomes integrated into the Met's broader holdings. This consolidation reflects broader patterns of institutional restructuring among major museums. The move addresses questions of collection stewardship and operational efficiency at major cultural institutions.",
-      "body_de": "Die Fusion der Neuen Galerie mit der Met stellt eine bedeutende institutionelle Umorganisation in New Yorks Museumslandschaft dar. Ronald Lauders Sammlung österreichischer und deutscher Kunst, einschließlich Werken bedeutender Modernisten, wird in die breiteren Bestände der Met integriert. Diese Konsolidierung spiegelt breitere Muster der institutionellen Umstrukturierung bei großen Museen wider. Der Schritt behandelt Fragen der Sammlungsbetreuung und betrieblichen Effizienz bei großen Kulturinstitutionen."
+      "body_de": "Die Fusion der Neuen Galerie mit der Met stellt eine bedeutende institutionelle Umorganisation in New Yorks Museumslandschaft dar. Ronald Lauders Sammlung österreichischer und deutscher Kunst, einschließlich Werken bedeutender Modernisten, wird in die breiteren Bestände der Met integriert. Diese Konsolidierung spiegelt breitere Muster der institutionellen Umstrukturierung bei großen Museen wider. Der Schritt behandelt Fragen der Sammlungsbetreuung und betrieblichen Effizienz bei großen Kulturinstitutionen.",
+      "trending": false
     },
     {
       "id": "s-_4SMB1tIfi6iL9",
@@ -241,7 +273,8 @@
       "summary_en": "The Metropolitan Museum of Art and the Neue Galerie have embarked on a merger under the guidance of Ronald S. Lauder's Special Advisory Board. The union marks a significant consolidation of two major New York cultural institutions.",
       "summary_de": "Das Metropolitan Museum of Art und die Neue Galerie gehen eine Fusion ein, geleitet von Ronald S. Lauders Sonderberatungsgremium. Die Vereinigung stellt eine bedeutende Konsolidierung zweier großer New Yorker Kulturinstitutionen dar.",
       "body_en": "The Metropolitan Museum of Art and the Neue Galerie have announced a historic merger, uniting two of New York's most prominent art institutions. Ronald S. Lauder will chair the Special Advisory Board created to oversee and guide the merger process. The combination represents a major structural shift in the city's museum landscape, bringing together the Met's comprehensive collection with the Neue Galerie's specialization in German and Austrian art. Details regarding the operational integration and future direction of both institutions are expected to unfold in coming months.",
-      "body_de": "Das Metropolitan Museum of Art und die Neue Galerie haben eine historische Fusion angekündigt, die zwei der prominentesten Kunstinstitutionen New Yorks vereint. Ronald S. Lauder wird den Vorsitz des Sonderberatungsgremiums übernehmen, das den Fusionsprozess leitet und überwacht. Die Kombination stellt eine bedeutende strukturelle Verschiebung in der Museumslandschaft der Stadt dar und bringt die umfassende Sammlung der Met mit der Spezialisierung der Neuen Galerie auf deutsche und österreichische Kunst zusammen. Details zur operativen Integration und zukünftigen Ausrichtung beider Institutionen werden in den kommenden Monaten erwartet."
+      "body_de": "Das Metropolitan Museum of Art und die Neue Galerie haben eine historische Fusion angekündigt, die zwei der prominentesten Kunstinstitutionen New Yorks vereint. Ronald S. Lauder wird den Vorsitz des Sonderberatungsgremiums übernehmen, das den Fusionsprozess leitet und überwacht. Die Kombination stellt eine bedeutende strukturelle Verschiebung in der Museumslandschaft der Stadt dar und bringt die umfassende Sammlung der Met mit der Spezialisierung der Neuen Galerie auf deutsche und österreichische Kunst zusammen. Details zur operativen Integration und zukünftigen Ausrichtung beider Institutionen werden in den kommenden Monaten erwartet.",
+      "trending": false
     },
     {
       "id": "s-GhvBmxst4N6yx9",
@@ -251,8 +284,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/suspect-taken-into-custody-louvre-ticketing-scam-1234785498/",
       "publishedAt": "2026-05-14T17:15:09.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 2,
       "kicker_en": "Louvre, Paris",
       "kicker_de": "Louvre, Paris",
@@ -261,7 +294,8 @@
       "summary_en": "A Louvre museum employee has been indicted and detained in connection with a ticketing scam spanning ten years. Six additional suspects were released pending further investigation.",
       "summary_de": "Ein Louvre-Angestellter wurde wegen eines zehnjährigen Ticketbetrugsfalls angeklagt und festgenommen. Sechs weitere Verdächtige wurden freigelassen.",
       "body_en": "The investigation revealed systematic fraud within the Louvre's ticketing operations, with one employee central to the decade-long scheme. The scope of the operation remained extensive enough to warrant detention of the primary suspect while six associates were released. This case highlights vulnerabilities in museum security and administrative procedures, particularly regarding point-of-sale systems and financial oversight. The Louvre, as one of the world's most visited museums, processes thousands of transactions daily, creating potential opportunities for such schemes.",
-      "body_de": "Die Ermittlungen deckten systematischen Betrug im Ticketbetrieb des Louvre auf, wobei ein Angestellter im Zentrum des zehnjährigen Systems stand. Der Umfang der Operation war umfangreich genug, um die Inhaftnahme des Hauptverdächtigen zu rechtfertigen, während sechs Mitarbeiter freigelassen wurden. Dieser Fall zeigt Sicherheitslücken in Museumssicherheit und Verwaltungsverfahren. Der Louvre verarbeitet täglich Tausende von Transaktionen."
+      "body_de": "Die Ermittlungen deckten systematischen Betrug im Ticketbetrieb des Louvre auf, wobei ein Angestellter im Zentrum des zehnjährigen Systems stand. Der Umfang der Operation war umfangreich genug, um die Inhaftnahme des Hauptverdächtigen zu rechtfertigen, während sechs Mitarbeiter freigelassen wurden. Dieser Fall zeigt Sicherheitslücken in Museumssicherheit und Verwaltungsverfahren. Der Louvre verarbeitet täglich Tausende von Transaktionen.",
+      "trending": false
     },
     {
       "id": "s-yv7Gkhy678hcuW",
@@ -271,8 +305,8 @@
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/05/14/neue-galerie-metropolitan-museum-merger",
       "publishedAt": "2026-05-14T16:11:12.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 4,
       "kicker_en": "New York Museums",
       "kicker_de": "New Yorker Museen",
@@ -281,7 +315,8 @@
       "summary_en": "New York's Neue Galerie will merge with the Metropolitan Museum of Art, completing the institutional integration by 2028. The union will incorporate the Lauder-founded museum's significant German and Austrian Modern art collection into the Met's encyclopaedic holdings.",
       "summary_de": "New Yorks Neue Galerie fusioniert mit dem Metropolitan Museum of Art, wodurch die institutionelle Integration bis 2028 abgeschlossen sein wird. Die Vereinigung wird die bedeutende deutsche und österreichische Moderne Kunstsammlung des von Lauder gegründeten Museums in die umfangreiche Sammlung des Met integrieren.",
       "body_en": "The Metropolitan Museum of Art has announced plans to merge with the Neue Galerie, one of New York's most specialized and prestigious institutions dedicated to German and Austrian art. Founded by Ronald Lauder, the Neue Galerie has maintained an exemplary collection of early 20th-century German and Austrian Modernism, including works by major figures in Expressionism and the Vienna Secession. The merger, scheduled for completion in 2028, represents a significant reconfiguration of New York's museum landscape and will substantially strengthen the Met's holdings in this critical area of art history. The integration signals a consolidation strategy that privileges encyclopaedic scope while potentially raising questions about the preservation of curatorial specialization and institutional identity.",
-      "body_de": "Das Metropolitan Museum of Art hat Pläne für eine Fusion mit der Neue Galerie angekündigt, einer der spezialisiersten und renommiertesten Institutionen New Yorks, die sich deutscher und österreichischer Kunst widmet. Die von Ronald Lauder gegründete Neue Galerie hat eine vorbildliche Sammlung der frühen Moderne des 20. Jahrhunderts mit Werken wichtiger Expressionisten und Vertreter der Wiener Secession bewahrt. Die für 2028 geplante Fusion stellt eine bedeutende Umgestaltung der Museumelandschaft New Yorks dar und wird die Bestände des Met in diesem wichtigen Bereich der Kunstgeschichte erheblich stärken."
+      "body_de": "Das Metropolitan Museum of Art hat Pläne für eine Fusion mit der Neue Galerie angekündigt, einer der spezialisiersten und renommiertesten Institutionen New Yorks, die sich deutscher und österreichischer Kunst widmet. Die von Ronald Lauder gegründete Neue Galerie hat eine vorbildliche Sammlung der frühen Moderne des 20. Jahrhunderts mit Werken wichtiger Expressionisten und Vertreter der Wiener Secession bewahrt. Die für 2028 geplante Fusion stellt eine bedeutende Umgestaltung der Museumelandschaft New Yorks dar und wird die Bestände des Met in diesem wichtigen Bereich der Kunstgeschichte erheblich stärken.",
+      "trending": false
     },
     {
       "id": "s-dDh4nZ5kTHKPIC",
@@ -291,8 +326,8 @@
       "source": "Monopol",
       "url": "https://www.monopol-magazin.de/metropolitan-museum-und-neue-galerie-new-york-fusionieren",
       "publishedAt": "2026-05-14T16:06:19.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 4,
       "kicker_en": "Metropolitan Museum, New York",
       "kicker_de": "Metropolitan Museum, New York",
@@ -301,7 +336,8 @@
       "summary_en": "The Metropolitan Museum of Art and the Neue Galerie New York have announced a merger combining the two major Manhattan institutions. The consolidation marks a significant restructuring of the city's museum sector.",
       "summary_de": "Das Metropolitan Museum of Art und die Neue Galerie New York haben eine Fusion angekündigt. Die Zusammenlegung markiert eine bedeutsame Umstrukturierung des Museumssektors.",
       "body_en": "The merger joins the Met, America's largest art museum, with the Neue Galerie, a specialist institution focused on German and Austrian art from the early 20th century. The consolidation streamlines operations while raising important questions about how specialized collections and curatorial missions will be preserved. The combined institution will need to balance the Neue Galerie's distinctive programming with the Met's encyclopedic approach to art history.",
-      "body_de": "Die Fusion verbindet das Metropolitan Museum, das größte Kunstmuseum Amerikas, mit der Neue Galerie, einer spezialisierten Institution, die sich deutscher und österreichischer Kunst des frühen 20. Jahrhunderts widmet. Die Konsolidierung optimiert Operationen, wirft aber Fragen zur Erhaltung spezialisierter Sammlungen auf. Die vereinigte Institution muss die eigenständige Programmierung der Neuen Galerie mit dem enzyklopädischen Ansatz des Met vereinbaren."
+      "body_de": "Die Fusion verbindet das Metropolitan Museum, das größte Kunstmuseum Amerikas, mit der Neue Galerie, einer spezialisierten Institution, die sich deutscher und österreichischer Kunst des frühen 20. Jahrhunderts widmet. Die Konsolidierung optimiert Operationen, wirft aber Fragen zur Erhaltung spezialisierter Sammlungen auf. Die vereinigte Institution muss die eigenständige Programmierung der Neuen Galerie mit dem enzyklopädischen Ansatz des Met vereinbaren.",
+      "trending": false
     },
     {
       "id": "s-6oPHebCbHl-_PL",
@@ -311,8 +347,8 @@
       "source": "Hyperallergic",
       "url": "https://hyperallergic.com/art-movements-michelle-millar-fisher-heads-to-cooper-hewitt/",
       "publishedAt": "2026-05-14T15:47:07.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "Museum news, New York",
       "kicker_de": "Museumsnachrichten, New York",
@@ -321,7 +357,8 @@
       "summary_en": "Michelle Millar Fisher assumes chief curator position at Cooper Hewitt museum in New York. The appointment reflects continued institutional investment in design scholarship and curatorial leadership.",
       "summary_de": "Michelle Millar Fisher übernimmt die Position der Chefkuratorin am Cooper Hewitt Museum in New York. Die Ernennung spiegelt anhaltende institutionelle Investitionen in Designforschung und kuratorische Führung wider.",
       "body_en": "The Cooper Hewitt announcement coincides with broader museum sector developments tracked by Hyperallergic. The week's coverage includes Getty Foundation grants of $1.8 million directed toward Black visual art archives, supporting institutional capacity for marginalized art histories. Additional notes highlight artistic interventions on the High Line, where an unnamed artist has mounted a sardonic appeal within the public art space. These movements collectively signal institutional attention to archival practices, curatorial infrastructure, and public art engagement.",
-      "body_de": "Die Cooper-Hewitt-Ankündigung fällt mit breiteren Museumssektor-Entwicklungen zusammen, die von Hyperallergic verfolgt werden. Die wöchentliche Berichterstattung umfasst Getty-Stiftungszuschüsse in Höhe von 1,8 Millionen Dollar für schwarze Kunstarchive, die institutionelle Kapazität für marginalisierte Kunstgeschichten unterstützen. Weitere Notizen heben künstlerische Interventionen auf der High Line hervor, wo ein Künstler eine bissige Beschwerde im öffentlichen Kunstraum angebracht hat. Diese Bewegungen deuten zusammen auf institutionelle Aufmerksamkeit für Archivpraktiken, kuratorische Infrastruktur und öffentliches Kunstengagement hin."
+      "body_de": "Die Cooper-Hewitt-Ankündigung fällt mit breiteren Museumssektor-Entwicklungen zusammen, die von Hyperallergic verfolgt werden. Die wöchentliche Berichterstattung umfasst Getty-Stiftungszuschüsse in Höhe von 1,8 Millionen Dollar für schwarze Kunstarchive, die institutionelle Kapazität für marginalisierte Kunstgeschichten unterstützen. Weitere Notizen heben künstlerische Interventionen auf der High Line hervor, wo ein Künstler eine bissige Beschwerde im öffentlichen Kunstraum angebracht hat. Diese Bewegungen deuten zusammen auf institutionelle Aufmerksamkeit für Archivpraktiken, kuratorische Infrastruktur und öffentliches Kunstengagement hin.",
+      "trending": false
     },
     {
       "id": "s-CtwbCD4aiIkTaZ",
@@ -331,8 +368,8 @@
       "source": "Wallpaper",
       "url": "https://www.wallpaper.com/travel/hotels/amangiri-utah-new-private-residences",
       "publishedAt": "2026-05-14T13:59:49.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "Amangiri, Utah",
       "kicker_de": "Amangiri, Utah",
@@ -341,7 +378,8 @@
       "summary_en": "Amangiri debuts its inaugural private residence at Canyon Point, Utah, introducing a six-bedroom villa with terrace and lap pool. The opening marks the first phase of an expanded residential program at the luxury resort.",
       "summary_de": "Amangiri präsentiert sein erstes privates Anwesen in Canyon Point, Utah, mit einer Sechs-Zimmer-Villa mit Terrasse und Swimmingpool. Die Eröffnung kennzeichnet die erste Phase eines erweiterten Wohnprogramms des Luxusresorts.",
       "body_en": "The new villa at Amangiri represents an architectural statement within Utah's distinctive desert landscape near Canyon Point. Designed as the inaugural property in an expanded residential initiative, the six-bedroom residence integrates contemporary architecture with landscape integration. The expansive terrace and lap pool establish recreational anchors within the property. This residential expansion signals Amangiri's evolution from resort destination toward permanent residential community, reflecting luxury hospitality's shift toward longer-term dwelling arrangements.",
-      "body_de": "Die neue Villa in Amangiri stellt eine architektonische Aussage in Utahs charakteristischer Wüstenlandschaft in der Nähe von Canyon Point dar. Als Ausgangsprojekt einer erweiterten Wohninitiative konzipiert, integriert das Sechs-Zimmer-Anwesen zeitgenössische Architektur mit Landschaftsintegration. Die weitläufige Terrasse und der Swimmingpool etablieren Erholungsankerpunkte innerhalb der Immobilie. Diese Wohnungserweiterung signalisiert Amangiri's Entwicklung vom Resort-Ziel hin zu einer permanenten Wohngemeinschaft und spiegelt die Verschiebung der Luxushotellerie hin zu längerfristigen Wohnarrangements wider."
+      "body_de": "Die neue Villa in Amangiri stellt eine architektonische Aussage in Utahs charakteristischer Wüstenlandschaft in der Nähe von Canyon Point dar. Als Ausgangsprojekt einer erweiterten Wohninitiative konzipiert, integriert das Sechs-Zimmer-Anwesen zeitgenössische Architektur mit Landschaftsintegration. Die weitläufige Terrasse und der Swimmingpool etablieren Erholungsankerpunkte innerhalb der Immobilie. Diese Wohnungserweiterung signalisiert Amangiri's Entwicklung vom Resort-Ziel hin zu einer permanenten Wohngemeinschaft und spiegelt die Verschiebung der Luxushotellerie hin zu längerfristigen Wohnarrangements wider.",
+      "trending": false
     },
     {
       "id": "s-_R5GxhO5rNeiXP",
@@ -361,7 +399,8 @@
       "summary_en": "Moscow's Gulag Museum has removed exhibitions documenting Stalin-era repression and shifted focus to Nazi crimes. The institutional change marks an escalation in state control over historical narratives.",
       "summary_de": "Das Gulag-Museum in Moskau hat Ausstellungen zur Stalinzeit entfernt und konzentriert sich nun auf Nazi-Verbrechen. Die institutionelle Umgestaltung verschärft die staatliche Kontrolle über historische Darstellungen.",
       "body_en": "The Gulag Museum's redesign represents a significant departure from its previous mission documenting Soviet political repression. By refocusing exhibitions on Nazi atrocities rather than Stalinist crimes, the institution reflects broader Kremlin efforts to reshape historical discourse. The rebranding has drawn concern from international observers regarding freedom of expression and institutional independence in Russia.",
-      "body_de": "Die Neugestaltung des Gulag-Museums stellt einen erheblichen Bruch mit seiner bisherigen Mission dar, die sowjetische politische Unterdrückung zu dokumentieren. Durch die Neuausrichtung auf Nazi-Gräueltaten statt Stalin-Verbrechen spiegelt die Institution breitere Kremlin-Bemühungen wider, historische Diskurse umzugestalten. Die Umbenennung hat internationale Besorgnis hinsichtlich Redefreiheit und institutioneller Unabhängigkeit in Russland geweckt."
+      "body_de": "Die Neugestaltung des Gulag-Museums stellt einen erheblichen Bruch mit seiner bisherigen Mission dar, die sowjetische politische Unterdrückung zu dokumentieren. Durch die Neuausrichtung auf Nazi-Gräueltaten statt Stalin-Verbrechen spiegelt die Institution breitere Kremlin-Bemühungen wider, historische Diskurse umzugestalten. Die Umbenennung hat internationale Besorgnis hinsichtlich Redefreiheit und institutioneller Unabhängigkeit in Russland geweckt.",
+      "trending": false
     },
     {
       "id": "s-nQNOE828vh5Ywe",
@@ -381,7 +420,8 @@
       "summary_en": "A French parliamentary commission has issued 40 recommendations for major museum reforms, citing alarming collection conditions and security vulnerabilities. The proposals follow recent theft concerns and aim to strengthen institutional safeguards.",
       "summary_de": "Eine französische Parlamentskommission hat 40 Empfehlungen für umfangreiche Museumsreformen vorgelegt und warnt vor besorgniserregenden Sammlungszuständen und Sicherheitslücken. Die Vorschläge folgen aktuellen Diebstahlbedenken.",
       "body_en": "The parliamentary report highlights systemic vulnerabilities in French museum collections, particularly in the wake of recent security incidents at major institutions like the Louvre. The commission identified deteriorating conditions and inadequate protection measures across the national collection. Its 40 recommendations address infrastructure improvements, staffing levels, and enhanced security protocols to prevent future thefts and preserve cultural heritage.",
-      "body_de": "Der Parlamentsbericht hebt systemische Anfälligkeit in französischen Museumssammlungen hervor, besonders nach neueren Sicherheitsvorfällen in großen Institutionen wie dem Louvre. Die Kommission identifizierte schlechter werdende Bedingungen und unzureichende Schutzmaßnahmen in der nationalen Sammlung. Ihre 40 Empfehlungen behandeln Infrastrukturverbesserungen, Personalausstattung und verstärkte Sicherheitsprotokolle."
+      "body_de": "Der Parlamentsbericht hebt systemische Anfälligkeit in französischen Museumssammlungen hervor, besonders nach neueren Sicherheitsvorfällen in großen Institutionen wie dem Louvre. Die Kommission identifizierte schlechter werdende Bedingungen und unzureichende Schutzmaßnahmen in der nationalen Sammlung. Ihre 40 Empfehlungen behandeln Infrastrukturverbesserungen, Personalausstattung und verstärkte Sicherheitsprotokolle.",
+      "trending": false
     },
     {
       "id": "s-9xWbVnZJedhRZd",
@@ -401,7 +441,8 @@
       "summary_en": "Greta Thunberg and actor Hugh Bonneville have signed a letter supporting Misan Harriman, chair of London's Southbank Centre, amid coverage in conservative media. The letter addresses criticism stemming from social media posts.",
       "summary_de": "Greta Thunberg und Schauspieler Hugh Bonneville haben einen Brief unterzeichnet, der Misan Harriman, Vorsitzender des Londoner Southbank Centre, unterstützt. Der Brief betrifft Kritik aus konservativen Medien zu Beiträgen in sozialen Medien.",
       "body_en": "Harriman has faced scrutiny from conservative UK media outlets over posts shared on social media platforms. The supporting letter from prominent figures in the arts and activism communities signals institutional backing for the Southbank Centre leadership. The controversy reflects broader tensions around cultural leadership and public discourse in Britain.",
-      "body_de": "Harriman ist von konservativen britischen Medien wegen Beiträgen auf Social-Media-Plattformen unter Beschuss geraten. Der unterstützende Brief von prominenten Figuren aus Kunst und Aktivismus signalisiert institutionelle Unterstützung für die Southbank-Zentrum-Leitung. Die Kontroverse spiegelt breitere Spannungen um kulturelle Führung und öffentlichen Diskurs in Großbritannien wider."
+      "body_de": "Harriman ist von konservativen britischen Medien wegen Beiträgen auf Social-Media-Plattformen unter Beschuss geraten. Der unterstützende Brief von prominenten Figuren aus Kunst und Aktivismus signalisiert institutionelle Unterstützung für die Southbank-Zentrum-Leitung. Die Kontroverse spiegelt breitere Spannungen um kulturelle Führung und öffentlichen Diskurs in Großbritannien wider.",
+      "trending": false
     },
     {
       "id": "s-SXGMx_AFC-cjVM",
@@ -421,7 +462,8 @@
       "summary_en": "Tehran's Museum of Contemporary Art has reopened with new exhibitions addressing regional conflict while navigating ongoing security challenges. The director discusses efforts to protect the institution's $3 billion collection.",
       "summary_de": "Das Museum für zeitgenössische Kunst in Teheran ist mit neuen Ausstellungen zu regionalen Konflikten wiedereröffnet worden, während es mit anhaltenden Sicherheitsherausforderungen umgeht. Der Direktor diskutiert Bemühungen zum Schutz der Sammlung im Wert von 3 Milliarden Dollar.",
       "body_en": "The museum's reopening comes as Iranian institutions navigate extraordinary challenges to preserve and display contemporary art amid regional instability. The director has implemented responsive programming that directly engages with themes of conflict and resilience. With holdings valued at approximately $3 billion, the institution operates under substantial pressure to maintain both curatorial freedom and collection security.",
-      "body_de": "Die Wiedereröffnung des Museums erfolgt, während iranische Institutionen außergewöhnliche Herausforderungen bewältigen, um zeitgenössische Kunst inmitten regionaler Instabilität zu bewahren und auszustellen. Der Direktor hat responsive Programmierung implementiert, die sich direkt mit Konflikt- und Resilienzthemen auseinandersetzt. Mit Beständen im Wert von etwa 3 Milliarden Dollar operiert die Institution unter substanziellem Druck, um sowohl kuratorische Freiheit als auch Sammlungssicherheit zu wahren."
+      "body_de": "Die Wiedereröffnung des Museums erfolgt, während iranische Institutionen außergewöhnliche Herausforderungen bewältigen, um zeitgenössische Kunst inmitten regionaler Instabilität zu bewahren und auszustellen. Der Direktor hat responsive Programmierung implementiert, die sich direkt mit Konflikt- und Resilienzthemen auseinandersetzt. Mit Beständen im Wert von etwa 3 Milliarden Dollar operiert die Institution unter substanziellem Druck, um sowohl kuratorische Freiheit als auch Sammlungssicherheit zu wahren.",
+      "trending": false
     },
     {
       "id": "s-rmfM9hcRCSm26I",
@@ -441,7 +483,8 @@
       "summary_en": "A reading room displaying over 3,000 printed volumes of documents related to sex offender Jeffrey Epstein has opened in New York. The archive aims to provide public access to records of his extensive connections within multiple sectors.",
       "summary_de": "Ein Lesezimmer mit über 3.000 gedruckten Dokumentbänden im Zusammenhang mit Sexualstraftäter Jeffrey Epstein ist in New York eröffnet worden. Das Archiv zielt darauf ab, der Öffentlichkeit Zugang zu Aufzeichnungen seiner umfangreichen Verbindungen in mehreren Sektoren zu bieten.",
       "body_en": "A newly opened reading room in New York provides public access to extensive documentation of Jeffrey Epstein's involvement in cultural and financial networks. The collection comprises more than 3,000 volumes of printed files examining his entanglements across various industries and institutions. The initiative represents a significant effort toward transparency regarding Epstein's influence and connections within elite circles. Access to these records enables researchers, journalists, and the public to examine his documented interactions and associations.",
-      "body_de": "Ein neu eröffneter Lesezimmer in New York bietet der Öffentlichkeit Zugang zu umfangreicher Dokumentation von Jeffrey Epsteins Beteiligung an kulturellen und Finanznetzen. Die Sammlung umfasst mehr als 3.000 Bände gedruckter Dateien, die seine Verstrickungen in verschiedenen Industrien und Institutionen untersuchen. Die Initiative stellt eine bedeutende Anstrengung zur Transparenz bezüglich Epsteins Einfluss und Verbindungen in Elite-Kreisen dar. Der Zugang zu diesen Unterlagen ermöglicht Forschern, Journalisten und der Öffentlichkeit, seine dokumentierten Interaktionen und Verbindungen zu untersuchen."
+      "body_de": "Ein neu eröffneter Lesezimmer in New York bietet der Öffentlichkeit Zugang zu umfangreicher Dokumentation von Jeffrey Epsteins Beteiligung an kulturellen und Finanznetzen. Die Sammlung umfasst mehr als 3.000 Bände gedruckter Dateien, die seine Verstrickungen in verschiedenen Industrien und Institutionen untersuchen. Die Initiative stellt eine bedeutende Anstrengung zur Transparenz bezüglich Epsteins Einfluss und Verbindungen in Elite-Kreisen dar. Der Zugang zu diesen Unterlagen ermöglicht Forschern, Journalisten und der Öffentlichkeit, seine dokumentierten Interaktionen und Verbindungen zu untersuchen.",
+      "trending": false
     },
     {
       "id": "s-6iBcDThKoKrxEc",
@@ -461,7 +504,8 @@
       "summary_en": "A proposal to repaint the Lincoln Memorial Reflecting Pool has sparked a lawsuit as costs escalate from $2 million to $13 million. The project faces legal opposition over its scope and expense.",
       "summary_de": "Ein Vorschlag zur Neuanstreichung des Lincoln-Memorial-Beckens hat eine Klage ausgelöst, da die Kosten von 2 auf 13 Millionen Dollar gestiegen sind. Das Projekt steht wegen Umfang und Kosten vor rechtlichen Herausforderungen.",
       "body_en": "The overhaul of the iconic Lincoln Memorial Reflecting Pool has become the subject of litigation following a dramatic cost increase. Initially budgeted at $2 million, the project has ballooned to $13 million, prompting legal challenges to its viability. The lawsuit reflects broader concerns about the scope and funding of the ambitious renovation plan. The dispute highlights tensions between preservation efforts and fiscal responsibility at major national monuments.",
-      "body_de": "Die Sanierung des ikonischen Lincoln-Memorial-Beckens ist aufgrund einer drastischen Kostensteigerung zum Gegenstand von Rechtsstreitigkeiten geworden. Das Projekt, ursprünglich mit 2 Millionen Dollar budgetiert, ist auf 13 Millionen Dollar angewachsen und hat Klagen ausgelöst. Der Rechtsstreit spiegelt größere Bedenken hinsichtlich Umfang und Finanzierung des ehrgeizigen Sanierungsplans wider. Der Disput verdeutlicht Spannungen zwischen Erhaltungsbemühungen und Haushaltsverantwortung bei großen nationalen Monumenten."
+      "body_de": "Die Sanierung des ikonischen Lincoln-Memorial-Beckens ist aufgrund einer drastischen Kostensteigerung zum Gegenstand von Rechtsstreitigkeiten geworden. Das Projekt, ursprünglich mit 2 Millionen Dollar budgetiert, ist auf 13 Millionen Dollar angewachsen und hat Klagen ausgelöst. Der Rechtsstreit spiegelt größere Bedenken hinsichtlich Umfang und Finanzierung des ehrgeizigen Sanierungsplans wider. Der Disput verdeutlicht Spannungen zwischen Erhaltungsbemühungen und Haushaltsverantwortung bei großen nationalen Monumenten.",
+      "trending": false
     },
     {
       "id": "s-RfCSJd2Qtzq3jH",
@@ -481,7 +525,8 @@
       "summary_en": "Anouska Samms has publicly alleged that the Metropolitan Museum displays a counterfeit version of her hair dress design in its costume art exhibition. The accusation circulated widely via social media.",
       "summary_de": "Anouska Samms hat öffentlich behauptet, dass das Metropolitan Museum ein Duplikat ihres Haarkleid-Designs in seiner Kostümkunstausstellung ausstellt. Die Anschuldigung verbreitete sich in sozialen Medien.",
       "body_en": "The artist posted a series of Instagram reels documenting the disputed dress and comparing it to her original design, claiming the Met's exhibition presents an unauthorized copy. The accusation raises questions about attribution and verification procedures in major museum exhibitions. The Met has not immediately responded to the public allegations.",
-      "body_de": "Die Künstlerin veröffentlichte eine Serie von Instagram-Reels, die das umstrittene Kleid dokumentieren und es mit ihrem Originaldesign vergleichen, wobei sie behauptet, dass die Met-Ausstellung eine nicht autorisierte Kopie präsentiert. Die Anschuldigung wirft Fragen zu Zuschreibung und Überprüfungsverfahren in großen Museumsausstellungen auf. Das Met hat nicht unmittelbar auf die öffentlichen Anschuldigungen reagiert."
+      "body_de": "Die Künstlerin veröffentlichte eine Serie von Instagram-Reels, die das umstrittene Kleid dokumentieren und es mit ihrem Originaldesign vergleichen, wobei sie behauptet, dass die Met-Ausstellung eine nicht autorisierte Kopie präsentiert. Die Anschuldigung wirft Fragen zu Zuschreibung und Überprüfungsverfahren in großen Museumsausstellungen auf. Das Met hat nicht unmittelbar auf die öffentlichen Anschuldigungen reagiert.",
+      "trending": false
     },
     {
       "id": "s-Zf-9jfJK98mG0o",
@@ -491,8 +536,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/hirshhorn-314-new-acquisitions-during-50th-anniversary-year-1234785215/",
       "publishedAt": "2026-05-13T15:29:52.000Z",
-      "time_en": "2d ago",
-      "time_de": "vor 2 Tagen",
+      "time_en": "3d ago",
+      "time_de": "vor 3 Tagen",
       "read": 3,
       "kicker_en": "Hirshhorn, Washington DC",
       "kicker_de": "Hirshhorn, Washington DC",
@@ -501,7 +546,8 @@
       "summary_en": "The Hirshhorn Museum and Sculpture Garden has announced 314 new acquisitions marking its 50th anniversary. Works include pieces by Lorna Simpson, Sarah Sze, Mickalene Thomas, and photography by Danny Lyon and Graciela Iturbide.",
       "summary_de": "Das Hirshhorn Museum und Sculpture Garden hat 314 Neuerwerbe zu seinem 50. Jubiläum bekannt gegeben. Die Werke umfassen Arbeiten von Lorna Simpson, Sarah Sze, Mickalene Thomas und Fotografien von Danny Lyon und Graciela Iturbide.",
       "body_en": "The acquisitions span multiple media and represent a significant expansion of the museum's collection on its milestone anniversary. Major pieces include large-scale mixed-media works alongside historical documentary photography. The purchases reflect the institution's continued commitment to contemporary and historical artistic practice. Notable among the acquisitions are works by leading contemporary artists and renowned photographers documenting American social history.",
-      "body_de": "Die Erwerbungen umfassen mehrere Medien und stellen eine erhebliche Erweiterung der Museumssammlung zu ihrem Meilenstein-Jubiläum dar. Zu den wichtigsten Werken gehören großformatige Mixed-Media-Arbeiten neben historischer dokumentarischer Fotografie. Die Käufe spiegeln das Engagement der Institution für zeitgenössische und historische künstlerische Praxis wider. Unter den Erwerbungen befinden sich Werke führender zeitgenössischer Künstler und renommierter Fotografen, die amerikanische Sozialgeschichte dokumentieren."
+      "body_de": "Die Erwerbungen umfassen mehrere Medien und stellen eine erhebliche Erweiterung der Museumssammlung zu ihrem Meilenstein-Jubiläum dar. Zu den wichtigsten Werken gehören großformatige Mixed-Media-Arbeiten neben historischer dokumentarischer Fotografie. Die Käufe spiegeln das Engagement der Institution für zeitgenössische und historische künstlerische Praxis wider. Unter den Erwerbungen befinden sich Werke führender zeitgenössischer Künstler und renommierter Fotografen, die amerikanische Sozialgeschichte dokumentieren.",
+      "trending": false
     },
     {
       "id": "s-drt_HwVRR_FLQq",
@@ -511,8 +557,8 @@
       "source": "Artnet News",
       "url": "https://news.artnet.com/art-world/met-costume-institute-samms-hadari-dress-credit-2772663",
       "publishedAt": "2026-05-13T15:11:03.000Z",
-      "time_en": "2d ago",
-      "time_de": "vor 2 Tagen",
+      "time_en": "3d ago",
+      "time_de": "vor 3 Tagen",
       "read": 2,
       "kicker_en": "Met Costume Institute",
       "kicker_de": "Metropolitan Museum Kostüminstitut",
@@ -521,7 +567,8 @@
       "summary_en": "A dispute has emerged at the Metropolitan Museum's Costume Institute over the authorship of a 'Hair Dress' between artist Anouska Samms and designer Yoav Hadari. The museum is addressing the conflicting claims regarding the work's creation.",
       "summary_de": "Im Kostüminstitut des Metropolitan Museum ist ein Streit um die Urheberschaft eines 'Hair Dress' zwischen der Künstlerin Anouska Samms und dem Designer Yoav Hadari entstanden. Das Museum befasst sich mit den konkurrierenden Ansprüchen zur Schöpfung des Werks.",
       "body_en": "The Metropolitan Museum's Costume Institute has become the site of an authorship dispute regarding a work titled 'Hair Dress'. Artist Anouska Samms and designer Yoav Hadari have competing claims to credit for the piece. The museum has acknowledged the dispute exists between the two collaborators. This raises broader questions about attribution and collaboration in contemporary costume and textile arts.",
-      "body_de": "Das Kostüminstitut des Metropolitan Museum ist Schauplatz eines Urheberschaftsstreits um ein Werk mit dem Titel 'Hair Dress' geworden. Die Künstlerin Anouska Samms und der Designer Yoav Hadari haben konkurrierende Ansprüche auf die Anerkennung des Werks. Das Museum hat anerkannt, dass ein Streit zwischen den beiden Mitarbeitern besteht. Dies wirft breitere Fragen zur Zuschreibung und Zusammenarbeit in zeitgenössischen Kostüm- und Textilkunsten auf."
+      "body_de": "Das Kostüminstitut des Metropolitan Museum ist Schauplatz eines Urheberschaftsstreits um ein Werk mit dem Titel 'Hair Dress' geworden. Die Künstlerin Anouska Samms und der Designer Yoav Hadari haben konkurrierende Ansprüche auf die Anerkennung des Werks. Das Museum hat anerkannt, dass ein Streit zwischen den beiden Mitarbeitern besteht. Dies wirft breitere Fragen zur Zuschreibung und Zusammenarbeit in zeitgenössischen Kostüm- und Textilkunsten auf.",
+      "trending": false
     },
     {
       "id": "s-KG37AXh3DsaFLy",
@@ -531,8 +578,8 @@
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/05/13/gettys-black-visual-arts-archives-receives-additional-19m-in-funding",
       "publishedAt": "2026-05-13T14:00:04.000Z",
-      "time_en": "2d ago",
-      "time_de": "vor 2 Tagen",
+      "time_en": "3d ago",
+      "time_de": "vor 3 Tagen",
       "read": 3,
       "kicker_en": "Getty Museum, Los Angeles",
       "kicker_de": "Getty Museum, Los Angeles",
@@ -541,7 +588,8 @@
       "summary_en": "The Getty's Black Visual Arts Archives initiative has secured an additional $1.8 million in funding. The money supports institutions in processing, digitising and preserving collections related to Black art in the US.",
       "summary_de": "Das Black Visual Arts Archives-Projekt des Getty hat zusätzliche 1,8 Millionen Dollar erhalten. Die Mittel unterstützen Institutionen bei der Verarbeitung, Digitalisierung und Bewahrung von Sammlungen zur schwarzen Kunst in den USA.",
       "body_en": "The Getty's Black Visual Arts Archives initiative has received a significant funding boost to advance its mission of preserving and making accessible archival materials related to African American art. The $1.8 million in additional funding will be distributed to partner institutions across the country. These resources will enable participating organisations to process digitised collections, establish preservation standards, and activate archival materials for public engagement and scholarly research. The initiative represents a major commitment to ensuring Black artists' legacies are properly documented and accessible to future generations.",
-      "body_de": "Das Black Visual Arts Archives-Projekt des Getty hat eine erhebliche Finanzspritze erhalten, um seine Mission der Bewahrung und Zugänglichmachung von Archivmaterialien zur afroamerikanischen Kunst voranzutreiben. Die zusätzlichen 1,8 Millionen Dollar werden an Partnerinstitutionen im ganzen Land verteilt. Diese Mittel ermöglichen es den beteiligten Organisationen, digitalisierte Sammlungen zu verarbeiten, Bewahrungsstandards zu etablieren und Archivmaterialien für öffentliches Engagement und wissenschaftliche Forschung zu aktivieren. Das Projekt stellt eine bedeutende Verpflichtung dar, die Vermächtnisse schwarzer Künstler angemessen zu dokumentieren und zukünftigen Generationen zugänglich zu machen."
+      "body_de": "Das Black Visual Arts Archives-Projekt des Getty hat eine erhebliche Finanzspritze erhalten, um seine Mission der Bewahrung und Zugänglichmachung von Archivmaterialien zur afroamerikanischen Kunst voranzutreiben. Die zusätzlichen 1,8 Millionen Dollar werden an Partnerinstitutionen im ganzen Land verteilt. Diese Mittel ermöglichen es den beteiligten Organisationen, digitalisierte Sammlungen zu verarbeiten, Bewahrungsstandards zu etablieren und Archivmaterialien für öffentliches Engagement und wissenschaftliche Forschung zu aktivieren. Das Projekt stellt eine bedeutende Verpflichtung dar, die Vermächtnisse schwarzer Künstler angemessen zu dokumentieren und zukünftigen Generationen zugänglich zu machen.",
+      "trending": false
     },
     {
       "id": "s-Jn6jOYH_tw-nQq",
@@ -561,7 +609,8 @@
       "summary_en": "A critical examination of delegitimation tactics and public denunciation within cultural institutions. The analysis addresses institutional vulnerability and rhetorical strategies.",
       "summary_de": "Eine kritische Analyse von Delegitimationstaktiken und öffentlicher Anklage in Kulturinstitutionen. Die Analyse behandelt institutionelle Anfälligkeit und rhetorische Strategien.",
       "body_en": "The discussion examines how cultural organizations are targeted through systematic delegitimation campaigns and public denunciations. Writers analyze the rhetorical mechanisms and institutional anxieties underlying these conflicts. The piece considers how museums, galleries, and cultural bodies navigate accusation and reputational challenges in contemporary discourse.",
-      "body_de": "Die Diskussion untersucht, wie Kultureinrichtungen durch systematische Delegitimationskampagnen und öffentliche Anklage angegriffen werden. Autoren analysieren die rhetorischen Mechanismen und institutionellen Ängste hinter solchen Konflikten. Der Text betrachtet, wie Museen, Galerien und Kultureinrichtungen mit Vorwürfen und Reputationsfragen in modernem Diskurs umgehen."
+      "body_de": "Die Diskussion untersucht, wie Kultureinrichtungen durch systematische Delegitimationskampagnen und öffentliche Anklage angegriffen werden. Autoren analysieren die rhetorischen Mechanismen und institutionellen Ängste hinter solchen Konflikten. Der Text betrachtet, wie Museen, Galerien und Kultureinrichtungen mit Vorwürfen und Reputationsfragen in modernem Diskurs umgehen.",
+      "trending": false
     },
     {
       "id": "s-K-x0J2XDw-UPQV",
@@ -581,7 +630,8 @@
       "summary_en": "Critic Rachel Ashenden examines challenges facing Glasgow's art community amid economic and structural pressures. Artists and organizers navigate a landscape marked by precariousness and declining resources.",
       "summary_de": "Die Kritikerin Rachel Ashenden untersucht die Herausforderungen, denen sich Glasgows Kunstgemeinschaft angesichts wirtschaftlicher und struktureller Druck gegenüber sieht. Künstler und Organisatoren navigieren eine von Ungewissheit und sinkenden Ressourcen geprägte Landschaft.",
       "body_en": "Ashenden's survey traces difficulties affecting Glasgow's cultural ecosystem, from gallery closures to diminished funding for independent artists and organizations. The city's art scene, once buoyed by institutional support and international visibility, now confronts structural vulnerabilities. Practitioners persevere despite reduced institutional backing and economic headwinds affecting arts workers across the sector. The piece documents how individual artists and grassroots organizers sustain creative practice under conditions of austerity and institutional retrenchment.",
-      "body_de": "Ashendens Übersicht zeichnet Schwierigkeiten nach, die Glasgows Kulturökosystem beeinträchtigen, von Galerieschließungen bis zu vermindertem Funding für unabhängige Künstler und Organisationen. Die Kunstszene der Stadt, die einst durch institutionelle Unterstützung und internationale Sichtbarkeit gestützt wurde, sieht sich nun strukturellen Anfälligkeiten gegenüber. Praktiker halten durch trotz reduzierter institutioneller Unterstützung und wirtschaftlicher Gegenwinds, der Kunstschaffende im gesamten Sektor trifft. Der Text dokumentiert, wie einzelne Künstler und Graswurzel-Organisatoren kreative Praxis unter Bedingungen von Sparpolitik und institutionellem Rückzug aufrechterhalten."
+      "body_de": "Ashendens Übersicht zeichnet Schwierigkeiten nach, die Glasgows Kulturökosystem beeinträchtigen, von Galerieschließungen bis zu vermindertem Funding für unabhängige Künstler und Organisationen. Die Kunstszene der Stadt, die einst durch institutionelle Unterstützung und internationale Sichtbarkeit gestützt wurde, sieht sich nun strukturellen Anfälligkeiten gegenüber. Praktiker halten durch trotz reduzierter institutioneller Unterstützung und wirtschaftlicher Gegenwinds, der Kunstschaffende im gesamten Sektor trifft. Der Text dokumentiert, wie einzelne Künstler und Graswurzel-Organisatoren kreative Praxis unter Bedingungen von Sparpolitik und institutionellem Rückzug aufrechterhalten.",
+      "trending": false
     },
     {
       "id": "seed-archive",
@@ -601,7 +651,8 @@
       "summary_en": "The build pipeline deduplicates against the master archive, processes only new items, and grows over time. Each story gets a permanent shareable URL.",
       "summary_de": "Die Build-Pipeline dedupliziert gegen das Master-Archiv, verarbeitet nur Neues und wächst über die Zeit. Jede Story bekommt eine permanente teilbare URL.",
       "body_en": "Latest 72 hours load instantly on app open. Scroll to the end and older stories load automatically. Share any article and the recipient gets a proper preview with the headline, image, and summary, server-rendered for social platforms and search engines.",
-      "body_de": "Die letzten 72 Stunden laden beim App-Start sofort. Am Ende des Feeds werden ältere Stories automatisch nachgeladen. Teile einen Artikel — der Empfänger sieht eine richtige Vorschau mit Headline, Bild und Zusammenfassung, server-gerendert für Social Media und Suchmaschinen."
+      "body_de": "Die letzten 72 Stunden laden beim App-Start sofort. Am Ende des Feeds werden ältere Stories automatisch nachgeladen. Teile einen Artikel — der Empfänger sieht eine richtige Vorschau mit Headline, Bild und Zusammenfassung, server-gerendert für Social Media und Suchmaschinen.",
+      "trending": false
     },
     {
       "id": "s-Zkfpc1hFIexGrX",
@@ -621,7 +672,8 @@
       "summary_en": "The Trump administration faces a lawsuit over planned changes to the Lincoln Memorial Reflecting Pool, which would coat the basin in \"American Flag Blue\" to address persistent leaks. The color choice, suggested by a contractor, has drawn legal opposition.",
       "summary_de": "Die Trump-Verwaltung sieht sich einer Klage gegen geplante Änderungen am Lincoln-Memorial-Spiegelbecken gegenüber, das in \"American Flag Blue\" gestrichen werden soll, um hartnäckige Lecks zu beheben. Die Farbwahl eines beauftragten Unternehmers stößt auf rechtliche Opposition.",
       "body_en": "The Lincoln Memorial Reflecting Pool is at the center of a dispute over planned renovations under the Trump administration. The project aims to address persistent water leaks in the basin by coating it in what President Trump has described as \"American Flag Blue,\" a color reportedly suggested by the contractor hired for the repairs. The over-budget nature of the renovation has prompted legal action against the administration. The decision represents a significant aesthetic intervention to one of the nation's most iconic monuments.",
-      "body_de": "Das Lincoln-Memorial-Spiegelbecken steht im Mittelpunkt einer Auseinandersetzung über geplante Renovierungen unter der Trump-Verwaltung. Das Projekt soll hartnäckige Wasserlecks im Becken durch eine Beschichtung in \"American Flag Blue\" beheben, einer Farbe, die der Auftragnehmer der Reparaturen vorgeschlagen haben soll. Die Kostenüberschreitung des Renovierungsprojekts hat zu Rechtsmaßnahmen gegen die Verwaltung geführt. Die Entscheidung stellt eine bedeutende ästhetische Intervention an einem der ikonischsten Denkmäler der Nation dar."
+      "body_de": "Das Lincoln-Memorial-Spiegelbecken steht im Mittelpunkt einer Auseinandersetzung über geplante Renovierungen unter der Trump-Verwaltung. Das Projekt soll hartnäckige Wasserlecks im Becken durch eine Beschichtung in \"American Flag Blue\" beheben, einer Farbe, die der Auftragnehmer der Reparaturen vorgeschlagen haben soll. Die Kostenüberschreitung des Renovierungsprojekts hat zu Rechtsmaßnahmen gegen die Verwaltung geführt. Die Entscheidung stellt eine bedeutende ästhetische Intervention an einem der ikonischsten Denkmäler der Nation dar.",
+      "trending": false
     },
     {
       "id": "s-_jD5jvIZq5pFqG",
@@ -641,7 +693,8 @@
       "summary_en": "Archaeologists in Egypt have uncovered a mummy entombed with papyrus inscribed with lines from Homer's Iliad. The discovery reinforces Homer's pervasive influence across the ancient Mediterranean.",
       "summary_de": "Archäologen in Ägypten haben eine Mumie gefunden, die mit Papyrusrollen mit Zeilen aus Homers Ilias bestattet wurde. Die Entdeckung unterstreicht Homers durchdringende Einfluss im antiken Mittelmeerraum.",
       "body_en": "The papyrus fragments found with the burial demonstrate that Greek literary texts circulated widely throughout Egypt during antiquity. Homer's works were not confined to Greece but traveled across trade routes and cultural networks. The inclusion of Iliadic passages with the deceased suggests both literary sophistication and spiritual significance attached to the text. This archaeological evidence contributes to scholarly understanding of how Greek culture was adopted and adapted in Hellenistic Egypt.",
-      "body_de": "Die mit dem Grab gefundenen Papyrusfragmente zeigen, dass griechische literarische Texte während der Antike weit verbreitet in Ägypten zirkulierten. Homers Werke waren nicht auf Griechenland beschränkt, sondern reisten über Handelsrouten und Kulturnetze. Die Einbeziehung von Ilias-Passagen bei dem Verstorbenen deutet sowohl auf literarische Raffinesse als auch auf spirituelle Bedeutung des Textes hin. Dieses archäologische Material trägt zum gelehrten Verständnis bei, wie griechische Kultur im hellenistischen Ägypten angenommen und angepasst wurde."
+      "body_de": "Die mit dem Grab gefundenen Papyrusfragmente zeigen, dass griechische literarische Texte während der Antike weit verbreitet in Ägypten zirkulierten. Homers Werke waren nicht auf Griechenland beschränkt, sondern reisten über Handelsrouten und Kulturnetze. Die Einbeziehung von Ilias-Passagen bei dem Verstorbenen deutet sowohl auf literarische Raffinesse als auch auf spirituelle Bedeutung des Textes hin. Dieses archäologische Material trägt zum gelehrten Verständnis bei, wie griechische Kultur im hellenistischen Ägypten angenommen und angepasst wurde.",
+      "trending": false
     },
     {
       "id": "s-0wb-mHBqKQA1Ku",
@@ -661,7 +714,8 @@
       "summary_en": "Over 2,000 architects, preservationists, and citizens have protested a proposed $7.5 million renovation plan for the Eisenhower Building. Opponents warn the project risks permanent damage to the historic structure.",
       "summary_de": "Über 2.000 Architekten, Denkmalschützer und Bürger protestieren gegen einen geplanten 7,5-Millionen-Dollar-Renovierungsplan für das Eisenhower-Gebäude. Gegner warnen vor permanenten Schäden am historischen Bauwerk.",
       "body_en": "A coalition of architects, preservationists, and concerned citizens has mobilized significant opposition to a proposed $7.5 million renovation of Washington DC's Eisenhower Building. The petition, signed by over 2,000 individuals and organizations, expresses concern that the modernization plan could irreversibly compromise the building's historic integrity and architectural significance. Critics argue that the scope and methods of the proposed work threaten key features of the structure. The pushback reflects broader debates over preservation versus modernization in federal building maintenance.",
-      "body_de": "Eine Koalition von Architekten, Denkmalschützern und besorgten Bürgern hat erhebliche Opposition gegen eine geplante 7,5-Millionen-Dollar-Renovierung des Eisenhower-Gebäudes in Washington DC mobilisiert. Die von über 2.000 Einzelpersonen und Organisationen unterzeichnete Petition äußert Bedenken, dass der Modernisierungsplan die historische Integrität und architektonische Bedeutung des Gebäudes unwiederbringlich beeinträchtigen könnte. Kritiker argumentieren, dass Umfang und Methoden der geplanten Arbeiten wichtige Strukturmerkmale gefährden."
+      "body_de": "Eine Koalition von Architekten, Denkmalschützern und besorgten Bürgern hat erhebliche Opposition gegen eine geplante 7,5-Millionen-Dollar-Renovierung des Eisenhower-Gebäudes in Washington DC mobilisiert. Die von über 2.000 Einzelpersonen und Organisationen unterzeichnete Petition äußert Bedenken, dass der Modernisierungsplan die historische Integrität und architektonische Bedeutung des Gebäudes unwiederbringlich beeinträchtigen könnte. Kritiker argumentieren, dass Umfang und Methoden der geplanten Arbeiten wichtige Strukturmerkmale gefährden.",
+      "trending": false
     },
     {
       "id": "s-BqDoYc0hEpw6gV",
@@ -681,7 +735,8 @@
       "summary_en": "Frankfurt's MMK museum has acquired the estate and archive of late German artist Henrike Naumann, who died earlier this year. The archive will be catalogued and made publicly accessible.",
       "summary_de": "Das Frankfurter MMK hat den Nachlass und das Archiv der deutschen Künstlerin Henrike Naumann erworben, die Anfang dieses Jahres starb. Das Archiv wird katalogisiert und der Öffentlichkeit zugänglich gemacht.",
       "body_en": "The MMK Frankfurt has secured the estate of Henrike Naumann, a significant figure in contemporary German art who represented Germany at the Venice Biennale. The acquisition includes her personal and professional archives, research materials, and artistic documentation spanning her career. MMK's commitment to cataloguing and preserving these materials ensures long-term access for scholars, curators, and the public. This institutional stewardship reflects recognition of Naumann's importance to recent German art history and strengthens the museum's holdings in this field.",
-      "body_de": "Das MMK Frankfurt hat den Nachlass von Henrike Naumann gesichert, einer bedeutenden Figur der zeitgenössischen deutschen Kunst, die Deutschland auf der Venedig Biennale vertreten hatte. Die Erwerbung umfasst ihre persönlichen und professionellen Archive, Forschungsmaterialien und künstlerische Dokumentation. Das Engagement des MMK für die Katalogisierung und Bewahrung dieser Materialien sichert langfristigen Zugang für Wissenschaftler, Kuratoren und die Öffentlichkeit. Diese institutionelle Betreuung spiegelt die Anerkennung von Naumanns Bedeutung für die jüngere deutsche Kunstgeschichte wider."
+      "body_de": "Das MMK Frankfurt hat den Nachlass von Henrike Naumann gesichert, einer bedeutenden Figur der zeitgenössischen deutschen Kunst, die Deutschland auf der Venedig Biennale vertreten hatte. Die Erwerbung umfasst ihre persönlichen und professionellen Archive, Forschungsmaterialien und künstlerische Dokumentation. Das Engagement des MMK für die Katalogisierung und Bewahrung dieser Materialien sichert langfristigen Zugang für Wissenschaftler, Kuratoren und die Öffentlichkeit. Diese institutionelle Betreuung spiegelt die Anerkennung von Naumanns Bedeutung für die jüngere deutsche Kunstgeschichte wider.",
+      "trending": false
     }
   ]
 }
