@@ -2261,3 +2261,74 @@ a.d-nav-link:active {
 
 /* Footer bug-report link blends in with regular footer links */
 .d-footer-bug { cursor: pointer; }
+
+/* ====================================================
+   Desktop sticky bottom mini-bar
+   Always-reachable nav (Impressum, Datenschutz, About, Bug)
+   so users don't have to scroll past an infinite story grid.
+   Hidden on mobile (drawer handles it there).
+   ==================================================== */
+.d-sticky-foot {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .d-sticky-foot {
+    display: block;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(14, 13, 11, 0.92);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+    border-top: 1px solid rgba(244, 241, 234, 0.08);
+    padding: 10px 28px;
+    z-index: 90;
+  }
+  /* Reserve space at bottom of body so sticky-foot doesn't cover content */
+  body { padding-bottom: 44px; }
+}
+.d-sticky-foot-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  gap: 28px;
+}
+.d-sticky-foot-brand {
+  color: rgba(244, 241, 234, 0.4);
+  white-space: nowrap;
+}
+.d-sticky-foot-nav {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+/* Bulletproof anchor reset — defeat any browser/UA defaults */
+a.d-sticky-foot-nav-link {}  /* placeholder to keep symmetry */
+.d-sticky-foot-nav a,
+.d-sticky-foot-nav a:link,
+.d-sticky-foot-nav a:visited,
+.d-sticky-foot-nav a:hover,
+.d-sticky-foot-nav a:active {
+  text-decoration: none;
+  border-bottom: none;
+  outline: none;
+  letter-spacing: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+.d-sticky-foot-nav a,
+.d-sticky-foot-nav a:link,
+.d-sticky-foot-nav a:visited {
+  color: rgba(244, 241, 234, 0.55);
+  transition: color 0.15s ease;
+}
+.d-sticky-foot-nav a:hover,
+.d-sticky-foot-nav a:active {
+  color: rgba(244, 241, 234, 1);
+}

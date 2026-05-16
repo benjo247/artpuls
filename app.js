@@ -649,6 +649,9 @@
     // ========= Footer =========
     html += desktopFooterHTML();
 
+    // ========= Sticky bottom mini-bar (always reachable navigation) =========
+    html += desktopStickyFootHTML();
+
     root.innerHTML = html;
     bindDesktopEvents();
   }
@@ -882,6 +885,26 @@
   }
 
   // ====================================================
+  // Persistent sticky bottom mini-bar for desktop.
+  // Always-reachable nav so users don't have to scroll past
+  // an infinite story grid to find Impressum/Datenschutz/About/Bug.
+  // ====================================================
+  function desktopStickyFootHTML() {
+    return '' +
+      '<div class="d-sticky-foot">' +
+        '<div class="d-sticky-foot-inner">' +
+          '<span class="d-sticky-foot-brand">© 2026 artpulse</span>' +
+          '<nav class="d-sticky-foot-nav">' +
+            '<a href="/about">' + escapeHTML(t('aboutPage')) + '</a>' +
+            '<a href="#" class="d-sticky-bug">' + escapeHTML(t('reportBug')) + '</a>' +
+            '<a href="/impressum">Impressum</a>' +
+            '<a href="/datenschutz">Datenschutz</a>' +
+          '</nav>' +
+        '</div>' +
+      '</div>';
+  }
+
+  // ====================================================
   // Desktop ARTICLE view — when user lands on /s/:id deep-link
   // Replaces the magazine layout with a focused reader.
   // ====================================================
@@ -948,6 +971,9 @@
     // Footer
     html += desktopFooterHTML();
 
+    // Sticky bottom mini-bar
+    html += desktopStickyFootHTML();
+
     root.innerHTML = html;
     bindDesktopArticleEvents();
     // Scroll to top on render
@@ -979,6 +1005,12 @@
         location.href = '/';
       });
     }
+    // Sticky-foot bug-report link
+    var stickyBug = document.querySelector('.d-sticky-bug');
+    if (stickyBug) stickyBug.addEventListener('click', function (e) {
+      e.preventDefault();
+      reportBug();
+    });
   }
 
   function bindDesktopEvents() {
@@ -1006,6 +1038,12 @@
     // Footer: Report a bug — mailto with diagnostics
     var dFooterBug = document.getElementById('dFooterBug');
     if (dFooterBug) dFooterBug.addEventListener('click', function (e) {
+      e.preventDefault();
+      reportBug();
+    });
+    // Sticky-foot bug-report link
+    var stickyBug = document.querySelector('.d-sticky-bug');
+    if (stickyBug) stickyBug.addEventListener('click', function (e) {
       e.preventDefault();
       reportBug();
     });
