@@ -1,4 +1,4 @@
-/* ArtPulse news aggregator — archive version.
+/* artpulse news aggregator — archive version.
  *
  * What it does:
  *   1. Loads the existing master archive (data/archive.json)
@@ -44,19 +44,25 @@ const ITEMS_PER_SOURCE = 6;
 const LATEST_HOURS = 72;
 const SITEMAP_LIMIT = 5000;
 
-// 10 international sources — verified working or strong best-guess URLs.
+// 15 international sources — verified working or strong best-guess URLs.
 // Failed feeds are logged as warnings and the run continues with the others.
 const SOURCES = [
-  { name: 'The Art Newspaper', url: 'https://www.theartnewspaper.com/rss.xml',  defaultCat: 'museum' },
-  { name: 'Artnet News',       url: 'https://news.artnet.com/feed',             defaultCat: 'market'  },
-  { name: 'Hyperallergic',     url: 'https://hyperallergic.com/feed/',          defaultCat: 'exhibition' },
-  { name: 'ArtAsiaPacific',    url: 'https://artasiapacific.com/feed',          defaultCat: 'exhibition' },
-  { name: 'Ocula',             url: 'https://ocula.com/magazine/feed/',         defaultCat: 'exhibition' },
-  { name: 'ArtReview',         url: 'https://artreview.com/rss.xml',            defaultCat: 'exhibition' },
-  { name: 'ARTnews',           url: 'https://www.artnews.com/feed/',            defaultCat: 'market' },
-  { name: 'Mousse Magazine',   url: 'https://www.moussemagazine.it/feed/',      defaultCat: 'exhibition' },
-  { name: 'Monopol',           url: 'https://www.monopol-magazin.de/rss.xml',   defaultCat: 'exhibition' },
-  { name: 'Wallpaper',         url: 'https://www.wallpaper.com/rss',            defaultCat: 'exhibition' }
+  { name: 'The Art Newspaper',  url: 'https://www.theartnewspaper.com/rss.xml',  defaultCat: 'museum' },
+  { name: 'Artnet News',        url: 'https://news.artnet.com/feed',             defaultCat: 'market'  },
+  { name: 'Hyperallergic',      url: 'https://hyperallergic.com/feed/',          defaultCat: 'exhibition' },
+  { name: 'ArtAsiaPacific',     url: 'https://artasiapacific.com/feed',          defaultCat: 'exhibition' },
+  { name: 'Ocula',              url: 'https://ocula.com/magazine/feed/',         defaultCat: 'exhibition' },
+  { name: 'ArtReview',          url: 'https://artreview.com/rss.xml',            defaultCat: 'exhibition' },
+  { name: 'ARTnews',            url: 'https://www.artnews.com/feed/',            defaultCat: 'market' },
+  { name: 'Mousse Magazine',    url: 'https://www.moussemagazine.it/feed/',      defaultCat: 'exhibition' },
+  { name: 'Monopol',            url: 'https://www.monopol-magazin.de/rss.xml',   defaultCat: 'exhibition' },
+  { name: 'Wallpaper',          url: 'https://www.wallpaper.com/rss',            defaultCat: 'exhibition' },
+  // Added May 16 2026 — pre-launch expansion to 15 sources
+  { name: 'Süddeutsche Kultur', url: 'https://rss.sueddeutsche.de/rss/Kultur',   defaultCat: 'exhibition' },
+  { name: 'Frieze',             url: 'https://www.frieze.com/feed',              defaultCat: 'biennale' },
+  { name: 'Apollo Magazine',    url: 'https://www.apollo-magazine.com/feed/',    defaultCat: 'museum' },
+  { name: 'Aesthetica',         url: 'https://aestheticamagazine.com/feed/',     defaultCat: 'artists' },
+  { name: 'Guardian Art',       url: 'https://www.theguardian.com/artanddesign/rss', defaultCat: 'exhibition' }
 ];
 
 const ACCENTS = {
@@ -279,7 +285,7 @@ function resolveUrl(imageUrl, baseUrl) {
   }
 }
 
-const SYSTEM_PROMPT = `You are the news editor for ArtPulse, an international art-news app with a Shorts-style feed.
+const SYSTEM_PROMPT = `You are the news editor for artpulse, an international art-news app with a Shorts-style feed.
 
 For each news item you receive, output a JSON object with these fields:
 - "i": the index number provided
