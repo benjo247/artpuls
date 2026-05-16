@@ -34,6 +34,8 @@
       readStory: 'Read the story',
       thisWeekHeadline: 'This week',
       emptyDesktop: 'Check back soon.',
+      flagTrending: 'Trending',
+      flagEditorial: 'Editor\u2019s Pick',
       nlEyebrow: 'artpulse monthly',
       nlTitle1: 'The first of the month,',
       nlTitle2: 'delivered.',
@@ -78,6 +80,8 @@
       readStory: 'Story lesen',
       thisWeekHeadline: 'Diese Woche',
       emptyDesktop: 'Schau später wieder vorbei.',
+      flagTrending: 'Trending',
+      flagEditorial: 'Empfehlung',
       nlEyebrow: 'artpulse monthly',
       nlTitle1: 'Den Ersten jeden Monats,',
       nlTitle2: 'frei Haus.',
@@ -269,6 +273,22 @@
       if (state.stories[i].cat === state.cat) out.push(state.stories[i]);
     }
     return out;
+  }
+
+  // ---------- Story flags ----------
+  // Returns the HTML for a flag pill if the story is trending or editorial.
+  // Trending is prioritized over editorial (when both are set, only trending shows).
+  // Trending is set automatically by fetch-news.mjs (multi-source clustering).
+  // Editorial is set manually via `editorial: true` in archive.json.
+  function flagPillHTML(s) {
+    if (!s) return '';
+    if (s.trending) {
+      return '<span class="flag-pill flag-trending">' + escapeHTML(t('flagTrending')) + '</span>';
+    }
+    if (s.editorial) {
+      return '<span class="flag-pill flag-editorial">' + escapeHTML(t('flagEditorial')) + '</span>';
+    }
+    return '';
   }
 
   // ---------- Bug report ----------
@@ -489,7 +509,10 @@
       '<article class="' + classes + '" data-idx="' + idx + '" data-id="' + escapeAttr(s.id) + '">' +
         visual +
         '<div class="card-top">' +
-          '<span class="badge"><span class="badge-dot" style="background:' + escapeAttr(accent) + '"></span>' + escapeHTML(catLabel(s.cat)) + '</span>' +
+          '<div class="card-top-left">' +
+            flagPillHTML(s) +
+            '<span class="badge"><span class="badge-dot" style="background:' + escapeAttr(accent) + '"></span>' + escapeHTML(catLabel(s.cat)) + '</span>' +
+          '</div>' +
           '<span class="meta-time">' + escapeHTML(getText(s, 'time')) + '</span>' +
         '</div>' +
         '<div class="card-body">' +
@@ -747,6 +770,7 @@
         visual +
         '<div class="d-hero-content">' +
           '<div class="d-hero-meta">' +
+            flagPillHTML(s) +
             '<span class="d-badge ' + catClass + '">' + cat + '</span>' +
             (timeStr ? '<span class="d-meta-sep">·</span><span class="d-meta-dim">' + timeStr + '</span>' : '') +
           '</div>' +
@@ -801,6 +825,7 @@
       '<a href="' + url + '" class="d-card">' +
         visual +
         '<div class="d-card-meta">' +
+          flagPillHTML(s) +
           '<span class="d-badge ' + catClass + '">' + cat + '</span>' +
           (timeStr ? '<span class="d-meta-sep">·</span><span class="d-meta-dim">' + timeStr + '</span>' : '') +
         '</div>' +
@@ -950,6 +975,7 @@
     }
     html += '<div class="d-article-body">';
     html += '<div class="d-article-meta">';
+    html += flagPillHTML(s);
     html += '<span class="d-badge ' + catClass + '">' + cat + '</span>';
     if (source) html += '<span class="d-meta-sep">\u00B7</span><span class="d-meta-dim">' + source + '</span>';
     if (timeStr) html += '<span class="d-meta-sep">\u00B7</span><span class="d-meta-dim">' + timeStr + '</span>';
@@ -1232,13 +1258,19 @@
     var heroBlock = hasImage
       ? '<div class="sheet-hero" style="background-image:url(\'' + escapeAttr(s.image) + '\')">' +
           '<div class="sheet-hero-shade"></div>' +
-          '<span class="badge"><span class="badge-dot" style="background:' + escapeAttr(accent) + '"></span>' + escapeHTML(catLabel(s.cat)) + '</span>' +
+          '<div class="sheet-hero-tags">' +
+            flagPillHTML(s) +
+            '<span class="badge"><span class="badge-dot" style="background:' + escapeAttr(accent) + '"></span>' + escapeHTML(catLabel(s.cat)) + '</span>' +
+          '</div>' +
         '</div>'
       : '<div class="sheet-hero sheet-hero-noimg cat-' + escapeAttr(catKey) + '">' +
           '<div class="sheet-hero-noimg-bg"></div>' +
           '<div class="sheet-hero-shade"></div>' +
           '<div class="sheet-hero-noimg-mark">a<span class="sheet-hero-noimg-dot"></span></div>' +
-          '<span class="badge"><span class="badge-dot" style="background:' + escapeAttr(accent) + '"></span>' + escapeHTML(catLabel(s.cat)) + '</span>' +
+          '<div class="sheet-hero-tags">' +
+            flagPillHTML(s) +
+            '<span class="badge"><span class="badge-dot" style="background:' + escapeAttr(accent) + '"></span>' + escapeHTML(catLabel(s.cat)) + '</span>' +
+          '</div>' +
         '</div>';
 
     var html = '' +
