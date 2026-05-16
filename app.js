@@ -214,6 +214,50 @@
     return kept;
   }
 
+  /**
+   * Reorder stories to break up source-clusters in the feed.
+   * Goal: prevent more than MAX_CONSECUTIVE stories from the same source
+   * appearing in a row. Searches up to LOOKAHEAD positions forward for an
+   * alternative source and pulls it up. Preserves chronological order
+   * where possible. If no alternative is within reach, accepts the cluster
+   * (better to keep order than to scramble).
+   */
+  function diversifyBySource(stories) {
+    var MAX_CONSECUTIVE = 2;   // After 2 in a row, force a different source
+    var LOOKAHEAD = 8;         // Search up to 8 positions ahead for alternative
+    if (!stories || stories.length <= MAX_CONSECUTIVE + 1) return stories || [];
+
+    var result = [];
+    var queue = stories.slice();
+
+    while (queue.length > 0) {
+      // Count consecutive trailing stories with the same source as queue head
+      var headSource = queue[0].source || '';
+      var consecutive = 0;
+      for (var i = result.length - 1; i >= 0; i--) {
+        if ((result[i].source || '') === headSource) consecutive++;
+        else break;
+      }
+
+      if (consecutive >= MAX_CONSECUTIVE) {
+        // Need a different source — scan lookahead window
+        var swapIdx = -1;
+        var limit = Math.min(LOOKAHEAD + 1, queue.length);
+        for (var k = 1; k < limit; k++) {
+          if ((queue[k].source || '') !== headSource) { swapIdx = k; break; }
+        }
+        if (swapIdx !== -1) {
+          // Pull diverse story to the front
+          result.push(queue.splice(swapIdx, 1)[0]);
+          continue;
+        }
+        // No alternative within reach — fall through and accept the cluster
+      }
+      result.push(queue.shift());
+    }
+    return result;
+  }
+
   function filteredStories() {
     if (state.cat === 'all') return state.stories.slice();
     var out = [];
@@ -241,7 +285,7 @@
         return r.json();
       })
       .then(function (data) {
-        state.stories = dedupStories(data.stories || []);  // raw, ads injected at render time
+        state.stories = diversifyBySource(dedupStories(data.stories || []));  // raw, ads injected at render time
         state.hasMore = (data.stories || []).length >= 24;  // assume archive has more
       })
       .catch(function (err) {
@@ -270,7 +314,7 @@
         if (older.length === 0) { state.hasMore = false; return; }
         // Append older stories. Ads are injected at render time on the filtered list,
         // so we keep state.stories pure (no ad markers).
-        state.stories = dedupStories(state.stories.concat(older));
+        state.stories = diversifyBySource(dedupStories(state.stories.concat(older)));
         renderFeed(true);  // preserve scroll position
       })
       .catch(function () { state.loadingMore = false; });
