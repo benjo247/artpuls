@@ -38,14 +38,12 @@
       nlTitle1: 'The first of the month,',
       nlTitle2: 'delivered.',
       nlBody: 'Once a month. The stories that mattered, condensed in one read.',
-      // Hero welcome (first-visit)
-      heroEyebrow: 'ArtPulse',
-      heroHeadline1: 'The art world,',
-      heroHeadline2: 'in one breath.',
-      heroBody: 'International art press, condensed. Free, bilingual, no algorithm.',
-      heroCtaPrimary: 'Read today\u2019s stories',
-      heroCtaSecondary: 'Get it monthly',
-      heroFine: 'Free \u00B7 Monthly \u00B7 Unsubscribe anytime',
+      // Story-detail newsletter prompt (engagement-triggered)
+      detailNlEyebrow: 'Newsletter',
+      detailNlTitle: 'The art press, condensed.',
+      detailNlBody: 'Once a month \u2014 the stories that mattered, bilingual, free.',
+      detailNlCta: 'Subscribe for free',
+      detailNlDismiss: 'Maybe later',
       footerTagline: 'International art news, in one breath. Three times daily, edited by us.',
       sectionsLabel: 'Sections',
       aboutLabel: 'About',
@@ -82,14 +80,12 @@
       nlTitle1: 'Den Ersten jeden Monats,',
       nlTitle2: 'frei Haus.',
       nlBody: 'Einmal im Monat. Stories, die zählten — in einem Atemzug.',
-      // Hero welcome (first-visit)
-      heroEyebrow: 'ArtPulse',
-      heroHeadline1: 'Die Kunstwelt,',
-      heroHeadline2: 'in einem Atemzug.',
-      heroBody: 'Internationale Kunstpresse, kondensiert. Kostenlos, zweisprachig, ohne Algorithmus.',
-      heroCtaPrimary: 'Heutige Stories lesen',
-      heroCtaSecondary: 'Monatlich per Mail',
-      heroFine: 'Kostenlos \u00B7 Monatlich \u00B7 Jederzeit abbestellbar',
+      // Story-detail newsletter prompt (engagement-triggered)
+      detailNlEyebrow: 'Newsletter',
+      detailNlTitle: 'Die Kunstpresse, kondensiert.',
+      detailNlBody: 'Einmal im Monat \u2014 die Stories, die zählten. Zweisprachig, kostenlos.',
+      detailNlCta: 'Kostenlos abonnieren',
+      detailNlDismiss: 'Sp\u00E4ter',
       footerTagline: 'Internationale Kunst-News, in einem Atemzug. Dreimal t\u00E4glich, redigiert von uns.',
       sectionsLabel: 'Rubriken',
       aboutLabel: 'Information',
@@ -338,43 +334,6 @@
       '</article>';
   }
 
-  function injectHero(items) {
-    /* Prepend the welcome hero on first visit (until dismissed via X or CTA). */
-    var dismissed = false;
-    try { dismissed = localStorage.getItem('ap-hero-dismissed') === '1'; } catch (e) {}
-    if (dismissed) return items;
-    return [{ isHero: true, id: 'hero-welcome' }].concat(items);
-  }
-
-  function heroHTML(item, idx) {
-    return '' +
-      '<article class="card card-hero" data-idx="' + idx + '">' +
-        '<div class="hero-shell">' +
-          '<button class="hero-dismiss" data-hero-dismiss aria-label="Dismiss welcome">' +
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
-          '</button>' +
-          '<div class="hero-top">' +
-            '<div class="hero-eyebrow">' + escapeHTML(t('heroEyebrow')) + '</div>' +
-            '<h1 class="hero-headline">' + escapeHTML(t('heroHeadline1')) + '<br><em>' + escapeHTML(t('heroHeadline2')) + '</em></h1>' +
-            '<p class="hero-body">' + escapeHTML(t('heroBody')) + '</p>' +
-          '</div>' +
-          '<div class="hero-bottom">' +
-            '<div class="hero-ctas">' +
-              '<button class="hero-cta hero-cta-primary" data-hero-read type="button">' +
-                '<span>' + escapeHTML(t('heroCtaPrimary')) + '</span>' +
-                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
-              '</button>' +
-              '<a class="hero-cta hero-cta-secondary" href="/subscribe" data-hero-subscribe>' +
-                '<span>' + escapeHTML(t('heroCtaSecondary')) + '</span>' +
-                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>' +
-              '</a>' +
-            '</div>' +
-            '<div class="hero-fine">' + escapeHTML(t('heroFine')) + '</div>' +
-          '</div>' +
-        '</div>' +
-      '</article>';
-  }
-
   // ---------- Rendering ----------
   function renderCats() {
     var html = '';
@@ -437,13 +396,24 @@
 
   function storyHTML(s, idx) {
     var accent = s.accent || '#e8503a';
-    var image = s.image || ('https://picsum.photos/seed/' + encodeURIComponent(s.id) + '/800/1200');
+    var hasImage = !!s.image;
+    var catKey = s.cat || 'all';
+    var classes = 'card' + (hasImage ? '' : ' no-image cat-' + catKey);
+    var visual;
+    if (hasImage) {
+      visual =
+        '<div class="card-img" style="background-image:url(\'' + escapeAttr(s.image) + '\')"></div>' +
+        '<div class="card-grad" style="background:linear-gradient(135deg,' + escapeAttr(accent) + ' 0%,transparent 60%)"></div>' +
+        '<div class="card-shade"></div>';
+    } else {
+      visual =
+        '<div class="card-noimg-bg"></div>' +
+        '<div class="card-noimg-mark">a<span class="card-noimg-dot"></span></div>';
+    }
 
     return '' +
-      '<article class="card" data-idx="' + idx + '" data-id="' + escapeAttr(s.id) + '">' +
-        '<div class="card-img" style="background-image:url(\'' + escapeAttr(image) + '\')"></div>' +
-        '<div class="card-grad" style="background:linear-gradient(135deg,' + escapeAttr(accent) + ' 0%,transparent 60%)"></div>' +
-        '<div class="card-shade"></div>' +
+      '<article class="' + classes + '" data-idx="' + idx + '" data-id="' + escapeAttr(s.id) + '">' +
+        visual +
         '<div class="card-top">' +
           '<span class="badge"><span class="badge-dot" style="background:' + escapeAttr(accent) + '"></span>' + escapeHTML(catLabel(s.cat)) + '</span>' +
           '<span class="meta-time">' + escapeHTML(getText(s, 'time')) + '</span>' +
@@ -488,13 +458,10 @@
     items = injectAds(items);
     // Inject the Newsletter CTA after the 5th story (once per session).
     items = injectNewsletter(items);
-    // Prepend the welcome hero on first visit (LocalStorage flag dismisses it).
-    items = injectHero(items);
     var html = '';
     for (var i = 0; i < items.length; i++) {
       if (items[i].isAd) html += adHTML(items[i], i);
       else if (items[i].isNewsletter) html += nlHTML(items[i], i);
-      else if (items[i].isHero) html += heroHTML(items[i], i);
       else html += storyHTML(items[i], i);
     }
     feed.innerHTML = html;
@@ -678,10 +645,23 @@
     if (hasImage) {
       visual = '<div class="d-hero-image" style="background-image:url(' + JSON.stringify(s.image).replace(/^"|"$/g, '') + ')"></div>';
     } else {
-      visual = '<div class="d-hero-typo d-typo-' + escapeAttr(catKey) + '">' +
-        '<span class="d-typo-mark">&ldquo;</span>' +
-        '<span class="d-hero-typo-headline">' + headline + '</span>' +
-      '</div>';
+      var kicker = escapeHTML(getText(s, 'kicker') || '');
+      visual =
+        '<div class="d-hero-noimg cat-' + escapeAttr(catKey) + '">' +
+          '<div class="d-hero-noimg-top">' +
+            '<span class="d-hero-noimg-cat"><span class="dot"></span>' + cat + '</span>' +
+            (timeStr ? '<span class="d-hero-noimg-time">' + timeStr + '</span>' : '') +
+          '</div>' +
+          '<div class="d-hero-noimg-mark">a<span class="dot"></span></div>' +
+          '<div class="d-hero-noimg-attr">' +
+            '<span class="d-hero-noimg-attr-line"></span>' +
+            '<span class="d-hero-noimg-attr-text">' +
+              (source ? source : '') +
+              (source && kicker ? '<span class="sep">·</span>' : '') +
+              (kicker ? kicker : '') +
+            '</span>' +
+          '</div>' +
+        '</div>';
     }
 
     return '' +
@@ -719,10 +699,24 @@
     if (hasImage) {
       visual = '<div class="d-card-image" style="background-image:url(' + JSON.stringify(s.image).replace(/^"|"$/g, '') + ')"></div>';
     } else {
-      visual = '<div class="d-card-typo d-typo-' + escapeAttr(catKey) + '">' +
-        '<span class="d-typo-mark">&ldquo;</span>' +
-        '<span class="d-card-typo-headline">' + headline + '</span>' +
-      '</div>';
+      // No-image card: a.-mark on category-themed gradient background
+      var kicker = escapeHTML(getText(s, 'kicker') || '');
+      visual =
+        '<div class="d-card-noimg cat-' + escapeAttr(catKey) + '">' +
+          '<div class="d-card-noimg-top">' +
+            '<span class="d-card-noimg-cat"><span class="dot"></span>' + cat + '</span>' +
+            (timeStr ? '<span class="d-card-noimg-time">' + timeStr + '</span>' : '') +
+          '</div>' +
+          '<div class="d-card-noimg-mark">a<span class="dot"></span></div>' +
+          '<div class="d-card-noimg-attr">' +
+            '<span class="d-card-noimg-attr-line"></span>' +
+            '<span class="d-card-noimg-attr-text">' +
+              (source ? source : '') +
+              (source && kicker ? '<span class="sep">·</span>' : '') +
+              (kicker ? kicker : '') +
+            '</span>' +
+          '</div>' +
+        '</div>';
     }
 
     return '' +
@@ -1005,29 +999,6 @@
     for (var k = 0; k < shares.length; k++) {
       shares[k].addEventListener('click', onShareClick);
     }
-    // Hero welcome (first-visit) handlers
-    var heroDismiss = document.querySelector('[data-hero-dismiss]');
-    if (heroDismiss) heroDismiss.addEventListener('click', onHeroDismiss);
-    var heroRead = document.querySelector('[data-hero-read]');
-    if (heroRead) heroRead.addEventListener('click', onHeroDismiss);
-    var heroSubscribe = document.querySelector('[data-hero-subscribe]');
-    if (heroSubscribe) heroSubscribe.addEventListener('click', function () {
-      try { localStorage.setItem('ap-hero-dismissed', '1'); } catch (e) {}
-      // Default <a> navigation proceeds.
-    });
-  }
-
-  function onHeroDismiss() {
-    try { localStorage.setItem('ap-hero-dismissed', '1'); } catch (e) {}
-    var heroEl = document.querySelector('.card-hero');
-    if (!heroEl) return;
-    heroEl.classList.add('hero-dismissing');
-    setTimeout(function () {
-      heroEl.remove();
-      var feed = document.getElementById('feed');
-      if (feed) feed.scrollTo({ top: 0, behavior: 'auto' });
-      renderProgress();
-    }, 380);
   }
 
   function onExpandClick(e) {
@@ -1073,9 +1044,48 @@
   }
 
   // ---------- Article sheet ----------
+  // Threshold of stories opened before showing the subscribe prompt at the
+  // bottom of the story-detail sheet. NYT-style: never on first touch, only
+  // after the user has shown sustained engagement.
+  var SHEET_NL_THRESHOLD = 3;
+
+  function shouldShowSheetNlPrompt() {
+    try {
+      if (localStorage.getItem('ap-nl-state') === 'subscribed') return false;
+      if (localStorage.getItem('ap-nl-detail-dismissed') === '1') return false;
+      var opened = parseInt(localStorage.getItem('ap-stories-opened') || '0', 10);
+      return opened >= SHEET_NL_THRESHOLD;
+    } catch (e) { return false; }
+  }
+
+  function sheetNlPromptHTML() {
+    return '' +
+      '<div class="sheet-nl-prompt" id="sheetNlPrompt">' +
+        '<div class="sheet-nl-head">' +
+          '<span class="sheet-nl-eyebrow">' + escapeHTML(t('detailNlEyebrow')) + '</span>' +
+          '<button class="sheet-nl-dismiss" id="sheetNlDismiss" aria-label="Dismiss" type="button">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
+          '</button>' +
+        '</div>' +
+        '<h3 class="sheet-nl-title">' + escapeHTML(t('detailNlTitle')) + '</h3>' +
+        '<p class="sheet-nl-body">' + escapeHTML(t('detailNlBody')) + '</p>' +
+        '<a class="sheet-nl-cta" href="/subscribe" id="sheetNlCta">' + escapeHTML(t('detailNlCta')) +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+        '</a>' +
+      '</div>';
+  }
+
   function openSheet(id) {
     var s = findStory(id);
     if (!s || s.isAd) return;
+
+    // Engagement counter: how many stories has this user opened in their lifetime?
+    // Used to trigger the subscribe prompt at the bottom of the sheet.
+    try {
+      var opened = parseInt(localStorage.getItem('ap-stories-opened') || '0', 10);
+      localStorage.setItem('ap-stories-opened', String(opened + 1));
+    } catch (e) {}
+
     var accent = s.accent || '#e8503a';
     var image = s.image || ('https://picsum.photos/seed/' + encodeURIComponent(s.id) + '/800/1200');
     var sourceLink = s.url ? (
@@ -1104,6 +1114,7 @@
         '<div class="sheet-actions">' +
           '<button class="pill" id="sheetShare"><svg class="icon icon-sm" viewBox="0 0 24 24">' + ICONS.share + '</svg>' + t('share') + '</button>' +
         '</div>' +
+        (shouldShowSheetNlPrompt() ? sheetNlPromptHTML() : '') +
       '</div>';
 
     document.getElementById('sheetInner').innerHTML = html;
@@ -1133,6 +1144,24 @@
     });
     document.getElementById('sheet').addEventListener('click', function (e) {
       if (e.target.id === 'sheet') closeSheet();
+    });
+
+    // Story-detail newsletter prompt handlers (only present if rendered)
+    var nlDismiss = document.getElementById('sheetNlDismiss');
+    if (nlDismiss) nlDismiss.addEventListener('click', function () {
+      try { localStorage.setItem('ap-nl-detail-dismissed', '1'); } catch (e) {}
+      var prompt = document.getElementById('sheetNlPrompt');
+      if (prompt) {
+        prompt.style.opacity = '0';
+        prompt.style.transition = 'opacity 0.3s ease';
+        setTimeout(function () { prompt.remove(); }, 300);
+      }
+    });
+    var nlCta = document.getElementById('sheetNlCta');
+    if (nlCta) nlCta.addEventListener('click', function () {
+      // User clicked subscribe — treat as positive intent, mark as dismissed
+      // so it doesn't keep appearing if they bounce back without subscribing.
+      try { localStorage.setItem('ap-nl-detail-dismissed', '1'); } catch (e) {}
     });
   }
 
@@ -1360,94 +1389,7 @@
     }
   }
 
-  // ---------- Welcome screen (first-visit overlay) ----------
-  function initWelcome() {
-    var FLAG = 'kp-welcome-seen';
-    try {
-      if (localStorage.getItem(FLAG) === '1') return;
-    } catch (e) { return; }
-
-    var welcome = document.getElementById('welcome');
-    if (!welcome) return;
-
-    var WLABELS = {
-      en: {
-        line1: 'The art world,',
-        line2: 'in one breath.',
-        body: 'International art press, daily. Two sentences per story. Bilingual. No login.',
-        read: 'Read today',
-        monthly: 'Get it monthly'
-      },
-      de: {
-        line1: 'Die Kunstwelt,',
-        line2: 'in einem Atemzug.',
-        body: 'Internationale Kunstpresse, t\u00E4glich. Zwei S\u00E4tze pro Story. Zweisprachig. Kein Login.',
-        read: 'Heute lesen',
-        monthly: 'Per Mail bekommen'
-      }
-    };
-
-    var initialLang = state.lang;
-
-    function applyLang(lang) {
-      var L = WLABELS[lang] || WLABELS.en;
-      welcome.querySelector('.welcome-line-1').textContent = L.line1;
-      welcome.querySelector('.welcome-line-2 em').textContent = L.line2;
-      document.getElementById('welcomeBody').textContent = L.body;
-      document.getElementById('welcomeReadLabel').textContent = L.read;
-      document.getElementById('welcomeSubscribeLabel').textContent = L.monthly;
-      var btns = welcome.querySelectorAll('.welcome-lang-btn');
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].classList.toggle('on', btns[i].getAttribute('data-lang') === lang);
-      }
-      state.lang = lang;
-      try { localStorage.setItem('kp-lang', lang); } catch (e) {}
-      document.documentElement.lang = lang;
-    }
-
-    // Render initial lang from existing state (browser or persisted)
-    applyLang(state.lang);
-
-    // Show welcome
-    welcome.classList.add('on');
-    welcome.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-
-    function dismiss(navigateUrl) {
-      try { localStorage.setItem(FLAG, '1'); } catch (e) {}
-      if (navigateUrl) {
-        window.location.href = navigateUrl;
-        return;
-      }
-      // If lang changed during welcome, reload so main app picks it up cleanly
-      if (state.lang !== initialLang) {
-        window.location.reload();
-        return;
-      }
-      welcome.classList.remove('on');
-      welcome.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    document.getElementById('welcomeClose').addEventListener('click', function () { dismiss(null); });
-    document.getElementById('welcomeRead').addEventListener('click', function () { dismiss(null); });
-    document.getElementById('welcomeSubscribe').addEventListener('click', function (e) {
-      e.preventDefault();
-      dismiss('/subscribe');
-    });
-
-    var langBtns = welcome.querySelectorAll('.welcome-lang-btn');
-    for (var i = 0; i < langBtns.length; i++) {
-      langBtns[i].addEventListener('click', function () {
-        applyLang(this.getAttribute('data-lang'));
-      });
-    }
-  }
-
   function init() {
-    // Welcome screen (first visit only) — runs early so it overlays the loading state
-    initWelcome();
-
     // Logo: scroll-to-top on home, navigate-home elsewhere
     var logo = document.getElementById('logo');
     if (logo) logo.addEventListener('click', onLogoClick);
@@ -1529,6 +1471,25 @@
     }
 
     renderCats();
+    // Splash screen: track minimum display time so the splash doesn't flash too
+    // quickly on a fast network. We aim for ~900ms minimum so the brand mark
+    // registers.
+    var splashStart = Date.now();
+    function hideSplash() {
+      var splash = document.getElementById('apSplash');
+      if (!splash) return;
+      var elapsed = Date.now() - splashStart;
+      var wait = Math.max(0, 900 - elapsed);
+      setTimeout(function () {
+        splash.classList.add('ap-splash-hide');
+        setTimeout(function () {
+          if (splash.parentNode) splash.parentNode.removeChild(splash);
+        }, 450);
+      }, wait);
+    }
+    // Safety: kill splash after 3s no matter what (network errors, etc.)
+    setTimeout(hideSplash, 3000);
+
     loadStories().then(function () {
       var deepLinkId = state.pendingDeepLink;
       state.pendingDeepLink = null;
@@ -1548,6 +1509,8 @@
           });
         }
       }
+      // First render complete — hide splash
+      hideSplash();
     });
   }
 
