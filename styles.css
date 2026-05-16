@@ -2231,3 +2231,33 @@ body.no-scroll {
 .sheet-hero-noimg.cat-biennale    { --bg1: var(--cat-bg-biennale-1);    --bg2: var(--cat-bg-biennale-2); }
 .sheet-hero-noimg.cat-restitution { --bg1: var(--cat-bg-restitution-1); --bg2: var(--cat-bg-restitution-2); }
 .sheet-hero-noimg.cat-all         { --bg1: var(--cat-bg-all-1);         --bg2: var(--cat-bg-all-2); }
+
+/* Desktop top-nav text link (e.g. "About artpulse") */
+/* All anchor states explicit to override any browser/UA default link color */
+a.d-nav-link,
+a.d-nav-link:link,
+a.d-nav-link:visited,
+a.d-nav-link:hover,
+a.d-nav-link:active {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
+  border-bottom: none;
+  outline: none;
+}
+a.d-nav-link,
+a.d-nav-link:link,
+a.d-nav-link:visited {
+  color: rgba(244, 241, 234, 0.65);
+  transition: color .15s ease;
+}
+a.d-nav-link:hover,
+a.d-nav-link:active {
+  color: rgba(244, 241, 234, 1);
+}
+
+/* Footer bug-report link blends in with regular footer links */
+.d-footer-bug { cursor: pointer; }

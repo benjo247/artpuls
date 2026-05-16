@@ -112,6 +112,11 @@
     #apSplash > div:first-child > span:last-child { width: min(5.92vw, 44px) !important; height: min(5.92vw, 44px) !important; }
     #apSplash > div:last-child { font-size: min(2.6vw, 20px) !important; }
   }
+  /* Desktop (≥1024px): splash hidden entirely — desktop has instant render,
+     splash would just flash distractingly. Mobile/tablet keep it. */
+  @media (min-width: 1024px) {
+    #apSplash { display: none !important; }
+  }
   /* When app signals ready, fade out then remove pointer events */
   #apSplash.ap-splash-hide { opacity: 0; pointer-events: none; }
 </style>
