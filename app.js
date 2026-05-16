@@ -1,4 +1,4 @@
-/* ArtPulse — app logic.
+/* artpulse — app logic.
    Loads stories.json, renders the feed, handles language, saves, and the article sheet. */
 
 (function () {
@@ -34,12 +34,12 @@
       readStory: 'Read the story',
       latestUpdated: 'Latest \u00B7 Updated three times daily',
       thisWeekHeadline: 'This week',
-      nlEyebrow: 'ArtPulse Monthly',
+      nlEyebrow: 'artpulse monthly',
       nlTitle1: 'The first of the month,',
       nlTitle2: 'delivered.',
       nlBody: 'Once a month. The stories that mattered, condensed in one read.',
       // Story-detail newsletter prompt (engagement-triggered)
-      detailNlEyebrow: 'ArtPulse Monthly',
+      detailNlEyebrow: 'artpulse monthly',
       detailNlTitle: 'The art press, condensed.',
       detailNlBody: 'Once a month \u2014 the stories that mattered, bilingual, free.',
       detailNlPlaceholder: 'your@email.com',
@@ -76,12 +76,12 @@
       readStory: 'Story lesen',
       latestUpdated: 'Aktuell \u00B7 Dreimal t\u00E4glich aktualisiert',
       thisWeekHeadline: 'Diese Woche',
-      nlEyebrow: 'ArtPulse Monthly',
+      nlEyebrow: 'artpulse monthly',
       nlTitle1: 'Den Ersten jeden Monats,',
       nlTitle2: 'frei Haus.',
       nlBody: 'Einmal im Monat. Stories, die zählten — in einem Atemzug.',
       // Story-detail newsletter prompt (engagement-triggered)
-      detailNlEyebrow: 'ArtPulse Monthly',
+      detailNlEyebrow: 'artpulse monthly',
       detailNlTitle: 'Die Kunstpresse, kondensiert.',
       detailNlBody: 'Einmal im Monat \u2014 die Stories, die zählten. Zweisprachig, kostenlos.',
       detailNlPlaceholder: 'deine@email.de',
@@ -798,7 +798,7 @@
           '</div>' +
         '</div>' +
         '<div class="d-footer-meta">' +
-          '<span>© 2026 ArtPulse · Made in Berlin</span>' +
+          '<span>© 2026 artpulse · Made in Berlin</span>' +
           '<span>artpulse.app</span>' +
         '</div>' +
       '</footer>';
@@ -1138,7 +1138,7 @@
       }
     } catch (e) {}
     // Update document title and meta description for in-app navigation
-    document.title = getText(s, 'headline') + ' — ArtPulse';
+    document.title = getText(s, 'headline') + ' — artpulse';
     // Trigger AdSense rendering for in-article slot
     if (window.ArtPulseAds && window.ArtPulseAds.activate) {
       window.ArtPulseAds.activate(document.getElementById('sheetInner'));
@@ -1229,7 +1229,7 @@
 
   function closeSheet(fromPopstate) {
     document.getElementById('sheet').classList.remove('on');
-    document.title = 'ArtPulse — Art world, in one breath';
+    document.title = 'artpulse — Art world, in one breath';
     if (!fromPopstate && window.location.pathname.indexOf('/s/') === 0) {
       try { window.history.pushState({}, '', '/'); } catch (e) {}
     }
@@ -1557,6 +1557,11 @@
       state.pendingDeepLink = null;
 
       if (deepLinkId) {
+        // On mobile, render the feed underneath FIRST so that closing the
+        // sheet reveals populated content (not the initial loading screen).
+        // On desktop, renderDesktopArticle() replaces the magazine view anyway,
+        // so we skip the magazine pre-render to avoid a flash.
+        if (!isDesktop) renderActive();
         // We landed on a /s/:id URL — render the right view for that ID
         resolveDeepLink(deepLinkId);
       } else {
