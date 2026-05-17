@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-17T08:32:23.092Z",
+  "generatedAt": "2026-05-17T12:04:40.732Z",
   "category": "auction",
   "count": 23,
   "stories": [
@@ -116,8 +116,8 @@
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/05/15/frieze-new-york-the-cranach-in-hitlers-munich-apartment-ajamu-x",
       "publishedAt": "2026-05-15T11:02:38.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "Frieze New York",
       "kicker_de": "Frieze New York",
@@ -137,8 +137,8 @@
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/05/15/robert-mnuchins-857m-rothko-leads-sothebys-4075m-auction-in-new-york",
       "publishedAt": "2026-05-15T10:15:04.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 2,
       "kicker_en": "Sotheby's, New York",
       "kicker_de": "Sotheby's, New York",
