@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-17T12:04:40.763Z",
+  "generatedAt": "2026-05-17T18:07:12.037Z",
   "category": "restitution",
   "count": 8,
   "stories": [
@@ -32,8 +32,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/wellcome-collection-jain-manuscripts-transfer-1234785772/",
       "publishedAt": "2026-05-15T16:31:04.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "London, Jain Studies",
       "kicker_de": "London, Jain-Studien",
@@ -53,8 +53,8 @@
       "source": "Guardian Art",
       "url": "https://www.theguardian.com/world/2026/may/15/czech-police-find-stolen-skull-13th-century-saint-arrest-man",
       "publishedAt": "2026-05-15T15:06:04.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "Czech Republic, cultural theft",
       "kicker_de": "Tschechien, Kulturraub",
