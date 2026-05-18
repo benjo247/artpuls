@@ -247,11 +247,37 @@ function extractImageFromHtml(html) {
  * - Ad/analytics domains
  * - SVG icons (often UI chrome, not real images)
  * - Data URIs (typically tiny placeholders)
+ * - Source blacklist: aggressive copyright enforcers (Getty, Reuters, dpa,
+ *   AP, AFP, etc.) — even though we only hot-link without copying, these
+ *   rightsholders are most likely to send takedown notices on commercial
+ *   sites. For these we fall back to our branded default-pic instead.
  */
+
+// Domains we will NOT hot-link from. fetch-news.mjs returns null for image,
+// site/edge function then renders the branded default-pic.
+// Match by substring (lowercased URL). Conservative list — bigger names only.
+const IMAGE_SOURCE_BLACKLIST = [
+  'gettyimages.', 'getty.edu',
+  'reuters.com', 'reuters.tv',
+  'apimagesarchive.', 'apimages.com', 'apnews.com',
+  'afp.com', 'afpforum.',
+  'dpa.com', 'dpa-images.', 'picture-alliance.',
+  'shutterstock.', 'istockphoto.', 'alamy.',
+  'bridgemanimages.', 'bridgemanart.',
+  'magnumphotos.',
+  'akg-images.',
+  'scala-archives.', 'artres.com',
+  'bpk-bildagentur.', 'bpkgate.'
+];
+
 function isUsableImage(url) {
   if (!url || typeof url !== 'string') return false;
   if (url.startsWith('data:')) return false;
   const lower = url.toLowerCase();
+  // Source blacklist (aggressive copyright enforcers)
+  for (const blocked of IMAGE_SOURCE_BLACKLIST) {
+    if (lower.includes(blocked)) return false;
+  }
   // Tracking pixel patterns
   if (/[/_-](pixel|beacon|track|stat|analytics|counter)[/_.-]/.test(lower)) return false;
   if (/[?&](w|width|h|height)=1(&|$)/.test(lower)) return false;
@@ -429,6 +455,22 @@ async function run() {
   const archive = loadArchive();
   console.log(`Loaded archive: ${archive.stories.length} stories.`);
 
+  // === Strip ALL third-party images ===
+  // Policy decision: never embed or hot-link source images. Every story uses
+  // the branded no-image rendering (category-specific gradient + a.-mark).
+  // This iterates existing archive stories and clears any image field, plus
+  // new stories are saved with image: null below.
+  let cleanupCount = 0;
+  for (const story of archive.stories) {
+    if (story.image) {
+      story.image = null;
+      cleanupCount++;
+    }
+  }
+  if (cleanupCount > 0) {
+    console.log(`Image policy: cleared ${cleanupCount} image(s) from existing stories.`);
+  }
+
   const parser = new Parser({
     timeout: 15000,
     headers: {
@@ -502,7 +544,7 @@ async function run() {
       id: c.id,
       cat,
       accent: ACCENTS[cat] || '#e8503a',
-      image: c.image,
+      image: null, // policy: never embed third-party images, always use branded no-image rendering
       source: c.source,
       url: c.url,
       publishedAt: c.publishedAt,
