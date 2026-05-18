@@ -95,6 +95,8 @@ ${JSON.stringify({
 <meta name="theme-color" content="#0e0d0b">
 <title>${escapeHTML(title)}</title>
 <meta name="description" content="${escapeHTML(desc)}">
+<!-- Allow page indexing; do not index hot-linked third-party images -->
+<meta name="robots" content="index, follow, noimageindex">
 <link rel="canonical" href="${url}">
 ${ogTags}
 
