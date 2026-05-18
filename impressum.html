@@ -8,8 +8,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="robots" content="noindex, follow">
 
-<title>Impressum — ArtPulse</title>
-<meta name="description" content="Impressum / Legal notice für ArtPulse gemäß § 5 TMG.">
+<title>Impressum — artpulse</title>
+<meta name="description" content="Impressum / Legal notice für artpulse gemäß § 5 TMG.">
 
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
@@ -17,7 +17,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;900&family=Geist+Mono:wght@400;500&family=Inter:wght@400;900&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -75,14 +75,15 @@
   .back-link:hover { background: rgba(244, 241, 234, 0.1); }
   .back-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
   .logo {
-    font-family: 'Geist', var(--sans);
+    font-family: 'Inter', var(--sans);
     font-size: 22px;
     line-height: 1;
     display: inline-flex; align-items: baseline;
     color: var(--fg); text-decoration: none;
   }
-  .logo .art { font-weight: 900; letter-spacing: -0.015em; }
-  .logo .pulse { font-weight: 500; letter-spacing: -0.025em; }
+  .logo { letter-spacing: -0.04em; }
+  .logo .art { font-weight: 900; }
+  .logo .pulse { font-weight: 400; letter-spacing: -0.02em; }
   .logo .dot {
     display: inline-block;
     width: 0.32em; height: 0.32em;
@@ -243,7 +244,11 @@
 
     <h2>Urheberrecht</h2>
     <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
-    <p>Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+    <p>Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet.</p>
+    <p>artpulse aggregiert öffentlich zugängliche Inhalte internationaler Kunstmagazine. Beiträge enthalten ausschließlich von uns erstellte Zusammenfassungen mit Verlinkung auf den Originalartikel. Bilder externer Quellen werden nicht eingebunden.</p>
+
+    <h2>Notice-and-Takedown</h2>
+    <p>Sollten Sie auf eine Urheberrechtsverletzung, einen sonstigen Rechtsverstoß oder einen falschen Inhalt aufmerksam werden, bitten wir um einen entsprechenden Hinweis an <a href="mailto:hello@artpulse.app">hello@artpulse.app</a>. Wir reagieren in der Regel <strong>innerhalb von 24 Stunden</strong>. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen. Ein anwaltliches Vorgehen ist hierfür nicht erforderlich.</p>
   </main>
 
   <!-- ================ ENGLISH ================ -->
@@ -292,11 +297,15 @@
 
     <h2>Copyright</h2>
     <p>The content and works on these pages created by the site operators are subject to German copyright law. Reproduction, processing, distribution, and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator.</p>
-    <p>Downloads and copies of this page are only permitted for private, non-commercial use. Insofar as the content on this page was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please notify us. Upon becoming aware of legal violations, we will remove such content immediately.</p>
+    <p>Downloads and copies of this page are only permitted for private, non-commercial use. Insofar as the content on this page was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such.</p>
+    <p>artpulse aggregates publicly available content from international art magazines. Stories contain summaries created exclusively by us with a link to the original article. Images from external sources are not embedded.</p>
+
+    <h2>Notice-and-takedown</h2>
+    <p>If you become aware of a copyright violation, any other legal infringement, or factually incorrect content, please notify us at <a href="mailto:hello@artpulse.app">hello@artpulse.app</a>. We typically respond <strong>within 24 hours</strong>. Upon becoming aware of legal violations, we will remove such content immediately. Legal action is not required.</p>
   </main>
 
   <footer class="foot">
-    <a href="/">ArtPulse</a>
+    <a href="/">artpulse</a>
     <span class="sep">·</span>
     <a href="/impressum">Impressum</a>
     <span class="sep">·</span>
@@ -332,7 +341,7 @@
         if (buttons[i].getAttribute('data-lang') === l) buttons[i].classList.add('on');
         else buttons[i].classList.remove('on');
       }
-      document.title = (l === 'en') ? 'Legal notice — ArtPulse' : 'Impressum — ArtPulse';
+      document.title = (l === 'en') ? 'Legal notice — artpulse' : 'Impressum — artpulse';
     }
   })();
 </script>
