@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-18T14:39:58.347Z",
+  "generatedAt": "2026-05-18T14:50:11.159Z",
   "category": "restitution",
   "count": 8,
   "stories": [
@@ -70,7 +70,7 @@
       "id": "s-0VRKwJo7TAXZmz",
       "cat": "restitution",
       "accent": "#9b8579",
-      "image": "https://storage.ghost.io/c/16/43/16435400-f27e-4b41-b5f7-d0c24f5ce4de/content/images/2026/05/6000.jpg-1.jpg",
+      "image": null,
       "source": "ArtAsiaPacific",
       "url": "https://www.artasiapacific.com/news/yindjibarndi-awarded-australias-largest-native-title-compensation/",
       "publishedAt": "2026-05-15T08:08:04.000Z",
@@ -91,7 +91,7 @@
       "id": "s-0a3-sQfbXFFBUt",
       "cat": "restitution",
       "accent": "#9b8579",
-      "image": "https://cdn.sanity.io/images/cxgd3urn/production/7b2b07e00770ecbd1a9131e700fd0087fef1b75f-4938x2124.jpg?w=460",
+      "image": null,
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/05/14/wellcome-collection-returns-2000-manuscripts-to-the-jain-community",
       "publishedAt": "2026-05-14T19:00:17.000Z",
@@ -112,7 +112,7 @@
       "id": "s-j25KqSokir5ADR",
       "cat": "restitution",
       "accent": "#9b8579",
-      "image": "https://cdn.sanity.io/images/cxgd3urn/production/4300f70c778c621a22977c80695588684aa0efcd-4284x5712.jpg?w=460",
+      "image": null,
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/05/14/nazi-looted-painting-discovered-in-home-of-dutch-ss-commanders-heirs",
       "publishedAt": "2026-05-14T08:50:12.000Z",
