@@ -1154,18 +1154,399 @@
     openSheet(id);
   }
 
+  // === Sharepic generation (Canvas-based, client-side) ===
+  // Renders a 1080x1350 (4:5 IG Feed) PNG with category gradient,
+  // pill, kicker, headline, source, read time, and brand block.
+  // No third-party images embedded. Layout: per Ben's mockup spec.
+  // Colors match the --cat-bg-* CSS variables (no-image card scheme).
+
+  var CAT_GRADIENTS = {
+    auction:     ['#3a1f1a', '#1a0e0a'],
+    exhibition:  ['#1f3329', '#0e1b14'],
+    museum:      ['#1f2a3a', '#0e141f'],
+    market:      ['#3a2f1a', '#1f1a0e'],
+    artists:     ['#2f1f3a', '#1a0e1f'],
+    biennale:    ['#1f1a3a', '#0e0a1f'],
+    restitution: ['#2a2a2a', '#161616'],
+    all:         ['#2a2520', '#161310']
+  };
+
+  // Category-specific accent for pill dot (matches --cat-bg-*-accent)
+  var CAT_ACCENTS = {
+    auction:     '#e8503a',
+    exhibition:  '#5ea88a',
+    museum:      '#6a8bb8',
+    market:      '#c89b4c',
+    artists:     '#a373b8',
+    biennale:    '#8a73e8',
+    restitution: '#a8a094',
+    all:         '#e8503a'
+  };
+
+  // The artpulse brand dot (next to "a.") is ALWAYS warm-red — brand identity
+  var BRAND_DOT_COLOR = '#e8503a';
+
+  function drawRoundedRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  function wrapCanvasText(ctx, text, maxWidth) {
+    var words = String(text || '').split(/\s+/).filter(function (w) { return w.length > 0; });
+    var lines = [];
+    var current = '';
+    for (var i = 0; i < words.length; i++) {
+      var tryLine = current ? current + ' ' + words[i] : words[i];
+      if (ctx.measureText(tryLine).width <= maxWidth) {
+        current = tryLine;
+      } else {
+        if (current) lines.push(current);
+        current = words[i];
+      }
+    }
+    if (current) lines.push(current);
+    return lines;
+  }
+
+  function generateSharepic(s, format) {
+    format = format || 'feed';
+    return new Promise(function (resolve, reject) {
+      var fontsReady = (document.fonts && document.fonts.ready)
+        ? document.fonts.ready
+        : Promise.resolve();
+      fontsReady.then(function () {
+        try {
+          var W = 1080;
+          var H = format === 'story' ? 1920 : 1350;
+          var canvas = document.createElement('canvas');
+          canvas.width = W;
+          canvas.height = H;
+          var ctx = canvas.getContext('2d');
+
+          var catKey = s.cat || 'all';
+          var pillDotColor = CAT_ACCENTS[catKey] || CAT_ACCENTS.all;
+          var padding = 80;
+
+          // Diagonal gradient (top-right deeper to bottom-left)
+          var grad = ctx.createLinearGradient(W * 0.78, H * 0.05, W * 0.2, H * 0.95);
+          var colors = CAT_GRADIENTS[catKey] || CAT_GRADIENTS.all;
+          grad.addColorStop(0, colors[0]);
+          grad.addColorStop(1, colors[1]);
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, W, H);
+
+          // Subtle radial highlight upper-right for depth
+          var rad = ctx.createRadialGradient(W * 0.82, H * 0.15, 60, W * 0.82, H * 0.15, W * 0.7);
+          rad.addColorStop(0, 'rgba(255,255,255,0.06)');
+          rad.addColorStop(1, 'rgba(255,255,255,0)');
+          ctx.fillStyle = rad;
+          ctx.fillRect(0, 0, W, H);
+
+          // === Category Pill (top-left) ===
+          ctx.font = '500 28px "Geist Mono", ui-monospace, monospace';
+          var catText = (catLabel(catKey) || catKey).toUpperCase();
+          var catW = ctx.measureText(catText).width;
+          var dotSize = 12;
+          var pillH = 64;
+          var pillPadX = 26;
+          var dotGap = 14;
+          var pillW = pillPadX * 2 + dotSize + dotGap + catW;
+          var pillX = padding;
+          var pillY = padding;
+
+          ctx.fillStyle = 'rgba(0,0,0,0.55)';
+          drawRoundedRect(ctx, pillX, pillY, pillW, pillH, pillH / 2);
+          ctx.fill();
+          ctx.strokeStyle = 'rgba(255,255,255,0.12)';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          ctx.fillStyle = pillDotColor;
+          ctx.beginPath();
+          ctx.arc(pillX + pillPadX + dotSize / 2, pillY + pillH / 2, dotSize / 2, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.fillStyle = 'white';
+          ctx.font = '500 28px "Geist Mono", ui-monospace, monospace';
+          ctx.textBaseline = 'middle';
+          ctx.textAlign = 'left';
+          ctx.fillText(catText, pillX + pillPadX + dotSize + dotGap, pillY + pillH / 2 + 1);
+
+          // === Time (top-right) ===
+          var timeText = '';
+          try { timeText = getText(s, 'time') || formatRelTime(s.publishedAt, state.lang) || ''; } catch (e) {}
+          if (timeText) {
+            ctx.fillStyle = 'rgba(255,255,255,0.6)';
+            ctx.font = '400 32px "Geist", system-ui, sans-serif';
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(timeText, W - padding, pillY + pillH / 2 + 1);
+            ctx.textAlign = 'left';
+          }
+
+          // === Kicker ===
+          var yCursor = pillY + pillH + 180;
+          var kicker = (getText(s, 'kicker') || '').toUpperCase();
+          if (kicker) {
+            ctx.fillStyle = 'rgba(255,255,255,0.85)';
+            ctx.font = '500 30px "Geist Mono", ui-monospace, monospace';
+            ctx.textBaseline = 'top';
+            ctx.fillText(kicker, padding, yCursor);
+            yCursor += 75;
+          }
+
+          // === Headline (responsive sizing) ===
+          var headline = getText(s, 'headline') || '';
+          var maxHW = W - padding * 2;
+          var sizes = [92, 84, 78, 72, 66];
+          var maxLines = format === 'story' ? 6 : 4;
+          var chosenSize = sizes[0];
+          var chosenLines = [];
+          for (var si = 0; si < sizes.length; si++) {
+            ctx.font = 'italic 400 ' + sizes[si] + 'px "Instrument Serif", "Times New Roman", serif';
+            var lns = wrapCanvasText(ctx, headline, maxHW);
+            if (lns.length <= maxLines || si === sizes.length - 1) {
+              chosenSize = sizes[si];
+              chosenLines = lns;
+              break;
+            }
+          }
+          ctx.font = 'italic 400 ' + chosenSize + 'px "Instrument Serif", "Times New Roman", serif';
+          ctx.fillStyle = 'white';
+          ctx.textBaseline = 'top';
+          var lineHeight = chosenSize * 1.05;
+          for (var li = 0; li < chosenLines.length; li++) {
+            ctx.fillText(chosenLines[li], padding, yCursor + li * lineHeight);
+          }
+
+          // === Source + read (bottom-left) ===
+          var source = s.source || '';
+          var readMin = s.read || 2;
+          var sourceLabel = (state.lang === 'de' ? 'Quelle: ' : 'source: ') + source;
+          var readLabel = readMin + (state.lang === 'de' ? ' Min Lesezeit' : ' min read');
+
+          ctx.fillStyle = 'white';
+          ctx.font = '500 32px "Geist", system-ui, sans-serif';
+          ctx.textBaseline = 'top';
+          ctx.fillText(sourceLabel, padding, H - padding - 90);
+
+          ctx.fillStyle = 'rgba(255,255,255,0.7)';
+          ctx.font = '400 28px "Geist", system-ui, sans-serif';
+          ctx.fillText(readLabel, padding, H - padding - 42);
+
+          // === Brand mark "a." (bottom-right, no background block) ===
+          ctx.font = '900 180px "Inter", system-ui, sans-serif';
+          ctx.textBaseline = 'alphabetic';
+          ctx.textAlign = 'left';
+          var aWidth = ctx.measureText('a').width;
+          var dotR = 16;
+          var rightMargin = padding;
+          var bottomMargin = padding;
+
+          // x position: right edge - margin - dot diameter - 6px gap - a width
+          var aX = W - rightMargin - dotR * 2 - 6 - aWidth;
+          var aY = H - bottomMargin; // baseline at bottom margin
+
+          ctx.fillStyle = 'white';
+          ctx.fillText('a', aX, aY);
+
+          // Brand dot (always warm-red)
+          var brandDotCX = aX + aWidth + 6 + dotR;
+          var brandDotCY = aY - dotR; // sits roughly at baseline
+          ctx.fillStyle = BRAND_DOT_COLOR;
+          ctx.beginPath();
+          ctx.arc(brandDotCX, brandDotCY, dotR, 0, Math.PI * 2);
+          ctx.fill();
+
+          canvas.toBlob(function (blob) {
+            if (blob) resolve(blob);
+            else reject(new Error('Canvas toBlob returned null'));
+          }, 'image/png', 0.95);
+        } catch (err) {
+          reject(err);
+        }
+      }).catch(reject);
+    });
+  }
+
+  function downloadBlob(blob, filename) {
+    var u = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = u;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(u); }, 1500);
+  }
+
+  function shareStoryWithImage(s) {
+    toast(state.lang === 'de' ? 'Sharepic wird erstellt…' : 'Generating sharepic…');
+    generateSharepic(s, 'feed').then(function (blob) {
+      openSharepicModal(s, blob, 'feed');
+    }).catch(function (err) {
+      console.error('Sharepic generation failed:', err);
+      // Fallback: URL-only share if canvas fails
+      var shareUrl = window.location.origin + '/s/' + encodeURIComponent(s.id);
+      var title = getText(s, 'headline');
+      if (navigator.share) {
+        navigator.share({ title: title, url: shareUrl }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(shareUrl).then(function () {
+          toast(state.lang === 'de' ? 'Link kopiert' : 'Link copied');
+        });
+      }
+    });
+  }
+
+  function openSharepicModal(s, initialBlob, initialFormat) {
+    var currentFormat = initialFormat || 'feed';
+    var currentBlob = initialBlob;
+    var currentObjUrl = URL.createObjectURL(initialBlob);
+    var shareUrl = window.location.origin + '/s/' + encodeURIComponent(s.id);
+    var title = getText(s, 'headline');
+    var isDe = state.lang === 'de';
+
+    function getFilename() {
+      return 'artpulse-' + s.id + '-' + currentFormat + '.png';
+    }
+
+    // Check if device supports file sharing
+    var canShareFile = false;
+    try {
+      if (navigator.canShare) {
+        var probeFile = new File([currentBlob], getFilename(), { type: 'image/png' });
+        canShareFile = navigator.canShare({ files: [probeFile] });
+      }
+    } catch (e) { canShareFile = false; }
+
+    var modal = document.createElement('div');
+    modal.className = 'sharepic-modal';
+    modal.innerHTML = (
+      '<div class="sharepic-backdrop"></div>' +
+      '<div class="sharepic-card" role="dialog" aria-modal="true">' +
+        '<button class="sharepic-close" aria-label="' + (isDe ? 'Schließen' : 'Close') + '">' +
+          '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">' +
+            '<path d="M6 6 L18 18 M6 18 L18 6"/>' +
+          '</svg>' +
+        '</button>' +
+        '<div class="sharepic-header">' +
+          '<span>' + (isDe ? 'Vorschau' : 'Preview') + '</span>' +
+        '</div>' +
+        '<div class="sharepic-format-switch">' +
+          '<button data-format="feed" class="' + (currentFormat === 'feed' ? 'active' : '') + '">Feed · 4:5</button>' +
+          '<button data-format="story" class="' + (currentFormat === 'story' ? 'active' : '') + '">Story · 9:16</button>' +
+        '</div>' +
+        '<div class="sharepic-preview">' +
+          '<img src="' + currentObjUrl + '" alt="" />' +
+        '</div>' +
+        '<div class="sharepic-actions">' +
+          (canShareFile ?
+            '<button class="sharepic-btn sharepic-btn-primary" data-act="share">' +
+              '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+                '<path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/>' +
+              '</svg>' +
+              (isDe ? 'Teilen' : 'Share') +
+            '</button>' : '') +
+          '<button class="sharepic-btn sharepic-btn-secondary" data-act="download">' +
+            (isDe ? 'Herunterladen' : 'Download') +
+          '</button>' +
+        '</div>' +
+      '</div>'
+    );
+
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () {
+      modal.classList.add('on');
+    });
+
+    function closeModal() {
+      modal.classList.remove('on');
+      setTimeout(function () {
+        if (modal.parentNode) modal.parentNode.removeChild(modal);
+        URL.revokeObjectURL(currentObjUrl);
+        document.body.style.overflow = '';
+      }, 240);
+      document.removeEventListener('keydown', onKey);
+    }
+    function onKey(e) {
+      if (e.key === 'Escape') closeModal();
+    }
+
+    function switchFormat(newFormat) {
+      if (newFormat === currentFormat) return;
+      var formatBtns = modal.querySelectorAll('[data-format]');
+      var actionBtns = modal.querySelectorAll('.sharepic-btn');
+      for (var i = 0; i < formatBtns.length; i++) formatBtns[i].disabled = true;
+      for (var j = 0; j < actionBtns.length; j++) actionBtns[j].disabled = true;
+      modal.querySelector('.sharepic-preview').classList.add('loading');
+
+      generateSharepic(s, newFormat).then(function (newBlob) {
+        URL.revokeObjectURL(currentObjUrl);
+        currentObjUrl = URL.createObjectURL(newBlob);
+        currentBlob = newBlob;
+        currentFormat = newFormat;
+
+        modal.querySelector('.sharepic-preview img').src = currentObjUrl;
+        modal.querySelector('.sharepic-preview').classList.remove('loading');
+        for (var i = 0; i < formatBtns.length; i++) {
+          formatBtns[i].classList.toggle('active', formatBtns[i].getAttribute('data-format') === newFormat);
+          formatBtns[i].disabled = false;
+        }
+        for (var j = 0; j < actionBtns.length; j++) actionBtns[j].disabled = false;
+      }).catch(function (err) {
+        console.error('Format switch failed:', err);
+        modal.querySelector('.sharepic-preview').classList.remove('loading');
+        for (var i = 0; i < formatBtns.length; i++) formatBtns[i].disabled = false;
+        for (var j = 0; j < actionBtns.length; j++) actionBtns[j].disabled = false;
+      });
+    }
+
+    document.addEventListener('keydown', onKey);
+    modal.querySelector('.sharepic-close').addEventListener('click', closeModal);
+    modal.querySelector('.sharepic-backdrop').addEventListener('click', closeModal);
+
+    var formatButtons = modal.querySelectorAll('[data-format]');
+    for (var k = 0; k < formatButtons.length; k++) {
+      formatButtons[k].addEventListener('click', function () {
+        switchFormat(this.getAttribute('data-format'));
+      });
+    }
+
+    var shareBtn = modal.querySelector('[data-act="share"]');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', function () {
+        try {
+          var file = new File([currentBlob], getFilename(), { type: 'image/png' });
+          var shareData = { files: [file], title: title, text: title, url: shareUrl };
+          navigator.share(shareData).then(closeModal).catch(function (err) {
+            if (err && err.name !== 'AbortError') closeModal();
+          });
+        } catch (e) {
+          closeModal();
+        }
+      });
+    }
+
+    modal.querySelector('[data-act="download"]').addEventListener('click', function () {
+      downloadBlob(currentBlob, getFilename());
+      toast(isDe ? 'Bild gespeichert' : 'Image saved');
+      closeModal();
+    });
+  }
+
   function onShareClick(e) {
     e.stopPropagation();
     var id = e.currentTarget.getAttribute('data-share');
     var s = findStory(id);
     if (!s) return;
-    var url = window.location.origin + '/s/' + encodeURIComponent(s.id);
-    var title = getText(s, 'headline');
-    if (navigator.share) {
-      navigator.share({ title: title, url: url }).catch(function () {});
-    } else if (navigator.clipboard) {
-      navigator.clipboard.writeText(url).then(function () { toast('Link copied'); });
-    }
+    shareStoryWithImage(s);
   }
 
   function findStory(id) {
@@ -1309,13 +1690,7 @@
     }
     document.getElementById('sheetClose').addEventListener('click', function () { closeSheet(); });
     document.getElementById('sheetShare').addEventListener('click', function () {
-      var shareUrl = window.location.origin + '/s/' + encodeURIComponent(s.id);
-      var title = getText(s, 'headline');
-      if (navigator.share) {
-        navigator.share({ title: title, url: shareUrl }).catch(function () {});
-      } else if (navigator.clipboard) {
-        navigator.clipboard.writeText(shareUrl).then(function () { toast('Link copied'); });
-      }
+      shareStoryWithImage(s);
     });
     document.getElementById('sheet').addEventListener('click', function (e) {
       if (e.target.id === 'sheet') closeSheet();

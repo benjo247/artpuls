@@ -2403,3 +2403,206 @@ a.d-sticky-foot-nav-link {}  /* placeholder to keep symmetry */
 .d-article-meta .flag-pill {
   margin-right: 2px;
 }
+
+/* ===== Sharepic Modal ===== */
+.sharepic-modal {
+  position: fixed; inset: 0;
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  padding-top: max(20px, env(safe-area-inset-top, 20px));
+  padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.24s ease;
+}
+.sharepic-modal.on {
+  opacity: 1;
+  pointer-events: auto;
+}
+.sharepic-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.sharepic-card {
+  position: relative;
+  background: var(--bg, #0e0d0b);
+  border: 1px solid rgba(244, 241, 234, 0.08);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 460px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.sharepic-modal.on .sharepic-card {
+  transform: translateY(0) scale(1);
+}
+.sharepic-close {
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 36px; height: 36px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(244, 241, 234, 0.14);
+  border-radius: 50%;
+  color: var(--fg, #f4f1ea);
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+  transition: background 0.15s ease;
+}
+.sharepic-close:hover { background: rgba(0, 0, 0, 0.7); }
+.sharepic-header {
+  padding: 18px 20px 6px;
+}
+.sharepic-header span {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-muted, #a8a097);
+  font-weight: 500;
+}
+.sharepic-preview {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px 16px;
+  min-height: 0;
+}
+.sharepic-preview img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 60vh;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  object-fit: contain;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+.sharepic-actions {
+  padding: 16px 20px 20px;
+  padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
+  display: flex;
+  gap: 10px;
+}
+.sharepic-btn {
+  flex: 1;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+  padding: 0 14px;
+  -webkit-tap-highlight-color: transparent;
+}
+.sharepic-btn:active { opacity: 0.85; transform: scale(0.98); }
+.sharepic-btn-primary {
+  background: #e8503a;
+  color: white;
+}
+.sharepic-btn-secondary {
+  background: rgba(244, 241, 234, 0.06);
+  color: var(--fg, #f4f1ea);
+  border: 1px solid rgba(244, 241, 234, 0.14);
+}
+
+/* Format switch inside sharepic modal (Feed / Story) */
+.sharepic-format-switch {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(244, 241, 234, 0.05);
+  border: 1px solid rgba(244, 241, 234, 0.1);
+  border-radius: 100px;
+  margin: 0 20px 14px;
+}
+.sharepic-format-switch button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--fg-muted, #a8a097);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.sharepic-format-switch button.active {
+  background: var(--bg-elev, #1c1a16);
+  color: var(--fg, #f4f1ea);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.sharepic-format-switch button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.sharepic-preview.loading {
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+}
+
+/* Format Switch (Feed / Story) */
+.sharepic-format-switch {
+  display: flex;
+  gap: 4px;
+  margin: 0 20px 14px;
+  padding: 4px;
+  background: rgba(244, 241, 234, 0.06);
+  border: 1px solid rgba(244, 241, 234, 0.1);
+  border-radius: 100px;
+}
+.sharepic-format-switch button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--fg-muted, #a8a097);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 11px 12px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.sharepic-format-switch button.active {
+  background: rgba(244, 241, 234, 0.08);
+  color: var(--fg, #f4f1ea);
+}
+.sharepic-format-switch button:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+.sharepic-preview.loading img {
+  opacity: 0.45;
+  transition: opacity 0.18s ease;
+}
+.sharepic-preview img {
+  transition: opacity 0.18s ease;
+}
