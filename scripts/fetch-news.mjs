@@ -27,6 +27,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const DATA_DIR = join(ROOT, 'data');
 const ARCHIVE_PATH = join(DATA_DIR, 'archive.json');
+const BLACKLIST_PATH = join(__dirname, 'source-blacklist.json');
 const LATEST_PATH = join(DATA_DIR, 'latest.json');
 const BY_CAT_DIR = join(DATA_DIR, 'by-category');
 const BY_MONTH_DIR = join(DATA_DIR, 'by-month');
@@ -80,6 +81,30 @@ function ensureDirs() {
   for (const d of [DATA_DIR, BY_CAT_DIR, BY_MONTH_DIR]) {
     if (!existsSync(d)) mkdirSync(d, { recursive: true });
   }
+}
+
+function loadBlacklist() {
+  // Source removal mechanism. Edit scripts/source-blacklist.json to add sources
+  // that should be excluded — publishers who have requested removal, sources
+  // that turned out to be unsuitable, etc. On next cron run:
+  //   1. Blacklisted sources are skipped in the RSS fetch loop
+  //   2. Existing stories from blacklisted sources are removed from the archive
+  //   3. All derived files (latest.json, by-category, by-month, sitemap) regenerate
+  // Push the JSON edit and the workflow re-runs automatically.
+  if (!existsSync(BLACKLIST_PATH)) return [];
+  try {
+    const data = JSON.parse(readFileSync(BLACKLIST_PATH, 'utf-8'));
+    return (data.blacklist || [])
+      .map(s => String(s).toLowerCase().trim())
+      .filter(Boolean);
+  } catch (e) {
+    console.warn('Could not parse source-blacklist.json:', e.message);
+    return [];
+  }
+}
+
+function isBlacklisted(sourceName, blacklist) {
+  return blacklist.includes(String(sourceName).toLowerCase().trim());
 }
 
 function loadArchive() {
@@ -311,22 +336,34 @@ function resolveUrl(imageUrl, baseUrl) {
   }
 }
 
-const SYSTEM_PROMPT = `You are the news editor for artpulse, an international art-news app with a Shorts-style feed.
+const SYSTEM_PROMPT = `You are the news editor for artpulse, an international art-news discovery app with a Shorts-style feed. artpulse is a discovery layer — readers are routed directly to the original source for the full article.
 
-For each news item you receive, output a JSON object with these fields:
-- "i": the index number provided
-- "cat": one of: auction, exhibition, artists, market, museum, biennale, restitution. Pick the BEST fit.
-- "kicker_en": 2-5 word location or context (e.g. "Tate Modern, London", "Market analysis", "Venice 2026")
-- "kicker_de": German equivalent
-- "headline_en": tight, clear English headline, max 70 chars, no clickbait
-- "headline_de": same in German
-- "summary_en": exactly 2 sentences, max 220 chars total, capture the news
-- "summary_de": same in German
-- "body_en": 3-5 sentences expanding the summary with concrete detail from the content
-- "body_de": same in German
-- "read": estimated reading time in minutes (integer 2-8)
+CRITICAL FACT-FIDELITY RULES — these override all other instructions:
+1. Every claim in your output must be directly derivable from the CONTENT field.
+2. If a fact (number, name, date, price, location, attribution) is not explicit in CONTENT, OMIT it.
+3. Never infer, extrapolate, generalize, or "fill in" missing context. If the source is vague, your output is vague.
+4. For person names: only use names that appear verbatim in CONTENT. Never construct, guess, or paraphrase names.
+5. For numbers, prices, dates: only state what is explicitly written. Never narrow approximations (do not turn "around 5 million" into "5.2 million").
+6. If you are uncertain whether something is in the source, OMIT it. Shorter is safer than wrong.
 
-Use the typographic style of serious art press: factual, neutral, precise. No hyperbole. Real names and institutions.
+For each news item, output a JSON object with:
+- "i": index number
+- "cat": auction | exhibition | artists | market | museum | biennale | restitution
+- "kicker_en", "kicker_de": 2-5 word location or context (only what's in CONTENT or obvious from the SOURCE name)
+- "headline_en", "headline_de": tight, factual headline, max 70 chars, no clickbait
+- "summary_en", "summary_de": exactly 2 sentences, max 220 chars total. Restate ONLY what is in CONTENT. This is a teaser preview shown before users click through to the source — entice without misrepresenting.
+- "confidence": "high" | "medium" | "low"
+    high   = CONTENT is detailed and clear, all facts unambiguous, you did not have to make any judgement calls
+    medium = CONTENT is reasonably clear but has some gaps or you made minor judgement calls
+    low    = CONTENT is short, vague, internally inconsistent, missing key facts, or you had to leave multiple fields minimal
+
+EXTRA CAUTION — set confidence to "medium" or "low" even if otherwise clear, for:
+- Restitution cases involving identifiable persons or descendants
+- Specific auction results with concrete named buyers or sellers
+- Any negative claim about a living person (allegations, criticism, controversy)
+- Stories where the source TITLE and CONTENT contradict each other
+
+Style: serious art press. Factual, neutral, precise. No hyperbole. Real names and institutions only when explicit in CONTENT.
 
 Output ONLY a JSON array, no commentary, no markdown fences.`;
 
@@ -455,6 +492,30 @@ async function run() {
   const archive = loadArchive();
   console.log(`Loaded archive: ${archive.stories.length} stories.`);
 
+  // === Apply source blacklist ===
+  // Publishers who requested removal go into scripts/source-blacklist.json.
+  // We skip them during fetch AND scrub existing stories from their source.
+  const blacklist = loadBlacklist();
+  if (blacklist.length > 0) {
+    console.log(`\nSource blacklist active (${blacklist.length} source(s) excluded):`);
+    blacklist.forEach(s => console.log(`  - ${s}`));
+
+    const beforeCount = archive.stories.length;
+    archive.stories = archive.stories.filter(s => !isBlacklisted(s.source, blacklist));
+    const removedFromArchive = beforeCount - archive.stories.length;
+
+    // Clean byId index too
+    for (const id of Object.keys(archive.byId)) {
+      if (isBlacklisted(archive.byId[id].source, blacklist)) {
+        delete archive.byId[id];
+      }
+    }
+
+    if (removedFromArchive > 0) {
+      console.log(`Blacklist enforcement: removed ${removedFromArchive} existing stories from archive.`);
+    }
+  }
+
   // === Strip ALL third-party images ===
   // Policy decision: never embed or hot-link source images. Every story uses
   // the branded no-image rendering (category-specific gradient + a.-mark).
@@ -482,6 +543,10 @@ async function run() {
   console.log(`\nFetching ${SOURCES.length} sources...`);
   const candidates = [];
   for (const src of SOURCES) {
+    if (isBlacklisted(src.name, blacklist)) {
+      console.log(`  ${src.name}: SKIPPED (blacklisted)`);
+      continue;
+    }
     try {
       const feed = await parser.parseURL(src.url);
       const items = (feed.items || []).slice(0, ITEMS_PER_SOURCE);
@@ -536,9 +601,31 @@ async function run() {
   }
 
   let added = 0;
+  let skippedLowConfidence = 0;
+  let mediumConfidenceCount = 0;
+  const rejectedSamples = [];
   for (const c of candidates) {
     const e = enriched[c.id];
     if (!e) continue;
+
+    // === Confidence filter ===
+    // The model self-assesses how sure it is. Low-confidence stories are NOT
+    // published — they're filtered out entirely. Medium-confidence is logged
+    // for review but still published. High-confidence is the normal path.
+    const confidence = String(e.confidence || 'medium').toLowerCase();
+    if (confidence === 'low') {
+      skippedLowConfidence++;
+      rejectedSamples.push({
+        id: c.id,
+        source: c.source,
+        title: c.title.slice(0, 80),
+        ai_headline_en: (e.headline_en || '').slice(0, 80),
+        reason: 'confidence=low',
+      });
+      continue;
+    }
+    if (confidence === 'medium') mediumConfidenceCount++;
+
     const cat = (e.cat || c.defaultCat || 'exhibition').toLowerCase();
     const story = {
       id: c.id,
@@ -555,14 +642,27 @@ async function run() {
       kicker_de: e.kicker_de || e.kicker_en || '',
       headline_en: e.headline_en || c.title,
       headline_de: e.headline_de || e.headline_en || c.title,
-      summary_en: e.summary_en || '',
-      summary_de: e.summary_de || e.summary_en || '',
-      body_en: e.body_en || '',
-      body_de: e.body_de || e.body_en || ''
+      summary_en: (e.summary_en || '').slice(0, 220),
+      summary_de: (e.summary_de || e.summary_en || '').slice(0, 220),
+      confidence  // store for editorial audit
     };
     archive.stories.push(story);
     archive.byId[story.id] = story;
     added++;
+  }
+
+  // Log confidence breakdown
+  if (skippedLowConfidence > 0 || mediumConfidenceCount > 0) {
+    console.log(`\n=== Confidence breakdown ===`);
+    console.log(`  Added:                  ${added}`);
+    console.log(`  Skipped (low conf):     ${skippedLowConfidence}`);
+    console.log(`  Of added, medium conf:  ${mediumConfidenceCount}`);
+    if (rejectedSamples.length > 0) {
+      console.log(`\n  Sample rejections (review whether prompt or sources need adjustment):`);
+      for (const r of rejectedSamples.slice(0, 5)) {
+        console.log(`   - [${r.source}] ${r.title}`);
+      }
+    }
   }
 
   archive.stories.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
