@@ -47,6 +47,7 @@
       detailNlPlaceholder: 'your@email.com',
       detailNlFine: 'Free \u00B7 Bilingual \u00B7 Unsubscribe anytime',
       footerTagline: 'The international art press, condensed. In English and German.',
+      footerAi: 'Posts AI-assisted',
       sectionsLabel: 'Sections',
       aboutLabel: 'About',
       legalLabel: 'Legal',
@@ -93,6 +94,7 @@
       detailNlPlaceholder: 'deine@email.de',
       detailNlFine: 'Kostenlos \u00B7 Zweisprachig \u00B7 Jederzeit abbestellbar',
       footerTagline: 'Die internationale Kunstpresse, kondensiert. In Englisch und Deutsch.',
+      footerAi: 'Beiträge KI-unterstützt',
       sectionsLabel: 'Rubriken',
       aboutLabel: 'Information',
       legalLabel: 'Rechtliches',
@@ -904,6 +906,7 @@
         '</div>' +
         '<div class="d-footer-meta">' +
           '<span>© 2026 artpulse · Made in Berlin</span>' +
+          '<span>' + escapeHTML(t('footerAi')) + '</span>' +
           '<span>artpulse.app</span>' +
         '</div>' +
       '</footer>';
