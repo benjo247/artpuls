@@ -2606,3 +2606,124 @@ a.d-sticky-foot-nav-link {}  /* placeholder to keep symmetry */
 .sharepic-preview img {
   transition: opacity 0.18s ease;
 }
+
+/* ============================================
+   v3 — Inline slide actions (Read at Source + Share)
+   Replaces the old card-foot pattern with direct action pills
+   ============================================ */
+
+.card-actions-block {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-source-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.card-source-line {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+.card-source-label {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-dim, #6d685f);
+}
+.card-source-name {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  color: var(--fg, #f4f1ea);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-brand-tag {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--fg, #f4f1ea);
+  display: inline-flex;
+  align-items: baseline;
+  flex-shrink: 0;
+}
+.card-brand-tag-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #e8503a;
+  border-radius: 50%;
+  margin-left: 2px;
+  transform: translateY(2px);
+}
+
+.card-action-pills {
+  display: flex;
+  gap: 8px;
+}
+.action-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 18px;
+  border-radius: 100px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  border: 1px solid rgba(244, 241, 234, 0.18);
+  background: rgba(244, 241, 234, 0.06);
+  color: var(--fg, #f4f1ea);
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  white-space: nowrap;
+}
+.action-pill:active {
+  opacity: 0.82;
+  transform: scale(0.97);
+}
+.pill-read {
+  flex: 1;
+  /* background + border-color set inline from category accent */
+  color: #0e0d0b;
+  font-weight: 600;
+  min-width: 0;
+}
+.pill-read span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pill-read .icon {
+  flex-shrink: 0;
+}
+.pill-share {
+  flex: 0 0 auto;
+}
+
+.card-ai-hint {
+  text-align: center;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-dim, #6d685f);
+  opacity: 0.75;
+  margin-top: 4px;
+}

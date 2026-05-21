@@ -503,9 +503,17 @@
         '<div class="card-shade"></div>';
     } else {
       visual =
-        '<div class="card-noimg-bg"></div>' +
-        '<div class="card-noimg-mark">a<span class="card-noimg-dot"></span></div>';
+        '<div class="card-noimg-bg"></div>';
     }
+
+    // "Read at [Source]" pill label — shortened for long source names
+    var srcShort = (s.source || '').split(',')[0].split(' ').slice(0, 3).join(' ');
+    var readLabel = state.lang === 'de'
+      ? 'Bei ' + srcShort + ' lesen'
+      : 'Read at ' + srcShort;
+    var sourceLabel = state.lang === 'de' ? 'Quelle' : 'Source';
+    var aiHint = state.lang === 'de' ? 'KI-unterstützt' : 'AI-assisted';
+    var sourceUrl = s.url || '';
 
     return '' +
       '<article class="' + classes + '" data-idx="' + idx + '" data-id="' + escapeAttr(s.id) + '">' +
@@ -519,15 +527,30 @@
         '</div>' +
         '<div class="card-body">' +
           '<div class="kicker">' + escapeHTML(getText(s, 'kicker')) + '</div>' +
-          '<h2 class="headline" data-expand="' + escapeAttr(s.id) + '">' + escapeHTML(getText(s, 'headline')) + '</h2>' +
+          '<h2 class="headline">' + escapeHTML(getText(s, 'headline')) + '</h2>' +
           '<p class="summary">' + escapeHTML(getText(s, 'summary')) + '</p>' +
-          '<div class="card-foot">' +
-            '<div class="meta"><span class="source">' + escapeHTML(s.source || '') + '</span><span class="sep">\u00B7</span><span>' + (s.read || 3) + ' ' + t('readingTime') + '</span></div>' +
-            '<button class="cta" data-expand="' + escapeAttr(s.id) + '"><span>' + t('cta') + '</span><svg class="icon icon-sm" viewBox="0 0 24 24">' + ICONS.chev + '</svg></button>' +
+          '<div class="card-actions-block">' +
+            '<div class="card-source-row">' +
+              '<div class="card-source-line">' +
+                '<div class="card-source-label">' + escapeHTML(sourceLabel) + '</div>' +
+                '<div class="card-source-name">' + escapeHTML(s.source || '') + '</div>' +
+              '</div>' +
+              '<div class="card-brand-tag">a<span class="card-brand-tag-dot"></span></div>' +
+            '</div>' +
+            '<div class="card-action-pills">' +
+              (sourceUrl
+                ? '<a class="action-pill pill-read" href="' + escapeAttr(sourceUrl) + '" target="_blank" rel="noopener noreferrer" style="background:' + escapeAttr(accent) + ';border-color:' + escapeAttr(accent) + '">' +
+                    '<span>' + escapeHTML(readLabel) + '</span>' +
+                    '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7 M7 7 h10 v10"/></svg>' +
+                  '</a>'
+                : '') +
+              '<button class="action-pill pill-share" data-share="' + escapeAttr(s.id) + '" aria-label="' + t('share') + '">' +
+                '<svg class="icon icon-sm" viewBox="0 0 24 24">' + ICONS.share + '</svg>' +
+                '<span>' + t('share') + '</span>' +
+              '</button>' +
+            '</div>' +
+            '<div class="card-ai-hint">' + escapeHTML(aiHint) + '</div>' +
           '</div>' +
-        '</div>' +
-        '<div class="rail">' +
-          '<button class="rail-btn" data-share="' + escapeAttr(s.id) + '" aria-label="' + t('share') + '"><svg class="icon icon-lg" viewBox="0 0 24 24">' + ICONS.share + '</svg></button>' +
         '</div>' +
       '</article>';
   }
