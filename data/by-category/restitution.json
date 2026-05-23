@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-23T12:05:39.385Z",
+  "generatedAt": "2026-05-23T18:09:17.053Z",
   "category": "restitution",
   "count": 12,
   "stories": [
@@ -11,8 +11,8 @@
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/05/22/fifty-years-after-franco-spain-begins-to-give-back-art-seized-during-the-civil-war",
       "publishedAt": "2026-05-22T15:18:46.000Z",
-      "time_en": "20h ago",
-      "time_de": "vor 20 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 3,
       "kicker_en": "Spain, Civil War restitution",
       "kicker_de": "Spanien, Restitution Bürgerkrieg",
@@ -31,8 +31,8 @@
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/05/20/manhattan-district-attorney-returns-650-looted-antiquities-india",
       "publishedAt": "2026-05-20T17:50:17.000Z",
-      "time_en": "2d ago",
-      "time_de": "vor 2 Tagen",
+      "time_en": "3d ago",
+      "time_de": "vor 3 Tagen",
       "read": 3,
       "kicker_en": "New York authorities",
       "kicker_de": "New Yorker Behörden",

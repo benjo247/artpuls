@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-05-23T12:05:39.388Z",
+  "generatedAt": "2026-05-23T18:09:17.054Z",
   "month": "2026-05",
-  "count": 667,
+  "count": 668,
   "stories": [
+    {
+      "id": "s-V6CShPpcxwUnuk",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/artanddesign/2026/may/23/mona-lisa-high-bmi-glp1-beauty",
+      "publishedAt": "2026-05-23T14:12:41.000Z",
+      "time_en": "3h ago",
+      "time_de": "vor 3 Std",
+      "read": 3,
+      "kicker_en": "Beauty standards, art",
+      "kicker_de": "Schönheitsstandards, Kunst",
+      "headline_en": "Weight-loss drugs reshaping artistic beauty",
+      "headline_de": "Gewichtsverlust-Medikamente verändern künstlerische Schönheit",
+      "summary_en": "Experts say drugs like Wegovy are shifting perceptions of artistic beauty, with historical figures like Mona Lisa now reexamined through modern weight-loss standards. The emergence of \"GLP-1 face\" may influence future de",
+      "summary_de": "Experten sagen, dass Medikamente wie Wegovy die Wahrnehmung künstlerischer Schönheit verschieben, wobei historische Figuren wie die Mona Lisa neu bewertet werden. Das Phänomen des \"GLP-1-Gesichts\" könnte zukünftige künst",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-LzpAktgTR8ey-v",
       "cat": "exhibition",
