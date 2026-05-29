@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-05-28T19:43:54.475Z",
+  "generatedAt": "2026-05-29T10:14:05.860Z",
   "category": "restitution",
-  "count": 16,
+  "count": 17,
   "stories": [
+    {
+      "id": "s-TlDSOkfkBfofpq",
+      "cat": "restitution",
+      "accent": "#9b8579",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/the-looter-who-built-your-favorite-museum/",
+      "publishedAt": "2026-05-28T22:13:54.000Z",
+      "time_en": "12h ago",
+      "time_de": "vor 12 Std",
+      "read": 3,
+      "kicker_en": "Khmer artifacts, restitution",
+      "kicker_de": "Khmer-Artefakte, Restitution",
+      "headline_en": "Book explores Latchford's Khmer statue trafficking",
+      "headline_de": "Buch untersucht Latchfords Khmer-Handel",
+      "summary_en": "A new book documents how Douglas Latchford and a network of associates removed Khmer statues from their origins and placed them in Western institutions. The book maps this trafficking network.",
+      "summary_de": "Ein neues Buch dokumentiert, wie Douglas Latchford und ein Netzwerk von Mitarbeitern Khmer-Statuen aus ihren Ursprungsorten entfernten und in westliche Institutionen verbrachten. Das Buch kartographiert dieses Handelsnet",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-ZnefL-4PGTaqpn",
       "cat": "restitution",
