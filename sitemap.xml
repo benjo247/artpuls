@@ -6,6 +6,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://artpulse.app/s/s-Tavw4N9Z2FOQcM</loc>
+    <lastmod>2026-05-31T12:00:48.000Z</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://artpulse.app/s/s-LTz3rnR2HkSBVN</loc>
     <lastmod>2026-05-31T09:00:44.000Z</lastmod>
     <changefreq>never</changefreq>
@@ -20,6 +26,12 @@
   <url>
     <loc>https://artpulse.app/s/s-tT5eLy6x4zy8Zk</loc>
     <lastmod>2026-05-31T08:00:00.000Z</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://artpulse.app/s/s-cxnP5hV6w6EXdA</loc>
+    <lastmod>2026-05-31T07:00:49.000Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -566,6 +578,12 @@
   <url>
     <loc>https://artpulse.app/s/s-2qUa_fFL6ZTdEz</loc>
     <lastmod>2026-05-28T18:55:14.000Z</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://artpulse.app/s/s-YHLi8QHkO8H70e</loc>
+    <lastmod>2026-05-28T16:57:25.000Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
