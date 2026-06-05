@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-06-05T14:03:17.698Z",
+  "generatedAt": "2026-06-05T19:06:55.195Z",
   "category": "restitution",
-  "count": 19,
+  "count": 20,
   "stories": [
+    {
+      "id": "s-hWe_I6s9XtvkOR",
+      "cat": "restitution",
+      "accent": "#9b8579",
+      "image": null,
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/news/unesco-and-lebanon-condemn-israeli-attacks-on-heritage-sites/",
+      "publishedAt": "2026-06-04T08:35:34.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Lebanon",
+      "kicker_de": "Libanon",
+      "headline_en": "UNESCO and Lebanon Condemn Israeli Attacks",
+      "headline_de": "UNESCO und Libanon verurteilen israelische Angriffe",
+      "summary_en": "Israel has damaged multiple cultural landmarks in southern Lebanon despite enhanced UNESCO protection, drawing condemnation from both UNESCO and Lebanon.",
+      "summary_de": "Israel hat trotz verstärktem UNESCO-Schutz mehrere Kulturdenkmäler im südlichen Libanon beschädigt, was zu Verurteilungen durch UNESCO und Libanon führte.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-pVktAs9VMn0Ff3",
       "cat": "restitution",
