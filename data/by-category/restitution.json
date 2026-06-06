@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-06-06T08:46:14.931Z",
+  "generatedAt": "2026-06-06T12:14:49.958Z",
   "category": "restitution",
-  "count": 20,
+  "count": 21,
   "stories": [
+    {
+      "id": "s-9tqsvdAMFEKzQ-",
+      "cat": "restitution",
+      "accent": "#9b8579",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/news/heir-lieser-sues-restitution-gustav-klimt-portrait-1234788404/",
+      "publishedAt": "2026-06-05T16:26:21.000Z",
+      "time_en": "19h ago",
+      "time_de": "vor 19 Std",
+      "read": 3,
+      "kicker_en": "Austria auction",
+      "kicker_de": "Österreich Auktion",
+      "headline_en": "Heir sues for restitution of Klimt portrait",
+      "headline_de": "Erbin klagt auf Restitution von Klimt-Porträt",
+      "summary_en": "Patricia J. Leahy claims to be the rightful heir to a Gustav Klimt portrait that fetched $37.5 M. at Austrian auction. The sale subsequently fell through.",
+      "summary_de": "Patricia J. Leahy behauptet, die legitime Erbin eines Gustav-Klimt-Porträts zu sein, das bei einer österreichischen Auktion 37,5 Millionen Dollar erzielte. Der Verkauf scheiterte später.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-hWe_I6s9XtvkOR",
       "cat": "restitution",
