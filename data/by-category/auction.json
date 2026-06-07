@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T09:32:42.072Z",
+  "generatedAt": "2026-06-07T12:48:38.203Z",
   "category": "auction",
   "count": 91,
   "stories": [
@@ -131,8 +131,8 @@
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/06/05/a-kennedy-connected-stiehl-box-and-a-pair-of-van-huysum-still-lifes-our-pick-of-the-june-auctions",
       "publishedAt": "2026-06-05T10:01:25.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "June auctions",
       "kicker_de": "Juni-Auktionen",
@@ -291,8 +291,8 @@
       "source": "Wallpaper",
       "url": "https://www.wallpaper.com/fashion-beauty/maison-martin-margiela-personal-auction-paris",
       "publishedAt": "2026-06-01T11:48:21.000Z",
-      "time_en": "5d ago",
-      "time_de": "vor 5 Tagen",
+      "time_en": "6d ago",
+      "time_de": "vor 6 Tagen",
       "read": 3,
       "kicker_en": "Fashion Archive",
       "kicker_de": "Mode-Archiv",
