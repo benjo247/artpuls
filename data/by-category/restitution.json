@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T19:44:48.325Z",
+  "generatedAt": "2026-06-11T10:57:23.992Z",
   "category": "restitution",
   "count": 24,
   "stories": [
@@ -11,8 +11,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/three-men-convicted-museum-heist-ancient-romanian-gold-1234788616/",
       "publishedAt": "2026-06-09T20:25:00.000Z",
-      "time_en": "23h ago",
-      "time_de": "vor 23 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 3,
       "kicker_en": "Dutch museum heist",
       "kicker_de": "Niederländischer Museumsraub",
@@ -91,8 +91,8 @@
       "source": "ArtAsiaPacific",
       "url": "https://www.artasiapacific.com/news/unesco-and-lebanon-condemn-israeli-attacks-on-heritage-sites/",
       "publishedAt": "2026-06-04T08:35:34.000Z",
-      "time_en": "6d ago",
-      "time_de": "vor 6 Tagen",
+      "time_en": "Jun 04",
+      "time_de": "04. Juni",
       "read": 3,
       "kicker_en": "Lebanon",
       "kicker_de": "Libanon",
