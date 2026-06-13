@@ -1,7 +1,147 @@
 {
-  "generatedAt": "2026-06-13T09:32:42.811Z",
-  "count": 1646,
+  "generatedAt": "2026-06-13T12:56:57.913Z",
+  "count": 1656,
   "stories": [
+    {
+      "id": "s-31rtOWbXHcQeW7",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/artanddesign/2026/jun/13/10-ways-david-hockney-changed-art-la-ipads-perspective",
+      "publishedAt": "2026-06-13T12:00:14.000Z",
+      "time_en": "just now",
+      "time_de": "gerade eben",
+      "read": 3,
+      "kicker_en": "David Hockney retrospective",
+      "kicker_de": "David-Hockney-Rückblick",
+      "headline_en": "Hockney's influence: 10 ways he transformed art",
+      "headline_de": "Hockneys Einfluss: 10 Wege, wie er die Kunst veränderte",
+      "summary_en": "David Hockney synthesized minimalism, abstraction, portraiture, pop and conceptualism into accessible work that reshaped landscape painting and perspective. He embraced new media, designed theatre and opera sets, and cre",
+      "summary_de": "David Hockney verschmolz Minimalismus, Abstraktion, Porträtkunst, Pop und Konzeptualismus zu zugänglichen Werken, die Landschaftsmalerei und Perspektive umgestalteten. Er nutzte neue Medien, entwarf Theater- und Opernkul",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-F1OhwAZhd4TZnI",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/market/almine-rech-now-represents-leonora-carrington-1234789226/",
+      "publishedAt": "2026-06-13T12:00:00.000Z",
+      "time_en": "just now",
+      "time_de": "gerade eben",
+      "read": 3,
+      "kicker_en": "Gallery representation, France",
+      "kicker_de": "Galerievertreter, Frankreich",
+      "headline_en": "Almine Rech represents Leonora Carrington estate",
+      "headline_de": "Almine Rech vertritt Leonora-Carrington-Nachlass",
+      "summary_en": "Gallery Almine Rech is now the exclusive partner of the Consejo Leonora Carrington in France. The gallery will represent the surrealist's work and legacy.",
+      "summary_de": "Die Galerie Almine Rech ist jetzt exklusiver Partner des Consejo Leonora Carrington in Frankreich. Die Galerie wird die Werke und das Vermächtnis der Surrealisten vertreten.",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-MU92gfVmgcITvy",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/art/exhibitions-shows/paul-thek-dream-of-vanishing-pace-gallery-new-york-review",
+      "publishedAt": "2026-06-13T11:30:00.000Z",
+      "time_en": "1h ago",
+      "time_de": "vor 1 Std",
+      "read": 3,
+      "kicker_en": "New York",
+      "kicker_de": "New York",
+      "headline_en": "Pace Gallery explores Paul Thek's rare works",
+      "headline_de": "Pace Gallery zeigt seltene Werke von Paul Thek",
+      "summary_en": "Pace Gallery in New York presents a major exhibition of rarely seen works by Paul Thek, offering insight into the artist's complex career and life. The show explores the work of an influential figure in art history.",
+      "summary_de": "Die Pace Gallery in New York zeigt eine große Ausstellung mit seltenen Werken von Paul Thek und bietet Einblicke in die komplexe Karriere des Künstlers. Die Schau widmet sich einem einflussreichen Künstler.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-WeWa186q9JnUkA",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/architecture/public-buildings/barack-obama-presidential-center-chicago",
+      "publishedAt": "2026-06-13T10:30:00.000Z",
+      "time_en": "2h ago",
+      "time_de": "vor 2 Std",
+      "read": 3,
+      "kicker_en": "Chicago",
+      "kicker_de": "Chicago",
+      "headline_en": "Obama Presidential Center opens on South Side",
+      "headline_de": "Obama Presidential Center eröffnet auf South Side",
+      "summary_en": "The 19-acre Obama Presidential Center, designed by architects Tod Williams and Billie Tsien, opens in Chicago on the South Side. The museum campus aims to provide spaces for enlightenment, engagement, and play.",
+      "summary_de": "Das 19 Hektar große Obama Presidential Center, entworfen von den Architekten Tod Williams und Billie Tsien, eröffnet in Chicago auf der South Side. Das Museumscampus will Räume für Aufklärung, Engagement und Spiel schaff",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-88srWJhpvfuT9T",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/obama-center-nayland-blake-danielle-mckinney/",
+      "publishedAt": "2026-06-13T10:00:22.000Z",
+      "time_en": "2h ago",
+      "time_de": "vor 2 Std",
+      "read": 3,
+      "kicker_en": "Chicago, multiple artists",
+      "kicker_de": "Chicago, mehrere Künstler",
+      "headline_en": "Obama Center unveiled; SAIC challenges students",
+      "headline_de": "Obama-Zentrum eröffnet; SAIC fordert Studenten",
+      "summary_en": "The \"Obamalith\" has been unveiled. The School of the Art Institute of Chicago is in conflict with its students regarding artistic imagination.",
+      "summary_de": "Das \"Obamalith\" wurde enthüllt. Die School of the Art Institute of Chicago befindet sich in Konflikt mit ihren Studierenden über künstlerische Fantasie.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-A_l48WhYPQLBtB",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/lifeandstyle/2026/jun/13/tony-hertz-best-phone-picture-man-dog",
+      "publishedAt": "2026-06-13T10:00:12.000Z",
+      "time_en": "2h ago",
+      "time_de": "vor 2 Std",
+      "read": 3,
+      "kicker_en": "Tony Hertz, photography",
+      "kicker_de": "Tony Hertz, Fotografie",
+      "headline_en": "Hertz's shadow portrait: phone shot becomes personal",
+      "headline_de": "Hertz' Schattenbild: Handyfoto wird persönlich",
+      "summary_en": "Photographer Tony Hertz captured a shadow portrait of himself and his dog Lolly at sunset in Pismo Beach, California, while working on a series exploring shadows. The intimate image emerged from a moment on a grassy area",
+      "summary_de": "Fotograf Tony Hertz hielt sein Schattenbild zusammen mit seinem Hund Lolly bei Sonnenuntergang in Pismo Beach, Kalifornien, fest, während er an einer Schattenreihe arbeitete. Das intime Bild entstand auf einer Grünfläche",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-A6mn99xx6F1zQj",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/tech/shark-luxe-collection-vaccums",
+      "publishedAt": "2026-06-13T10:00:00.000Z",
+      "time_en": "2h ago",
+      "time_de": "vor 2 Std",
+      "read": 3,
+      "kicker_en": "Design",
+      "kicker_de": "Design",
+      "headline_en": "Shark Home Luxe Collection debuts in vibrant colors",
+      "headline_de": "Shark Home Luxe Collection in bunten Farben",
+      "summary_en": "Shark introduces the Home Luxe Collection, bringing unconventional colors to robotic and manual vacuuming products. The collection aims to elevate the everyday cleaning experience through design.",
+      "summary_de": "Shark präsentiert die Home Luxe Collection mit unkonventionellen Farben für Roboter- und Handstaubsauger. Die Kollektion zielt darauf ab, das alltägliche Reinigungserlebnis durch Design zu verbessern.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-xgI6gihDyVwC_w",
       "cat": "museum",
@@ -63,6 +203,46 @@
       "trending": false
     },
     {
+      "id": "s-xRn_XNuKClAt8r",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/exit-crisis-women-2780818",
+      "publishedAt": "2026-06-13T05:15:03.000Z",
+      "time_en": "7h ago",
+      "time_de": "vor 7 Std",
+      "read": 3,
+      "kicker_en": "Art world retention",
+      "kicker_de": "Künstler im Kunstbetrieb",
+      "headline_en": "Retaining women in arts is leadership issue",
+      "headline_de": "Frauen in der Kunst: Führungsproblem",
+      "summary_en": "The art world excels at identifying talent but struggles to retain it. The post argues this is fundamentally a leadership issue rather than a women's issue.",
+      "summary_de": "Die Kunstwelt ist talentiert darin, Fähigkeiten zu erkennen, aber hat Schwierigkeiten, sie zu halten. Laut dem Artikel ist dies ein Führungsproblem.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-RbV0rW2mWfNH9j",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/culture/2026/jun/13/entertainment-guide-week-ahead-disclosure-day-olivia-rodrigo-douglas-weatherford-cinema-theatre-art-music",
+      "publishedAt": "2026-06-13T05:01:04.000Z",
+      "time_en": "7h ago",
+      "time_de": "vor 7 Std",
+      "read": 3,
+      "kicker_en": "Entertainment this week",
+      "kicker_de": "Unterhaltung diese Woche",
+      "headline_en": "Spielberg's UFO drama and new releases lead the week",
+      "headline_de": "Spielbergs UFO-Drama und Neuerscheinungen führen die Woche an",
+      "summary_en": "A new Steven Spielberg sci-fi film starring Emily Blunt, Josh O'Connor, Colin Firth and Colman Domingo explores UFOs, whistleblowing and conspiracy theories. The week also features Olivia Rodrigo and Peter Mullan in a ne",
+      "summary_de": "Ein neuer Science-Fiction-Film von Steven Spielberg mit Emily Blunt, Josh O'Connor, Colin Firth und Colman Domingo erforscht UFOs, Whistleblowing und Verschwörungstheorien. Die Woche zeigt auch Olivia Rodrigo und Peter M",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
       "id": "s-f71LoOmx33H1z8",
       "cat": "exhibition",
       "accent": "#d4a574",
@@ -100,6 +280,26 @@
       "summary_en": "A photographic tour documents Carl Pruscha's architectural projects in Nepal and Sri Lanka, where his designs blend local traditions with modernism. The Austrian architect's work is presented by photojournalist Nipun Pra",
       "summary_de": "Eine fotografische Tour dokumentiert Carl Pruschas Architekturprojekte in Nepal und Sri Lanka, wo seine Designs lokale Traditionen mit Modernismus verbinden. Das Werk des österreichischen Architekten wird von Fotojournal",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-4_rsEI7vnpzKIL",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/football/gallery/2026/jun/13/world-cup-2026-usa-opening-ceremony-dominant-victory-paraguay-in-pictures",
+      "publishedAt": "2026-06-13T03:31:46.000Z",
+      "time_en": "9h ago",
+      "time_de": "vor 9 Std",
+      "read": 3,
+      "kicker_en": "Los Angeles, World Cup 2026",
+      "kicker_de": "Los Angeles, Weltmeisterschaft 2026",
+      "headline_en": "USMNT defeats Paraguay in World Cup opening match",
+      "headline_de": "USMNT besiegtParaguay in WM-Eröffnungsspiel",
+      "summary_en": "The USMNT secured a resounding victory over Paraguay in Group D at Los Angeles Stadium, which hosted the opening ceremony for World Cup 2026. The match marked the tournament's opening action.",
+      "summary_de": "Die USMNT erzielte einen überzeugenden Sieg über Paraguay in Gruppe D im Los-Angeles-Stadion, das die Eröffnungsfeier der Weltmeisterschaft 2026 ausrichtete. Das Spiel war der Auftakt des Turniers.",
+      "confidence": "medium",
       "trending": false
     },
     {
@@ -820,7 +1020,7 @@
       "summary_en": "David Hockney, known for paintings inspired by 1960s California light and colour, has died aged 88. He moved to Los Angeles in the 1960s and became celebrated for his depictions of swimming pools.",
       "summary_de": "David Hockney, bekannt für Malereien inspiriert durch das Licht und die Farben Kaliforniens der 1960er Jahre, ist mit 88 Jahren gestorben. Er zog in den 1960er Jahren nach Los Angeles und wurde berühmt für seine Darstell",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-araffp84f7OtL_",
@@ -880,7 +1080,7 @@
       "summary_en": "David Hockney, celebrated British artist born in 1937, passed away peacefully on 11 June 2026. His legacy spans chromatic brilliance across two centuries of art.",
       "summary_de": "Der britische Künstler David Hockney starb am 11. Juni 2026 friedlich. Sein Vermächtnis umfasst chromatische Brillanz über zwei Jahrhunderte hinweg.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-Sf634XXx9Eo7oF",
@@ -1040,7 +1240,7 @@
       "summary_en": "David Hockney, who gained prominence as a pop artist in the 1960s and was best known for swimming pool paintings, has died aged 88. Over six decades, he worked in portraiture, abstract landscape painting and 3D technolog",
       "summary_de": "David Hockney, der sich in den 1960er Jahren als Pop-Artist einen Namen machte und für Schwimmbadmalereien bekannt war, ist mit 88 Jahren gestorben. In einer sechsjährigen Karriere arbeitete er in Porträt-, abstrakter La",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-68h5TFGfyhzfw0",
@@ -1140,7 +1340,7 @@
       "summary_en": "Painter David Hockney has died at age 88. He was known for capturing the pleasures and contradictions of modern life with wit, warmth, and technical innovation.",
       "summary_de": "Maler David Hockney ist im Alter von 88 Jahren verstorben. Er war für die Darstellung der Freuden und Widersprüche des modernen Lebens mit Witz, Wärme und technischer Innovation bekannt.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-gKi07frmz9uTen",
@@ -1180,7 +1380,7 @@
       "summary_en": "British artist David Hockney has died aged 88. He combined groundedness, glamour, boundary-crossing and technical mastery in his work.",
       "summary_de": "Der britische Künstler David Hockney ist im Alter von 88 Jahren gestorben. Er verband Bodenständigkeit, Glamour, Grenzüberschreitung und technische Perfektion.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-yQzEEdhE5jFSpv",
@@ -1220,7 +1420,7 @@
       "summary_en": "The Yorkshire-born artist, known for pioneering new figurative formats, gained prominence at the New Contemporaries exhibition in London in 1961. Hockney was a cultural figure with global recognition beyond the art world",
       "summary_de": "Der in Yorkshire geborene Künstler, bekannt für bahnbrechende neue figurative Formate, erlangte 1961 auf der New Contemporaries Ausstellung in London Prominenz. Hockney war eine Kulturfigur mit weltweiter Anerkennung übe",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-IYpvj7zoHkJbXy",
@@ -1260,7 +1460,7 @@
       "summary_en": "David Hockney, the artist who rose to fame with paintings including A Bigger Splash, has died aged 88. In later years he created large-scale works celebrating nature.",
       "summary_de": "David Hockney, der Künstler, der mit Gemälden wie A Bigger Splash berühmt wurde, ist im Alter von 88 Jahren gestorben. In späteren Jahren schuf er großflächige Werke, die die Natur feierten.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-GpucZTU6DW6XY0",
@@ -1340,7 +1540,7 @@
       "summary_en": "David Hockney, the iconic British painter from Bradford, has died aged 88. He rose to fame as a pop artist in the 1960s and became known for paintings of swimming pools that defined the Los Angeles aesthetic.",
       "summary_de": "David Hockney, der ikonische britische Maler aus Bradford, ist im Alter von 88 Jahren gestorben. Er wurde als Pop-Art-Künstler in den 1960er Jahren berühmt und bekannt für Swimmingpool-Gemälde.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-5_RCXQX0BbSRmE",
