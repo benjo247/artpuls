@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-21T10:03:43.321Z",
-  "count": 1976,
+  "generatedAt": "2026-06-21T13:16:48.840Z",
+  "count": 1977,
   "stories": [
     {
       "id": "s-tyycoegQFD6sY4",
@@ -160,6 +160,26 @@
       "summary_en": "Mexican architect Manuel Cervantes designs Teocali, a Costa Rican residence exploring the patio house typology. The home blends interior and exterior spaces.",
       "summary_de": "Mexikanischer Architekt Manuel Cervantes entwirft Teocali, ein costa-ricanisches Wohnhaus, das die Patiohäuser-Typologie erforscht. Das Haus verbindet Innen- und Außenraum.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-rg2xGidkkF47HB",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Ocula",
+      "url": "https://ocula.com/magazine/conversations/payne-zhu-ocean-teach-us-ai-interview-2026/",
+      "publishedAt": "2026-06-20T22:00:05.000Z",
+      "time_en": "15h ago",
+      "time_de": "vor 15 Std",
+      "read": 3,
+      "kicker_en": "Shanghai",
+      "kicker_de": "Shanghai",
+      "headline_en": "Payne Zhu Explores Ocean, AI, and Shrimp",
+      "headline_de": "Payne Zhu erforscht Ozean, KI und Shrimps",
+      "summary_en": "Shanghai-based artist Payne Zhu discusses a 16th-century Chinese novel as inspiration and paints using shrimp waste, employing digestion as a metaphor. The work engages with themes of AI and ocean ecology.",
+      "summary_de": "Die in Shanghai ansässige Künstlerin Payne Zhu diskutiert einen Roman aus dem 16. Jahrhundert als Inspiration und malt mit Shrimpsmüll, wobei sie Verdauung als Metapher nutzt. Das Werk beschäftigt sich mit KI und Meeresö",
+      "confidence": "medium",
       "trending": false
     },
     {
