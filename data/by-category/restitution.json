@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-06-23T13:46:35.781Z",
+  "generatedAt": "2026-06-23T19:17:35.382Z",
   "category": "restitution",
-  "count": 29,
+  "count": 30,
   "stories": [
+    {
+      "id": "s-Jzzid1rc1cZ_2M",
+      "cat": "restitution",
+      "accent": "#9b8579",
+      "image": null,
+      "source": "The Art Newspaper",
+      "url": "https://www.theartnewspaper.com/2026/06/23/the-netherlands-and-germany-to-return-more-than-2000-cultural-artefacts-to-ghana",
+      "publishedAt": "2026-06-23T16:25:17.000Z",
+      "time_en": "2h ago",
+      "time_de": "vor 2 Std",
+      "read": 3,
+      "kicker_en": "Netherlands, Germany, Ghana",
+      "kicker_de": "Niederlande, Deutschland, Ghana",
+      "headline_en": "Netherlands and Germany to return 2,000+ artefacts to Ghana",
+      "headline_de": "Niederlande und Deutschland geben 2.000+ Artefakte an Ghana zurück",
+      "summary_en": "The Netherlands and Germany have agreed to return more than 2,000 cultural artefacts taken unlawfully during colonial conquests to Ghana. Details on the objects are yet to be announced.",
+      "summary_de": "Niederlande und Deutschland haben sich auf die Rückgabe von mehr als 2.000 Kulturgütern, die während kolonialer Eroberungen rechtswidrig entnommen wurden, an Ghana geeinigt. Details zu den Objekten werden später bekanntg",
+      "confidence": "high",
+      "trending": true
+    },
     {
       "id": "s-tR4ETr2n2a5Mmi",
       "cat": "restitution",
@@ -11,8 +31,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/netherlands-germany-return-2000-artifacts-ghana-1234789956/",
       "publishedAt": "2026-06-22T21:20:57.000Z",
-      "time_en": "16h ago",
-      "time_de": "vor 16 Std",
+      "time_en": "21h ago",
+      "time_de": "vor 21 Std",
       "read": 3,
       "kicker_en": "Ghana, Accra",
       "kicker_de": "Ghana, Accra",
@@ -21,7 +41,7 @@
       "summary_en": "The Netherlands and Germany have agreed to return 2,000 artifacts to Ghana, with the announcement made at a conference in Accra. The repatriation represents a significant commitment to cultural restitution.",
       "summary_de": "Niederlande und Deutschland haben sich zur Rückgabe von 2.000 Artefakten an Ghana verpflichtet; die Ankündigung erfolgte auf einer Konferenz in Accra. Die Rückführung stellt eine bedeutende Zusage zur Restitution dar.",
       "confidence": "medium",
-      "trending": false
+      "trending": true
     },
     {
       "id": "s-3Dc3M0FnmPoxgK",
