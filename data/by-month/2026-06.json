@@ -1,8 +1,48 @@
 {
-  "generatedAt": "2026-06-27T08:49:08.275Z",
+  "generatedAt": "2026-06-27T12:16:21.302Z",
   "month": "2026-06",
-  "count": 1278,
+  "count": 1281,
   "stories": [
+    {
+      "id": "s-an914K67f_gV_7",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Süddeutsche Kultur",
+      "url": "https://www.sueddeutsche.de/kultur/bruno-mars-konzert-berlin-kritik-li.3505946",
+      "publishedAt": "2026-06-27T11:40:51.000Z",
+      "time_en": "just now",
+      "time_de": "gerade eben",
+      "read": 3,
+      "kicker_en": "Berlin",
+      "kicker_de": "Berlin",
+      "headline_en": "Bruno Mars performs at Berlin Olympic Stadium",
+      "headline_de": "Bruno Mars tritt im Berliner Olympiastadion auf",
+      "summary_en": "Bruno Mars performed at Berlin's Olympic Stadium under record temperatures. The concert was noted for its polished execution.",
+      "summary_de": "Bruno Mars trat im Berliner Olympiastadion bei Rekordtemperaturen auf. Das Konzert war für seine perfekte Ausführung bemerkenswert.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-cywy92VqwO5_S_",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/lifeandstyle/2026/jun/27/monojit-dutta-best-phone-picture",
+      "publishedAt": "2026-06-27T10:00:01.000Z",
+      "time_en": "2h ago",
+      "time_de": "vor 2 Std",
+      "read": 3,
+      "kicker_en": "West Bengal",
+      "kicker_de": "Westbengalen",
+      "headline_en": "Monojit Dutta captures children with balloons in field",
+      "headline_de": "Monojit Dutta fotografiert Kinder mit Luftballons",
+      "summary_en": "Photographer Monojit Dutta captured children playing in a field in Canning, West Bengal on a Sunday after distributing balloons. The image records the spontaneous joy and freedom of their movements.",
+      "summary_de": "Fotograf Monojit Dutta hielt Kinder fest, die in einem Feld in Canning spielten, nachdem er ihnen Luftballons verteilt hatte. Das Bild fängt ihre spontane Freude und Bewegungsfreiheit ein.",
+      "confidence": "high",
+      "trending": false
+    },
     {
       "id": "s-kQOQsPD-8Q1K-l",
       "cat": "artists",
@@ -661,7 +701,7 @@
       "summary_en": "A major exhibition in London celebrates the Baroque Spanish painter Francisco de Zurbarán, known for his paintings of martyrs and his work as a textile merchant. The exhibition highlights both his artistic and commercial",
       "summary_de": "Eine bedeutende Ausstellung in London würdigt den barocken spanischen Maler Francisco de Zurbarán, bekannt für seine Gemälde von Märtyrern und seine Tätigkeit als Textilhändler. Die Ausstellung hebt beide seine künstleri",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-fx7EsfOYGYHOqP",
@@ -701,6 +741,26 @@
       "summary_en": "Lanza Atelier and chef Laila Gohar staged the Serpentine Galleries' annual party around a pavilion, combining food, furniture and performance. The event blended architecture, landscape and culinary art.",
       "summary_de": "Lanza Atelier und Köchin Laila Gohar inszenieren die jährliche Party der Serpentine Galleries um einen Pavillon. Das Event verband Architektur, Landschaft und kulinarische Kunst.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-TdDeDG09EIV1nv",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/auctions-specialist-spotlight-june-2026-2783614",
+      "publishedAt": "2026-06-26T13:16:33.000Z",
+      "time_en": "22h ago",
+      "time_de": "vor 22 Std",
+      "read": 3,
+      "kicker_en": "Artnet Auctions",
+      "kicker_de": "Artnet Auctions",
+      "headline_en": "Photography, Hockney, and contemporary market top concerns",
+      "headline_de": "Fotografie, Hockney und zeitgenössischer Markt im Fokus",
+      "summary_en": "Artnet Auctions specialists are focused on artists pushing photography boundaries, David Hockney's legacy, and the ultra-contemporary market's direction. The themes reflect current priorities in the auction world.",
+      "summary_de": "Artnet-Auktionsspezialisten konzentrieren sich auf künstler, die fotografie neu definieren, David Hockneys vermächtnis und die richtung des ultramodernen marktes. Die themen spiegeln aktuelle prioritäten in der auktionsw",
+      "confidence": "medium",
       "trending": false
     },
     {
@@ -901,7 +961,7 @@
       "summary_en": "'Lacock by Martin Parr' opens at the Fox Talbot Museum with the National Trust, presenting Parr's portrait series documenting English community and tradition. Susie Parr reflects on his artistic legacy.",
       "summary_de": "'Lacock by Martin Parr' eröffnet im Fox Talbot Museum mit dem National Trust und präsentiert Parrs Porträtserie zum englischen Gemeinwesen und Traditionen. Susie Parr würdigt sein künstlerisches Erbe.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-dSutrdGXk0ufsH",
