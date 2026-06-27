@@ -1,7 +1,47 @@
 {
-  "generatedAt": "2026-06-27T12:16:20.973Z",
-  "count": 2278,
+  "generatedAt": "2026-06-27T18:16:06.136Z",
+  "count": 2280,
   "stories": [
+    {
+      "id": "s-YhR4wYsB5IB9uQ",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/pace-william-kentridge-algaebtq/",
+      "publishedAt": "2026-06-27T16:12:59.000Z",
+      "time_en": "2h ago",
+      "time_de": "vor 2 Std",
+      "read": 3,
+      "kicker_en": "Pace Gallery",
+      "kicker_de": "Pace Gallery",
+      "headline_en": "William Kentridge at Pace: AlgaeBTQ+",
+      "headline_de": "William Kentridge bei Pace: AlgaeBTQ+",
+      "summary_en": "Pace Gallery presents William Kentridge's AlgaeBTQ+. The exhibition is examined beyond official gallery narrative.",
+      "summary_de": "Die Pace Gallery präsentiert William Kentridges AlgaeBTQ+. Die Ausstellung wird jenseits der offiziellen Galerienerzählung untersucht.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-YqcqSChXgKeLsI",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/raphael-loggia-vatican-palace-restoration-2784105",
+      "publishedAt": "2026-06-27T13:53:57.000Z",
+      "time_en": "4h ago",
+      "time_de": "vor 4 Std",
+      "read": 3,
+      "kicker_en": "Vatican",
+      "kicker_de": "Vatikan",
+      "headline_en": "Raphael Loggia Restoration After 500 Years",
+      "headline_de": "Restaurierung der Raphael-Loggia nach 500 Jahren",
+      "summary_en": "The Raphael Loggia, a frescoed corridor in the Apostolic Palace's papal apartments, is undergoing restoration. The work was designed by Raphael.",
+      "summary_de": "Die Raphael-Loggia, ein Korridor mit Fresken in den päpstlichen Gemächern des Apostolischen Palastes, wird restauriert. Das Werk wurde von Raphael entworfen.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-an914K67f_gV_7",
       "cat": "artists",
@@ -420,7 +460,7 @@
       "summary_en": "Peter Ahrends, founding partner of Ahrends, Burton and Koralek since 1961, has died aged 93. His firm designed Oxford colleges, libraries, housing, and public structures, with a philosophy centring on people and living s",
       "summary_de": "Peter Ahrends, Gründungspartner von Ahrends, Burton and Koralek seit 1961, ist im Alter von 93 Jahren gestorben. Seine Firma entwarf Oxford-Colleges, Bibliotheken, Wohnungen und öffentliche Bauwerke.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-Xh7k2c1c8LI8no",
@@ -600,7 +640,7 @@
       "summary_en": "Peter Ahrends, founding partner of the architectural firm Ahrends, Burton and Koralek, has died at 93. ABK was known for designs spanning Oxford colleges, public libraries, housing, and industrial structures.",
       "summary_de": "Peter Ahrends, Gründungspartner des Architekturbüros Ahrends, Burton and Koralek, ist mit 93 Jahren verstorben. Das Büro war für Entwürfe von Oxford-Colleges bis zu Büchereien und Industriegebäuden bekannt.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-6RWuhclEB8s0F4",
