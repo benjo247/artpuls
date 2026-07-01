@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T19:05:28.075Z",
+  "generatedAt": "2026-07-01T10:09:39.574Z",
   "category": "restitution",
   "count": 38,
   "stories": [
@@ -11,8 +11,8 @@
       "source": "Artnet News",
       "url": "https://news.artnet.com/art-world/switzerland-returned-benin-bronzes-restitution-2785078",
       "publishedAt": "2026-06-30T18:36:21.000Z",
-      "time_en": "just now",
-      "time_de": "gerade eben",
+      "time_en": "15h ago",
+      "time_de": "vor 15 Std",
       "read": 3,
       "kicker_en": "Switzerland, Nigeria",
       "kicker_de": "Schweiz, Nigeria",
@@ -21,7 +21,7 @@
       "summary_en": "Switzerland has repatriated 18 Benin Bronzes to Nigeria following provenance research conducted under the Benin Initiative Switzerland. The repatriation addresses colonial-era cultural losses.",
       "summary_de": "Die Schweiz hat 18 Benin-Bronzen an Nigeria zurückgegeben nach Herkunftsforschung unter der Benin Initiative Schweiz. Die Rückführung betrifft Kulturverluste aus der Kolonialzeit.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-K4Dtz715042UTX",
@@ -31,8 +31,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/swiss-museums-return-benin-bronzes-nigeria-1234790609/",
       "publishedAt": "2026-06-29T20:36:37.000Z",
-      "time_en": "22h ago",
-      "time_de": "vor 22 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 3,
       "kicker_en": "Switzerland to Nigeria",
       "kicker_de": "Schweiz nach Nigeria",
@@ -41,7 +41,7 @@
       "summary_en": "Three Swiss museums have returned a collection of Benin artifacts to Nigeria, including a Benin Eroro ceremonial bell. The repatriation addresses colonial-era removal of cultural patrimony.",
       "summary_de": "Drei Schweizer Museen haben eine Sammlung von Benin-Artefakten an Nigeria zurückgegeben, darunter eine Benin-Eroro-Zeremonial-Glocke. Die Rückführung befasst sich mit der kolonialen Entfernung von Kulturgut.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-uHyh2CeqtgE3Kc",
@@ -71,8 +71,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/committee-urges-irish-government-establish-new-laws-policies-restitution-repatriation-cultural-objects-1234790490/",
       "publishedAt": "2026-06-26T20:20:26.000Z",
-      "time_en": "3d ago",
-      "time_de": "vor 3 Tagen",
+      "time_en": "4d ago",
+      "time_de": "vor 4 Tagen",
       "read": 3,
       "kicker_en": "Ireland",
       "kicker_de": "Irland",
@@ -111,8 +111,8 @@
       "source": "Hyperallergic",
       "url": "https://hyperallergic.com/inside-the-mind-of-an-antiquities-looter/",
       "publishedAt": "2026-06-24T19:48:36.000Z",
-      "time_en": "5d ago",
-      "time_de": "vor 5 Tagen",
+      "time_en": "6d ago",
+      "time_de": "vor 6 Tagen",
       "read": 3,
       "kicker_en": "Ancient Cambodia",
       "kicker_de": "Altes Kambodscha",
