@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T13:40:31.693Z",
+  "generatedAt": "2026-07-01T19:08:19.165Z",
   "month": "2026-06",
   "count": 1415,
   "stories": [
@@ -561,7 +561,7 @@
       "summary_en": "The World Monuments Fund has named ten at-risk US landmarks to its Irreplaceable America list, including I.M. Pei's Dallas City Hall and Black Mountain College. The list identifies sites requiring urgent preservation att",
       "summary_de": "Die World Monuments Fund hat zehn gefährdete US-Stätten auf ihre Liste Irreplaceable America gesetzt, darunter I.M. Peis Dallas City Hall und Black Mountain College. Die Liste identifiziert Orte, die dringend Schutz benö",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-kxP3a5pYMRzsHJ",
@@ -761,7 +761,7 @@
       "summary_en": "The World Monuments Fund has launched its Irreplaceable America programme, spotlighting ten heritage sites including the Watts Towers, Black Mountain College, and New Orleans. The initiative marks the US's 250th annivers",
       "summary_de": "Die World Monuments Fund hat ihr Programm Irreplaceable America gestartet und zehn Stätten, darunter die Watts Towers, Black Mountain College und New Orleans, hervor. Die Initiative würdigt das 250-jährige Bestehen der U",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-0tt76vj9wmtNf8",
