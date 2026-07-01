@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-01T10:09:39.577Z",
+  "generatedAt": "2026-07-01T13:40:31.693Z",
   "month": "2026-06",
-  "count": 1413,
+  "count": 1415,
   "stories": [
     {
       "id": "s-JgAqQD4RbHvp9C",
@@ -80,6 +80,26 @@
       "headline_de": "Black Mountain College auf Schutzliste",
       "summary_en": "Black Mountain College and nine other historic sites have been designated \"irreplaceable\" to American history by the World Monuments Fund. They now appear on the U.S. Preservation Watch List.",
       "summary_de": "Black Mountain College und neun weitere historische Orte wurden von der World Monuments Fund als \"unersetzbar\" für die amerikanische Geschichte eingestuft. Sie stehen nun auf der U.S. Preservation Watch List.",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-WGE5mNXGTNOE7d",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "Süddeutsche Kultur",
+      "url": "https://www.sueddeutsche.de/kultur/deutschland-merkel-portraet-bode-museum-li.3508078",
+      "publishedAt": "2026-06-30T20:20:16.000Z",
+      "time_en": "17h ago",
+      "time_de": "vor 17 Std",
+      "read": 3,
+      "kicker_en": "Berlin",
+      "kicker_de": "Berlin",
+      "headline_en": "Jérémie Queyras Unveils Merkel's Chancellor Portrait",
+      "headline_de": "Jérémie Queyras enthüllt Merkels Kanzlerporträt",
+      "summary_en": "A portrait of Angela Merkel by 28-year-old artist Jérémie Queyras has been unveiled in Berlin's chancellor gallery. The work features prominent use of light, shadow, and blue tones.",
+      "summary_de": "Ein Porträt von Angela Merkel des 28-jährigen Künstlers Jérémie Queyras wurde in Berlins Kanzlergalerie enthüllt. Das Werk zeichnet sich durch Licht, Schatten und Blautöne aus.",
       "confidence": "high",
       "trending": false
     },
@@ -564,6 +584,26 @@
       "trending": false
     },
     {
+      "id": "s-8ZtrvskioDAp-o",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Süddeutsche Kultur",
+      "url": "https://www.sueddeutsche.de/projekte/artikel/kultur/grau-trendfarbe-folge-psychologie-deutschland-e726651/",
+      "publishedAt": "2026-06-30T15:15:00.000Z",
+      "time_en": "22h ago",
+      "time_de": "vor 22 Std",
+      "read": 3,
+      "kicker_en": "Color Trends",
+      "kicker_de": "Farbtrends",
+      "headline_en": "Grey Dominates: The Fading of Analog Color",
+      "headline_de": "Grau dominiert: Das Verblassen der analogen Farbe",
+      "summary_en": "A trend toward greyscale aesthetics is visible across design sectors—from automotive to fashion to architecture. The shift reflects broader cultural sentiment through color psychology.",
+      "summary_de": "Ein Trend zu Graustufen-Ästhetik ist in Designbereichen sichtbar—von Autos über Mode bis Architektur. Die Verschiebung spiegelt breitere kulturelle Stimmung durch Farbpsychologie wider.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
       "id": "s-81r2lK66FdYGZC",
       "cat": "market",
       "accent": "#c8553d",
@@ -681,7 +721,7 @@
       "summary_en": "Skulptur Projekte Münster has announced the first five artists for its 2027 edition. Hew Locke and Oscar Murillo are among those selected.",
       "summary_de": "Skulptur Projekte Münster hat die ersten fünf Künstler für die Ausgabe 2027 bekannt gegeben. Hew Locke und Oscar Murillo gehören zu den Ausgewählten.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-RHR3xfrLCOGBTw",
@@ -801,7 +841,7 @@
       "summary_en": "Hew Locke and Oscar Murillo are among artists selected for the ten-yearly Skulptur Projekte Münster exhibition in 2027. The show will extend to locations outside the city centre that are undergoing transformation.",
       "summary_de": "Hew Locke und Oscar Murillo gehören zu den Künstlern für die zehnjährliche Skulptur Projekte Münster 2027. Die Ausstellung wird sich auf Orte außerhalb des Stadtzentrums ausweiten, die sich im Wandel befinden.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-7rZir9K6zpe_aj",
@@ -981,7 +1021,7 @@
       "summary_en": "Oscar Murillo, Selma Selman, and Hew Locke are among artists announced for the 2027 Skulptur Projekte Münster, its first edition without Kasper König. The show will explore communal cooking and examinations of power.",
       "summary_de": "Oscar Murillo, Selma Selman und Hew Locke gehören zu den Künstlern, die für die Skulptur Projekte Münster 2027 angekündigt wurden, die erste Ausgabe ohne Kasper König. Die Schau erforscht gemeinsames Kochen und Machtunte",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-N2fvohqS5QXjee",
@@ -1041,7 +1081,7 @@
       "summary_en": "The forthcoming edition of Skulptur Projekte Münster will run from 13 June to 3 October 2027. The first artists have been announced.",
       "summary_de": "Die kommende Ausgabe von Skulptur Projekte Münster läuft vom 13. Juni bis 3. Oktober 2027. Die ersten Künstler wurden angekündigt.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-bJ0IFpamvUK-O7",
