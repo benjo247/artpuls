@@ -1,7 +1,27 @@
 {
-  "generatedAt": "2026-07-04T12:15:03.096Z",
-  "count": 2596,
+  "generatedAt": "2026-07-04T18:12:05.085Z",
+  "count": 2598,
   "stories": [
+    {
+      "id": "s-PJg0cl9PhLO5DZ",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/art/design-history-andy-warhol-campbell-soup-can",
+      "publishedAt": "2026-07-04T13:00:00.000Z",
+      "time_en": "5h ago",
+      "time_de": "vor 5 Std",
+      "read": 3,
+      "kicker_en": "American Design",
+      "kicker_de": "Amerikanisches Design",
+      "headline_en": "Andy Warhol's Campbell's Soup Can",
+      "headline_de": "Andy Warhols Campbell's Suppendose",
+      "summary_en": "Feature examines Andy Warhol's Campbell's tomato soup can as emblematic of American design. Appearing in Wallpaper's August US issue.",
+      "summary_de": "Feature untersucht Andy Warhols Campbell's Tomatensuppe als Symbol amerikanischen Designs. In der August US-Ausgabe von Wallpaper.",
+      "confidence": "high",
+      "trending": false
+    },
     {
       "id": "s-TBdUaYvZqF-lZr",
       "cat": "museum",
@@ -200,6 +220,26 @@
       "summary_en": "The Theodore Roosevelt Presidential Library, designed by Snøhetta, opens 4 July 2026 in North Dakota's Badlands. The architecture is inspired by the dramatic landscape surrounding the site.",
       "summary_de": "Die von Snøhetta gestaltete Theodore-Roosevelt-Präsidenten-Bibliothek öffnet am 4. Juli 2026 in North Dakotas Badlands. Die Architektur wird von der dramatischen Landschaft des Standorts inspiriert.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-LpCoHT6eHsfiPp",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/culture/2026/jul/04/entertainment-week-ahead-minions-monsters-madonna-little-house-prairie-assassins-black-flag",
+      "publishedAt": "2026-07-04T05:00:08.000Z",
+      "time_en": "13h ago",
+      "time_de": "vor 13 Std",
+      "read": 3,
+      "kicker_en": "Entertainment",
+      "kicker_de": "Unterhaltung",
+      "headline_en": "Entertainment Guide: Madonna, Minions",
+      "headline_de": "Unterhaltungsführer: Madonna, Minions",
+      "summary_en": "Weekly entertainment roundup featuring Madonna's new pop album and the latest Minions film. Not art-focused; minimal relevance to artpulse.",
+      "summary_de": "Wöchentlicher Unterhaltungsüberblick mit Madonnas neuem Pop-Album und dem neuesten Minions-Film. Nicht kunstfokussiert; minimale Relevanz für artpulse.",
+      "confidence": "medium",
       "trending": false
     },
     {
