@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T12:23:27.365Z",
+  "generatedAt": "2026-07-05T18:13:23.569Z",
   "category": "biennale",
   "count": 135,
   "stories": [
@@ -51,8 +51,8 @@
       "source": "ArtReview",
       "url": "https://artreview.com/manifesta-16-ruhr-this-is-not-a-church-review-phoebe-blatton/",
       "publishedAt": "2026-07-03T13:40:55.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "Ruhr",
       "kicker_de": "Ruhr",
@@ -131,8 +131,8 @@
       "source": "ArtReview",
       "url": "https://artreview.com/59th-carnegie-international-if-the-word-we-review-jenny-wu/",
       "publishedAt": "2026-07-01T14:21:19.000Z",
-      "time_en": "3d ago",
-      "time_de": "vor 3 Tagen",
+      "time_en": "4d ago",
+      "time_de": "vor 4 Tagen",
       "read": 3,
       "kicker_en": "59th Carnegie International",
       "kicker_de": "59. Carnegie International",

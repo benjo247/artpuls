@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-05T12:23:27.372Z",
+  "generatedAt": "2026-07-05T18:13:23.578Z",
   "month": "2026-07",
-  "count": 200,
+  "count": 201,
   "stories": [
     {
       "id": "s-ooQeuYfSBoFiN2",
@@ -821,6 +821,26 @@
       "summary_en": "P21 Gallery presents Alan Gignoux's black and white portraits of Palestinian refugees exiled in 1948 and the homes they were forced to leave. Gignoux photographed these sites on behalf of his subjects, who now live in ca",
       "summary_de": "P21 Gallery zeigt Alan Gignoux' Schwarzweiß-Porträts palästinensischer Flüchtlinge von 1948 und ihrer verlassenen Häuser. Gignoux fotografierte diese Orte im Auftrag seiner Untersuchungspersonen, die nun in Lagern in Jor",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-xYEwLbq4ER6qNF",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "Monopol",
+      "url": "https://www.monopol-magazin.de/regenbogenfahnen-wehen-zum-us-jubilaeum-neuer-nationalgalerie",
+      "publishedAt": "2026-07-03T13:15:43.000Z",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
+      "read": 3,
+      "kicker_en": "Berlin",
+      "kicker_de": "Berlin",
+      "headline_en": "Pride flags at Neue Nationalgalerie",
+      "headline_de": "Regenbogenfahnen an der Neuen Nationalgalerie",
+      "summary_en": "Rainbow flags are displayed at Berlin's Neue Nationalgalerie to mark a US anniversary. The installation marks a significant commemorative moment.",
+      "summary_de": "Regenbogenfahnen werden in der Berliner Neuen Nationalgalerie anlässlich eines US-Jahrestags angebracht. Die Installation markiert einen bedeutsamen Gedenkmoment.",
+      "confidence": "medium",
       "trending": false
     },
     {
