@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-07-11T12:01:42.642Z",
+  "generatedAt": "2026-07-11T18:01:57.370Z",
   "month": "2026-07",
-  "count": 513,
+  "count": 515,
   "stories": [
+    {
+      "id": "s-Uu5EiKCGy4abie",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Süddeutsche Kultur",
+      "url": "https://www.sueddeutsche.de/kultur/kai-wegner-berlin-debatte-wahl-kultur-li.3514026",
+      "publishedAt": "2026-07-11T12:48:23.000Z",
+      "time_en": "5h ago",
+      "time_de": "vor 5 Std",
+      "read": 3,
+      "kicker_en": "Not art-related",
+      "kicker_de": "Nicht kunstbezogen",
+      "headline_en": "EXCLUDED: Politics",
+      "headline_de": "AUSGESCHLOSSEN: Politik",
+      "summary_en": "EXCLUDED: This article concerns Berlin politics and elections, not visual art.",
+      "summary_de": "AUSGESCHLOSSEN: Dieser Artikel behandelt Berliner Politik und Wahlen, nicht bildende Kunst.",
+      "confidence": "high",
+      "trending": false
+    },
     {
       "id": "s-ROM6dgNXM7l8u0",
       "cat": "artists",
@@ -241,7 +261,7 @@
       "summary_en": "Legionella bacteria was detected in a cooling tower at the Guggenheim Museum in New York. A spokesperson stated there is no present danger to the public, though the museum is in an area with confirmed cases of Legionnair",
       "summary_de": "Legionella-Bakterien wurden in einem Kühlturm des Guggenheim Museums in New York entdeckt. Ein Sprecher sagte, es gebe keine gegenwärtige Gefahr für die Öffentlichkeit.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-4E0Cy88S2fhRuE",
@@ -524,6 +544,26 @@
       "trending": false
     },
     {
+      "id": "s-6vCnBNzwAlZNU6",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/artanddesign/gallery/2026/jul/10/the-week-around-the-world-in-20-pictures",
+      "publishedAt": "2026-07-10T18:22:53.000Z",
+      "time_en": "23h ago",
+      "time_de": "vor 23 Std",
+      "read": 3,
+      "kicker_en": "Guardian Art",
+      "kicker_de": "Guardian Art",
+      "headline_en": "EXCLUDED: News Photography",
+      "headline_de": "AUSGESCHLOSSEN: Nachrichtenfotos",
+      "summary_en": "EXCLUDED: Article covers news photography on major world events, not visual art news.",
+      "summary_de": "AUSGESCHLOSSEN: Artikel behandelt Nachrichtenfotos zu weltweiten Ereignissen, nicht Kunstnachrichten.",
+      "confidence": "high",
+      "trending": false
+    },
+    {
       "id": "s-fOkM7EfyANY4WS",
       "cat": "artists",
       "accent": "#8b6f47",
@@ -681,7 +721,7 @@
       "summary_en": "Legionella bacteria was detected in the Guggenheim's cooling tower during an Upper East Side outbreak. Last month, 93 percent of unionized workers voted to authorize a strike following stalled contract negotiations.",
       "summary_de": "Legionella-Bakterien wurden im Kühlturm des Guggenheim während eines Ausbruchs auf der Upper East Side entdeckt. 93 Prozent der gewerkschaftlich organisierten Mitarbeiter stimmten für einen Streik nach festgefahrenen Tar",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-fRd9KRIR_viXSb",
@@ -761,7 +801,7 @@
       "summary_en": "The Bayeux Tapestry has arrived at the British Museum and will be displayed in a major exhibition beginning in September. The medieval embroidery was transported under strictly controlled conditions to protect the artwor",
       "summary_de": "Der Bayeux Teppich ist im British Museum angekommen und wird ab September in einer Großausstellung gezeigt. Die mittelalterliche Stickerei wurde unter streng kontrollierten Bedingungen transportiert, um das Kunstwerk zu ",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-w8jO6WoY_x9jYt",
@@ -781,7 +821,7 @@
       "summary_en": "The Bayeux Tapestry has arrived at the British Museum in London via secret convoy, marking its first return to the country in approximately 1,000 years. It is thought to have been made in England.",
       "summary_de": "Der Bayeux-Teppich ist per Geheimkonvoi ins Londoner British Museum gekommen – sein erstes Mal im Land seit etwa 1.000 Jahren. Es wird vermutet, dass er in England hergestellt wurde.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-gjQAZyDrBRumlz",
