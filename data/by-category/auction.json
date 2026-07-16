@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T08:30:11.609Z",
+  "generatedAt": "2026-07-16T12:46:42.831Z",
   "category": "auction",
   "count": 160,
   "stories": [
@@ -11,8 +11,8 @@
       "source": "Artnet News",
       "url": "https://news.artnet.com/market/christies-h1-mid-year-sales-2026-2788024",
       "publishedAt": "2026-07-15T09:00:39.000Z",
-      "time_en": "23h ago",
-      "time_de": "vor 23 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 3,
       "kicker_en": "International auction",
       "kicker_de": "Internationale Auktion",
@@ -21,7 +21,7 @@
       "summary_en": "Christie's achieved $4.5 billion in sales for the first half, its largest haul in five years. Works from collections of S.I. Newhouse and Agnes Gund drove the results.",
       "summary_de": "Christie's erzielte 4,5 Milliarden Dollar Umsatz im ersten Halbjahr, sein größter Erfolg seit fünf Jahren. Werke aus den Sammlungen von S.I. Newhouse und Agnes Gund trieben die Ergebnisse voran.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-euqU-JC8240IV5",
@@ -31,8 +31,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/market/christies-first-half-2026-auction-sales-up-71-percent-1234792160/",
       "publishedAt": "2026-07-15T09:00:00.000Z",
-      "time_en": "23h ago",
-      "time_de": "vor 23 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 3,
       "kicker_en": "Christie's first half 2026",
       "kicker_de": "Christie's Halbjahr 2026",
@@ -41,7 +41,7 @@
       "summary_en": "Christie's reported $4.5 billion in sales for the first half, its strongest performance in five years. CEO Bonnie Brennan cited growth across all departments and regions.",
       "summary_de": "Christie's meldete einen Umsatz von 4,5 Milliarden Dollar im ersten Halbjahr, das beste Ergebnis seit fünf Jahren. Geschäftsführerin Bonnie Brennan führte dies auf Wachstum in allen Abteilungen und Regionen zurück.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-7DVRGh2QPyBwA3",
@@ -151,8 +151,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/artnews/news/christies-fifa-world-cup-memorabilia-auction-jim-irsay-1234791995/",
       "publishedAt": "2026-07-14T11:00:00.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "Christie's Charity Auction",
       "kicker_de": "Christie's Charity-Auktion",
@@ -231,8 +231,8 @@
       "source": "Monopol",
       "url": "https://www.monopol-magazin.de/deutsche-sommerauktionen-mit-rekorden-und-soliden-ergebnissen",
       "publishedAt": "2026-07-10T11:44:14.000Z",
-      "time_en": "5d ago",
-      "time_de": "vor 5 Tagen",
+      "time_en": "6d ago",
+      "time_de": "vor 6 Tagen",
       "read": 3,
       "kicker_en": "Germany",
       "kicker_de": "Deutschland",
