@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-18T12:02:10.196Z",
+  "generatedAt": "2026-07-18T18:03:33.282Z",
   "month": "2026-07",
-  "count": 785,
+  "count": 788,
   "stories": [
     {
       "id": "s-Zm2AozJXwNPd2x",
@@ -21,6 +21,26 @@
       "summary_en": "An investigation examines an antiquities dealer's role in looted artifacts found at dozens of museums across the United States. The inquiry focuses on connections between the dealer and institutions holding these objects",
       "summary_de": "Eine Ermittlung untersucht die Rolle eines Antiquitätenhändlers bei Raubartefakten in Dutzenden von Museen in den USA. Die Untersuchung konzentriert sich auf Verbindungen zwischen dem Händler und Institutionen, die diese",
       "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-ls4LNh3z5ij9xP",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/lifeandstyle/2026/jul/18/jibak-bhattacharya-best-phone-picture",
+      "publishedAt": "2026-07-18T10:00:00.000Z",
+      "time_en": "8h ago",
+      "time_de": "vor 8 Std",
+      "read": 3,
+      "kicker_en": "Kolkata, photography",
+      "kicker_de": "Kolkata, Fotografie",
+      "headline_en": "Oncologist's scaffolding photo explores human isolation",
+      "headline_de": "Foto eines Arztes von Baugerüst erforscht menschliche Isolation",
+      "summary_en": "Jibak Bhattacharya, an oncologist in Kolkata, captured a 2024 photograph of construction workers on scaffolding while on a work break, noticing geometric patterns that evoke human disconnection. The image reflects his pe",
+      "summary_de": "Jibak Bhattacharya, ein Onkologe in Kolkata, fotografierte 2024 Bauarbeiter auf Gerüsten während einer Arbeitspause und bemerkte geometrische Muster, die menschliche Isolation widerspiegeln. Das Bild zeigt seine Perspekt",
+      "confidence": "high",
       "trending": false
     },
     {
@@ -244,6 +264,26 @@
       "trending": false
     },
     {
+      "id": "s-mMQ0emlM0Pijli",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/man-sentenced-to-20-years-for-fatally-stabbing-nyc-vogue-dancer/",
+      "publishedAt": "2026-07-17T18:30:53.000Z",
+      "time_en": "23h ago",
+      "time_de": "vor 23 Std",
+      "read": 3,
+      "kicker_en": "Crime reporting",
+      "kicker_de": "Kriminalberichterstattung",
+      "headline_en": "NYC vogue dancer killed in hate crime",
+      "headline_de": "NYC-Vogue-Tänzer in Hassverbrechen getötet",
+      "summary_en": "O'Shae Sibley, a Black gay dancer, was fatally stabbed at a Brooklyn gas station in 2023. Dmitriy Popov was sentenced to 20 years for the homophobic hate crime.",
+      "summary_de": "O'Shae Sibley, ein schwarzer schwuler Tänzer, wurde 2023 an einer Tankstelle in Brooklyn tödlich erstochen. Dmitriy Popov wurde zu 20 Jahren Freiheitsstrafe für das homophobe Hassverbrechen verurteilt.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
       "id": "s-iYbvyxglWFK6qL",
       "cat": "market",
       "accent": "#c8553d",
@@ -320,6 +360,26 @@
       "headline_de": "Tate Modern zeigt Ana Mendietas Vermächtnis",
       "summary_en": "Tate Modern is presenting a landmark exhibition of Cuban-American artist Ana Mendieta's work. The show establishes her rightful place in art history.",
       "summary_de": "Die Tate Modern zeigt eine bedeutende Ausstellung des Werkes der kubanisch-amerikanischen Künstlerin Ana Mendieta. Die Schau würdigt ihren Platz in der Kunstgeschichte.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-Otl2IC_ZOsU4J2",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/market/auction-house-h1-results-art-market-analysis-2026-1234792333/",
+      "publishedAt": "2026-07-17T16:57:02.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Auction market",
+      "kicker_de": "Auktionsmarkt",
+      "headline_en": "Auction houses show stronger first-half results",
+      "headline_de": "Auktionshäuser zeigen stärkere Halbjahresergebnisse",
+      "summary_en": "Auction houses have adapted more quickly than other segments of the art market, according to first-half performance data. The gap between auction sector performance and broader market trends suggests structural shifts in",
+      "summary_de": "Auktionshäuser haben sich schneller angepasst als andere Segmente des Kunstmarkts, wie die Halbjahresergebnisse zeigen. Die Diskrepanz zwischen Auktionsleistung und breiteren Markttrends deutet auf strukturelle Verschieb",
       "confidence": "medium",
       "trending": false
     },
