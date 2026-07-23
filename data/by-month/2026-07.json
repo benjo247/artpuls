@@ -1,8 +1,108 @@
 {
-  "generatedAt": "2026-07-23T12:47:20.243Z",
+  "generatedAt": "2026-07-23T18:21:35.423Z",
   "month": "2026-07",
-  "count": 985,
+  "count": 990,
   "stories": [
+    {
+      "id": "s-5ezcEmYDKbkj7y",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Süddeutsche Kultur",
+      "url": "https://www.sueddeutsche.de/kultur/apsilon-neues-album-glanz-null-interview-li.3516399",
+      "publishedAt": "2026-07-23T15:43:47.000Z",
+      "time_en": "2h ago",
+      "time_de": "vor 2 Std",
+      "read": 3,
+      "kicker_en": "German music",
+      "kicker_de": "Deutsche Musik",
+      "headline_en": "Apsilon: punk rocker posing as gentle rapper",
+      "headline_de": "Apsilon: Punkrocker als sanfter Rapper",
+      "summary_en": "Artist Apsilon blends punk and rap aesthetics to capture contemporary sound. Described as one of Germany's most compelling current artists.",
+      "summary_de": "Der Künstler Apsilon verbindet Punk- und Rap-Ästhetik, um den zeitgenössischen Sound einzufangen. Er wird als einer der spannendsten deutschen Künstler beschrieben.",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-dfWqs-a1ovYHDw",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Süddeutsche Kultur",
+      "url": "https://www.sueddeutsche.de/kultur/ausstellungen-im-mai-kunst-veranstaltungskalender-veranstaltungen-li.3510149",
+      "publishedAt": "2026-07-23T14:51:02.000Z",
+      "time_en": "3h ago",
+      "time_de": "vor 3 Std",
+      "read": 3,
+      "kicker_en": "Vienna, Nuremberg, Oldenburg",
+      "kicker_de": "Wien, Nürnberg, Oldenburg",
+      "headline_en": "August exhibitions across three cities",
+      "headline_de": "Ausstellungen im August an drei Orten",
+      "summary_en": "Vienna, Nuremberg, and Oldenburg host notable August exhibitions. Featured themes include historical spaces, perception, and truth-seeking.",
+      "summary_de": "Wien, Nürnberg und Oldenburg zeigen bemerkenswerte Ausstellungen im August. Die Themen reichen von historischen Räumen bis zur Wahrheitssuche.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-vB5Bv_KMA35D-i",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Süddeutsche Kultur",
+      "url": "https://www.sueddeutsche.de/kultur/bregenzer-festspiele-la-traviata-verdi-see-li.3517134",
+      "publishedAt": "2026-07-23T14:46:10.000Z",
+      "time_en": "3h ago",
+      "time_de": "vor 3 Std",
+      "read": 3,
+      "kicker_en": "Bregenz",
+      "kicker_de": "Bregenz",
+      "headline_en": "Verdi's La Traviata on Bregenz lake stage",
+      "headline_de": "Verdis La Traviata auf der Bregenzer Seebühne",
+      "summary_en": "Bregenz Festival presents Verdi's \"La Traviata\" featuring a standout lead performer and distinctive lakeside staging. The production emphasizes solitary theatrical experience.",
+      "summary_de": "Die Bregenzer Festspiele präsentieren Verdis \"La Traviata\" mit herausragender Hauptdarstellerin und einzigartiger Seebühne. Das Stück betont das Einzelerlebnis.",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-roFv-Ob8pTGnJk",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Süddeutsche Kultur",
+      "url": "https://www.sueddeutsche.de/kultur/kino-70mm-imax-christopher-nolan-astor-lounge-li.3519030",
+      "publishedAt": "2026-07-23T13:54:48.000Z",
+      "time_en": "4h ago",
+      "time_de": "vor 4 Std",
+      "read": 3,
+      "kicker_en": "Munich cinema",
+      "kicker_de": "Münchner Kino",
+      "headline_en": "70mm film screening in Munich celebrates cinema",
+      "headline_de": "70mm-Filmvorführung in München würdigt das Kino",
+      "summary_en": "Munich's Maxvorstadt hosts an analog 70mm screening of \"Odyssey\" as cinema reasserts its artistic form. The event highlights film's enduring power despite industry pressures.",
+      "summary_de": "Münchens Maxvorstadt zeigt die \"Odyssee\" auf analogem 70-Millimeter-Film. Die Veranstaltung unterstreicht Kinos künstlerische Kraft trotz Branchendruck.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-9pjJsp9SKlBvW8",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/fashion-beauty/pre-fall-2026-fashion-john-lautner-los-angeles",
+      "publishedAt": "2026-07-23T13:30:00.000Z",
+      "time_en": "4h ago",
+      "time_de": "vor 4 Std",
+      "read": 3,
+      "kicker_en": "Los Angeles",
+      "kicker_de": "Los Angeles",
+      "headline_en": "Fashion shoot at Sheats-Goldstein Residence",
+      "headline_de": "Fashion-Fotoshooting in Sheats-Goldstein Residence",
+      "summary_en": "Wallpaper's Pre-Fall 2026 fashion story shot at the Sheats-Goldstein Residence in Los Angeles on a rare rainy day. The article explores the story behind the shoot.",
+      "summary_de": "Wallpapers Pre-Fall-2026-Fashion-Geschichte wurde in der Sheats-Goldstein-Residenz in Los Angeles an einem seltenen Regentag fotografiert. Der Artikel beleuchtet die Geschichte hinter dem Shooting.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-YTeWY7uWfj4HLZ",
       "cat": "biennale",
@@ -421,7 +521,7 @@
       "summary_en": "British curator Jessica Morgan, a leader at Dia, will become the next director of Tate. She will assume the role beginning next year.",
       "summary_de": "Die britische Kuratorin Jessica Morgan, eine Führungsperson bei Dia, wird die nächste Direktorin der Tate. Sie übernimmt die Rolle ab nächstem Jahr.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-3quty7eDLojJcv",
@@ -961,7 +1061,7 @@
       "summary_en": "Jessica Morgan has been appointed as the new director of Tate.",
       "summary_de": "Jessica Morgan wurde zur neuen Direktorin der Tate ernannt.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-D3CITIbIcTumJe",
@@ -1081,7 +1181,7 @@
       "summary_en": "Jessica Morgan, a Dia veteran who diversified its programming, has been appointed director of Tate, succeeding Maria Balshaw after a yearlong search. The appointment ends the institution's leadership transition.",
       "summary_de": "Jessica Morgan, eine Dia-Veteranin, die deren Programm diversifiziert hat, wurde zur Direktorin der Tate ernannt und folgt Maria Balshaw nach einer einjährigen Suche. Die Ernennung beendet die Leitungstransition der Inst",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-hd3bHUOlNzjsLR",
@@ -1121,7 +1221,7 @@
       "summary_en": "Jessica Morgan, a curator of contemporary art who recently led the Dia Art Foundation in the US and previously worked at Tate Modern, has been appointed as Tate's new director. The appointment comes as Tate faces pressur",
       "summary_de": "Jessica Morgan, Kuratorin für zeitgenössische Kunst und kürzlich Leiterin der Dia Art Foundation in den USA, wurde zur neuen Direktorin der Tate ernannt. Die Ernennung erfolgt, während sich die Tate mit institutionellen ",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-SEFSvpNqR6UyIi",
