@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T12:52:12.891Z",
+  "generatedAt": "2026-07-30T18:41:54.106Z",
   "category": "auction",
   "count": 168,
   "stories": [
@@ -11,8 +11,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/christies-paris-durand-ruel-monet-sale-1234793792/",
       "publishedAt": "2026-07-29T17:13:56.000Z",
-      "time_en": "19h ago",
-      "time_de": "vor 19 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 3,
       "kicker_en": "Christie's Paris",
       "kicker_de": "Christie's Paris",
@@ -31,8 +31,8 @@
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/07/27/dia-azzawi-donates-work-to-charity-auction-supporting-displaced-people-in-lebanon",
       "publishedAt": "2026-07-27T15:46:37.000Z",
-      "time_en": "2d ago",
-      "time_de": "vor 2 Tagen",
+      "time_en": "3d ago",
+      "time_de": "vor 3 Tagen",
       "read": 3,
       "kicker_en": "Charity auction, Lebanon",
       "kicker_de": "Benefizauktion, Libanon",
