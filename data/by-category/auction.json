@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-07-30T18:41:54.106Z",
+  "generatedAt": "2026-07-31T09:14:31.076Z",
   "category": "auction",
-  "count": 168,
+  "count": 169,
   "stories": [
+    {
+      "id": "s-0ov-TtCioF_BT8",
+      "cat": "auction",
+      "accent": "#e8503a",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/film-auction-propostore-saturday-night-fever-2792213",
+      "publishedAt": "2026-07-30T21:47:54.000Z",
+      "time_en": "11h ago",
+      "time_de": "vor 11 Std",
+      "read": 3,
+      "kicker_en": "Entertainment memorabilia",
+      "kicker_de": "Unterhaltungs-Memorabilia",
+      "headline_en": "John Travolta's 'Saturday Night Fever' suit heading to auction",
+      "headline_de": "John Travoltas 'Saturday Night Fever'-Anzug kommt unter den Hammer",
+      "summary_en": "The iconic suit worn by John Travolta in 'Saturday Night Fever' is part of Propstore's entertainment memorabilia sale. The ensemble is expected to draw significant collector interest.",
+      "summary_de": "Der ikonische Anzug von John Travolta aus 'Saturday Night Fever' ist Teil von Propstores Auktion von Unterhaltungs-Memorabilia. Das Kostüm dürfte großes Sammlerinteresse wecken.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-IVYINf0NWpkDa2",
       "cat": "auction",
