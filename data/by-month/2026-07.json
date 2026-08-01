@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-01T08:32:45.122Z",
+  "generatedAt": "2026-08-01T12:09:48.532Z",
   "month": "2026-07",
-  "count": 1376,
+  "count": 1377,
   "stories": [
     {
       "id": "s-cqmwwmhUijk3IA",
@@ -441,7 +441,7 @@
       "summary_en": "Performance artist and pioneer Simone Forti has died at age 91. No further details are provided.",
       "summary_de": "Performance-Künstlerin und Pionierin Simone Forti ist im Alter von 91 Jahren gestorben. Weitere Details fehlen.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-TAJoqKRZy_A5rL",
@@ -501,6 +501,26 @@
       "summary_en": "Designer Clara Nahas has transformed a studio apartment into a tribute to her late pianist mother. The space resonates like a semibreve note.",
       "summary_de": "Designerin Clara Nahas hat ein Studio in ein Tribut an ihre verstorbene Pianistin-Mutter umgewandelt. Der Raum klingt wie eine ganze Note.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-4AW4ZygRJW-1cV",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Mousse Magazine",
+      "url": "/magazine/1-x-high-speed-splash-fluent-santander-2026",
+      "publishedAt": "2026-07-31T13:20:00.000Z",
+      "time_en": "22h ago",
+      "time_de": "vor 22 Std",
+      "read": 3,
+      "kicker_en": "Santander",
+      "kicker_de": "Santander",
+      "headline_en": "Group exhibition at fluent, Santander",
+      "headline_de": "Gruppenausstellung bei fluent, Santander",
+      "summary_en": "Mousse Magazine covers a group show at fluent gallery in Santander featuring ten artists exploring sound, possibility, and collective experience. The exhibition engages themes of connection and horizon.",
+      "summary_de": "Mousse Magazine präsentiert eine Gruppenausstellung bei fluent in Santander mit zehn Künstlern. Die Ausstellung erforscht Klang, Möglichkeit und kollektive Erfahrung.",
+      "confidence": "medium",
       "trending": false
     },
     {
@@ -821,7 +841,7 @@
       "summary_en": "Pioneering performance artist Simone Forti has died at age 91. Additionally, Trump has given two gilded statues in Washington DC a makeover.",
       "summary_de": "Die Pionier-Performance-Künstlerin Simone Forti ist im Alter von 91 Jahren gestorben. Außerdem hat Trump zwei vergoldete Statuen in Washington DC erneuert.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-pcSG4ocRW86jH7",
