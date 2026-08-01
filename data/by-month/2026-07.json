@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-01T12:09:48.532Z",
+  "generatedAt": "2026-08-01T18:08:30.344Z",
   "month": "2026-07",
-  "count": 1377,
+  "count": 1378,
   "stories": [
     {
       "id": "s-cqmwwmhUijk3IA",
@@ -381,6 +381,26 @@
       "summary_en": "Workers at the V&A have voted to strike, alleging poor working conditions. Staff claim they were denied adequate time for essential breaks during the workday.",
       "summary_de": "Arbeitnehmer des V&A haben sich für einen Streik entschieden und beklagen schlechte Arbeitsbedingungen. Das Personal behauptet, dass ihm ausreichend Zeit für Pausen verweigert wurde.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-QYhrPCawG0z1C0",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/artanddesign/gallery/2026/jul/31/the-week-around-the-world-in-20-pictures",
+      "publishedAt": "2026-07-31T17:04:00.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Global week in pictures",
+      "kicker_de": "Woche in Bildern",
+      "headline_en": "Week in 20 pictures: wildfires, strikes, tornado",
+      "headline_de": "Woche in 20 Bildern: Brände, Anschläge, Tornado",
+      "summary_en": "Photojournalistic roundup captures European wildfires, Russian missile strikes in Lviv, Wisconsin tornado, and Spencer Tunick in Spain. Past seven days documented by leading photographers.",
+      "summary_de": "Fotojournalistische Zusammenfassung zeigt europäische Waldbrände, russische Raketenangiffe in Lwiw, Tornado in Wisconsin und Spencer Tunick in Spanien.",
+      "confidence": "medium",
       "trending": false
     },
     {
