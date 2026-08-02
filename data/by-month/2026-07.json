@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-02T08:35:23.373Z",
+  "generatedAt": "2026-08-02T12:11:55.714Z",
   "month": "2026-07",
-  "count": 1378,
+  "count": 1379,
   "stories": [
     {
       "id": "s-cqmwwmhUijk3IA",
@@ -420,6 +420,26 @@
       "headline_de": "Sammler plant neues Museum in Brasilien",
       "summary_en": "A collector is developing a new museum in Brazil modeled on art pavilions in a botanical landscape. The project is located near an existing institution.",
       "summary_de": "Ein Sammler entwickelt ein neues Museum in Brasilien nach dem Vorbild von Kunstpavillons in einer botanischen Landschaft. Das Projekt entsteht in der Nähe einer bestehenden Institution.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-ByEGraVfLTOZx4",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Monopol",
+      "url": "https://www.monopol-magazin.de/wenders-schneidet-nacktszene-mit-nastassja-kinski-aus-film",
+      "publishedAt": "2026-07-31T15:31:11.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Film, Wenders",
+      "kicker_de": "Film, Wenders",
+      "headline_en": "Wenders removes scene with Kinski from film",
+      "headline_de": "Wenders entfernt Szene mit Kinski aus Film",
+      "summary_en": "Filmmaker Wim Wenders has cut a scene from his film. The scene previously featured Nastassja Kinski.",
+      "summary_de": "Filmemacher Wim Wenders hat eine Szene aus seinem Film entfernt. Die Szene zeigte zuvor Nastassja Kinski.",
       "confidence": "medium",
       "trending": false
     },
