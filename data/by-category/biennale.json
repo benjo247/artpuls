@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T18:08:30.332Z",
+  "generatedAt": "2026-08-02T08:35:23.340Z",
   "category": "biennale",
   "count": 189,
   "stories": [
@@ -11,8 +11,8 @@
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/07/31/aspen-art-fair-sales-report-immersion-over-expansion",
       "publishedAt": "2026-07-31T18:45:12.000Z",
-      "time_en": "23h ago",
-      "time_de": "vor 23 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 3,
       "kicker_en": "Aspen",
       "kicker_de": "Aspen",
@@ -171,8 +171,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/biennale-of-sydney-appoints-low-kee-hong-artistic-director-2028-edition-1234793670/",
       "publishedAt": "2026-07-28T18:52:23.000Z",
-      "time_en": "3d ago",
-      "time_de": "vor 3 Tagen",
+      "time_en": "4d ago",
+      "time_de": "vor 4 Tagen",
       "read": 3,
       "kicker_en": "Sydney, 2028",
       "kicker_de": "Sydney, 2028",
