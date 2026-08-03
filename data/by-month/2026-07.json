@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-03T13:47:28.972Z",
+  "generatedAt": "2026-08-03T18:57:33.849Z",
   "month": "2026-07",
-  "count": 1379,
+  "count": 1380,
   "stories": [
     {
       "id": "s-cqmwwmhUijk3IA",
@@ -1180,6 +1180,26 @@
       "headline_de": "Speaking in Tongues im ICA LA",
       "summary_en": "ICA LA's main gallery presents Speaking in Tongues, an intergenerational and international exhibition exploring art as a conduit to the spiritual. Featured works engage with notions of the sacred and the divine.",
       "summary_de": "Die Hauptgalerie des ICA LA zeigt Speaking in Tongues, eine intergenerationale und internationale Ausstellung, die Kunst als Weg zum Spirituellen erforscht. Die gezeigten Arbeiten befassen sich mit dem Heiligen und Göttl",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-mJ8bx6X62GmOuT",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Mousse Magazine",
+      "url": "/magazine/ilit-azoulay-lohaus-gallery-munich-2026",
+      "publishedAt": "2026-07-31T07:00:00.000Z",
+      "time_en": "3d ago",
+      "time_de": "vor 3 Tagen",
+      "read": 3,
+      "kicker_en": "Munich",
+      "kicker_de": "München",
+      "headline_en": "Ilit Azoulay and Alicja Kwade at LOHAUS GALLERY Munich",
+      "headline_de": "Ilit Azoulay und Alicja Kwade in der LOHAUS GALLERY München",
+      "summary_en": "LOHAUS SOMINSKY presents an exhibition of artists Ilit Azoulay and Alicja Kwade in cooperation with MENNOUR Paris as part of Various Others in Munich. Azoulay's project \"Future Ancestors\" brings together images from open",
+      "summary_de": "LOHAUS SOMINSKY präsentiert eine Ausstellung der Künstlerinnen Ilit Azoulay und Alicja Kwade in Zusammenarbeit mit MENNOUR Paris als Teil von Various Others in München. Azoulays Projekt \"Future Ancestors\" vereint Bilder ",
       "confidence": "medium",
       "trending": false
     },
