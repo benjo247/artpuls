@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-08-07T11:54:03.282Z",
+  "generatedAt": "2026-08-07T17:58:46.748Z",
   "category": "auction",
-  "count": 172,
+  "count": 173,
   "stories": [
+    {
+      "id": "s-kBTfDifIr9oco-",
+      "cat": "auction",
+      "accent": "#e8503a",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/devil-wears-prada-2-wardrobe-auction-2795249",
+      "publishedAt": "2026-08-07T17:53:56.000Z",
+      "time_en": "just now",
+      "time_de": "gerade eben",
+      "read": 3,
+      "kicker_en": "Charity auction",
+      "kicker_de": "Wohltätigkeitsauktion",
+      "headline_en": "Devil Wears Prada 2 wardrobe heads to auction for charity",
+      "headline_de": "The Devil Wears Prada 2 Garderobe geht für wohltätige Zwecke unter den Hammer",
+      "summary_en": "Wardrobe pieces from The Devil Wears Prada 2 are being auctioned to benefit charitable causes. The sale will offer costumes from the film.",
+      "summary_de": "Kostüme aus The Devil Wears Prada 2 werden versteigert, um wohltätige Organisationen zu unterstützen.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-t0wUTB_8qiKLx2",
       "cat": "auction",
