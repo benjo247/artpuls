@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T11:38:22.825Z",
+  "generatedAt": "2026-08-08T17:42:07.496Z",
   "category": "restitution",
   "count": 80,
   "stories": [
@@ -11,8 +11,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/pablo-picasso-etching-stolen-returned-to-milwuakee-police-1234794538/",
       "publishedAt": "2026-08-07T18:48:58.000Z",
-      "time_en": "16h ago",
-      "time_de": "vor 16 Std",
+      "time_en": "22h ago",
+      "time_de": "vor 22 Std",
       "read": 3,
       "kicker_en": "Milwaukee",
       "kicker_de": "Milwaukee",
@@ -151,8 +151,8 @@
       "source": "Artnet News",
       "url": "https://news.artnet.com/art-world/ai-provenance-assistant-looted-art-tool-2792609",
       "publishedAt": "2026-08-01T12:52:33.000Z",
-      "time_en": "6d ago",
-      "time_de": "vor 6 Tagen",
+      "time_en": "Aug 01",
+      "time_de": "01. Aug.",
       "read": 3,
       "kicker_en": "Nazi-looted art",
       "kicker_de": "Nazi-Raubkunst",

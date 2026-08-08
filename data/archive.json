@@ -1,7 +1,27 @@
 {
-  "generatedAt": "2026-08-08T11:38:22.194Z",
-  "count": 4062,
+  "generatedAt": "2026-08-08T17:42:06.866Z",
+  "count": 4063,
   "stories": [
+    {
+      "id": "s-CdClwgZ7hHZDnW",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Süddeutsche Kultur",
+      "url": "https://www.sueddeutsche.de/kultur/sebastian-fitzek-20-jahre-autor-waldbuehne-show-berlin-li.3525007",
+      "publishedAt": "2026-08-08T14:01:30.000Z",
+      "time_en": "3h ago",
+      "time_de": "vor 3 Std",
+      "read": 3,
+      "kicker_en": "Berlin",
+      "kicker_de": "Berlin",
+      "headline_en": "Sebastian Fitzek celebrates author anniversary with Berlin shows",
+      "headline_de": "Sebastian Fitzek feiert Autorenjubiläum in Berlin",
+      "summary_en": "Thriller author Sebastian Fitzek marks his author anniversary with two sold-out performances at the Berliner Waldbühne. The review explores the secret of his remarkable success.",
+      "summary_de": "Thriller-Autor Sebastian Fitzek feiert sein Autorenjubiläum mit zwei ausverkauften Aufführungen an der Berliner Waldbühne. Die Kritik erforscht sein Erfolgsgeheimnis.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-Wg7pYA8598gvcI",
       "cat": "artists",
