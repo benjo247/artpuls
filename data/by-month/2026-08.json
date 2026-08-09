@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-09T07:11:14.949Z",
+  "generatedAt": "2026-08-09T11:39:43.619Z",
   "month": "2026-08",
-  "count": 271,
+  "count": 272,
   "stories": [
     {
       "id": "s-CdClwgZ7hHZDnW",
@@ -101,6 +101,26 @@
       "summary_en": "Welsh artist Gwen John, 150 years after her birth, is having her first major retrospective at the Scottish National Gallery of Modern Art. The exhibition marks a significant recognition of her work.",
       "summary_de": "Die walisische Künstlerin Gwen John hat 150 Jahre nach ihrer Geburt ihre erste große Retrospektive in der Scottish National Gallery of Modern Art.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-vM_ljOSxC5ldNM",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Monopol",
+      "url": "https://www.monopol-magazin.de/riesige-marienstatue-polen-soll-pilger-anziehen",
+      "publishedAt": "2026-08-08T09:15:33.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Poland",
+      "kicker_de": "Polen",
+      "headline_en": "Large Marian statue erected in Poland",
+      "headline_de": "Große Marienstatue in Polen errichtet",
+      "summary_en": "A large Marian statue has been installed in Poland with the intention of attracting pilgrims.",
+      "summary_de": "Eine große Marienstatue wurde in Polen errichtet, um Pilger anzuziehen.",
+      "confidence": "medium",
       "trending": false
     },
     {
