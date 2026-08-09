@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T17:42:07.500Z",
+  "generatedAt": "2026-08-09T07:11:14.949Z",
   "month": "2026-08",
   "count": 271,
   "stories": [
@@ -261,7 +261,7 @@
       "summary_en": "A federal appeals court ruled Friday that Congress must approve alterations to the White House ballroom. The decision asserts that each president is a temporary tenant, not owner of the building.",
       "summary_de": "Ein Berufungsgericht entschied, dass der Kongress Änderungen am Ballsaal des Weißen Hauses genehmigen muss. Das Gericht stellte fest, dass jeder Präsident nur ein Mieter auf Zeit ist, kein Eigentümer.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-julBAN-SgR8Vg7",
@@ -401,7 +401,7 @@
       "summary_en": "An appeals court ruled that Trump lacks authority to build a White House ballroom. Trump stated via social media that he would appeal the decision to the US Supreme Court.",
       "summary_de": "Ein Berufungsgericht entschied, dass Trump nicht befugt ist, einen Ballroom im Weißen Haus zu bauen. Trump teilte über Social Media mit, dass er die Entscheidung dem US Supreme Court vorlegen würde.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-UhMAJFq7eDpMI_",
