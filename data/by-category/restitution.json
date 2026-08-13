@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-08-13T11:56:18.730Z",
+  "generatedAt": "2026-08-13T18:04:42.436Z",
   "category": "restitution",
-  "count": 81,
+  "count": 82,
   "stories": [
+    {
+      "id": "s-Q5-HlKpMzuk9Sr",
+      "cat": "restitution",
+      "accent": "#9b8579",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/a-picasso-vanished-in-1961-the-guggenheim-now-wants-it-back/",
+      "publishedAt": "2026-08-13T17:17:08.000Z",
+      "time_en": "just now",
+      "time_de": "gerade eben",
+      "read": 3,
+      "kicker_en": "Pittsburgh / Guggenheim",
+      "kicker_de": "Pittsburgh / Guggenheim",
+      "headline_en": "Guggenheim sues to recover stolen 1918 Picasso",
+      "headline_de": "Guggenheim verklagt zur Rückgabe von Picasso 1918",
+      "summary_en": "\"Femme dans un fauteuil\" (1918) was stolen from the University of Pittsburgh and resurfaced decades later. The Guggenheim is now pursuing legal action against the current owners for recovery.",
+      "summary_de": "«Femme dans un fauteuil» (1918) wurde von der Universität Pittsburgh gestohlen und tauchte Jahrzehnte später wieder auf. Das Guggenheim verfolgt rechtliche Schritte gegen die aktuellen Besitzer zur Rückgabe.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-PEBmfpsuyzoHmk",
       "cat": "restitution",
