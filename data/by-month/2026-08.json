@@ -1,8 +1,68 @@
 {
-  "generatedAt": "2026-08-15T11:30:52.619Z",
+  "generatedAt": "2026-08-15T17:31:21.302Z",
   "month": "2026-08",
-  "count": 538,
+  "count": 542,
   "stories": [
+    {
+      "id": "s-tMce3KhJ3pWtv8",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/design-interiors/hye-the-store-copenhagen-korean-design-boutique",
+      "publishedAt": "2026-08-15T16:51:14.000Z",
+      "time_en": "just now",
+      "time_de": "gerade eben",
+      "read": 3,
+      "kicker_en": "Copenhagen design",
+      "kicker_de": "Kopenhagener Design",
+      "headline_en": "Korean design boutique opens in Copenhagen",
+      "headline_de": "Koreanisches Design-Boutique in Kopenhagen",
+      "summary_en": "Hye The Store, a new design boutique in Copenhagen, presents objects from South Korea united by a practical and understated approach. The shop offers curated pieces from the region and beyond.",
+      "summary_de": "Hye The Store ist ein neues Design-Boutique in Kopenhagen mit Objekten aus Südkorea und darüber hinaus, verbunden durch einen praktischen und dezenten Design-Ansatz.",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-63Af4H-6eMAKrk",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/news/mary-heilmann-influential-abstract-painter-dead-86-1234795047/",
+      "publishedAt": "2026-08-15T15:59:04.000Z",
+      "time_en": "1h ago",
+      "time_de": "vor 1 Std",
+      "read": 3,
+      "kicker_en": "Obituary",
+      "kicker_de": "Nachruf",
+      "headline_en": "Mary Heilmann, Abstract Painter, Dead at 86",
+      "headline_de": "Mary Heilmann, abstrakte Malerin, mit 86 verstorben",
+      "summary_en": "Abstract painter Mary Heilmann has died at 86. She was known for blending pop culture, craft, and art history in her pioneering work.",
+      "summary_de": "Die abstrakte Malerin Mary Heilmann ist mit 86 Jahren verstorben. Sie war bekannt dafür, Popkultur, Handwerk und Kunstgeschichte in ihrem Werk zu verbinden.",
+      "confidence": "high",
+      "trending": true
+    },
+    {
+      "id": "s-lZjYaaF0aSp2Oo",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/architecture/residential/sidell-pakravan-midcentury-modern-home-berkeley-hills",
+      "publishedAt": "2026-08-15T14:00:00.000Z",
+      "time_en": "3h ago",
+      "time_de": "vor 3 Std",
+      "read": 3,
+      "kicker_en": "California architecture",
+      "kicker_de": "Kalifornische Architektur",
+      "headline_en": "Mid-century home upgraded with light and space",
+      "headline_de": "Modernhaus erhält sensible Erneuerung",
+      "summary_en": "House Vert by Sidell Pakravan is a renovated Californian mid-century modern residence that balances enhancement with preservation. The upgrade strategy respects the structure's integrity and site qualities.",
+      "summary_de": "House Vert von Sidell Pakravan ist ein renoviertes kalifornisches Modernhaus, das Verbesserung mit Erhaltung ausbalanciert und die Integrität der Struktur respektiert.",
+      "confidence": "high",
+      "trending": false
+    },
     {
       "id": "s-YXN3ZqvALr2PXT",
       "cat": "artists",
@@ -81,7 +141,7 @@
       "summary_en": "Mary Heilmann has died at the age of 86. The artist is being memorialized by Monopol.",
       "summary_de": "Mary Heilmann ist im Alter von 86 Jahren verstorben. Die Künstlerin wird von Monopol gewürdigt.",
       "confidence": "high",
-      "trending": false
+      "trending": true
     },
     {
       "id": "s-Amu4sTSm1gMHeD",
@@ -161,6 +221,26 @@
       "summary_en": "Eight works from Matisse's 'Jazz' series were stolen from a São Paulo library during visiting hours. Brazilian police recovered the works and arrested one suspect.",
       "summary_de": "Acht Werke aus Matisses 'Jazz'-Serie wurden aus einer Bibliothek in São Paulo während der Öffnungszeiten gestohlen. Die brasilianische Polizei konnte die Werke bergen und einen Verdächtigen festnehmen.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-wlLluRE8gIgJrR",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/susan-hauptman-george-adams-review-2797924",
+      "publishedAt": "2026-08-14T21:28:22.000Z",
+      "time_en": "20h ago",
+      "time_de": "vor 20 Std",
+      "read": 3,
+      "kicker_en": "Susan Hauptman",
+      "kicker_de": "Susan Hauptman",
+      "headline_en": "Ben Davis on Susan Hauptman's Strange Drawing",
+      "headline_de": "Ben Davis über Susan Hauptmans seltsame Zeichnung",
+      "summary_en": "Critic Ben Davis examines a drawing by Susan Hauptman, describing it as serious yet ambiguous in tone. The work maintains an uncertain relationship with its own seriousness.",
+      "summary_de": "Kritiker Ben Davis untersucht eine Zeichnung von Susan Hauptman und beschreibt sie als ernsthaft, aber tonlich mehrdeutig. Das Werk bewahrt eine unsichere Beziehung zu seiner eigenen Ernsthaftigkeit.",
+      "confidence": "medium",
       "trending": false
     },
     {
@@ -361,7 +441,7 @@
       "summary_en": "Italian police recovered paintings by Cézanne, Matisse, and Renoir valued at $10 million, while Brazilian authorities recovered eight Matisse works on paper. Both were stolen masterpieces.",
       "summary_de": "Italienische Polizei fand Gemälde von Cézanne, Matisse und Renoir im Wert von 10 Millionen Dollar. Brasilianische Behörden bergten acht Matisse-Arbeiten auf Papier.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-qp2zk_-NoynW_8",
@@ -621,7 +701,7 @@
       "summary_en": "Stolen paintings by Cézanne, Matisse, and Renoir have been recovered in Italy. The works were taken from the Magnani-Rocca Foundation near Parma in March.",
       "summary_de": "Gestohlene Gemälde von Cézanne, Matisse und Renoir wurden in Italien gefunden. Die Werke waren im März aus der Magnani-Rocca-Stiftung in der Nähe von Parma gestohlen worden.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-IJFs9f9J7juei8",
