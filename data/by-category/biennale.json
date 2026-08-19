@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-08-19T07:01:53.270Z",
+  "generatedAt": "2026-08-19T11:36:13.620Z",
   "category": "biennale",
-  "count": 202,
+  "count": 203,
   "stories": [
+    {
+      "id": "s-5c4GSbD2ci5Bad",
+      "cat": "biennale",
+      "accent": "#a8b89f",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/taiwanese-artists-accuse-south-koreas-gwangju-biennale-of-censorship/",
+      "publishedAt": "2026-08-18T20:17:07.000Z",
+      "time_en": "15h ago",
+      "time_de": "vor 15 Std",
+      "read": 3,
+      "kicker_en": "Gwangju Biennale",
+      "kicker_de": "Gwangju-Biennalen",
+      "headline_en": "Taiwan artists accuse Gwangju Biennale of censorship",
+      "headline_de": "Taiwanesische Künstler werfen Gwangju-Biennalen Zensur vor",
+      "summary_en": "Taiwanese artists have condemned the Gwangju Biennale's exclusion of \"Taiwan\" from the pavilion's official name as censorship. They argue it threatens freedom of expression globally.",
+      "summary_de": "Taiwanesische Künstler haben den Ausschluss von \"Taiwan\" aus dem offiziellen Namen des Pavillons der Gwangju-Biennalen als Zensur verurteilt. Sie argumentieren, dass dies die Meinungsfreiheit weltweit gefährdet.",
+      "confidence": "high",
+      "trending": false
+    },
     {
       "id": "s-vYKP-m4Myi9O1j",
       "cat": "biennale",
