@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-08-20T07:02:37.275Z",
+  "generatedAt": "2026-08-20T11:37:47.995Z",
   "category": "biennale",
-  "count": 203,
+  "count": 204,
   "stories": [
+    {
+      "id": "s-fpMN2GPdlnfKqx",
+      "cat": "biennale",
+      "accent": "#a8b89f",
+      "image": null,
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/news/gwangju-biennale-faces-censorship-accusations-over-pavilion-title/",
+      "publishedAt": "2026-08-20T09:34:37.000Z",
+      "time_en": "2h ago",
+      "time_de": "vor 2 Std",
+      "read": 3,
+      "kicker_en": "Gwangju Biennale",
+      "kicker_de": "Gwangju Biennale",
+      "headline_en": "Gwangju Biennale Faces Censorship Accusations",
+      "headline_de": "Gwangju Biennale mit Zensur-Vorwürfen konfrontiert",
+      "summary_en": "A pavilion title change at the Gwangju Biennale has been condemned as political censorship by the curator, artists, and Taiwan's Ministry of Culture. The controversy centers on disputed editorial control over the present",
+      "summary_de": "Eine Änderung des Pavillon-Titels auf der Gwangju Biennale wurde von Kurator, Künstlern und Taiwans Kulturministerium als politische Zensur verurteilt. Die Kontroverse betrifft umstrittene redaktionelle Kontrolle über di",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-5c4GSbD2ci5Bad",
       "cat": "biennale",
