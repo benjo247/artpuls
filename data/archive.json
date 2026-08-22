@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-22T11:31:35.621Z",
-  "count": 4583,
+  "generatedAt": "2026-08-22T17:32:16.780Z",
+  "count": 4584,
   "stories": [
     {
       "id": "s-kcnoKWSTj0cD5Z",
@@ -300,6 +300,26 @@
       "summary_en": "The Indigenous Art Centre has been unable to locate 111 works from its collection of more than 5,000 pieces by First Nations, Métis and Inuit artists. The works remain unaccounted for.",
       "summary_de": "Das Indigenous Art Centre konnte 111 Werke aus seiner Sammlung von über 5.000 Werken von First Nations-, Métis- und Inuit-Künstlern nicht auffinden. Die Werke bleiben unauffindbar.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-DjzukwLqk15-eM",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/miles-greenberg-rehearses-myths-for-the-future/",
+      "publishedAt": "2026-08-21T20:08:22.000Z",
+      "time_en": "21h ago",
+      "time_de": "vor 21 Std",
+      "read": 3,
+      "kicker_en": "Performance",
+      "kicker_de": "Performance",
+      "headline_en": "Miles Greenberg Rehearses Myths in Video",
+      "headline_de": "Miles Greenberg probiert Mythen im Video",
+      "summary_en": "The artist's performance videos invoke the human spirit and position Black people as characters in universal stories.",
+      "summary_de": "Die Performance-Videos des Künstlers beschwören den menschlichen Geist herauf und positionieren Black people als Charaktere in universellen Geschichten.",
+      "confidence": "medium",
       "trending": false
     },
     {
