@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-08-23T06:57:22.941Z",
+  "generatedAt": "2026-08-23T11:31:26.997Z",
   "month": "2026-08",
-  "count": 796,
+  "count": 798,
   "stories": [
+    {
+      "id": "s-WJYW1tL1KPQp69",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/artanddesign/2026/aug/23/betye-saar-obituary",
+      "publishedAt": "2026-08-23T10:15:55.000Z",
+      "time_en": "1h ago",
+      "time_de": "vor 1 Std",
+      "read": 3,
+      "kicker_en": "Artist obituary",
+      "kicker_de": "Künstlerin-Nekrolog",
+      "headline_en": "Betye Saar, assemblage artist, dies at 99",
+      "headline_de": "Betye Saar, Assemblage-Künstlerin, mit 99 gestorben",
+      "summary_en": "Betye Saar, who died aged 99, was known for assemblages of found objects exploring racism, ritual and religion. Her 1972 work Liberation of Aunt Jemima, which transformed a racist figurine into an empowered figure, was c",
+      "summary_de": "Betye Saar, die im Alter von 99 Jahren starb, war bekannt für Assemblages aus gefundenen Objekten, die sich mit Rassismus, Ritual und Religion auseinandersetzten. Ihr 1972er Werk Liberation of Aunt Jemima, das eine rassi",
+      "confidence": "high",
+      "trending": false
+    },
     {
       "id": "s-_6BrdyYAzf8pTD",
       "cat": "exhibition",
@@ -301,6 +321,26 @@
       "summary_en": "The Smithsonian board of regents will discuss housing a national Latino museum in the historic Arts and Industries Building on the National Mall. The proposal could bypass congressional approval.",
       "summary_de": "Das Smithsonian-Kuratorium wird die Unterbringung eines nationalen Latino-Museums im historischen Arts and Industries Building auf der National Mall diskutieren. Der Vorschlag könnte die Genehmigung durch den Kongress um",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-QGgu59jfYWNT4G",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/news/report-accuses-marseille-museum-president-of-sexual-harassment-and-putting-institution-at-risk-1234795542/",
+      "publishedAt": "2026-08-21T20:47:48.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Marseille",
+      "kicker_de": "Marseille",
+      "headline_en": "Mucem President Suspended Over Misconduct Claims",
+      "headline_de": "Mucem-Präsident wegen Vorwürfen suspendiert",
+      "summary_en": "A government audit alleges that Pierre-Olivier Costa, president of Marseille's Mucem, sexually and morally harassed staff and showed favoritism in hiring and contracting. The allegations have prompted a criminal investig",
+      "summary_de": "Ein Regierungsbericht wirft Pierre-Olivier Costa, Präsident des Mucem in Marseille, sexuelle und moralische Belästigung von Mitarbeitern sowie Bevorzugung bei Einstellungen vor. Die Vorwürfe führten zu einer strafrechtli",
+      "confidence": "medium",
       "trending": false
     },
     {
