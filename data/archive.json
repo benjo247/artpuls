@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-24T07:16:04.994Z",
-  "count": 4600,
+  "generatedAt": "2026-08-24T11:39:03.634Z",
+  "count": 4601,
   "stories": [
     {
       "id": "s-A0yXwF-HpI4fqD",
@@ -1019,6 +1019,26 @@
       "headline_de": "Monterey Car Week 2026: Rekordzahlen und Verkäufe",
       "summary_en": "Monterey Car Week 2026 brought together the world's most significant automobiles across multiple prestigious events in Northern California, including The Quail and Pebble Beach Concours. Historic vehicles were exhibited,",
       "summary_de": "Die Monterey Car Week 2026 versammelte Fahrzeuge von Weltrang in mehreren renommierten Veranstaltungen in Nordkalifornien, darunter The Quail und Pebble Beach Concours. Historische Fahrzeuge wurden ausgestellt, bewertet ",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-QE1FMDt1rqStp6",
+      "cat": "auction",
+      "accent": "#e8503a",
+      "image": null,
+      "source": "Monopol",
+      "url": "https://www.monopol-magazin.de/gandhi-aufzeichnungen-erzielen-bei-auktion-millionenerloes",
+      "publishedAt": "2026-08-21T13:46:28.000Z",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
+      "read": 3,
+      "kicker_en": "Auction results",
+      "kicker_de": "Auktionsergebnisse",
+      "headline_en": "Gandhi manuscripts bring millions at auction",
+      "headline_de": "Gandhi-Aufzeichnungen erzielen Millionen",
+      "summary_en": "Gandhi-related manuscripts achieved significant sums at auction.",
+      "summary_de": "Gandhi-Aufzeichnungen erzielten bei einer Auktion Millionenerlöse.",
       "confidence": "medium",
       "trending": false
     },
