@@ -1,7 +1,27 @@
 {
-  "generatedAt": "2026-08-23T17:31:20.490Z",
-  "count": 4599,
+  "generatedAt": "2026-08-24T07:16:04.994Z",
+  "count": 4600,
   "stories": [
+    {
+      "id": "s-A0yXwF-HpI4fqD",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/artanddesign/2026/aug/24/nick-haymes-sons-entire-lives-chronograph",
+      "publishedAt": "2026-08-24T04:00:51.000Z",
+      "time_en": "3h ago",
+      "time_de": "vor 3 Std",
+      "read": 3,
+      "kicker_en": "Photography",
+      "kicker_de": "Fotografie",
+      "headline_en": "Nick Haymes Documents Sons' Lives in New Book",
+      "headline_de": "Nick Haymes dokumentiert Leben seiner Söhne in neuem Buch",
+      "summary_en": "Photographer Nick Haymes has captured his two sons Philipp and Lawrence growing from infants to young men in a new book titled Chronograph, spanning from 2001 to the present. The work documents both mundane and significa",
+      "summary_de": "Der Fotograf Nick Haymes hat in seinem neuen Buch Chronograph seine zwei Söhne Philipp und Lawrence vom Babyalter bis zum jungen Erwachsenenalter dokumentiert. Das Werk zeigt alltägliche und bedeutsame Momente von 2001 b",
+      "confidence": "high",
+      "trending": false
+    },
     {
       "id": "s-2DJHwzv_EWy_CA",
       "cat": "artists",
