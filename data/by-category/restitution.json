@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-25T07:05:13.146Z",
+  "generatedAt": "2026-08-25T11:38:19.842Z",
   "category": "restitution",
-  "count": 105,
+  "count": 106,
   "stories": [
     {
       "id": "s-XkwONrm8P-kKLN",
@@ -11,8 +11,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/fbi-hands-over-48-illegally-trafficked-artifacts-egypt-1234795650/",
       "publishedAt": "2026-08-24T20:53:54.000Z",
-      "time_en": "10h ago",
-      "time_de": "vor 10 Std",
+      "time_en": "14h ago",
+      "time_de": "vor 14 Std",
       "read": 3,
       "kicker_en": "Egypt, FBI",
       "kicker_de": "Ägypten, FBI",
@@ -21,6 +21,26 @@
       "summary_en": "The FBI has handed over 48 illegally trafficked artifacts to Egypt following an investigation by the Art Crimes Team. The owner's tip-off to authorities helped establish the artifacts' illicit history.",
       "summary_de": "Das FBI hat 48 illegale Artefakte an Ägypten übergeben, nachdem das Art Crimes Team eine Ermittlung durchgeführt hat. Der Hinweis des Eigentümers an die Behörden half, die illegale Geschichte der Artefakte zu klären.",
       "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-Nwcj_babNuQiUV",
+      "cat": "restitution",
+      "accent": "#9b8579",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/news/eight-years-theft-picasso-etching-discovered-apartment-1234795627/",
+      "publishedAt": "2026-08-24T19:40:35.000Z",
+      "time_en": "15h ago",
+      "time_de": "vor 15 Std",
+      "read": 3,
+      "kicker_en": "Milwaukee, recovered",
+      "kicker_de": "Milwaukee, gefunden",
+      "headline_en": "Picasso Etching Found Eight Years After Theft",
+      "headline_de": "Picasso-Radierung acht Jahre nach Diebstahl gefunden",
+      "summary_en": "A Picasso 'Torero' etching from 1949 has been discovered in a Milwaukee apartment eight years after being stolen. The print, one of 30 known impressions, previously belonged to a local fine art appraiser.",
+      "summary_de": "Eine Picasso-Radierung 'Torero' von 1949 wurde acht Jahre nach ihrem Diebstahl in einem Apartment in Milwaukee entdeckt. Der Druck, einer von 30 bekannten Abzügen, gehörte zuvor einem lokalen Kunstgutachter.",
+      "confidence": "high",
       "trending": false
     },
     {
