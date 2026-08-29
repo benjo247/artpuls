@@ -1,7 +1,47 @@
 {
-  "generatedAt": "2026-08-29T12:39:39.305Z",
-  "count": 4824,
+  "generatedAt": "2026-08-29T19:42:29.221Z",
+  "count": 4832,
   "stories": [
+    {
+      "id": "s-QQcYjeBCQY1eNy",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/architecture/architects-directory/studio-khoa-vu-profile-usa-vietnam",
+      "publishedAt": "2026-08-29T16:33:07.000Z",
+      "time_en": "3h ago",
+      "time_de": "vor 3 Std",
+      "read": 3,
+      "kicker_en": "US and Vietnam",
+      "kicker_de": "USA und Vietnam",
+      "headline_en": "Studio Khoa Vu joins Wallpaper* Architects",
+      "headline_de": "Studio Khoa Vu in Wallpaper* Architects vertreten",
+      "summary_en": "US- and Vietnam-based Studio Khoa Vu has been included in the Wallpaper* Architects' Directory 2026. The practice's work Lunar Cavern draws inspiration from the moon's dark side.",
+      "summary_de": "Das US- und Vietnam-basierte Studio Khoa Vu wurde in das Wallpaper* Architects' Directory 2026 aufgenommen. Ihre Arbeit Lunar Cavern lässt sich von der Schattenseite des Mondes inspirieren.",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-vLl8C6eC7oZdhm",
+      "cat": "biennale",
+      "accent": "#a8b89f",
+      "image": null,
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/shows/shows-to-see-in-korea-september-2026/",
+      "publishedAt": "2026-08-29T12:30:36.000Z",
+      "time_en": "7h ago",
+      "time_de": "vor 7 Std",
+      "read": 3,
+      "kicker_en": "Korea, September 2026",
+      "kicker_de": "Korea, September 2026",
+      "headline_en": "Biennials converge across Korea in September",
+      "headline_de": "Biennalen convergieren im September in Korea",
+      "summary_en": "Gwangju, Busan, and Jeju host overlapping biennials in September 2026, while Frieze and Kiaf return in Seoul. The month offers a concentrated program of major exhibitions across the country.",
+      "summary_de": "Gwangju, Busan und Jeju veranstalten im September 2026 zeitgleich Biennalen, während Frieze und Kiaf in Seoul zurückkehren. Der Monat bietet ein konzentriertes Programm großer Ausstellungen im ganzen Land.",
+      "confidence": "high",
+      "trending": false
+    },
     {
       "id": "s-Vmr8sHYQIjlJNY",
       "cat": "exhibition",
@@ -40,6 +80,26 @@
       "summary_en": "Five women in their 80s and 90s, known as the 'Golden Girls of Eastbourne', reflect on their variety careers spanning more than 50 years. They discuss flammable feather headdresses, wardrobe malfunctions, and performance",
       "summary_de": "Fünf Frauen in ihren 80ern und 90ern, bekannt als die ‚Golden Girls of Eastbourne', blicken auf ihre über 50 Jahre lange Varieté-Karriere zurück. Sie berichten von brennbaren Federhauben, Garderobenausfällen und Auftritt",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-kwwvwaBJd3wNwI",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/maybe-this-fall-will-be-kind/",
+      "publishedAt": "2026-08-29T10:00:58.000Z",
+      "time_en": "9h ago",
+      "time_de": "vor 9 Std",
+      "read": 3,
+      "kicker_en": "Deaths in art",
+      "kicker_de": "Todesfälle in der Kunst",
+      "headline_en": "Kusama, Mansour, Parton pass away",
+      "headline_de": "Kusama, Mansour, Parton verstorben",
+      "summary_en": "Yayoi Kusama, Sliman Mansour, and Dolly Parton have passed away. A major Pompeii exhibition is coming to the US.",
+      "summary_de": "Yayoi Kusama, Sliman Mansour und Dolly Parton sind verstorben. Eine große Pompeji-Ausstellung kommt in die USA.",
+      "confidence": "medium",
       "trending": false
     },
     {
@@ -320,7 +380,47 @@
       "summary_en": "Two thieves stole a 673-white diamond necklace worth $4.6 million from a Viennese museum after paying for entry. The necklace once belonged to Queen Nazli of Egypt.",
       "summary_de": "Zwei Diebe stahlen eine 673er-Diamanthalskette im Wert von 4,6 Millionen Dollar aus einem Wiener Museum, nachdem sie Eintritt bezahlt hatten. Die Halskette gehörte einst Königin Nazli von Ägypten.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
+    },
+    {
+      "id": "s-ZCEzsB2F006Itc",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/the-belgian-exhibition-that-strives-to-decenter-the-west/",
+      "publishedAt": "2026-08-28T19:31:23.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Bruges, Belgium",
+      "kicker_de": "Brügge, Belgien",
+      "headline_en": "Belgian show tackles decentering Europe",
+      "headline_de": "Belgische Ausstellung hinterfragt Europa-Zentrismus",
+      "summary_en": "A Belgian exhibition aims to decenter Europe while asserting Bruges's role in international networks, creating tension in its curatorial approach. The show explores the city's historical significance amid contradictory i",
+      "summary_de": "Eine belgische Ausstellung soll Europa dezentralisieren und gleichzeitig Brügges Rolle in internationalen Netzwerken zeigen. Diese widersprüchliche Aufgabe führt bereits zu Herausforderungen in der kuratorischen Arbeit.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-DJLxoTizKckcbS",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/demolition-of-georgian-architectural-landmark-sparks-outcry/",
+      "publishedAt": "2026-08-28T19:23:56.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Tbilisi, Georgia",
+      "kicker_de": "Tiflis, Georgien",
+      "headline_en": "Georgian landmark Rike Tubes faces demolition",
+      "headline_de": "Georgisches Wahrzeichen Rike Tubes vor Abriss",
+      "summary_en": "The Rike Tubes, a Georgian architectural complex in Tbilisi, faces demolition, prompting opposition from civilians, architects, and preservationists. The campaign to save the structure has gained momentum among heritage ",
+      "summary_de": "Das georgische Architektur-Ensemble Rike Tubes in Tiflis soll abgerissen werden und ruft Widerstand von Zivilisten, Architekten und Denkmalschützern hervor. Der Kampf um den Erhalt des Komplexes wird von Bewahrern unters",
+      "confidence": "medium",
+      "trending": false
     },
     {
       "id": "s-0NGJWrglxyOXS5",
@@ -400,7 +500,7 @@
       "summary_en": "Two municipal workers at Rotterdam's Museum Boijmans Van Beuningen have been dismissed following an investigation into contracts regarding asbestos treatment.",
       "summary_de": "Zwei städtische Mitarbeiter des Rotterdamer Museums Boijmans Van Beuningen wurden nach einer Untersuchung von Verträgen zur Asbestsanierung entlassen.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-02tlKppT6bLqDR",
@@ -580,7 +680,7 @@
       "summary_en": "Lisa Havilah has stepped down as chief executive of Powerhouse Parramatta, a $915 million cultural institution, 10 weeks before its opening. The departure comes amid ongoing investigations.",
       "summary_de": "Lisa Havilah ist als Geschäftsführerin des Powerhouse Parramatta zurückgetreten, 10 Wochen vor der Eröffnung. Der Rücktritt erfolgt inmitten laufender Ermittlungen.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-jyuH9fLZf0ybjX",
@@ -720,7 +820,7 @@
       "summary_en": "Two civil servants at Rotterdam's Museum Boijmans Van Beuningen were dismissed after accepting gifts from municipal business contacts in exchange for preferential treatment. The city's mayor confirmed the allegations.",
       "summary_de": "Zwei Beamte des Rotterdamer Museums Boijmans Van Beuningen wurden entlassen, nachdem sie Geschenke von kommunalen Geschäftskontakten angenommen hatten. Der Bürgermeister bestätigte die Vorwürfe.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-kyoRuWiS0ZdNhB",
@@ -800,7 +900,7 @@
       "summary_en": "Austrian police are searching for two suspects after a 200-carat diamond necklace with 673 diamonds, once owned by Egyptian royalty, was stolen from Vienna's Museum of Applied Arts. The platinum piece was on loan when it",
       "summary_de": "Österreichische Polizei sucht nach zwei Verdächtigen, nachdem eine 200-Karat-Diamantkette mit 673 Diamanten, die einst ägyptischem Königshaus gehörte, aus Wiens Museum für angewandte Kunst gestohlen wurde. Das Platingold",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-A8EcY4etTBsjDa",
@@ -900,7 +1000,7 @@
       "summary_en": "Powerhouse Parramatta remains on track to open on 7 November.",
       "summary_de": "Powerhouse Parramatta öffnet planmäßig am 7. November.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-OolTXToM5LT7X6",
@@ -1220,6 +1320,66 @@
       "summary_en": "The CEO of a Sydney museum has exited amid a spending scandal. Separately, thieves stole gold from a Spanish museum and a cactus from an Arizona arts center.",
       "summary_de": "Der Direktor eines Sydney-Museums ist wegen eines Ausgabenskandals ausgeschieden. Diebe stahlen Gold aus einem spanischen Museum und einen Kaktus aus einem Kunstzentrum in Arizona.",
       "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-eo2B5ICs7OAzNq",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/shows/up-close-shigeo-otakes-myco-market-day/",
+      "publishedAt": "2026-08-28T05:59:11.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Asia Pacific",
+      "kicker_de": "Asien-Pazifik",
+      "headline_en": "Shigeo Otake explores capitalism in bazaar",
+      "headline_de": "Shigeo Otake erforscht Kapitalismus im Basar",
+      "summary_en": "Shigeo Otake's \"Myco-Market Day\" presents a bustling bazaar that functions as an allegory for capitalism. The work suggests how abnormality becomes normalized within market systems.",
+      "summary_de": "Shigeo Otakes \"Myco-Market Day\" zeigt einen lebhaften Basar als Allegorie des Kapitalismus. Das Werk deutet darauf hin, wie das Abnormale zur Normalität in Marktsystemen wird.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-lOftbhIzPiROHy",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/shows/deceitful-narratives-ai-weiweis-button-up-at-factory-international/",
+      "publishedAt": "2026-08-28T05:42:12.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Manchester",
+      "kicker_de": "Manchester",
+      "headline_en": "Ai Weiwei's Manchester show impresses, raises questions",
+      "headline_de": "Ai Weiweis Manchester-Schau beeindruckt, wirft Fragen auf",
+      "summary_en": "Ai Weiwei's \"Button Up!\" at Factory International in Manchester displays grand ambition but prompts critical reflection on its underlying costs. The artist-agitator's exhibition balances visual impact with ethical consid",
+      "summary_de": "Ai Weiweis \"Button Up!\" im Factory International Manchester besticht durch Grandiosität, wirft aber Fragen zu ihren Kosten auf. Die Ausstellung des Künstler-Aktivisten balanciert visuelle Wirkung mit ethischen Überlegung",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-pSpftrhZdUF_Z6",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/people/rakyat-pasti-menang-the-people-united-will-never-be-defeated-interview-with-taring-padi-part-1/",
+      "publishedAt": "2026-08-28T03:44:32.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Taring Padi at Ibraaz",
+      "kicker_de": "Taring Padi bei Ibraaz",
+      "headline_en": "Taring Padi on collective legacy",
+      "headline_de": "Taring Padi über kollektives Erbe",
+      "summary_en": "ArtAsiaPacific interviews first-generation member Alexander Supartono on the occasion of Taring Padi's three-chapter exhibition at Ibraaz. The discussion explores the Indonesian collective's legacy and philosophy.",
+      "summary_de": "ArtAsiaPacific interviewt Gründungsmitglied Alexander Supartono anlässlich von Taring Padis dreiteiliger Ausstellung bei Ibraaz. Das Gespräch behandelt das Erbe und die Philosophie des indonesischen Kollektivs.",
+      "confidence": "high",
       "trending": false
     },
     {
