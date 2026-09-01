@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-09-01T11:34:40.164Z",
+  "generatedAt": "2026-09-01T19:55:29.200Z",
   "month": "2026-08",
-  "count": 1093,
+  "count": 1094,
   "stories": [
+    {
+      "id": "s--pbXRyr-94xtbb",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Ocula",
+      "url": "https://ocula.com/magazine/art-news/seoul-alternative-art-fair-pavilion/",
+      "publishedAt": "2026-08-31T23:26:08.000Z",
+      "time_en": "20h ago",
+      "time_de": "vor 20 Std",
+      "read": 3,
+      "kicker_en": "Seoul",
+      "kicker_de": "Seoul",
+      "headline_en": "Seoul art fair Pavilion prioritizes slower pace",
+      "headline_de": "Seoul-Kunstmesse Pavilion setzt auf Entschleunigung",
+      "summary_en": "Pavilion art fair in Seoul departs from traditional booth-focused format, occupying three converted industrial buildings in Yongsan to display works in exhibition style. Features primarily local galleries.",
+      "summary_de": "Die Kunstmesse Pavilion in Seoul verzichtet auf das traditionelle Booth-Format und nutzt drei umgebaute Industriegebäude in Yongsan für Ausstellungen. Zeigt vor allem Werke lokaler Galerien.",
+      "confidence": "high",
+      "trending": false
+    },
     {
       "id": "s-rEWGL4Vi9IP18g",
       "cat": "exhibition",
@@ -21,7 +41,7 @@
       "summary_en": "The Metropolitan Museum has cancelled a planned Costume Institute exhibition honouring designer John Galliano following criticism from Jewish community leaders, donors and politicians over his 2011 antisemitic hate crime",
       "summary_de": "Das Metropolitan Museum hat eine geplante Ausstellung des Costume Institute zu Ehren von Designer John Galliano nach Kritik von jüdischen Gemeinschaftsführern, Spendern und Politikern wegen seiner Verurteilung wegen eine",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-qSXLVG_kGNSSrc",
@@ -381,7 +401,7 @@
       "summary_en": "The Metropolitan Museum has scrapped its planned Costume Institute exhibition featuring designer John Galliano. Galliano stated he did not want the controversy surrounding him to create difficulties for the institution.",
       "summary_de": "Das Metropolitan Museum hat seine geplante Ausstellung des Costume Institute mit Designer John Galliano abgebrochen. Galliano erklärte, dass er nicht möchte, dass die Kontroverse um ihn die Institution in Schwierigkeiten",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-RbDJIuc7YeWYra",
@@ -441,7 +461,7 @@
       "summary_en": "The London Science Museum's sponsorship partnership with BP is ending on 31 August, concluding nearly 25 years of collaboration. Museum leadership cited the end of the agreed term, though reports indicate the original ag",
       "summary_de": "Die Sponsoringpartnerschaft des Londoner Science Museum mit BP endet am 31. August nach fast 25 Jahren Zusammenarbeit. Die Museumsleitung berief sich auf das Ende der vereinbarten Laufzeit, obwohl Berichte darauf hindeut",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-QxNexJDa6DPWUZ",
@@ -481,7 +501,7 @@
       "summary_en": "The Metropolitan Museum cancelled a John Galliano exhibition due to controversy over the designer's antisemitic comments. Anna Wintour described the decision as correct.",
       "summary_de": "Das Metropolitan Museum annullierte eine John-Galliano-Ausstellung wegen Kontroversen über antisemitische Äußerungen des Designers. Anna Wintour bezeichnete die Entscheidung als richtig.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-gq0wiVNnY2x4oo",
@@ -521,7 +541,7 @@
       "summary_en": "London's Science Museum has ended its 25-year relationship with BP. The development marks a significant shift in the museum's corporate partnerships.",
       "summary_de": "Das Londoner Science Museum beendet seine 25-jährige Partnerschaft mit BP. Die Entwicklung kennzeichnet einen bedeutenden Wandel in den Unternehmenspartnerschaften des Museums.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-vXthxX-Vzc7Zmi",
