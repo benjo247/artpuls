@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-31T21:54:11.902Z",
+  "generatedAt": "2026-09-01T11:34:40.164Z",
   "month": "2026-08",
-  "count": 1090,
+  "count": 1093,
   "stories": [
     {
       "id": "s-rEWGL4Vi9IP18g",
@@ -101,6 +101,26 @@
       "summary_en": "Jennifer Higgie, author and art critic, writes a novel called Bedlam told in the voice of English painter Richard Dadd. The work avoids sensationalizing Dadd's mental history.",
       "summary_de": "Jennifer Higgie, Autorin und Kunstkritikerin, schreibt einen Roman namens Bedlam aus der Perspektive des englischen Malers Richard Dadd. Das Werk vermeidet Sensationalisierung von Dadds psychiatrischer Geschichte.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-9GoyotLTDHswxM",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/news/egyptian-official-tomb-later-burials-discovered-saqqara-1234796349/",
+      "publishedAt": "2026-08-31T20:15:13.000Z",
+      "time_en": "15h ago",
+      "time_de": "vor 15 Std",
+      "read": 3,
+      "kicker_en": "Saqqara, Egypt",
+      "kicker_de": "Saqqara, Ägypten",
+      "headline_en": "New Discoveries at Egypt's Saqqara Necropolis",
+      "headline_de": "Neue Funde in Ägyptens Saqqara-Nekropole",
+      "summary_en": "Excavations in an area west of the Bubasteion necropolis at Saqqara have yielded new discoveries. The finds were made during the mission's first excavation season.",
+      "summary_de": "Ausgrabungen in einem Gebiet westlich der Bubasteion-Nekropole in Saqqara haben neue Funde erbracht. Diese stammen aus der ersten Ausgrabungssaison der Mission.",
+      "confidence": "medium",
       "trending": false
     },
     {
@@ -364,6 +384,26 @@
       "trending": true
     },
     {
+      "id": "s-RbDJIuc7YeWYra",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/john-galliano-withdraws-from-met-exhibition-after-backlash-over-racist-comments/",
+      "publishedAt": "2026-08-31T15:17:21.000Z",
+      "time_en": "20h ago",
+      "time_de": "vor 20 Std",
+      "read": 3,
+      "kicker_en": "New York; controversy",
+      "kicker_de": "New York; Kontroverse",
+      "headline_en": "Designer Withdraws After Backlash Over Past Remarks",
+      "headline_de": "Designer zieht sich nach Gegenreaktion zurück",
+      "summary_en": "A British fashion designer was convicted of a hate crime in 2011 for anti-Asian and antisemitic remarks and has withdrawn from a Met exhibition. The withdrawal follows public backlash.",
+      "summary_de": "Ein britischer Modedesigner, der 2011 wegen anti-asiatischer und antisemitischer Äußerungen verurteilt wurde, zieht sich aus einer Met-Ausstellung zurück. Der Rückzug erfolgt nach öffentlichem Widerstand.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
       "id": "s-YnjIqVKBaNIzIn",
       "cat": "restitution",
       "accent": "#9b8579",
@@ -520,6 +560,26 @@
       "headline_de": "Nach SDF-Auflösung: Hoffnung auf Autonomie",
       "summary_en": "Following the dissolution of the Kurdish army SDF, questions arise about the future of Kurdish aspirations in Syria. The focus remains on hopes for autonomy, equality, and emancipation.",
       "summary_de": "Nach der Auflösung der kurdischen Armee SDF stellt sich die Frage nach der Zukunft. Es geht um Hoffnung auf Autonomie, Gleichberechtigung und Emanzipation.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-qD-Ui5R1iiNrHt",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/south-korea-seoul-10-essential-museums-2802281",
+      "publishedAt": "2026-08-31T11:00:11.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Seoul, South Korea",
+      "kicker_de": "Seoul, Südkorea",
+      "headline_en": "10 Essential Art Museums to Visit in Seoul",
+      "headline_de": "10 unverzichtbare Kunstmuseen in Seoul",
+      "summary_en": "Artnet News highlights 10 essential art museums in Seoul, including the Leeum as a must-see destination. The guide offers numerous cultural attractions for visitors.",
+      "summary_de": "Artnet News stellt 10 unverzichtbare Kunstmuseen in Seoul vor, darunter das Leeum. Der Führer bietet zahlreiche kulturelle Attraktionen.",
       "confidence": "medium",
       "trending": false
     },
