@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-01T19:55:29.200Z",
+  "generatedAt": "2026-09-02T11:11:48.031Z",
   "month": "2026-08",
-  "count": 1094,
+  "count": 1096,
   "stories": [
     {
       "id": "s--pbXRyr-94xtbb",
@@ -724,6 +724,26 @@
       "trending": false
     },
     {
+      "id": "s--7MkCkELPAEQYn",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/news/gao-zhen-sentenced-for-satirical-mao-sculptures/",
+      "publishedAt": "2026-08-31T07:12:00.000Z",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
+      "read": 3,
+      "kicker_en": "China",
+      "kicker_de": "China",
+      "headline_en": "Chinese Artist Convicted for Satirical Sculptures",
+      "headline_de": "Chinesischer Künstler wegen Satire-Skulpturen verurteilt",
+      "summary_en": "A Chinese court found artist Gao Zhen guilty of slandering Communist Party heroes through satirical Mao sculptures. The conviction reflects legal restrictions on artistic expression in China.",
+      "summary_de": "Ein chinesisches Gericht befand Künstler Gao Zhen für schuldig, kommunistische Partei-Helden durch satirische Mao-Skulpturen zu diffamieren. Die Verurteilung spiegelt rechtliche Beschränkungen künstlerischer Ausdrucksfre",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
       "id": "s-Au7zcP1e-TETdm",
       "cat": "market",
       "accent": "#c8553d",
@@ -821,6 +841,26 @@
       "summary_en": "Two unmasked men purchased tickets to Vienna's Museum of Applied Arts, smashed a display case, and stole a 673-diamond necklace belonging to an Egyptian queen. Authorities are searching for the suspects.",
       "summary_de": "Zwei Männer kauften Tickets für Wiens Museum für Angewandte Kunst, zerschlugen eine Vitrine und stahlen ein Diamantencollier mit 673 Diamanten einer ägyptischen Königin. Die Behörden suchen nach den Verdächtigen.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-QCE3PEoRdJtC0n",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/news/weekly-news-roundup-august-31-2026/",
+      "publishedAt": "2026-08-31T02:40:00.000Z",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
+      "read": 3,
+      "kicker_en": "Seoul",
+      "kicker_de": "Seoul",
+      "headline_en": "Park Seo-Bo Museum opens in Seoul",
+      "headline_de": "Park Seo-Bo Museum eröffnet in Seoul",
+      "summary_en": "Park Seo-Bo Museum has opened in Seoul. Frieze Abu Dhabi revealed programming and Perth Sky Sculpture Park was among other developments announced.",
+      "summary_de": "Das Park Seo-Bo Museum hat in Seoul eröffnet. Frieze Abu Dhabi präsentierte sein Programm, und der Perth Sky Sculpture Park war unter weiteren angekündigten Entwicklungen.",
+      "confidence": "medium",
       "trending": false
     },
     {
