@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-05T10:30:17.201Z",
-  "count": 5111,
+  "generatedAt": "2026-09-05T13:50:56.721Z",
+  "count": 5113,
   "stories": [
     {
       "id": "s-ITefQW269ttCAY",
@@ -103,6 +103,26 @@
       "trending": false
     },
     {
+      "id": "s-rSjy7rB2d0_ajJ",
+      "cat": "biennale",
+      "accent": "#a8b89f",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/gwangju-biennale-china-pulls-out-plows-ahead-2806903",
+      "publishedAt": "2026-09-04T23:36:57.000Z",
+      "time_en": "14h ago",
+      "time_de": "vor 14 Std",
+      "read": 3,
+      "kicker_en": "Gwangju Biennale",
+      "kicker_de": "Gwangju Biennale",
+      "headline_en": "Taiwan artists ready installations as China exits Gwangju Biennale",
+      "headline_de": "Taiwanische Künstler bereiten Installationen vor, während China Gwangju Biennale verlässt",
+      "summary_en": "China has exited the Gwangju Biennale amid escalating controversy. Taiwanese artists are continuing their participation and preparing their installations.",
+      "summary_de": "China hat sich aus der Gwangju Biennale inmitten eskalierender Kontroversen zurückgezogen. Taiwanische Künstler setzen ihre Teilnahme fort und bereiten ihre Installationen vor.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
       "id": "s-dDG9M1e3g8GcMM",
       "cat": "market",
       "accent": "#c8553d",
@@ -160,6 +180,26 @@
       "summary_en": "Hyperallergic highlights anticipated autumn art titles including works by Guadalupe Rosales, Christine Sun Kim, Fady Joudah, and Elizabeth Alexander. The selection spans memoir, artist books, and essay collections.",
       "summary_de": "Hyperallergic stellt erwartete Herbst-Kunsttitel vor, darunter Werke von Guadalupe Rosales, Christine Sun Kim, Fady Joudah und Elizabeth Alexander. Die Auswahl umfasst Memoiren, Künstlerbücher und Essaysammlungen.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-8RcTwXHxKyd1cs",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/news/adam-lindemann-sued-julian-schnabel-sculpture-montauk-1234797149/",
+      "publishedAt": "2026-09-04T20:47:21.000Z",
+      "time_en": "17h ago",
+      "time_de": "vor 17 Std",
+      "read": 3,
+      "kicker_en": "Legal dispute",
+      "kicker_de": "Rechtsstreit",
+      "headline_en": "Dealer sued over Schnabel sculpture installation",
+      "headline_de": "Kunsthändler wegen Schnabel-Skulptur verklagt",
+      "summary_en": "A lawsuit alleges a prominent art dealer refused to deinstall a Julian Schnabel sculpture. The Nature Conservancy brought the action.",
+      "summary_de": "Eine Klage wirft einem bekannten Kunsthändler vor, sich geweigert zu haben, eine Skulptur von Julian Schnabel zu deinstallieren. Die Nature Conservancy reichte die Klage ein.",
+      "confidence": "medium",
       "trending": false
     },
     {
