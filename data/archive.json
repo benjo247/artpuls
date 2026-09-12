@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-12T10:40:19.797Z",
-  "count": 5376,
+  "generatedAt": "2026-09-12T14:03:34.207Z",
+  "count": 5380,
   "stories": [
     {
       "id": "s-KUV2VO84uTjodY",
@@ -63,6 +63,26 @@
       "trending": false
     },
     {
+      "id": "s-lfPlzNHKj7gLXk",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/travel/bars/circadian-tea-atelier-berlin",
+      "publishedAt": "2026-09-12T07:40:00.000Z",
+      "time_en": "6h ago",
+      "time_de": "vor 6 Std",
+      "read": 3,
+      "kicker_en": "Berlin",
+      "kicker_de": "Berlin",
+      "headline_en": "Circadian creates ritual in Funkhaus",
+      "headline_de": "Circadian kreiert Ritual im Funkhaus",
+      "summary_en": "Berlin-based atelier Circadian has opened a new minimalist headquarters in a GDR-era Funkhaus, where it creates a contemporary ritual using Japan's rare shade-grown gyokuro tea.",
+      "summary_de": "Das Berliner Atelier Circadian hat seinen neuen Sitz in einem GDR-Funkthaus eröffnet und kreiert dort ein zeitgenössisches Ritual mit seltenem japanischem Gyokuro-Tee.",
+      "confidence": "high",
+      "trending": false
+    },
+    {
       "id": "s-W9Wk_simPILmGl",
       "cat": "museum",
       "accent": "#7a9e9f",
@@ -80,7 +100,27 @@
       "summary_en": "The Bayeux Tapestry is on display at the British Museum, drawing large crowds and prompting reflection on its meaning in contemporary times. Scholars debate whether it was embroidered in Canterbury, England rather than B",
       "summary_de": "Der Teppich von Bayeux wird im British Museum ausgestellt und zieht große Besucherzahlen an. Gelehrte debattieren, ob er in Canterbury, England, statt in Bayeux, Normandie, gestickt wurde.",
       "confidence": "high",
-      "trending": true
+      "trending": false
+    },
+    {
+      "id": "s-uoFkkyLaL5B2Cv",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/art/photography/as-jesse-glazzard-arrives-at-londons-ica-step-into-his-tender-dirty-decade",
+      "publishedAt": "2026-09-12T07:00:00.000Z",
+      "time_en": "7h ago",
+      "time_de": "vor 7 Std",
+      "read": 3,
+      "kicker_en": "London",
+      "kicker_de": "London",
+      "headline_en": "Jesse Glazzard debuts book at ICA",
+      "headline_de": "Jesse Glazzard präsentiert Buch im ICA",
+      "summary_en": "British photographer Jesse Glazzard presents his first book, The Sound of Dirt and Beauty, at London's ICA.",
+      "summary_de": "Der britische Fotograf Jesse Glazzard präsentiert sein erstes Buch, The Sound of Dirt and Beauty, im Londoner ICA.",
+      "confidence": "high",
+      "trending": false
     },
     {
       "id": "s-YW_h6Au1bk9bJ5",
@@ -160,6 +200,26 @@
       "summary_en": "A generation of South Asian art and activism was defined by the struggle for immigrant rights and lives after 9/11. The work reflects the ongoing challenge of response and recovery.",
       "summary_de": "Eine Generation südasiatischer Kunst und Aktivismus wurde durch den Kampf um Immigrantenrechte und Leben nach 9/11 geprägt. Die Arbeit spiegelt die andauernde Herausforderung von Reaktion und Genesung wider.",
       "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-qtoY5Y7QRifaJJ",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/fashion-beauty/tory-burch-ss-2027-new-york-fashion-week-review",
+      "publishedAt": "2026-09-11T21:26:53.000Z",
+      "time_en": "16h ago",
+      "time_de": "vor 16 Std",
+      "read": 3,
+      "kicker_en": "New York",
+      "kicker_de": "New York",
+      "headline_en": "Tory Burch shows S/S 2027 collection",
+      "headline_de": "Tory Burch zeigt S/S-2027-Kollektion",
+      "summary_en": "American designer Tory Burch presented her S/S 2027 collection at Isamu Noguchi's Sunken Garden during New York Fashion Week, expressing 'joy and optimism' through playful combinations.",
+      "summary_de": "Die amerikanische Designerin Tory Burch präsentierte ihre S/S-2027-Kollektion im Sunken Garden von Isamu Noguchi, wobei sie durch verspielte Kombinationen 'Freude und Optimismus' ausdrückte.",
+      "confidence": "high",
       "trending": false
     },
     {
@@ -620,7 +680,7 @@
       "summary_en": "Bhutanese mixed media artist Pem Lham has won the 2026 Rubin Museum Himalayan Art Prize. The award carries USD 30,000 and celebrates contemporary Himalayan art.",
       "summary_de": "Die bhutanische Medienkünstlerin Pem Lham hat den Rubin Museum Himalayan Art Prize 2026 gewonnen. Der Preis ist mit USD 30.000 dotiert und würdigt zeitgenössische Himalaya-Kunst.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-GGvwMKSIDWfYZc",
@@ -640,7 +700,7 @@
       "summary_en": "Bhutanese artist Pem Lham has won the Rubin Museum's prize for Himalayan art, a $30,000 unrestricted cash award. The prize will be presented at a ceremony attended by the Queen of Bhutan.",
       "summary_de": "Der bhutanische Künstler Pem Lham erhielt den Himalaya-Kunstpreis des Rubin Museums in Höhe von 30.000 Dollar. Die Preisverleihung findet in Anwesenheit der Königin von Bhutan statt.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-pi0IPdLxh02MFg",
@@ -760,7 +820,7 @@
       "summary_en": "The Art Newspaper's correspondent visited the blockbuster Bayeux Tapestry exhibition at the British Museum on its opening day. The review examines the visitor experience and value for admission.",
       "summary_de": "Ein Korrespondent der Art Newspaper besuchte die Blockbuster-Ausstellung zum Teppich von Bayeux am Eröffnungstag. Die Kritik untersucht das Besuchererlebnis und das Preis-Leistungs-Verhältnis.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-ghEUj_7ZO0WJUb",
@@ -899,6 +959,26 @@
       "headline_de": "\"Call me gravity\" Ausstellung im Wiels Brüssel",
       "summary_en": "A new exhibition at Wiels, Brussels, titled \"Call me gravity: The Physicality of Debt,\" explores questions about obligation and responsibility. The show examines who owes whom and why.",
       "summary_de": "Eine neue Ausstellung im Wiels Brüssel mit dem Titel \"Call me gravity: The Physicality of Debt\" erforscht Fragen zur Verpflichtung und Verantwortung. Die Schau untersucht, wer wem etwas schuldet und warum.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-_7cU49LP9EUjPu",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Süddeutsche Kultur",
+      "url": "https://www.sueddeutsche.de/kultur/faten-ben-omar-fussball-ceuta-marokko-tot-li.3543649",
+      "publishedAt": "2026-09-11T11:33:33.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Morocco",
+      "kicker_de": "Marokko",
+      "headline_en": "Story of Faten Ben Omar's escape attempt",
+      "headline_de": "Geschichte von Faten Ben Omars Fluchtversuch",
+      "summary_en": "Faten Ben Omar, a Moroccan woman seeking freedom from patriarchal constraints, drowned off Ceuta after entering the sea. Her story reflects the experiences of many young women risking everything to escape oppressive cond",
+      "summary_de": "Faten Ben Omar, eine marokkanische Frau, die vor patriarchalen Zwängen fliehen wollte, ertrank vor Ceuta. Ihre Geschichte erzählt von vielen jungen Frauen, die alles riskieren, um der Unterdrückung zu entkommen.",
       "confidence": "medium",
       "trending": false
     },

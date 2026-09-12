@@ -24,8 +24,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://artpulse.app/s/s-lfPlzNHKj7gLXk</loc>
+    <lastmod>2026-09-12T07:40:00.000Z</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://artpulse.app/s/s-W9Wk_simPILmGl</loc>
     <lastmod>2026-09-12T07:00:27.000Z</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://artpulse.app/s/s-uoFkkyLaL5B2Cv</loc>
+    <lastmod>2026-09-12T07:00:00.000Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -50,6 +62,12 @@
   <url>
     <loc>https://artpulse.app/s/s-BP_jScKoqfPzpw</loc>
     <lastmod>2026-09-11T21:52:49.000Z</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://artpulse.app/s/s-qtoY5Y7QRifaJJ</loc>
+    <lastmod>2026-09-11T21:26:53.000Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -272,6 +290,12 @@
   <url>
     <loc>https://artpulse.app/s/s-DnKcdl6LR1iG-T</loc>
     <lastmod>2026-09-11T11:33:36.000Z</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://artpulse.app/s/s-_7cU49LP9EUjPu</loc>
+    <lastmod>2026-09-11T11:33:33.000Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -29978,30 +30002,6 @@
   <url>
     <loc>https://artpulse.app/s/s-mibKC4BNcU_lsR</loc>
     <lastmod>2026-05-19T10:59:01.000Z</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://artpulse.app/s/s-u1oWy6U5-MlIn9</loc>
-    <lastmod>2026-05-19T10:50:53.000Z</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://artpulse.app/s/s-Xmzc2tizqwEY9n</loc>
-    <lastmod>2026-05-19T10:42:37.000Z</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://artpulse.app/s/s-hBTW23AM9-YY9N</loc>
-    <lastmod>2026-05-19T10:38:44.000Z</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://artpulse.app/s/s-Fqd2gDVcYzzK76</loc>
-    <lastmod>2026-05-19T10:07:17.000Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
