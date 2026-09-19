@@ -1,8 +1,48 @@
 {
-  "generatedAt": "2026-09-19T14:21:15.724Z",
+  "generatedAt": "2026-09-19T19:17:58.282Z",
   "month": "2026-09",
-  "count": 777,
+  "count": 780,
   "stories": [
+    {
+      "id": "s-IgOPF5ltXaoorU",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/peter-kogler-barovier-and-toso-2812190",
+      "publishedAt": "2026-09-19T14:56:12.000Z",
+      "time_en": "4h ago",
+      "time_de": "vor 4 Std",
+      "read": 3,
+      "kicker_en": "Venice",
+      "kicker_de": "Venedig",
+      "headline_en": "Peter Kogler Merges Digital Art With Murano Glass",
+      "headline_de": "Peter Kogler verbindet digitale Kunst mit Murano-Glas",
+      "summary_en": "An exhibition at Galleria Barovier and Toso presents 40 years of Kogler's computer-generated motifs alongside seven centuries of Murano glassmaking tradition. The show brings together digital vocabulary and traditional c",
+      "summary_de": "Eine Ausstellung in der Galleria Barovier and Toso präsentiert 40 Jahre von Koglers computergestützten Motiven neben sieben Jahrhunderten Murano-Glashandwerk. Die Schau vereint digitale Ästhetik und traditionelle Handwer",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-zcFYFRDyHKmGTD",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Monopol",
+      "url": "https://www.monopol-magazin.de/emanuel-layr-galerist-interview",
+      "publishedAt": "2026-09-19T13:00:11.000Z",
+      "time_en": "6h ago",
+      "time_de": "vor 6 Std",
+      "read": 3,
+      "kicker_en": "Germany",
+      "kicker_de": "Deutschland",
+      "headline_en": "Gallery Model Reaches Its Limits",
+      "headline_de": "Galeriemodell stößt an Grenzen",
+      "summary_en": "An article by Daniel Völzke examines the limitations of the traditional gallery model. The piece suggests the model faces increasing challenges.",
+      "summary_de": "Ein Artikel von Daniel Völzke untersucht die Grenzen des traditionellen Galeriemodells. Der Beitrag deutet darauf hin, dass das Modell mit wachsenden Herausforderungen konfrontiert ist.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-3srwZlHCSLc4SK",
       "cat": "artists",
@@ -81,6 +121,26 @@
       "summary_en": "Article not art-related. Omitted.",
       "summary_de": "Artikel nicht kunstbezogen. Omittiert.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-qSwnsqLOMqv4rL",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "Monopol",
+      "url": "https://www.monopol-magazin.de/museen-koennen-sich-bewerben-1500-kunstwerke-zu-verschenken",
+      "publishedAt": "2026-09-19T07:06:35.000Z",
+      "time_en": "12h ago",
+      "time_de": "vor 12 Std",
+      "read": 3,
+      "kicker_en": "Germany",
+      "kicker_de": "Deutschland",
+      "headline_en": "1,500 Artworks Offered to Museums",
+      "headline_de": "1.500 Kunstwerke für Museen zu vergeben",
+      "summary_en": "Museums are invited to apply for 1,500 artworks being made available for distribution. The initiative by Daniel Völzke aims to support institutional collecting.",
+      "summary_de": "Museen sind eingeladen, sich um 1.500 verfügbare Kunstwerke zu bewerben. Die Initiative von Daniel Völzke zielt auf die Unterstützung institutioneller Sammlungen ab.",
+      "confidence": "medium",
       "trending": false
     },
     {
@@ -221,7 +281,7 @@
       "summary_en": "Taryn Simon presents an ambitious exhibition at the Guggenheim Museum exploring systemic injustice. The work examines accountability and the nature of individual versus structural responsibility.",
       "summary_de": "Taryn Simon präsentiert eine ehrgeizige Ausstellung im Guggenheim Museum, die sich mit systemischer Ungerechtigkeit befasst. Das Werk untersucht Rechenschaftspflicht und das Wesen individueller versus struktureller Veran",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-4LiIhsPcn_3jzT",
@@ -561,7 +621,7 @@
       "summary_en": "Taryn Simon has mounted a show at the Guggenheim featuring 1,000 pictures and thousands of words of text. The exhibition challenges conventional notions of truth.",
       "summary_de": "Taryn Simon hat im Guggenheim eine Ausstellung mit 1.000 Bildern und Tausenden Wörtern Text eröffnet. Die Ausstellung stellt konventionelle Wahrheitsbegriffe in Frage.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-Sfrq9ZRou68fdv",
