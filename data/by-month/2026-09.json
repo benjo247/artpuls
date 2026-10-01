@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-01T13:04:35.901Z",
+  "generatedAt": "2026-10-01T21:47:45.567Z",
   "month": "2026-09",
-  "count": 1260,
+  "count": 1261,
   "stories": [
     {
       "id": "s-HkG-UQ70kUoa0o",
@@ -301,7 +301,7 @@
       "summary_en": "'Es Devlin: Other Worlds' at the Design Museum (2 October 2026 – 4 April 2027) features a reproduction of the designer's studio, sketchbook excerpts, installation overviews, and a 2,000-book experiential library. The exh",
       "summary_de": "'Es Devlin: Other Worlds' im Design Museum (2. Oktober 2026 – 4. April 2027) zeigt eine Reproduktion des Studios der Designerin, Skizzenbuchauszüge, Installationsübersichten und eine erlebbare Bibliothek mit 2.000 Bücher",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-6W8f-h9u7UOUvm",
@@ -2401,6 +2401,26 @@
       "summary_en": "The inaugural Currents festival in Berlin brought together independent designers, brands, and creative collectives over three days in September. The sprawling fair highlighted the city's contemporary design offerings.",
       "summary_de": "Das erste Currents Festival in Berlin brachte unabhängige Designer, Marken und kreative Kollektive über drei Tage im September zusammen. Die umfangreiche Messe präsentierte das zeitgenössische Designangebot der Stadt.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-ZPjy3fURMZVWeA",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "ArtAsiaPacific",
+      "url": "https://www.artasiapacific.com/news/national-gallery-of-victoria-senior-executive-accused-of-8-million-theft/",
+      "publishedAt": "2026-09-29T04:26:00.000Z",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
+      "read": 3,
+      "kicker_en": "Melbourne, Australia",
+      "kicker_de": "Melbourne, Australien",
+      "headline_en": "NGV Official Charged with $8 Million Theft",
+      "headline_de": "NGV-Beamter wegen 8-Millionen-Dollar-Diebstahl angeklagt",
+      "summary_en": "A senior executive at the National Gallery of Victoria has been charged with siphoning funds over six years. The alleged theft amounts to approximately $8 million.",
+      "summary_de": "Ein hochrangiger Beamter der National Gallery of Victoria wurde angeklagt, Gelder über sechs Jahre hinweg veruntreut zu haben. Der mutmaßliche Diebstahl beläuft sich auf etwa 8 Millionen Dollar.",
+      "confidence": "medium",
       "trending": false
     },
     {
