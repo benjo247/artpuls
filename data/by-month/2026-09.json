@@ -1,8 +1,48 @@
 {
-  "generatedAt": "2026-09-30T21:25:10.349Z",
+  "generatedAt": "2026-10-01T13:04:35.901Z",
   "month": "2026-09",
-  "count": 1257,
+  "count": 1260,
   "stories": [
+    {
+      "id": "s-HkG-UQ70kUoa0o",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "The Art Newspaper",
+      "url": "https://www.theartnewspaper.com/2026/09/30/new-york-split-level-art-fair-second-edition-madison-avenue",
+      "publishedAt": "2026-09-30T22:08:13.000Z",
+      "time_en": "14h ago",
+      "time_de": "vor 14 Std",
+      "read": 3,
+      "kicker_en": "New York design fair",
+      "kicker_de": "New York Designmesse",
+      "headline_en": "Split Level returns to Madison Avenue showroom",
+      "headline_de": "Split Level kehrt zu Madison-Avenue-Showroom zurück",
+      "summary_en": "Split Level art fair holds its second edition at Rimadesio's design showroom on Madison Avenue. The fair focuses on young galleries and emphasizes experimentation and affordability.",
+      "summary_de": "Die Split-Level-Kunstmesse findet ihre zweite Ausgabe im Designausstellungsraum von Rimadesio an der Madison Avenue statt. Die Messe konzentriert sich auf junge Galerien und betont Experimentieren und Erschwinglichkeit.",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-gW8v-i6KFIWqma",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/market/hong-kong-september-2026-acutions-sothebys-christies-phillips-1234800173/",
+      "publishedAt": "2026-09-30T21:30:00.000Z",
+      "time_en": "15h ago",
+      "time_de": "vor 15 Std",
+      "read": 3,
+      "kicker_en": "Hong Kong",
+      "kicker_de": "Hong Kong",
+      "headline_en": "Hong Kong evening sales total $184.6M amid uneven recovery",
+      "headline_de": "Hong Kong-Abendauktionen: 184,6 Mio. $ bei ungleichmäßiger Erholung",
+      "summary_en": "Hong Kong's evening art sales reached a combined $184.6 million. The region's art market recovery remains uneven against a mixed macroeconomic backdrop across Asia.",
+      "summary_de": "Abendauktionen in Hong Kong erzielen kombiniert 184,6 Millionen Dollar. Asiens Kunstmarkt zeigt ungleichmäßige Erholung bei gemischtem makroökonomischem Hintergrund.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-0SSIt2taycW5Ug",
       "cat": "exhibition",
@@ -20,6 +60,26 @@
       "headline_de": "Fünfte Guadalajara Art Week bestätigt Kulturstatus",
       "summary_en": "Guadalajara Art Week returns for its fifth edition with an expanding programme. The event signals growth while maintaining an intimate atmosphere.",
       "summary_de": "Die Guadalajara Art Week kehrt in ihrer fünften Auflage mit einem erweiterten Programm zurück. Die Veranstaltung signalisiert Wachstum und bewahrt gleichzeitig eine intime Atmosphäre.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-aMcccYAWRQFzsE",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/pietro-bracci-pope-clement-xii-2818087",
+      "publishedAt": "2026-09-30T21:06:42.000Z",
+      "time_en": "15h ago",
+      "time_de": "vor 15 Std",
+      "read": 3,
+      "kicker_en": "U.K. salvage yard",
+      "kicker_de": "Britischer Schrottplatz",
+      "headline_en": "Baroque marble maquette bought for £300",
+      "headline_de": "Barock-Marmor-Maquette für £300 gekauft",
+      "summary_en": "A marble sculpture by a Baroque master was purchased for £300 at a U.K. salvage yard before being properly attributed. The maquette's true significance was only recognized after the initial sale.",
+      "summary_de": "Eine Marmorskulptur eines Barock-Meisters wurde für £300 auf einem britischen Schrottplatz gekauft, bevor sie korrekt zugeordnet wurde. Die wahre Bedeutung der Maquette wurde erst nach dem Kauf erkannt.",
       "confidence": "medium",
       "trending": false
     },
@@ -241,7 +301,7 @@
       "summary_en": "'Es Devlin: Other Worlds' at the Design Museum (2 October 2026 – 4 April 2027) features a reproduction of the designer's studio, sketchbook excerpts, installation overviews, and a 2,000-book experiential library. The exh",
       "summary_de": "'Es Devlin: Other Worlds' im Design Museum (2. Oktober 2026 – 4. April 2027) zeigt eine Reproduktion des Studios der Designerin, Skizzenbuchauszüge, Installationsübersichten und eine erlebbare Bibliothek mit 2.000 Bücher",
       "confidence": "high",
-      "trending": false
+      "trending": true
     },
     {
       "id": "s-6W8f-h9u7UOUvm",
@@ -821,7 +881,7 @@
       "summary_en": "The Blaquier-Arrieta collection, valued at $450m and including a potentially record-breaking Van Gogh, will be auctioned at Sotheby's New York in November. Five works from the collection are on international tour, curren",
       "summary_de": "Die Blaquier-Arrieta-Sammlung im Wert von $450m, darunter ein möglicherweise rekordwürdiges Van-Gogh-Gemälde, wird im November bei Sotheby's New York versteigert. Fünf Werke sind auf internationaler Tournee.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-WO43LH1h8b_Vag",
@@ -1021,7 +1081,7 @@
       "summary_en": "Sotheby's has unveiled the Blaquier collection, described as \"Collection of the Year,\" led by a Van Gogh estimated at $180M. An auction house advisor called it \"like nothing we have seen for a very long time.\"",
       "summary_de": "Sotheby's hat die Blaquier-Sammlung enthüllt, als \"Collection of the Year\" beschrieben und angeführt von einem Van Gogh mit Schätzung $180M. Ein Berater des Auktionshauses nannte es \"wie nichts, was wir lange gesehen hab",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-CINNOeo9or_MfO",
