@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T11:34:42.886Z",
+  "generatedAt": "2026-10-03T19:49:12.952Z",
   "category": "biennale",
   "count": 285,
   "stories": [
@@ -31,8 +31,8 @@
       "source": "Artnet News",
       "url": "https://news.artnet.com/market/artbo-fair-downsizing-2818535",
       "publishedAt": "2026-10-01T18:08:51.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "Bogotá",
       "kicker_de": "Bogotá",
@@ -51,8 +51,8 @@
       "source": "ArtReview",
       "url": "https://artreview.com/pattani-biennale-2026-review-a-hopeful-aftertaste/",
       "publishedAt": "2026-10-01T14:04:30.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "Pattani, 2026",
       "kicker_de": "Pattani, 2026",
