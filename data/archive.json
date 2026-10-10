@@ -1,7 +1,47 @@
 {
-  "generatedAt": "2026-10-10T12:24:23.586Z",
-  "count": 6520,
+  "generatedAt": "2026-10-10T20:33:14.105Z",
+  "count": 6525,
   "stories": [
+    {
+      "id": "s-8HGB2QMP1lbakv",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/fashion-beauty/fragrance/ds-durga-resurrected-corpse-flower-review",
+      "publishedAt": "2026-10-10T16:00:00.000Z",
+      "time_en": "4h ago",
+      "time_de": "vor 4 Std",
+      "read": 3,
+      "kicker_en": "Design & fragrance",
+      "kicker_de": "Design & Duft",
+      "headline_en": "DS & Durga launches corpse flower perfume",
+      "headline_de": "DS & Durga lanciert Leichenblumen-Duft",
+      "summary_en": "DS & Durga has created a perfume inspired by the corpse flower, featuring notes of bog cedar, tuberose and lily. The fragrance draws on the world's notoriously pungent plant.",
+      "summary_de": "DS & Durga hat ein von der Leichenblume inspiriertes Parfüm mit Noten von Sumpfzeder, Tuberose und Lilie kreiert. Der Duft basiert auf der berüchtigten Pflanze.",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-EcbsxYP2gIvoAL",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/architecture/residential/living-in-a-japanese-house-book",
+      "publishedAt": "2026-10-10T12:19:01.000Z",
+      "time_en": "8h ago",
+      "time_de": "vor 8 Std",
+      "read": 3,
+      "kicker_en": "Design & architecture",
+      "kicker_de": "Design & Architektur",
+      "headline_en": "Phaidon releases Japanese House living guide",
+      "headline_de": "Phaidon veröffentlicht Guide zum Leben im japanischen Haus",
+      "summary_en": "Phaidon has published 'Living in a Japanese House,' a new book by Kanae Hasegawa exploring the Japanese home typology. The book examines questions about this popular architectural style.",
+      "summary_de": "Phaidon hat 'Living in a Japanese House' von Kanae Hasegawa veröffentlicht, das die japanische Hausform untersucht. Das Buch behandelt Fragen zu dieser beliebten Architektur.",
+      "confidence": "high",
+      "trending": false
+    },
     {
       "id": "s-YEKfvPfwSTDBwI",
       "cat": "market",
@@ -63,6 +103,46 @@
       "trending": false
     },
     {
+      "id": "s-mDgLpmSFgafJIc",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/tech/six-new-coffee-machines-for-the-design-loving-caffeine-addict",
+      "publishedAt": "2026-10-10T08:14:02.000Z",
+      "time_en": "12h ago",
+      "time_de": "vor 12 Std",
+      "read": 3,
+      "kicker_en": "Design & appliances",
+      "kicker_de": "Design & Geräte",
+      "headline_en": "Six new designer coffee machines launched",
+      "headline_de": "Sechs neue Designer-Kaffeemaschinen vorgestellt",
+      "summary_en": "Six new coffee machines ranging from espresso makers to bean-to-cup and automatic filter models are now available. Each model targets design-conscious coffee enthusiasts.",
+      "summary_de": "Sechs neue Kaffeemaschinen von Espressomaschinen bis zu Vollautomat- und Filtermodellen sind erhältlich. Jedes Modell richtet sich an designbewusste Kaffeeliebhaber.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-Dd7E1xr1z_4O3u",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/fashion-beauty/fashion-week-trends-spring-summer-2027",
+      "publishedAt": "2026-10-10T07:00:00.000Z",
+      "time_en": "13h ago",
+      "time_de": "vor 13 Std",
+      "read": 3,
+      "kicker_en": "Fashion",
+      "kicker_de": "Mode",
+      "headline_en": "S/S 2027 fashion shows define new season trends",
+      "headline_de": "S/S 2027 Shows prägen neue Saison-Trends",
+      "summary_en": "Wallpaper* identifies key trends from the S/S 2027 fashion shows, including a skirt renaissance and a focus on lightness. The report captures the defining aesthetic of the completed season.",
+      "summary_de": "Wallpaper* identifiziert Schlüssel-Trends aus den S/S 2027 Shows, darunter eine Rock-Renaissance und Fokus auf Leichtigkeit. Der Bericht erfasst die charakteristische Ästhetik der Saison.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
       "id": "s-_K4ZPTMwtQEt1e",
       "cat": "exhibition",
       "accent": "#d4a574",
@@ -80,6 +160,26 @@
       "summary_en": "Seungjin Yang's 'Blowing Series' transforms childhood balloons into functional furniture. The work appears at PAD London from 13 October.",
       "summary_de": "Seungjin Yangs 'Blowing Series' verwandelt Kinderballons in funktionale Möbel. Die Serie ist ab 13. Oktober in PAD London zu sehen.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-_LT6UzFf9STYKh",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/architecture/architecture-tour-of-ghent-belgium",
+      "publishedAt": "2026-10-10T05:30:00.000Z",
+      "time_en": "15h ago",
+      "time_de": "vor 15 Std",
+      "read": 3,
+      "kicker_en": "Ghent, Belgium",
+      "kicker_de": "Gent, Belgien",
+      "headline_en": "Architecture and design tour of Ghent revealed",
+      "headline_de": "Architektur- und Design-Tour durch Gent",
+      "summary_en": "Ghent, Belgium is highlighted as a cultural destination with thriving creativity. Wallpaper* offers an architecture and design tour of the city.",
+      "summary_de": "Gent, Belgien wird als Kulturziel mit lebendiger Kreativität hervorgehoben. Wallpaper* bietet einen Architektur- und Design-Rundgang durch die Stadt.",
+      "confidence": "medium",
       "trending": false
     },
     {
@@ -140,7 +240,7 @@
       "summary_en": "Hoocąk artist Truman Lowe presents his first major retrospective, featuring sculptures made from natural materials. The works explore themes of place, ancestry, and cultural survival.",
       "summary_de": "Der Hoocąk-Künstler Truman Lowe präsentiert seine erste große Retrospektive mit Skulpturen aus natürlichen Materialien. Die Werke erforschen Themen von Ort, Abstammung und kulturellem Überleben.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-UgkWYnWiCPjawV",
@@ -260,7 +360,7 @@
       "summary_en": "Portrait of Madame Colonna Romano (1910) and Jeune fille au puits (1886) have been recovered. The two Renoir paintings were valued at $10.5 million.",
       "summary_de": "Portrait of Madame Colonna Romano (1910) und Jeune fille au puits (1886) wurden zurückgefunden. Die beiden Renoir-Gemälde waren mit 10,5 Millionen Dollar bewertet.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-gL6hs_ya3xkhuk",
@@ -640,7 +740,7 @@
       "summary_en": "A major exhibition at Berlin's Gropius-Bau showcases theater and action artist Christoph Schlingensief's work. The exhibition highlights his radical approach and underscores his continued relevance.",
       "summary_de": "Eine große Ausstellung im Berliner Gropius-Bau zeigt das Werk des Theater- und Aktionskünstlers Christoph Schlingensief. Die Ausstellung dokumentiert seine radikale Arbeit.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-Dbk5wLXFA4ZIvt",
@@ -660,7 +760,7 @@
       "summary_en": "Police have recovered Renoir paintings stolen in last month's burglary at the Renoir Museum in Cagnes-sur-Mer. Six suspects have been arrested in connection with the theft.",
       "summary_de": "Die Polizei hat Renoir-Gemälde zurückgefordert, die bei dem Einbruch im Renoir-Museum in Cagnes-sur-Mer gestohlen wurden. Sechs Verdächtige wurden verhaftet.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-_76JkA4QuSdAPi",
