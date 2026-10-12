@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-10-11T20:56:39.497Z",
+  "generatedAt": "2026-10-12T15:14:40.034Z",
   "category": "restitution",
-  "count": 156,
+  "count": 157,
   "stories": [
+    {
+      "id": "s-RcS-uDIAwNsCLs",
+      "cat": "restitution",
+      "accent": "#9b8579",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/two-stolen-renoirs-worth-10m-recovered-in-france-2822207",
+      "publishedAt": "2026-10-12T08:00:58.000Z",
+      "time_en": "7h ago",
+      "time_de": "vor 7 Std",
+      "read": 3,
+      "kicker_en": "France",
+      "kicker_de": "Frankreich",
+      "headline_en": "Two stolen Renoirs recovered in France",
+      "headline_de": "Zwei gestohlene Renoirs in Frankreich gefunden",
+      "summary_en": "Two stolen Renoir paintings valued at $10 million have been recovered in France. Culture Minister Catherine Pégard commended investigators for their swift work.",
+      "summary_de": "Zwei im Wert von 10 Millionen Dollar geschätzte gestohlene Renoir-Gemälde wurden in Frankreich gefunden. Kulturministerin Catherine Pégard lobte die Ermittler für ihre schnelle Arbeit.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-g3v8FqZTyfptY7",
       "cat": "restitution",
