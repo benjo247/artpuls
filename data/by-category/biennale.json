@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-14T20:39:33.246Z",
+  "generatedAt": "2026-10-15T11:21:04.663Z",
   "category": "biennale",
-  "count": 296,
+  "count": 297,
   "stories": [
     {
       "id": "s-DGaOoXGBwhLYb9",
@@ -11,8 +11,8 @@
       "source": "Hyperallergic",
       "url": "https://hyperallergic.com/tammy-nguyen-plumbs-nationhood-and-the-sea-in-new-opera/",
       "publishedAt": "2026-10-14T19:47:06.000Z",
-      "time_en": "just now",
-      "time_de": "gerade eben",
+      "time_en": "15h ago",
+      "time_de": "vor 15 Std",
       "read": 3,
       "kicker_en": "Venice Biennale 61",
       "kicker_de": "Venedig Biennale 61",
@@ -21,7 +21,27 @@
       "summary_en": "Artist Tammy Nguyen will perform an aria from the unfinished opera \"Timaeus and The Teacher\" at the closing program of the 61st Venice Biennale. The work explores themes of nationhood and the sea.",
       "summary_de": "Künstlerin Tammy Nguyen präsentiert eine Arie aus der unvollendeten Oper \"Timaeus and The Teacher\" im Abschlussprogramm der 61. Venedig Biennale. Das Werk behandelt Themen von Nationalität und Meer.",
       "confidence": "high",
-      "trending": true
+      "trending": false
+    },
+    {
+      "id": "s-S5ZKW0EXbTzp9b",
+      "cat": "biennale",
+      "accent": "#a8b89f",
+      "image": null,
+      "source": "Hyperallergic",
+      "url": "https://hyperallergic.com/tammy-nguyens-new-opera-will-be-the-coda-to-the-venice-biennale/",
+      "publishedAt": "2026-10-14T19:47:06.000Z",
+      "time_en": "15h ago",
+      "time_de": "vor 15 Std",
+      "read": 3,
+      "kicker_en": "Venice Biennale",
+      "kicker_de": "Biennale von Venedig",
+      "headline_en": "Tammy Nguyen Premieres Opera at Venice Biennale Closing",
+      "headline_de": "Tammy Nguyen präsentiert Oper beim Biennale-Finale in Venedig",
+      "summary_en": "Artist Tammy Nguyen will present an aria from her still-unfinished opera \"Timaeus and The Teacher\" as part of the Venice Biennale's closing program. The performance marks a significant moment in the festival's proceeding",
+      "summary_de": "Künstlerin Tammy Nguyen wird eine Arie aus ihrer noch unfertigen Oper \"Timaeus and The Teacher\" im Rahmen des Abschlussprogramms der Biennale von Venedig präsentieren.",
+      "confidence": "high",
+      "trending": false
     },
     {
       "id": "s-_OUHcV19j-VvKu",
@@ -31,8 +51,8 @@
       "source": "ArtReview",
       "url": "https://artreview.com/rubaiya-qatar-2026-announces-full-list-of-artists/",
       "publishedAt": "2026-10-14T13:05:33.000Z",
-      "time_en": "7h ago",
-      "time_de": "vor 7 Std",
+      "time_en": "22h ago",
+      "time_de": "vor 22 Std",
       "read": 3,
       "kicker_en": "Qatar 2026",
       "kicker_de": "Katar 2026",
@@ -51,8 +71,8 @@
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/10/13/tammy-nguyen-venice-biennale-closing-performance-opera-aria",
       "publishedAt": "2026-10-13T21:44:15.000Z",
-      "time_en": "22h ago",
-      "time_de": "vor 22 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 3,
       "kicker_en": "Venice Biennale",
       "kicker_de": "Venedig Biennale",
@@ -61,7 +81,7 @@
       "summary_en": "Wesleyan University commissioned Tammy Nguyen's first opera, which explores nationhood and freedom. An aria from the work will feature at the Venice Biennale's closing celebration.",
       "summary_de": "Die Wesleyan University beauftragte Tammy Nguyens erste Oper, die sich mit Nationalstaat und Freiheit auseinandersetzt. Eine Arie aus dem Werk wird beim Abschluss der Venedig Biennale aufgeführt.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-IKvHsQEUgkST-P",
@@ -91,8 +111,8 @@
       "source": "Monopol",
       "url": "https://www.monopol-magazin.de/manifesta-16-ruhr-geht-mit-fast-200000-besuchen-zu-ende",
       "publishedAt": "2026-10-11T05:54:57.000Z",
-      "time_en": "3d ago",
-      "time_de": "vor 3 Tagen",
+      "time_en": "4d ago",
+      "time_de": "vor 4 Tagen",
       "read": 3,
       "kicker_en": "Manifesta 16",
       "kicker_de": "Manifesta 16",
