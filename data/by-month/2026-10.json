@@ -1,8 +1,48 @@
 {
-  "generatedAt": "2026-10-17T14:11:05.964Z",
+  "generatedAt": "2026-10-17T19:18:27.759Z",
   "month": "2026-10",
-  "count": 683,
+  "count": 687,
   "stories": [
+    {
+      "id": "s-jaQ_ahF9CdYelP",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/list/art-news/market/1-54-london-2026-best-booths-1234802855/",
+      "publishedAt": "2026-10-17T15:27:18.000Z",
+      "time_en": "3h ago",
+      "time_de": "vor 3 Std",
+      "read": 3,
+      "kicker_en": "London, 1-54",
+      "kicker_de": "London, 1-54",
+      "headline_en": "Best Booths at 1-54 London Through Oct 18",
+      "headline_de": "Beste Stände bei 1-54 London bis 18. Oktober",
+      "summary_en": "The 1-54 Contemporary African Art Fair runs at Somerset House through October 18, featuring booths with 3D-printed chairs and futuristic visions of Lagos's waterfront. Highlights cutting-edge presentations from exhibitor",
+      "summary_de": "Die 1-54 Contemporary African Art Fair läuft bis 18. Oktober im Somerset House und präsentiert Stände mit 3D-gedruckten Stühlen und futuristischen Visionen des Wasserfronts von Lagos. Hebt innovative Präsentationen von A",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-mqBqWWoiRcR9OD",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/tech/new-smartphones-by-tecno-tcl-and-xiaomi-review",
+      "publishedAt": "2026-10-17T11:39:28.000Z",
+      "time_en": "7h ago",
+      "time_de": "vor 7 Std",
+      "read": 3,
+      "kicker_en": "Technology",
+      "kicker_de": "Technologie",
+      "headline_en": "Tecno, TCL, Xiaomi launch new smartphone variants",
+      "headline_de": "Tecno, TCL und Xiaomi bringen neue Smartphone-Varianten",
+      "summary_en": "Tecno, TCL and Xiaomi have introduced new smartphones with fresh design and form factor innovations. The devices offer alternatives to mainstream smartphone design.",
+      "summary_de": "Tecno, TCL und Xiaomi haben neue Smartphones mit innovativen Design- und Formfaktoren eingeführt. Die Geräte bieten Alternativen zum Mainstream-Smartphone-Design.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-ts7WUd_37g9CN4",
       "cat": "museum",
@@ -244,6 +284,26 @@
       "trending": false
     },
     {
+      "id": "s-XLyq7EHS24XsI8",
+      "cat": "restitution",
+      "accent": "#9b8579",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/news/morning-links-october-16-norton-simon-museum-1234802810/",
+      "publishedAt": "2026-10-16T23:59:51.000Z",
+      "time_en": "19h ago",
+      "time_de": "vor 19 Std",
+      "read": 3,
+      "kicker_en": "Legal & news",
+      "kicker_de": "Rechtsstreit & News",
+      "headline_en": "Norton Simon Museum Countersues Over Cranach",
+      "headline_de": "Norton Simon Museum verklagt zurück wegen Cranach",
+      "summary_en": "Norton Simon Museum has filed a countersuit against the Jewish Federation regarding a Cranach diptych. The Met has also named Danh Võ for a Genesis Façade Commission.",
+      "summary_de": "Das Norton Simon Museum hat Gegenklage gegen die Jewish Federation eingereicht bezüglich eines Cranach-Diptychons. Das Met hat Danh Võ für eine Genesis Façade Commission benannt.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
       "id": "s-Om5PjFniyK6dBQ",
       "cat": "museum",
       "accent": "#7a9e9f",
@@ -320,6 +380,26 @@
       "headline_de": "Sanaz Sohrabi erforscht OPEC in Feature-Dokumentarfilm",
       "summary_en": "Artist Sanaz Sohrabi's feature-length documentary \"An Incomplete Calendar\" uses archival materials to reframe the oil cartel OPEC as an agent of anti-imperialist solidarity. The work offers a poetic rumination on the pol",
       "summary_de": "Die Feature-Dokumentation \"An Incomplete Calendar\" der Künstlerin Sanaz Sohrabi nutzt Archivmaterialien, um das Ölkartell OPEC als Agent der antiimperialistischen Solidarität neu zu bewerten. Das Werk bietet eine poetisc",
+      "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-X1NEWM6nVLKWUI",
+      "cat": "biennale",
+      "accent": "#a8b89f",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/news/rubaiya-qatar-2026-inaugural-edition-artist-list-1234802793/",
+      "publishedAt": "2026-10-16T21:21:51.000Z",
+      "time_en": "21h ago",
+      "time_de": "vor 21 Std",
+      "read": 3,
+      "kicker_en": "Qatar inaugural",
+      "kicker_de": "Katar Eröffnung",
+      "headline_en": "Rubaiya Qatar Quadrennial Announces 120+ Artists",
+      "headline_de": "Rubaiya Qatar Quadrennial kündet 120+ Künstler an",
+      "summary_en": "The inaugural Rubaiya Qatar Quadrennial has named more than 120 artists. The lead exhibition, \"Unruly Waters,\" will feature two additional exhibitions and a public art program.",
+      "summary_de": "Die inaugural Rubaiya Qatar Quadrennial hat mehr als 120 Künstler benannt. Die Hauptausstellung \"Unruly Waters\" wird zwei zusätzliche Ausstellungen und ein öffentliches Kunstprogramm begleiten.",
       "confidence": "high",
       "trending": false
     },
@@ -441,7 +521,7 @@
       "summary_en": "Non-profit Large opens on an island near Paris with a show exploring the island's automotive history. The centre is focused on promoting the French art scene.",
       "summary_de": "Die gemeinnützige Institution Large eröffnet auf einer Insel bei Paris mit einer Ausstellung zur Automobilgeschichte der Insel. Das Zentrum konzentriert sich auf die Förderung der französischen Kunstszene.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-F-3GXFN80oUcyV",
@@ -721,7 +801,7 @@
       "summary_en": "Large, a contemporary art space founded by collector Laurent Dumas, occupies L'Île Seguin and references the island's industrial heritage. The multi-million-dollar venue positions itself within the location's complex his",
       "summary_de": "Large, ein von Sammler Laurent Dumas gegründetes zeitgenössisches Kunstzentrum, befindet sich auf L'Île Seguin und bezieht sich auf das industrielle Erbe der Insel. Das millionenschwere Projekt verankert sich in der komp",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-ykRD4FV5WB1uQP",
