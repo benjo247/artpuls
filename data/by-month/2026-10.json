@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-10-18T14:32:05.673Z",
+  "generatedAt": "2026-10-18T19:23:50.603Z",
   "month": "2026-10",
-  "count": 710,
+  "count": 711,
   "stories": [
+    {
+      "id": "s-3H0TNGTtrhxr_v",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/travel/bars/circle-13-petanque-bar-london-fields-review",
+      "publishedAt": "2026-10-18T16:16:45.000Z",
+      "time_en": "3h ago",
+      "time_de": "vor 3 Std",
+      "read": 3,
+      "kicker_en": "London Fields",
+      "kicker_de": "London Fields",
+      "headline_en": "Circle13 reimagines pétanque with design focus",
+      "headline_de": "Circle13 interpretiert Pétanque neu",
+      "summary_en": "Circle13 in London Fields presents a contemporary take on the century-old French sport pétanque, featuring design-led interiors and Basque-inspired cuisine. The venue offers a refreshed approach to the traditional game a",
+      "summary_de": "Circle13 in London Fields präsentiert einen zeitgenössischen Zugang zum französischen Spiel Pétanque mit designorientierten Innenräumen und baskisch inspirierter Küche. Das Lokal bietet einen erneuerten Zugang zum tradit",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-GT-zRjXsWfQcQa",
       "cat": "artists",

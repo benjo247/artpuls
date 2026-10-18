@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T14:32:05.665Z",
+  "generatedAt": "2026-10-18T19:23:50.595Z",
   "category": "restitution",
   "count": 164,
   "stories": [
@@ -31,8 +31,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/spain-police-recover-stolen-church-artworks-valladolid-1234802674/",
       "publishedAt": "2026-10-16T17:15:01.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "Spain, church theft",
       "kicker_de": "Spanien, Kirchendiebstahl",
@@ -131,8 +131,8 @@
       "source": "The Art Newspaper",
       "url": "https://www.theartnewspaper.com/2026/10/12/dutch-museum-return-ancient-vase-to-sicily-after-research-uncovers-problematic-provenance",
       "publishedAt": "2026-10-12T17:31:14.000Z",
-      "time_en": "5d ago",
-      "time_de": "vor 5 Tagen",
+      "time_en": "6d ago",
+      "time_de": "vor 6 Tagen",
       "read": 3,
       "kicker_en": "Amsterdam to Sicily",
       "kicker_de": "Amsterdam nach Sizilien",
