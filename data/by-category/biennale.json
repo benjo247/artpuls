@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T10:57:17.136Z",
+  "generatedAt": "2026-10-18T14:32:05.640Z",
   "category": "biennale",
   "count": 302,
   "stories": [
@@ -51,8 +51,8 @@
       "source": "ArtReview",
       "url": "https://artreview.com/war-conditions-see-karachi-biennale-cancelled/",
       "publishedAt": "2026-10-16T11:04:13.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "Karachi",
       "kicker_de": "Karachi",
@@ -131,8 +131,8 @@
       "source": "ArtReview",
       "url": "https://artreview.com/rubaiya-qatar-2026-announces-full-list-of-artists/",
       "publishedAt": "2026-10-14T13:05:33.000Z",
-      "time_en": "3d ago",
-      "time_de": "vor 3 Tagen",
+      "time_en": "4d ago",
+      "time_de": "vor 4 Tagen",
       "read": 3,
       "kicker_en": "Qatar 2026",
       "kicker_de": "Katar 2026",
