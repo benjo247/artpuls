@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-10-23T20:23:54.209Z",
+  "generatedAt": "2026-10-24T10:50:55.716Z",
   "month": "2026-10",
-  "count": 970,
+  "count": 975,
   "stories": [
+    {
+      "id": "s-YevJ6krwPI2Cui",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Wallpaper",
+      "url": "https://www.wallpaper.com/architecture/hermes-quilt-windows-space-popular-london",
+      "publishedAt": "2026-10-24T06:00:00.000Z",
+      "time_en": "4h ago",
+      "time_de": "vor 4 Std",
+      "read": 3,
+      "kicker_en": "London",
+      "kicker_de": "London",
+      "headline_en": "Hermès London Window Installation Uses Handmade Fabrics",
+      "headline_de": "Hermès-Fensterinstallation in London mit handgefertigten Stoffen",
+      "summary_en": "Architecture Space Popular created a handmade fabric installation for Hermès Maison's New Bond Street window display, featuring hundreds of miles of stitching. The project combines textile craft with architectural design",
+      "summary_de": "Architecture Space Popular gestaltete eine handgefertigte Stoffinstallation für das New-Bond-Street-Schaufenster von Hermès Maison mit hunderten Meilen Näharbeit. Das Projekt verbindet Textilhandwerk mit architektonische",
+      "confidence": "high",
+      "trending": false
+    },
     {
       "id": "s-BXYL0FUUlVcylE",
       "cat": "artists",
@@ -40,6 +60,26 @@
       "headline_de": "Monet-Gemälde im Museum-Wettstreit",
       "summary_en": "The Milwaukee Art Museum and MFA St. Petersburg have placed Monet paintings at the center of a World Series wager. Both works depict River Thames scenes and were painted in the early 20th century.",
       "summary_de": "Das Milwaukee Art Museum und das MFA St. Petersburg haben Monet-Gemälde in den Mittelpunkt einer World Series-Wette gestellt. Beide Werke zeigen Szenen der Themse und entstanden im frühen 20. Jahrhundert.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-Vokq3FMJAKlxgU",
+      "cat": "market",
+      "accent": "#c8553d",
+      "image": null,
+      "source": "ARTnews",
+      "url": "https://www.artnews.com/art-news/news/monument-to-iwo-jima-flag-raising-near-quantico-vandalized-1234803717/",
+      "publishedAt": "2026-10-23T19:53:20.000Z",
+      "time_en": "14h ago",
+      "time_de": "vor 14 Std",
+      "read": 3,
+      "kicker_en": "Quantico, Virginia",
+      "kicker_de": "Quantico, Virginia",
+      "headline_en": "Iwo Jima Monument Statue Vandalized",
+      "headline_de": "Iwo-Jima-Monument-Statue beschädigt",
+      "summary_en": "A Virginia man allegedly beheaded one of six statues at the Iwo Jima monument near the Quantico Marine base. The incident marks an act of vandalism at the landmark.",
+      "summary_de": "Ein Virginiaer soll eine der sechs Statuen des Iwo-Jima-Monuments in der Nähe der Quantico-Marinebasis enthauptet haben. Der Vorfall stellt einen Vandalismus-Akt am Denkmal dar.",
       "confidence": "medium",
       "trending": false
     },
@@ -241,6 +281,26 @@
       "summary_en": "Maison Guerlain has opened an exhibition of works by 33 artists, including James Turrell and Annette Messager, responding to the fragrance L'Heure Bleue. The show opened on the Champs Élysées as riots affected nearby lux",
       "summary_de": "Maison Guerlain zeigt Arbeiten von 33 Künstlern, darunter James Turrell und Annette Messager, als Antwort auf den Duft L'Heure Bleue. Die Ausstellung eröffnete auf den Champs Élysées.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-W1BRKFsTjADPQJ",
+      "cat": "auction",
+      "accent": "#e8503a",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/market/art-basel-paris-2026-sales-protests-early-closure-2823843",
+      "publishedAt": "2026-10-23T16:59:01.000Z",
+      "time_en": "17h ago",
+      "time_de": "vor 17 Std",
+      "read": 3,
+      "kicker_en": "Art Basel Paris",
+      "kicker_de": "Art Basel Paris",
+      "headline_en": "Art Basel Paris sales halted amid shutdown",
+      "headline_de": "Art Basel Paris Verkäufe durch Shutdown unterbrochen",
+      "summary_en": "Art Basel Paris experienced brisk sales before the fair closed early. Some exhibitors began packing before the event concluded.",
+      "summary_de": "Art Basel Paris verzeichnete lebhafte Verkäufe vor der vorzeitigen Schließung der Messe. Einige Aussteller begannen zu packen, bevor die Veranstaltung endete.",
+      "confidence": "medium",
       "trending": false
     },
     {
@@ -501,7 +561,7 @@
       "summary_en": "The Róng Museum of Art, a private venture, has selected a curatorial team ahead of its opening. The museum is a project of tech businessman Ma Huateng.",
       "summary_de": "Das Róng Museum of Art, ein privates Unternehmen, hat ein Kuratorenteam vor seiner Eröffnung ausgewählt. Das Museum ist ein Projekt des Technologie-Unternehmers Ma Huateng.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-GvhT7g6fW1h04J",
@@ -520,6 +580,26 @@
       "headline_de": "Fender x Paul Smith Limited Telecaster",
       "summary_en": "A limited-edition Fender x Paul Smith Telecaster celebrates the octogenarian status of designer Sir Paul Smith and Fender Musical Instruments Corporation. The collaboration brings together sound, vision, style and design",
       "summary_de": "Eine limitierte Fender x Paul Smith Telecaster feiert das achtzigste Jubiläum des Designers Sir Paul Smith und der Fender Musical Instruments Corporation. Die Zusammenarbeit vereint Sound, Vision, Stil und Design.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-bUb3Zf08-7tw7b",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "ArtReview",
+      "url": "https://artreview.com/pap-souleye-fall-mit-list-visual-arts-center-review-gee-wesley/",
+      "publishedAt": "2026-10-23T12:48:41.000Z",
+      "time_en": "22h ago",
+      "time_de": "vor 22 Std",
+      "read": 3,
+      "kicker_en": "Contemporary art",
+      "kicker_de": "Zeitgenössische Kunst",
+      "headline_en": "Pap Souleye Fall's digital materialism explores dark themes",
+      "headline_de": "Pap Souleye Falls digitaler Materialismus erforscht dunkle Themen",
+      "summary_en": "Artist Pap Souleye Fall creates a fictional universe of pixel characters and data collectors. His maximalist approach highlights underlying dark realities.",
+      "summary_de": "Künstler Pap Souleye Fall schafft ein fiktives Universum aus Pixelcharakteren und Datensammlern. Sein maximalistischer Ansatz hebt zugrunde liegende dunkle Realitäten hervor.",
       "confidence": "medium",
       "trending": false
     },
@@ -761,7 +841,7 @@
       "summary_en": "Freya Chou, Li Jia, and Susanna Zhu have joined the Shenzhen-based Róng Museum of Art ahead of its 2027 opening. The institution has revealed its curatorial leadership.",
       "summary_de": "Freya Chou, Li Jia und Susanna Zhu sind dem Shenzhen-Museum Róng Museum of Art vor dessen Eröffnung 2027 beigetreten. Die Institution hat ihre kuratorische Leitung bekannt gegeben.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-s8LD8ZbXzEh4JG",
@@ -984,6 +1064,26 @@
       "trending": false
     },
     {
+      "id": "s-HoA5ccluSieIRl",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/artnet-bulletin/art-basel-paris-week-highlights-oct-23-2827321",
+      "publishedAt": "2026-10-23T06:30:38.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Art Basel Paris",
+      "kicker_de": "Art Basel Paris",
+      "headline_en": "Five artworks stand out at turbulent Art Basel Paris",
+      "headline_de": "Fünf Arbeiten stechen auf turbulenter Art Basel Paris hervor",
+      "summary_en": "Art Basel Paris featured works including Martin Wong's paintbrushes and a Dan Flavin presentation at Gagosian. The fair occurred amid fraught circumstances.",
+      "summary_de": "Art Basel Paris zeigte Werke einschließlich Martin Wongs Pinsel und eine Dan Flavin-Präsentation bei Gagosian. Die Messe fand unter angespannten Umständen statt.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
       "id": "s-KvPM3dbv-7DY8o",
       "cat": "exhibition",
       "accent": "#d4a574",
@@ -1021,7 +1121,7 @@
       "summary_en": "David Brognon and Stéphanie Rollin have been awarded the Marcel Duchamp Prize, first presented in 2000. Their installations and multidisciplinary practice engage with time and empowerment of marginalised communities.",
       "summary_de": "David Brognon und Stéphanie Rollin erhalten den Marcel-Duchamp-Preis, der seit 2000 verliehen wird. Ihre Installationen und multidisziplinäre Praxis befassen sich mit Zeit und Ermächtigung von marginalisierten Gemeinscha",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-LXPCrWasKPKhdO",
@@ -1121,7 +1221,7 @@
       "summary_en": "A Monet painting sold by Sotheby's in Paris for €50 million has set a new French auction record for the artist. The sale surpassed a previous Monet record set hours earlier at Christie's.",
       "summary_de": "Ein von Sotheby's in Paris verkauftes Monet-Gemälde für 50 Millionen Euro stellt einen neuen französischen Auktionsrekord für den Künstler auf. Der Verkauf übertraf einen Stunden zuvor bei Christie's aufgestellten früher",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-ngaE6GScplUdTy",
@@ -1181,7 +1281,7 @@
       "summary_en": "A Monet painting sold for $56.2 million at Sotheby's Paris, establishing a French auction record. Nearly three-quarters of lots sold above their high estimates.",
       "summary_de": "Ein Monet-Gemälde erzielte bei Sotheby's Paris $56,2 Millionen und stellte einen französischen Auktionsrekord auf. Fast drei Viertel der Lose wurden über ihren Höchstschätzungen verkauft.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-Px1qYbVgGpTLMa",
@@ -1201,7 +1301,7 @@
       "summary_en": "The Louvre, Fondation Cartier, Gagosian, Perrotin galleries, and Art Basel Paris will remain closed all weekend due to protests. Major Paris cultural institutions are shuttering in response to Saturday demonstrations.",
       "summary_de": "Das Louvre, die Fondation Cartier, die Galerien Gagosian und Perrotin sowie Art Basel Paris bleiben das ganze Wochenende geschlossen. Pariser Kulturinstitutionen stellen ihren Betrieb wegen Protesten ein.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-ekgbMKpYHSmXM6",
