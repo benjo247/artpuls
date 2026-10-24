@@ -1,7 +1,27 @@
 {
-  "generatedAt": "2026-10-24T14:28:04.110Z",
-  "count": 7135,
+  "generatedAt": "2026-10-24T19:27:00.340Z",
+  "count": 7136,
   "stories": [
+    {
+      "id": "s-z7WCtx3rWkNC5d",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Süddeutsche Kultur",
+      "url": "https://www.sueddeutsche.de/kultur/bob-dylan-tour-flensburg-li.3568229",
+      "publishedAt": "2026-10-24T17:46:03.000Z",
+      "time_en": "1h ago",
+      "time_de": "vor 1 Std",
+      "read": 3,
+      "kicker_en": "Music, Germany",
+      "kicker_de": "Musik, Deutschland",
+      "headline_en": "Bob Dylan Performs Opening Concert in Flensburg",
+      "headline_de": "Bob Dylan eröffnet Konzert in Flensburg",
+      "summary_en": "Bob Dylan began his German tour with a performance in stormy Flensburg, demonstrating his blues mastery. Audiences are advised to arrive early for subsequent tour dates.",
+      "summary_de": "Bob Dylan eröffnete seine Deutschlandtournee mit einem Auftritt im stürmischen Flensburg und demonstrierte seine Blues-Meisterschaft. Zuschauer werden aufgefordert, für weitere Termine pünktlich zu erscheinen.",
+      "confidence": "medium",
+      "trending": false
+    },
     {
       "id": "s-u46sW8akUpJQ-V",
       "cat": "artists",
@@ -460,7 +480,7 @@
       "summary_en": "The Louvre, Picasso Museum, and Musée d'Orsay will close Saturday as a precaution. Around 70,000 law enforcement officers will be deployed across the country.",
       "summary_de": "Der Louvre, das Picasso-Museum und das Musée d'Orsay werden Samstag zur Vorsicht geschlossen. Etwa 70.000 Polizeikräfte werden im ganzen Land eingesetzt.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-jT6n9EcakHS4ps",
@@ -540,7 +560,7 @@
       "summary_en": "The Louvre, Musée d'Orsay, Fondation Louis Vuitton, Musée National Picasso–Paris, and Maison de Victor Hugo are closing on Saturday as a precautionary measure. The closures are in response to ongoing protests.",
       "summary_de": "Der Louvre, das Musée d'Orsay, die Fondation Louis Vuitton, das Musée National Picasso–Paris und die Maison de Victor Hugo schließen Samstag vorsorglich. Die Schließungen erfolgen wegen laufender Proteste.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-hlnQ9hOZh69N8Z",
