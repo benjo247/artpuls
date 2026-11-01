@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-31T20:26:46.201Z",
+  "generatedAt": "2026-11-01T13:13:25.143Z",
   "month": "2026-10",
-  "count": 1251,
+  "count": 1254,
   "stories": [
     {
       "id": "s-2nYXAvGGMFht-F",
@@ -21,6 +21,26 @@
       "summary_en": "A new biography unravels myths surrounding Geoffrey Bardon and the origin of Western Desert Aboriginal dot painting, which Bardon arrived to teach at Papunya (250km west of Alice Springs) in 1971. The account challenges ",
       "summary_de": "Eine neue Biografie enthüllt Mythen rund um Geoffrey Bardon und die Ursprünge der Western Desert Aboriginal Punktmalerei, bei denen Bardon 1971 in Papunya (250 km westlich von Alice Springs) unterrichtete. Die Darstellun",
       "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-rnI14XFUjqua87",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Ocula",
+      "url": "https://ocula.com/magazine/conversations/jota-mombaca-rockbund-art-museum-2026/",
+      "publishedAt": "2026-10-31T18:00:06.000Z",
+      "time_en": "19h ago",
+      "time_de": "vor 19 Std",
+      "read": 3,
+      "kicker_en": "Shanghai",
+      "kicker_de": "Shanghai",
+      "headline_en": "Jota Mombaça on Octavia Butler & Clay",
+      "headline_de": "Jota Mombaça über Octavia Butler & Ton",
+      "summary_en": "Artist Jota Mombaça discusses her opera at Rockbund Art Museum in Shanghai, drawing on American science fiction, Gabrielle Goliath's influence, and working with clay.",
+      "summary_de": "Künstlerin Jota Mombaça spricht über ihre Oper im Rockbund Art Museum in Shanghai, ihre Inspiration durch Science-Fiction und die Arbeit mit Ton.",
+      "confidence": "high",
       "trending": false
     },
     {
@@ -61,6 +81,26 @@
       "summary_en": "The Kubly House, designed by Craig Ellwood in 1965, is for sale after remaining in the same family for six decades. The residence exemplifies modernism with its minimalist structure and clean lines.",
       "summary_de": "Das 1965 von Craig Ellwood entworfene Kubly House steht zum Verkauf, nachdem es sechs Jahrzehnte in derselben Familie verblieb. Das Wohnhaus verkörpert die Moderne mit minimalistischer Struktur und klaren Linien.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-sh9JQKIFC9POnP",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Guardian Art",
+      "url": "https://www.theguardian.com/artanddesign/gallery/2026/oct/31/mill-19-steel-factory-pittsburgh",
+      "publishedAt": "2026-10-31T12:00:42.000Z",
+      "time_en": "yesterday",
+      "time_de": "gestern",
+      "read": 3,
+      "kicker_en": "Pittsburgh, Pennsylvania",
+      "kicker_de": "Pittsburgh, Pennsylvania",
+      "headline_en": "Mill 19 transforms Pittsburgh steel factory into creative hub",
+      "headline_de": "Mill 19: Ehemaliges Stahlwerk wird Kreativzentrum",
+      "summary_en": "Mill 19 is a creative hub established within a former steel factory in Pittsburgh, Pennsylvania. The post-industrial site has been repurposed for cultural and artistic activities.",
+      "summary_de": "Mill 19 ist ein Kreativzentrum in einem ehemaligen Stahlwerk in Pittsburgh, Pennsylvania. Der postindustrielle Standort wurde für kulturelle und künstlerische Aktivitäten umgenutzt.",
+      "confidence": "medium",
       "trending": false
     },
     {
@@ -1801,6 +1841,26 @@
       "summary_en": "Local businessman Jemal Inaishvili has established the Kvareli Foundation for Contemporary Art to bring Georgian art to a wider audience. The museum opens amid ongoing protests in the country.",
       "summary_de": "Der lokale Geschäftsmann Jemal Inaishvili hat die Kvareli Foundation for Contemporary Art gegründet, um georgische Kunst einem breiteren Publikum zugänglich zu machen. Das Museum eröffnet inmitten von Protesten im Land.",
       "confidence": "high",
+      "trending": false
+    },
+    {
+      "id": "s-hzJ211yglZXx0o",
+      "cat": "biennale",
+      "accent": "#a8b89f",
+      "image": null,
+      "source": "Monopol",
+      "url": "https://www.monopol-magazin.de/documenta-sixteen-gibt-erweitertes-kuratorisches-team-bekannt",
+      "publishedAt": "2026-10-29T14:40:44.000Z",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
+      "read": 3,
+      "kicker_en": "Documenta",
+      "kicker_de": "Documenta",
+      "headline_en": "Documenta Sixteen announces curatorial team",
+      "headline_de": "Documenta Sixteen kündigt Kuratorenteam an",
+      "summary_en": "Documenta Sixteen has announced an expanded curatorial team.",
+      "summary_de": "Documenta Sixteen hat ein erweitertes Kuratorenteam bekannt gegeben.",
+      "confidence": "medium",
       "trending": false
     },
     {
