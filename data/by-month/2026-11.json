@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-14T13:25:33.682Z",
+  "generatedAt": "2026-11-14T21:24:30.975Z",
   "month": "2026-11",
-  "count": 543,
+  "count": 546,
   "stories": [
     {
       "id": "s-pd4SnewVziWXuN",
@@ -321,7 +321,7 @@
       "summary_en": "The ADAA Fair, a rebooted version of the association's Art Show, returns to New York after a year off with a reduced exhibitor list. The fair now partners with the Whitney Museum.",
       "summary_de": "Die ADAA Fair, eine überarbeitete Version der Art Show des Verbands, kehrt nach einer Jahrespause nach New York zurück. Die Messe hat jetzt eine reduzierte Ausstellerliste und kooperiert mit dem Whitney Museum.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-4-gGx5JoNN7JSc",
@@ -360,6 +360,26 @@
       "headline_de": "Betye Saar im Getty Center geehrt",
       "summary_en": "A memorial at the Getty Center honored late Los Angeles artist Betye Saar. The event highlighted her influence on both artists and artmaking.",
       "summary_de": "Ein Memorial im Getty Center ehrte die verstorbene Künstlerin Betye Saar aus Los Angeles. Die Veranstaltung würdigte ihren Einfluss auf Künstler und Kunstpraxis.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-MGXp-3tvupmswu",
+      "cat": "artists",
+      "accent": "#8b6f47",
+      "image": null,
+      "source": "Artnet News",
+      "url": "https://news.artnet.com/art-world/kehinde-wiley-rent-lawsuit-2834710",
+      "publishedAt": "2026-11-13T21:40:07.000Z",
+      "time_en": "23h ago",
+      "time_de": "vor 23 Std",
+      "read": 3,
+      "kicker_en": "New York",
+      "kicker_de": "New York",
+      "headline_en": "Wiley sued for unpaid New York rent",
+      "headline_de": "Wiley wegen Mietrückständen verklagt",
+      "summary_en": "Portrait painter Kehinde Wiley faces a lawsuit from his landlord seeking at least $36,000 in unpaid rent on a New York apartment.",
+      "summary_de": "Der Porträtmaler Kehinde Wiley wird von seinem Vermieter auf mindestens 36.000 Dollar Mietrückstände für ein New Yorker Apartment verklagt.",
       "confidence": "medium",
       "trending": false
     },
@@ -421,7 +441,7 @@
       "summary_en": "The Art Dealers Association of America's five-day fair has returned to the Upper East Side after the fall edition was canceled. Works including Diebenkorns are on view.",
       "summary_de": "Die fünftägige Messe der Art Dealers Association of America ist nach Absage der Herbstausgabe zur Upper East Side zurückgekehrt. Werke einschließlich Diebenkorns sind zu sehen.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-6AAiGR2UaF3VzJ",
@@ -561,7 +581,7 @@
       "summary_en": "The ADAA Fair has reopened at the Park Avenue Armory after a controversial yearlong hiatus with a smaller footprint and strong early sales. The event emphasized looking at art directly.",
       "summary_de": "Die ADAA-Messe ist in der Park Avenue Armory nach einer kontroversen einjährigen Pause mit reduziertem Platzangebot und starken Anfangsumsätzen zurückgekehrt. Der Fokus lag auf der direkten Betrachtung von Kunst.",
       "confidence": "high",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-XKlwl04nsCH5xk",
@@ -1644,6 +1664,26 @@
       "trending": false
     },
     {
+      "id": "s-ykHAkD8liuFbUS",
+      "cat": "exhibition",
+      "accent": "#d4a574",
+      "image": null,
+      "source": "Ocula",
+      "url": "https://ocula.com/magazine/opinion/earthly-paradise-william-morris-gallery-2026/",
+      "publishedAt": "2026-11-12T18:00:00.000Z",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
+      "read": 3,
+      "kicker_en": "United Kingdom",
+      "kicker_de": "Vereinigtes Königreich",
+      "headline_en": "UK exhibition explores artists' unconventional lives",
+      "headline_de": "Ausstellung über unkonventionelle Künstlerleben",
+      "summary_en": "A new show documents the history of unconventional ways artists have arranged their lives in the UK.",
+      "summary_de": "Eine neue Ausstellung dokumentiert die Geschichte unkonventioneller Lebensweisen von Künstlern in Großbritannien.",
+      "confidence": "medium",
+      "trending": false
+    },
+    {
       "id": "s-sBGRy8na5wuidd",
       "cat": "museum",
       "accent": "#7a9e9f",
@@ -2061,6 +2101,26 @@
       "summary_en": "A German museum has restituted a painting by German Impressionist Slevogt to heirs of a Nazi-persecuted collector. The work will be sold at auction in Munich.",
       "summary_de": "Ein deutsches Museum hat ein Gemälde des deutschen Impressionisten Slevogt an Erben eines von den Nazis verfolgten Sammlers zurückgegeben. Das Werk wird bei einer Auktion in München verkauft.",
       "confidence": "medium",
+      "trending": false
+    },
+    {
+      "id": "s-w_4c3m-glxQyiZ",
+      "cat": "museum",
+      "accent": "#7a9e9f",
+      "image": null,
+      "source": "Monopol",
+      "url": "https://www.monopol-magazin.de/wiener-aktionismus-museum-stellt-betrieb-ein",
+      "publishedAt": "2026-11-12T12:10:18.000Z",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
+      "read": 3,
+      "kicker_en": "Vienna",
+      "kicker_de": "Wien",
+      "headline_en": "Wiener Aktionismus Museum closes operations",
+      "headline_de": "Wiener Aktionismus Museum stellt Betrieb ein",
+      "summary_en": "The Wiener Aktionismus Museum has ceased operations.",
+      "summary_de": "Das Wiener Aktionismus Museum hat seinen Betrieb eingestellt.",
+      "confidence": "high",
       "trending": false
     },
     {
