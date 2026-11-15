@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T21:24:30.392Z",
+  "generatedAt": "2026-11-15T13:51:51.370Z",
   "category": "auction",
   "count": 347,
   "stories": [
@@ -11,8 +11,8 @@
       "source": "ARTnews",
       "url": "https://www.artnews.com/art-news/news/sothebys-hedreen-auction-proceeds-will-repay-loan-not-fund-university-museum-report-1234805958/",
       "publishedAt": "2026-11-13T21:36:03.000Z",
-      "time_en": "23h ago",
-      "time_de": "vor 23 Std",
+      "time_en": "yesterday",
+      "time_de": "gestern",
       "read": 3,
       "kicker_en": "Seattle",
       "kicker_de": "Seattle",
@@ -21,7 +21,7 @@
       "summary_en": "A Sotheby's auction of works from the Hedreen collection will reportedly service a debt secured against the collection, according to reports. The sale stands between the collector and his pledge to Seattle University.",
       "summary_de": "Eine Sotheby's-Auktion von Werken aus der Hedreen-Sammlung soll Schulden begleichen, die gegen die Sammlung besichert sind. Der Verkauf verzögert die Erfüllung einer Zusage an die Seattle University.",
       "confidence": "medium",
-      "trending": true
+      "trending": false
     },
     {
       "id": "s-ly2WvIhRjnK6ti",
@@ -111,8 +111,8 @@
       "source": "Artnet News",
       "url": "https://news.artnet.com/market/whitney-deaccession-de-kooning-auction-christies-2835978",
       "publishedAt": "2026-11-13T01:12:26.000Z",
-      "time_en": "yesterday",
-      "time_de": "gestern",
+      "time_en": "2d ago",
+      "time_de": "vor 2 Tagen",
       "read": 3,
       "kicker_en": "New York auction",
       "kicker_de": "New-York-Auktion",
@@ -231,8 +231,8 @@
       "source": "Artnet News",
       "url": "https://news.artnet.com/art-world/doyle-important-fine-art-2834205",
       "publishedAt": "2026-11-10T21:30:40.000Z",
-      "time_en": "3d ago",
-      "time_de": "vor 3 Tagen",
+      "time_en": "4d ago",
+      "time_de": "vor 4 Tagen",
       "read": 3,
       "kicker_en": "New York, Doyle",
       "kicker_de": "New York, Doyle",
